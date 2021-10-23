@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Character2DController : MonoBehaviour
 {
@@ -8,9 +10,10 @@ public class Character2DController : MonoBehaviour
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
+	[SerializeField] List<Transform> m_GroundCheck = new List<Transform>();	// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
+	[SerializeField] private List<Collider2D> m_JumpDisableCollider;                  // A collider that will be disabled when crouching
 
 	public CharacterMovement movescript;
 	private Rigidbody2D m_Rigidbody2D;
@@ -52,7 +55,7 @@ public class Character2DController : MonoBehaviour
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck[0].position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
 			if (colliders[i].gameObject != gameObject)
@@ -62,7 +65,16 @@ public class Character2DController : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
-
+		colliders = Physics2D.OverlapCircleAll(m_GroundCheck[1].position, k_GroundedRadius, m_WhatIsGround);
+		for (int i = 0; i < colliders.Length; i++)
+		{
+			if (colliders[i].gameObject != gameObject)
+			{
+				m_Grounded = true;
+				if (!wasGrounded)
+					OnLandEvent.Invoke();
+			}
+		}
 		if (m_Grounded == false)
 		{
 			Debug.Log("not grounded");
@@ -86,7 +98,22 @@ public class Character2DController : MonoBehaviour
 				crouch = true;
 			}
 		}
+        if (!m_Grounded)
+        {
+            foreach (Collider2D jumpCollider in m_JumpDisableCollider)
+            {
 
+				jumpCollider.enabled = false;
+			}
+        }
+        else
+        {
+			foreach (Collider2D jumpCollider in m_JumpDisableCollider)
+			{
+
+				jumpCollider.enabled = true;
+			}
+		}
 		//only control the player if grounded or airControl is turned on
 		if (m_Grounded || m_AirControl)
 		{
