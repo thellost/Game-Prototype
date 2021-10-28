@@ -77,7 +77,6 @@ public class Character2DController : MonoBehaviour
 		}
 		if (m_Grounded == false)
 		{
-			Debug.Log("not grounded");
 			movescript.animator.SetBool("IsJumping", !m_Grounded);
 		}
 		else
