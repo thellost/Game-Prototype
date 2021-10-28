@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class FlickeringLight : MonoBehaviour
 {
-    //reusable
-
-    // Update is called once per frame
+   // Reusable
+   
+   // Update is called once per frame
     void Update()
     {
         
