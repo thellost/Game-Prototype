@@ -6,7 +6,6 @@ public class CharacterMovement : MonoBehaviour
 {
 
 	public Character2DController controller;
-	public TimeManager timeManager;
 	public Animator animator;
 
 	public float runSpeed = 40f;
@@ -36,12 +35,6 @@ public class CharacterMovement : MonoBehaviour
 		else if (Input.GetButtonUp("Crouch"))
 		{
 			crouch = false;
-		}
-
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			Debug.Log("Slowmo");
-			timeManager.DoSlowMotion();
 		}
 
 	}
