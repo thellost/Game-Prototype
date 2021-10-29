@@ -27,7 +27,7 @@ public class TimeManager : MonoBehaviour
         //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
 
         if (Time.timeScale == 1.0f)
-            Time.timeScale = 0.5f;
+            Time.timeScale = slowDownFactor;
         else
             Time.timeScale = 1.0f;
         // Adjust fixed delta time according to timescale
