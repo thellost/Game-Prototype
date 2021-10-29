@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Character2DController : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
+	[SerializeField] private float m_JumpForce = 15f;                          // Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
@@ -169,7 +169,7 @@ public class Character2DController : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 10f);
+			m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, m_JumpForce);
 		}
 	}
 
