@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class HealthBar_Script : MonoBehaviour
 {
-    private image HealthBar;
+    ////private image HealthBar;
     public float Currenthealth;
     private float MaxHealth = 100f;
-    playescript Player;
+    //playescript Player;
 
     private void Start()
     {
-        HealthBar = GetComponent<image>();
-        Player = FindObjectOfType<skrippleyer>();
+        //HealthBar = GetComponent<image>();
+        //Player = FindObjectOfType<skrippleyer>();
     }
 
     private void Upadate()
     {
-        Currenthealth = Player.Health;
-        HealthBar.fillmount = Currenthealth / MaxHealth;
+       // Currenthealth = Player.Health;
+        //HealthBar.fillmount = Currenthealth / MaxHealth;
     }
 }
