@@ -5,15 +5,15 @@ using System.Collections.Generic;
 
 public class Character2DController : MonoBehaviour
 {
-	[SerializeField] private float m_JumpForce = 15f;                          // Amount of force added when the player jumps.
+	[SerializeField] private float m_JumpForce = 15f;                           // Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  // How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;                         // Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-	[SerializeField] List<Transform> m_GroundCheck = new List<Transform>();	// A position marking where to check if the player is grounded.
+	[SerializeField] List<Transform> m_GroundCheck = new List<Transform>();	    // A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
-	[SerializeField] private List<Collider2D> m_JumpDisableCollider;                  // A collider that will be disabled when crouching
+	[SerializeField] private List<Collider2D> m_JumpDisableCollider;            // A collider that will be disabled when crouching
 
 	public CharacterMovement movescript;
 	private Rigidbody2D m_Rigidbody2D;
@@ -65,6 +65,7 @@ public class Character2DController : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
+
 		colliders = Physics2D.OverlapCircleAll(m_GroundCheck[1].position, k_GroundedRadius, m_WhatIsGround);
 		for (int i = 0; i < colliders.Length; i++)
 		{
