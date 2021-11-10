@@ -13,7 +13,7 @@ public class CharacterAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Attack();
         }
@@ -27,11 +27,19 @@ public class CharacterAttack : MonoBehaviour
         //check enemies
         Collider2D[] hit = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
 
-
         //damage the enemies
         foreach(Collider2D enemy in hit)
         {
             Debug.Log("We Hit" + enemy.name);
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+        Gizmos.DrawWireSphere(attackPoint.position, attackRangeCircle);
     }
 }

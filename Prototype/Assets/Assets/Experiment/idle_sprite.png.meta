@@ -106,8 +106,8 @@ TextureImporter:
       name: Untitled12_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 1296
+        x: 7
+        y: 1298
         width: 272
         height: 684
       alignment: 0
@@ -127,7 +127,7 @@ TextureImporter:
       name: Untitled12_1
       rect:
         serializedVersion: 2
-        x: 291
+        x: 289
         y: 1296
         width: 272
         height: 684
