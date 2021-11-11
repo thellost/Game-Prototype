@@ -9,6 +9,7 @@ public class CharacterAttack : MonoBehaviour
     public float attackRangeCircle;
     public Transform attackPoint;
     public LayerMask enemiesLayer;
+    [SerializeField] GameObject bloodParticle;
 
     // Update is called once per frame
     void Update()
@@ -23,14 +24,22 @@ public class CharacterAttack : MonoBehaviour
     {
         //play the animation
         animator.SetTrigger("isAttack");
+        //bakal di lanjutkan di script State Machine , terus di state machine bakal nge triggerAttackRaycast
+        //state machine doesnt work dont trust the above
+        // kayaknya bagus pake animation event tapi semoga implementasi nya ga ribet kalau banyak
+        //anj malah makin ribet
+    }
+
+    public void triggerAttackRaycast()
+    {
 
         //check enemies
-        Collider2D[] hit = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
+        RaycastHit2D[] hit = Physics2D.CircleCastAll(attackPoint.position, attackRangeCircle, new Vector2(0, 0), 0f, enemiesLayer);
 
         //damage the enemies
-        foreach(Collider2D enemy in hit)
+        foreach (RaycastHit2D enemy in hit)
         {
-            Debug.Log("We Hit" + enemy.name);
+            Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, 0), Quaternion.Euler(-90f, 0, 0));
         }
     }
 

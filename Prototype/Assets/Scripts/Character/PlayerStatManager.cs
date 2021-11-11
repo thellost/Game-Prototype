@@ -11,20 +11,23 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] float maxPlayerEnergy = 50;
     [SerializeField] float invicTimer = 1;
 
+
     [Header("Energy Parameter")]
     [SerializeField] float energyDrainRate = 0.5f;
 
     [Header("UI Reference")]
     [SerializeField] private Slider hpProgressUI = null;
+    [SerializeField] private Slider energyProgressUI = null;
 
-
-    private float currentHp;
-    private float currentEnergy;
+    public TimeManager timeManager;
+    public float currentHp;
+    public float currentEnergy;
     private bool isUsingEnergy;
     private float internalTimer;
     // Start is called before the first frame update
     void Start()
     {
+        isUsingEnergy = false;
         setPlayerStat();
     }
 
@@ -37,6 +40,8 @@ public class PlayerStatManager : MonoBehaviour
 
         hpProgressUI.maxValue = maxPlayerHP;
         hpProgressUI.value = currentHp;
+        energyProgressUI.maxValue = maxPlayerEnergy;
+        energyProgressUI.value = currentEnergy;
 
     }
 
@@ -48,7 +53,8 @@ public class PlayerStatManager : MonoBehaviour
 
     public void useEnergy()
     {
-        
+        isUsingEnergy = !isUsingEnergy;
+       
     }
 
     // Update is called once per frame
@@ -60,6 +66,21 @@ public class PlayerStatManager : MonoBehaviour
             internalTimer = 0;
             takeDamage(5);
         }
-        
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            useEnergy();
+            
+        }
+
+        if (isUsingEnergy)
+        {
+            currentEnergy -= energyDrainRate * Time.unscaledDeltaTime;
+            energyProgressUI.value = currentEnergy;
+            if (currentEnergy <= 0)
+            {
+                timeManager.stopSlowMotion();
+            }
+        }
+
     }
 }

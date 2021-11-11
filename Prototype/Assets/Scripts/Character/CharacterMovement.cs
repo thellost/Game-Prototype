@@ -40,7 +40,6 @@ public class CharacterMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.X))
 		{
-			Debug.Log("Slowmo");
 			timeManager.DoSlowMotion();
 		}
 

@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class AttackBehaviour : StateMachineBehaviour
 {
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    [SerializeField] int frameCountAttack = 5;
+
+    private CharacterAttack characaterAttack;
+    private int counter;
+    private bool alreadyAttack;
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        characaterAttack = GameObject.Find("Player").GetComponent<CharacterAttack>();
+        counter = 0;
+        alreadyAttack = false;
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
-    //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        counter += 1;
+        if(counter > frameCountAttack)
+        {
+            alreadyAttack = true;
+            if (characaterAttack != null)
+            {
+                characaterAttack.triggerAttackRaycast();
+            }
+        }
+    }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

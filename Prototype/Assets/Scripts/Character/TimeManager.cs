@@ -4,6 +4,7 @@ public class TimeManager : MonoBehaviour
 {
     public float slowDownFactor = 0.5f;
     public float slowDownDuration = 2f;
+    public PlayerStatManager playerStat;
 
     private float fixedDeltaTime;
 
@@ -23,15 +24,25 @@ public class TimeManager : MonoBehaviour
 
     public void DoSlowMotion()
     {
-        //Time.timeScale = slowDownFactor;
-        //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
+        if (playerStat.currentEnergy > 0)
+        {
+            //Time.timeScale = slowDownFactor;
+            //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
 
-        if (Time.timeScale == 1.0f)
-            Time.timeScale = slowDownFactor;
-        else
-            Time.timeScale = 1.0f;
-        // Adjust fixed delta time according to timescale
-        // The fixed delta time will now be 0.02 real-time seconds per frame
+            if (Time.timeScale == 1.0f)
+                Time.timeScale = slowDownFactor;
+            else
+                Time.timeScale = 1.0f;
+            // Adjust fixed delta time according to timescale
+            // The fixed delta time will now be 0.02 real-time seconds per frame
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        }
+        
+    }
+
+    public void stopSlowMotion()
+    {
+        Time.timeScale = 1.0f;
         Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
 }
