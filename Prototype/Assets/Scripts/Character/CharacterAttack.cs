@@ -39,7 +39,7 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, 0), Quaternion.Euler(-90f, 0, 0));
+            Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
         }
     }
 
