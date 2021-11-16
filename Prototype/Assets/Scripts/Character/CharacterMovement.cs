@@ -26,9 +26,8 @@ public class CharacterMovement : MonoBehaviour
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 		verticalMove = rb.velocity.y;
-		Debug.Log(verticalMove);
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-		animator.SetFloat("SpeedY", Mathf.Abs(horizontalMove));
+		animator.SetFloat("SpeedY", Mathf.Abs(verticalMove));
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
