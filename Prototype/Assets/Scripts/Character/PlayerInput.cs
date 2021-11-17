@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerVelocity))]
 public class PlayerInput : MonoBehaviour
 {
-	public Animator animator;
 	private TimeManager timeManager;
 	private PlayerVelocity playerVelocity;
 
@@ -39,6 +38,10 @@ public class PlayerInput : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.LeftShift))
         {
 			playerVelocity.OnDashInputDown();
+        }
+		if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+			playerVelocity.Roll();
         }
 		if (Input.GetKeyDown(KeyCode.X))
 		{
