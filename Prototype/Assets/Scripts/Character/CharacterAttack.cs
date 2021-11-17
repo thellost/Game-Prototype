@@ -103,12 +103,8 @@ public class CharacterAttack : MonoBehaviour
     {
         while (slash != null)
         {
-            if(slash == null)
-            {
-                break;
-            }
-            yield return new WaitForEndOfFrame();
             slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.05f);
+            yield return new WaitForEndOfFrame();
         }
     }
 
