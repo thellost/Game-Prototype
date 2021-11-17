@@ -15,13 +15,21 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float forceFallSpeed = 20;
 	[SerializeField] private float dashPower = 10f;
 	[SerializeField] private float dashCooldown = 2f;
+	[SerializeField] private float rollPower = 10f;
+	[SerializeField] private float rollCooldown = 2f;
 	[SerializeField] private int maxAirJump = 1;
 	[SerializeField] private PlayerAnimator playerAnimator;
+	[SerializeField] private Vector2 standingColliderSize;
+	[SerializeField] private Vector2 rollingColliderSize;
+	[SerializeField] private Vector2 standingColliderOffset;
+	[SerializeField] private Vector2 rollingColliderOffset;
 	
 	private int airJumpCount;
 	private float lastDashTime;
+	private float lastRollTime;
 	private float lastHorizontalVelocity;
 	private bool isDashing;
+	private bool isRolling;
 
 	private float gravity;
 	private float maxJumpVelocity;
@@ -91,13 +99,15 @@ public class PlayerVelocity : MonoBehaviour
 			lastHorizontalVelocity = velocity.x;
         }
 
-		if (!isDashing)
-        {
-			velocity.y += gravity * Time.deltaTime;
-		} else
-        {
-			velocity.y = 0;
-        }
+		velocity.y += gravity * Time.deltaTime;
+
+		// if (!isDashing)
+        // {
+		//	velocity.y += gravity * Time.deltaTime;
+		// } else
+        // {
+			// velocity.y = 0;
+        // }
 	}
 
 
@@ -188,13 +198,15 @@ public class PlayerVelocity : MonoBehaviour
 		Invoke("ResetDashing", 0.3f);
 
 		var dashDirection = dashPower;
+		Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 		if (lastHorizontalVelocity < 0)
         {
 			dashDirection = -dashPower;
         }
 
-
+		velocity = Vector2.zero;
+		velocity = direction.normalized * dashPower;
 		velocity = new Vector2(dashDirection, velocity.y);
 
 		//MENGUBAH ARAH DASH jika argument tidak default
@@ -202,6 +214,8 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			velocity = new Vector2(dashDirectionX * velocity.x , velocity.y * dashDirectionY);
 		}
+		// velocity = new Vector2(dashDirection, velocity.y);
+		
 		lastDashTime = Time.time;
 		airJumpCount++;
     }
@@ -211,10 +225,49 @@ public class PlayerVelocity : MonoBehaviour
 		isDashing = false;
     }
 
+	public void Roll()
+    {
+		if (Time.time - lastRollTime < rollCooldown)
+		{
+			return;
+		}
+
+		if (!playerMovement.isGrounded)
+		{
+			return;
+		}
+
+		isRolling = true;
+		Invoke("ResetRolling", 0.3f);
+
+		var rollDirection = rollPower;
+
+		if (lastHorizontalVelocity < 0)
+		{
+			rollDirection = -rollPower;
+		}
+
+		velocity = new Vector2(rollDirection, velocity.y);
+		lastRollTime = Time.time;
+
+		playerMovement.boxCollider.size = rollingColliderSize;
+		playerMovement.boxCollider.offset = rollingColliderOffset;
+	}
+
+	private void ResetRolling()
+	{
+		isRolling = false;
+		playerMovement.boxCollider.size = standingColliderSize;
+		playerMovement.boxCollider.offset = standingColliderOffset;
+	}
+
 	private void HandleAnimation()
     {
 		playerAnimator.SetDashing(isDashing);
 		playerAnimator.SetJumping(!playerMovement.isGrounded);
-		playerAnimator.SetRunning(directionalInput.x != 0);
-    }
+		// playerAnimator.SetRunning(directionalInput.x != 0);
+		playerAnimator.SetSpeedX(Mathf.Abs(directionalInput.x));
+		playerAnimator.SetSpeedY(velocity.y);
+		playerAnimator.SetRolling(isRolling);
+	}
 }

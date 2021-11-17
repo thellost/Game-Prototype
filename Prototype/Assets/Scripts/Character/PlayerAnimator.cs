@@ -21,4 +21,19 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool("isDashing", isDashing);
     }
 
+    public void SetRolling(bool isRolling)
+    {
+        animator.SetBool("isRolling", isRolling);
+    }
+
+    public void SetSpeedX(float speedX)
+    {
+        animator.SetFloat("Speed", speedX);
+    }
+
+    public void SetSpeedY(float speedY)
+    {
+        animator.SetFloat("SpeedY", speedY);
+    }
+
 }
