@@ -16,21 +16,13 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float dashPower = 10f;
 	[SerializeField] private float dashCooldown = 2f;
 	[SerializeField] private int maxAirJump = 1;
+	[SerializeField] private PlayerAnimator playerAnimator;
 	
-
 	private int airJumpCount;
 	private float lastDashTime;
 	private float lastHorizontalVelocity;
 	private bool isDashing;
 
-	//[SerializeField] private Vector2 wallJump;
-	//[SerializeField] private Vector2 wallJumpClimb;
-	//[SerializeField] private Vector2 wallLeapOff;
-
-	//[SerializeField] private float wallSlideSpeedMax = 3;
-	//[SerializeField] private float wallStickTime = .25f;
-
-	private float timeToWallUnstick;
 	private float gravity;
 	private float maxJumpVelocity;
 	private float minJumpVelocity;
@@ -41,8 +33,6 @@ public class PlayerVelocity : MonoBehaviour
 	private Movement playerMovement;
 
 	private Vector2 directionalInput;
-	private bool wallContact;
-	private int wallDirX;
 
 	void Start()
 	{
@@ -83,6 +73,8 @@ public class PlayerVelocity : MonoBehaviour
         {
 			airJumpCount = 0;
         }
+
+		HandleAnimation();
 	}
 
 	public void CalculateVelocity()
@@ -177,6 +169,11 @@ public class PlayerVelocity : MonoBehaviour
 
 	public void OnDashInputDown()
     {
+		if (Time.time - lastDashTime < dashCooldown)
+		{
+			return;
+		}
+
 		if (playerMovement.collisionDirection.below)
         {
 			return;
@@ -184,11 +181,6 @@ public class PlayerVelocity : MonoBehaviour
 
 		isDashing = true;
 		Invoke("ResetDashing", 0.3f);
-
-		if (Time.time - lastDashTime < dashCooldown)
-        {
-			return;
-        }
 
 		var dashDirection = dashPower;
 
@@ -199,10 +191,18 @@ public class PlayerVelocity : MonoBehaviour
 
 		velocity = new Vector2(dashDirection, velocity.y);
 		lastDashTime = Time.time;
+		airJumpCount++;
     }
 
 	private void ResetDashing()
     {
 		isDashing = false;
+    }
+
+	private void HandleAnimation()
+    {
+		playerAnimator.SetDashing(isDashing);
+		playerAnimator.SetJumping(!playerMovement.isGrounded);
+		playerAnimator.SetRunning(directionalInput.x != 0);
     }
 }

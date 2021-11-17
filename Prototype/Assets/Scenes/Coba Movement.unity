@@ -3254,10 +3254,11 @@ GameObject:
   - component: {fileID: 1490652066}
   - component: {fileID: 1490652065}
   - component: {fileID: 1490652068}
-  - component: {fileID: 1490652070}
   - component: {fileID: 1490652064}
   - component: {fileID: 1490652063}
   - component: {fileID: 1490652071}
+  - component: {fileID: 1490652070}
+  - component: {fileID: 1490652069}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -3285,8 +3286,9 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.1
   forceFallSpeed: 20
   dashPower: 25
-  dashCooldown: 0
+  dashCooldown: 2
   maxAirJump: 1
+  playerAnimator: {fileID: 1490652069}
 --- !u!114 &1490652064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3314,6 +3316,8 @@ MonoBehaviour:
   objectInput: {x: 0, y: 0}
   slidingDownMaxSlope: 0
   forceFall: 0
+  isGrounded: 0
+  distanceToGround: 1.75
   maxSlopeAngle: 80
 --- !u!61 &1490652065
 BoxCollider2D:
@@ -3426,6 +3430,19 @@ CircleCollider2D:
   m_Offset: {x: 0.018113388, y: -0.2559235}
   serializedVersion: 2
   m_Radius: 0.08030095
+--- !u!114 &1490652069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490652062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fbe8889aaffa54e9de5b7a8a1cb6f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1490652070}
 --- !u!95 &1490652070
 Animator:
   serializedVersion: 3
@@ -3434,9 +3451,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490652062}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fd3e92b4260bf9546af6bc2708843c3f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 395b333e11f93c64182018cdc762c08b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3457,7 +3474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912b25a2bb2ba5a44946b063ba74b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &1518983072
 GameObject:
   m_ObjectHideFlags: 0

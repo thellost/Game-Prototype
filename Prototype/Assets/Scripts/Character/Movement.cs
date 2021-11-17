@@ -10,6 +10,8 @@ public class Movement : BoxColliderCasts
 	[HideInInspector] public bool slidingDownMaxSlope = false;
 	[HideInInspector] public bool forceFall = false;
 
+	public bool isGrounded;
+	public float distanceToGround = 1f;
 	private const float wallAngle = 90;
 	private const float wallTolerence = 1;
 	[SerializeField] [Range(0f, wallAngle - wallTolerence)] private float maxSlopeAngle = 80;
@@ -17,16 +19,23 @@ public class Movement : BoxColliderCasts
 	private int faceDirection = 0;
 	private bool ascendSlope = false;
 	private bool descendSlope = false;
+	private bool isFacingRight = true;
 
 	public override void Start()
 	{
 		base.Start();
 	}
 
-	/// <summary>
-	/// Checks for collisions then applies correct transform translation to move object
-	/// </summary>
-	public void Move(Vector2 displacement, Vector2 input)
+    public void Update()
+    {
+		isGrounded = Physics2D.Raycast(transform.position, -Vector2.up, distanceToGround + 0.1f, collisionMask);
+		Debug.DrawRay(transform.position, -Vector2.up);
+    }
+
+    /// <summary>
+    /// Checks for collisions then applies correct transform translation to move object
+    /// </summary>
+    public void Move(Vector2 displacement, Vector2 input)
 	{
 		ResetDetection();
 
@@ -57,6 +66,17 @@ public class Movement : BoxColliderCasts
 		{
 			forceFall = false;
 		}
+
+		// If the input is moving the player right and the player is facing left...
+		if (faceDirection > 0 && !isFacingRight)
+        {
+			Flip();
+        }
+		// Otherwise if the input is moving the player left and the player is facing right...
+		else if (faceDirection < 0 && isFacingRight)
+        {
+			Flip();
+        }
 	}
 
 	void ResetDetection()
@@ -319,4 +339,13 @@ public class Movement : BoxColliderCasts
 		}
 	}
 
+	private void Flip()
+    {
+		isFacingRight = !isFacingRight;
+
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+
+	}
 }
