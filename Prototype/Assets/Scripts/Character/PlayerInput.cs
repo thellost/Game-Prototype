@@ -6,12 +6,14 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 	public Animator animator;
+	private TimeManager timeManager;
 	private PlayerVelocity playerVelocity;
 
 
 	void Start()
 	{
 		playerVelocity = GetComponent<PlayerVelocity>();
+		timeManager = GameObject.Find("TimeManager").GetComponent<TimeManager>();
 	}
 
 	void Update()
@@ -38,5 +40,10 @@ public class PlayerInput : MonoBehaviour
         {
 			playerVelocity.OnDashInputDown();
         }
+		if (Input.GetKeyDown(KeyCode.X))
+		{
+			Debug.Log("test slow");
+			timeManager.DoSlowMotion();
+		}
 	}
 }

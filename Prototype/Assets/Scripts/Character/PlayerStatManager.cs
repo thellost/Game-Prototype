@@ -60,6 +60,7 @@ public class PlayerStatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        energyProgressUI.value = currentEnergy;
         internalTimer += Time.deltaTime;
         if(internalTimer > invicTimer)
         {
@@ -75,7 +76,7 @@ public class PlayerStatManager : MonoBehaviour
         if (isUsingEnergy)
         {
             currentEnergy -= energyDrainRate * Time.unscaledDeltaTime;
-            energyProgressUI.value = currentEnergy;
+            
             if (currentEnergy <= 0)
             {
                 timeManager.stopSlowMotion();

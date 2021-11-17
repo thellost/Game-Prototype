@@ -24,8 +24,10 @@ public class TimeManager : MonoBehaviour
 
     public void DoSlowMotion()
     {
+
         if (playerStat.currentEnergy > 0)
         {
+            Debug.Log("SLOWWWW");
             //Time.timeScale = slowDownFactor;
             //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
 

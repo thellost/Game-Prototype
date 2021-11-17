@@ -13,7 +13,8 @@ public class CharacterAttack : MonoBehaviour
     public float animationOffset;
     [SerializeField] GameObject bloodParticle;
     [SerializeField] GameObject slashParticle;
-
+    [SerializeField] float cameraShakeIntensity;
+    [SerializeField] float cameraShakeTimer;
     private bool isAttacking;
 
     // Update is called once per frame
@@ -57,6 +58,10 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
+            if(CameraShake.Instance != null)
+            {
+                CameraShake.Instance.ShakeCamera(cameraShakeIntensity , cameraShakeTimer);
+            }
             Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
         }
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
