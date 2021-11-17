@@ -167,16 +167,21 @@ public class PlayerVelocity : MonoBehaviour
 		}
 	}
 
-	public void OnDashInputDown()
+
+	//kutambahin optional argument yang berguna untuk attack dash
+	public void OnDashInputDown(int dashDirectionX = 0 , int dashDirectionY = 0)
     {
+
 		if (Time.time - lastDashTime < dashCooldown)
 		{
 			return;
 		}
+		
 
+		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (playerMovement.collisionDirection.below)
         {
-			return;
+			
         }
 
 		isDashing = true;
@@ -189,7 +194,14 @@ public class PlayerVelocity : MonoBehaviour
 			dashDirection = -dashPower;
         }
 
+
 		velocity = new Vector2(dashDirection, velocity.y);
+
+		//MENGUBAH ARAH DASH jika argument tidak default
+		if (dashDirectionX != 0 || dashDirectionY != 0)
+		{
+			velocity = new Vector2(dashDirectionX * velocity.x , velocity.y * dashDirectionY);
+		}
 		lastDashTime = Time.time;
 		airJumpCount++;
     }
