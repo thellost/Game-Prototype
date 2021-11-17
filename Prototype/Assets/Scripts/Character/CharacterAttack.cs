@@ -16,11 +16,13 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] float cameraShakeIntensity;
     [SerializeField] float cameraShakeTimer;
     private bool isAttacking;
-
+    private PlayerVelocity playerVelocity;
+    private Vector2 direction;
     // Update is called once per frame
 
     private void Start()
     {
+        playerVelocity = GetComponent<PlayerVelocity>();
         isAttacking = false;
     }
     void Update()
@@ -35,8 +37,11 @@ public class CharacterAttack : MonoBehaviour
     {
         if (!isAttacking) {
             //play the animation
+            setMousePosition();
+            dashToMouse();
             animator.SetTrigger("isAttack");
             isAttacking = true;
+            StartCoroutine(WaitForAttackCooldown());
             //bakal di lanjutkan di script State Machine , terus di state machine bakal nge triggerAttackRaycast
             //state machine doesnt work dont trust the above
             // kayaknya bagus pake animation event tapi semoga implementasi nya ga ribet kalau banyak
@@ -44,16 +49,29 @@ public class CharacterAttack : MonoBehaviour
         }
             
     }
+    private void setMousePosition()
+    {
 
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+    }
+
+    private void dashToMouse()
+    {
+        //set dash
+        Vector2 temp = direction;
+        setTraditionalNormalize(ref temp);
+        playerVelocity.OnDashInputDown(temp.x, temp.y);
+    }
     public void triggerAttackRaycast()
     { 
         
         //mouse position
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         Vector3 directionAnimation = direction.normalized * attackRangeCircle;
-
+        
         //check enemies
         RaycastHit2D[] hit = Physics2D.CircleCastAll(directionAnimation + transform.position, attackRangeCircle, new Vector2(0, 0), 0f, enemiesLayer);
+
+       
 
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
@@ -72,22 +90,35 @@ public class CharacterAttack : MonoBehaviour
     }
 
     
-    
+    private void setTraditionalNormalize(ref Vector2 vector2)
+    {
+        float temp = Mathf.Abs(vector2.x) + Mathf.Abs(vector2.y);
+        vector2.x = vector2.x / temp;
+        vector2.y = vector2.y / temp;
 
+    }
+
+
+    //ini di panggil melalui event animation
     private void spawnSlashAnimation()
     {
         //mouse position to rotation
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
 
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
         gameobj.transform.localScale = new Vector3(0.3f, 0.3f, 0);
-        gameobj.transform.position = transform.position;
         gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = Quaternion.Euler(0, 0, -68.43f) * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
+
+        //set  transform behind player
+        Vector2 temp2 = direction;
+        setTraditionalNormalize(ref temp2);
+        Vector3 temp3 = temp2;
+        gameobj.transform.position = transform.position - (0.5f * temp3);
     }
     
 
@@ -95,7 +126,7 @@ public class CharacterAttack : MonoBehaviour
  
     private IEnumerator WaitForAttackCooldown()
     {
-         yield return new WaitForSeconds(attackSpeed);
+        yield return new WaitForSeconds(attackSpeed);
         isAttacking = false;
     }
 

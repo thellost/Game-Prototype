@@ -28,6 +28,7 @@ public class PlayerVelocity : MonoBehaviour
 	private float lastDashTime;
 	private float lastRollTime;
 	private float lastHorizontalVelocity;
+	private float tempDashPower;
 	private bool isDashing;
 	private bool isRolling;
 
@@ -179,42 +180,49 @@ public class PlayerVelocity : MonoBehaviour
 
 
 	//kutambahin optional argument yang berguna untuk attack dash
-	public void OnDashInputDown(int dashDirectionX = 0 , int dashDirectionY = 0)
+	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
-
+	
 		if (Time.time - lastDashTime < dashCooldown)
 		{
 			return;
 		}
 		
-
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (playerMovement.collisionDirection.below)
         {
-			
+
+			tempDashPower = dashPower;
+        }
+        else
+        {
+			tempDashPower = dashPower * 75 / 100;
         }
 
 		isDashing = true;
 		Invoke("ResetDashing", 0.3f);
 
-		var dashDirection = dashPower;
+		var dashDirection = tempDashPower;
+
+
 		Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
 		if (lastHorizontalVelocity < 0)
         {
-			dashDirection = -dashPower;
+			dashDirection = -tempDashPower;
         }
 
-		velocity = Vector2.zero;
-		velocity = direction.normalized * dashPower;
+		
 		velocity = new Vector2(dashDirection, velocity.y);
 
 		//MENGUBAH ARAH DASH jika argument tidak default
 		if (dashDirectionX != 0 || dashDirectionY != 0)
 		{
-			velocity = new Vector2(dashDirectionX * velocity.x , velocity.y * dashDirectionY);
+			
+			velocity = Vector2.one * tempDashPower;
+			velocity = new Vector2(dashDirectionX * velocity.x, velocity.y * dashDirectionY);
+			
 		}
-		// velocity = new Vector2(dashDirection, velocity.y);
 		
 		lastDashTime = Time.time;
 		airJumpCount++;
