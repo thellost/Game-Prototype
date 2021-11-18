@@ -115,14 +115,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.016666668
-    functionName: spawnSlashAnimation
+    functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.016666668
-    functionName: triggerAttackRaycast
+    functionName: spawnSlashAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
