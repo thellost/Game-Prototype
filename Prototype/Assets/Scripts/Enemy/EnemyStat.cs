@@ -23,19 +23,30 @@ public class EnemyStat : MonoBehaviour
 
     }
 
-    public void takeDamage(float dmg)
+    public bool takeDamage(float dmg)
     {
-        currentHp -= dmg;
-
-        if (currentHp <= 0)
+        if (internalTimer <= 0)
         {
-            Destroy(gameObject);
+            internalTimer = invicTimer;
+            
+            currentHp -= dmg;
+
+            if (currentHp <= 0)
+            {
+                Destroy(gameObject);
+            }
+            return true;
         }
+        return false;
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        if(internalTimer > 0)
+        {
+            internalTimer -= Time.deltaTime;
+        }
     }
 }

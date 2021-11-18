@@ -13,7 +13,8 @@ public class CharacterAttack : MonoBehaviour
     public float animationOffset;
     [SerializeField] GameObject bloodParticle;
     [SerializeField] GameObject slashParticle;
-    [SerializeField] float cameraShakeIntensity;
+    [SerializeField] float cameraShakeIntensity = 5;
+    [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
@@ -76,16 +77,20 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            if(CameraShake.Instance != null)
-            {
-                CameraShake.Instance.ShakeCamera(cameraShakeIntensity , cameraShakeTimer);
-            }
+            
             Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
         }
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<EnemyStat>().takeDamage(attackDamage);
+            if (enemy.GetComponent<EnemyStat>().takeDamage(attackDamage))
+            {
+                if (CameraShake.Instance != null)
+                {
+                    CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
+                }
+
+            }
         }
     }
 
@@ -135,7 +140,7 @@ public class CharacterAttack : MonoBehaviour
         while (slash != null)
         {
             slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.05f);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
     }
 

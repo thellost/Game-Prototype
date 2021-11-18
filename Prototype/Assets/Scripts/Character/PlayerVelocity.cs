@@ -25,12 +25,14 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private Vector2 rollingColliderOffset;
 	
 	private int airJumpCount;
+	private int dashCount;
 	private float lastDashTime;
 	private float lastRollTime;
 	private float lastHorizontalVelocity;
 	private float tempDashPower;
 	private bool isDashing;
 	private bool isRolling;
+	private bool isInAir;
 
 	private float gravity;
 	private float maxJumpVelocity;
@@ -56,7 +58,7 @@ public class PlayerVelocity : MonoBehaviour
 	void Update()
 	{
 		CalculateVelocity();
-		
+		checkIfInAir();
 
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
@@ -85,6 +87,19 @@ public class PlayerVelocity : MonoBehaviour
 
 		HandleAnimation();
 	}
+
+	//check apakah player ada di udara apa ga , ini setiap update
+	private void checkIfInAir()
+    {
+        if (playerMovement.collisionDirection.below)
+        {
+			isInAir = false;
+        }
+        else
+        {
+			isInAir = true;
+        }
+    }
 
 	public void CalculateVelocity()
 	{
@@ -182,21 +197,21 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
-	
+		
 		if (Time.time - lastDashTime < dashCooldown)
 		{
 			return;
 		}
-		
-		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
-		if (playerMovement.collisionDirection.below)
-        {
 
+		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
+		if (true)
+        {
 			tempDashPower = dashPower;
         }
-        else
+        else if(!playerMovement.collisionDirection.below )
         {
-			tempDashPower = dashPower * 75 / 100;
+			dashCount += 1;
+			tempDashPower = dashPower;
         }
 
 		isDashing = true;
@@ -205,8 +220,7 @@ public class PlayerVelocity : MonoBehaviour
 		var dashDirection = tempDashPower;
 
 
-		Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-
+		
 		if (lastHorizontalVelocity < 0)
         {
 			dashDirection = -tempDashPower;

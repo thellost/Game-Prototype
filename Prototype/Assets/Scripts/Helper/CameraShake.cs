@@ -19,10 +19,11 @@ public class CameraShake : MonoBehaviour
         cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
     }
     // Update is called once per frame
-    public void ShakeCamera(float intensity, float time)
+    public void ShakeCamera(float intensity, float time, float frequency = 1)
     {
         CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
+        cinemachineBasicMultiChannelPerlin.m_FrequencyGain = frequency;
         shaketimer = time;
     }
 
