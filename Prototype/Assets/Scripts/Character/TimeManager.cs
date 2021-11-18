@@ -1,4 +1,5 @@
 using UnityEngine;
+using Chronos;
 
 public class TimeManager : MonoBehaviour
 {
@@ -7,11 +8,18 @@ public class TimeManager : MonoBehaviour
     public PlayerStatManager playerStat;
 
     private float fixedDeltaTime;
+    private bool isInSlowmo;
+    private Clock enemyClock;
 
     void Awake()
     {
         // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
         this.fixedDeltaTime = Time.fixedDeltaTime;
+    }
+
+    private void Start()
+    {
+        enemyClock = Timekeeper.instance.Clock("Enemies");
     }
 
     void Update()
@@ -27,24 +35,19 @@ public class TimeManager : MonoBehaviour
 
         if (playerStat.currentEnergy > 0)
         {
-            Debug.Log("SLOWWWW");
-            //Time.timeScale = slowDownFactor;
-            //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
-
-            if (Time.timeScale == 1.0f)
-                Time.timeScale = slowDownFactor;
-            else
-                Time.timeScale = 1.0f;
-            // Adjust fixed delta time according to timescale
-            // The fixed delta time will now be 0.02 real-time seconds per frame
-            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+            if (!isInSlowmo)
+            {
+                isInSlowmo = true;
+                enemyClock.localTimeScale = slowDownFactor;
+                Invoke("stopSlowMotion", slowDownDuration);
+            }
         }
         
     }
 
     public void stopSlowMotion()
     {
-        Time.timeScale = 1.0f;
-        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
+        enemyClock.localTimeScale = 1;
+        isInSlowmo = false;
     }
 }
