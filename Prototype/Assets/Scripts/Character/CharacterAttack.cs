@@ -59,9 +59,10 @@ public class CharacterAttack : MonoBehaviour
     private void dashToMouse()
     {
         //set dash
-        Vector2 temp = direction;
-        setTraditionalNormalize(ref temp);
-        playerVelocity.OnDashInputDown(temp.x, temp.y);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float xside = Mathf.Cos(angle * Mathf.PI / 180);
+        float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        playerVelocity.OnDashInputDown(xside, yside);
     }
     public void triggerAttackRaycast()
     { 
