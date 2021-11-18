@@ -23,7 +23,7 @@ public class Movement : BoxColliderCasts
 
 	public override void Start()
 	{
-		base.Start();
+		base.Start();	
 	}
 
     public void Update()

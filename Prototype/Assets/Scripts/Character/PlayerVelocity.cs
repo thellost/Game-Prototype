@@ -58,7 +58,6 @@ public class PlayerVelocity : MonoBehaviour
 	void Update()
 	{
 		CalculateVelocity();
-		checkIfInAir();
 
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
@@ -89,17 +88,7 @@ public class PlayerVelocity : MonoBehaviour
 	}
 
 	//check apakah player ada di udara apa ga , ini setiap update
-	private void checkIfInAir()
-    {
-        if (playerMovement.collisionDirection.below)
-        {
-			isInAir = false;
-        }
-        else
-        {
-			isInAir = true;
-        }
-    }
+	
 
 	public void CalculateVelocity()
 	{

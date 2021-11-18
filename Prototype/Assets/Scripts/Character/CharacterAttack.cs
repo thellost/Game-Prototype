@@ -77,8 +77,8 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            
-            Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
+            spawnBlood(enemy);
+
         }
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
         foreach(Collider2D enemy in hitEnemies)
@@ -117,6 +117,7 @@ public class CharacterAttack : MonoBehaviour
         gameobj.transform.localScale = new Vector3(0.3f, 0.3f, 0);
         gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = Quaternion.Euler(0, 0, -68.43f) * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
+        gameobj.transform.localScale *= 1.5f;
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
 
         //set  transform behind player
@@ -125,10 +126,21 @@ public class CharacterAttack : MonoBehaviour
         Vector3 temp3 = temp2;
         gameobj.transform.position = transform.position - (0.5f * temp3);
     }
-    
+
+    private void spawnBlood(RaycastHit2D enemy)
+    {
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        GameObject gameobj = Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
+        gameobj.transform.rotation = Quaternion.Euler(-90f, 0, 0) * rotation;
+
+    }
+
 
     //this is fucking useless need to replace it in animator
- 
+
     private IEnumerator WaitForAttackCooldown()
     {
         yield return new WaitForSeconds(attackSpeed);
