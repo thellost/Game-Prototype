@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Movement))]
+[RequireComponent(typeof(PlayerInput))]
 public class PlayerVelocity : MonoBehaviour
 {
 
@@ -42,13 +43,13 @@ public class PlayerVelocity : MonoBehaviour
 	private float velocityXSmoothing;
 
 	private Movement playerMovement;
-
+	private PlayerInput playerInput;
 	private Vector2 directionalInput;
 
 	void Start()
 	{
 		playerMovement = GetComponent<Movement>();
-
+		playerInput = GetComponent<PlayerInput>();
 		// see suvat calculations; s = ut + 1/2at^2, v^2 = u^2 + 2at, where u=0, scalar looking at only y dir
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -63,6 +64,7 @@ public class PlayerVelocity : MonoBehaviour
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
 		Vector3 displacement = (velocity + oldVelocity) * 0.5f * Time.deltaTime;
 		// Move player using movement controller which checks for collisions then applies correct transform (displacement) translation
+		
 		playerMovement.Move(displacement, directionalInput);
 
 		bool verticalCollision = playerMovement.collisionDirection.above || playerMovement.collisionDirection.below;
@@ -186,7 +188,7 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
-		
+		playerInput.enabled = false;
 		if (Time.time - lastDashTime < dashCooldown)
 		{
 			return;
@@ -204,7 +206,6 @@ public class PlayerVelocity : MonoBehaviour
         }
 
 		isDashing = true;
-		Invoke("ResetDashing", 0.3f);
 
 		var dashDirection = tempDashPower;
 
@@ -224,15 +225,14 @@ public class PlayerVelocity : MonoBehaviour
 			
 			velocity = Vector2.one * tempDashPower;
 			velocity = new Vector2(dashDirectionX * velocity.x, velocity.y * dashDirectionY);
-			
 		}
-		
 		lastDashTime = Time.time;
 		airJumpCount++;
     }
 
 	private void ResetDashing()
     {
+		playerInput.enabled = true;
 		isDashing = false;
     }
 
@@ -278,7 +278,7 @@ public class PlayerVelocity : MonoBehaviour
 		playerAnimator.SetJumping(!playerMovement.isGrounded);
 		// playerAnimator.SetRunning(directionalInput.x != 0);
 		playerAnimator.SetSpeedX(Mathf.Abs(directionalInput.x));
-		playerAnimator.SetSpeedY(velocity.y);
+		playerAnimator.SetSpeedY(Mathf.Abs(velocity.y));
 		playerAnimator.SetRolling(isRolling);
 	}
 }

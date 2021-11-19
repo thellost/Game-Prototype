@@ -59,9 +59,10 @@ public class CharacterAttack : MonoBehaviour
     private void dashToMouse()
     {
         //set dash
-        Vector2 temp = direction;
-        setTraditionalNormalize(ref temp);
-        playerVelocity.OnDashInputDown(temp.x, temp.y);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float xside = Mathf.Cos(angle * Mathf.PI / 180);
+        float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        playerVelocity.OnDashInputDown(xside, yside);
     }
     public void triggerAttackRaycast()
     { 
@@ -108,15 +109,17 @@ public class CharacterAttack : MonoBehaviour
     private void spawnSlashAnimation()
     {
         //mouse position to rotation
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+        Debug.Log(direction);
 
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
-        gameobj.transform.localScale = new Vector3(0.3f, 0.3f, 0);
+        gameobj.transform.localScale = transform.localScale;
         gameobj.transform.parent = gameObject.transform;
-        gameobj.transform.rotation = Quaternion.Euler(0, 0, -68.43f) * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
+        gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
+
         gameobj.transform.localScale *= 1.5f;
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
 
@@ -149,9 +152,11 @@ public class CharacterAttack : MonoBehaviour
 
     private IEnumerator MoveAnimation(GameObject slash, Vector3 direction)
     {
+
         while (slash != null)
         {
-            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.05f);
+            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.2f);
+
             yield return new WaitForFixedUpdate();
         }
     }
