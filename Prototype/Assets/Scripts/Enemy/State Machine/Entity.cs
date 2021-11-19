@@ -46,12 +46,12 @@ public class Entity : MonoBehaviour
 
     public virtual void Update()
     {
-        Core.LogicUpdate();
+        //changed , the core class havent been created  global::Core.LogicUpdate();
         stateMachine.currentState.LogicUpdate();
 
-        anim.SetFloat("yVelocity", Core.Movement.RB.velocity.y);
+        //changed , the core class havent been created  anim.SetFloat("yVelocity", global::Core.Movement.RB.velocity.y);
 
-        if(Time.time >= lastDamageTime + entityData.stunRecoveryTime)
+        if (Time.time >= lastDamageTime + entityData.stunRecoveryTime)
         {
             ResetStunResistance();
         }
@@ -79,8 +79,8 @@ public class Entity : MonoBehaviour
 
     public virtual void DamageHop(float velocity)
     {
-        velocityWorkspace.Set(Core.Movement.RB.velocity.x, velocity);
-        Core.Movement.RB.velocity = velocityWorkspace;
+        //changed , the core class havent been created  velocityWorkspace.Set(global::Core.Movement.RB.velocity.x, velocity);
+        //changed , the core class havent been created  global::Core.Movement.RB.velocity = velocityWorkspace;
     }
 
     public virtual void ResetStunResistance()
@@ -93,7 +93,8 @@ public class Entity : MonoBehaviour
     {
         if(Core != null)
         {
-            Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Core.Movement.FacingDirection * entityData.wallCheckDistance));
+            //changed , the core class havent been created
+            //Gizmos.DrawLine(wallCheck.position, wallCheck.position + (Vector3)(Vector2.right * Core.Movement.FacingDirection * entityData.wallCheckDistance));
             Gizmos.DrawLine(ledgeCheck.position, ledgeCheck.position + (Vector3)(Vector2.down * entityData.ledgeCheckDistance));
 
             Gizmos.DrawWireSphere(playerCheck.position + (Vector3)(Vector2.right * entityData.closeRangeActionDistance), 0.2f);
