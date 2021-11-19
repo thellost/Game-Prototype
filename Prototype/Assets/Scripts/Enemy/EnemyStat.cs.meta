@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Prototype/Assets/Scripts/Enemy/CombatDummyController.cs.meta
+<<<<<<< HEAD
+guid: c5ae2d8fffd903e459303444fcdae457
+=======
+<<<<<<< HEAD:Prototype/Assets/DizzyDialogue/Sample Scenes/Assets/Script/JumpWhenTalking.cs.meta
+guid: 9395f53f15c88b2458b1b46aa993f300
+=======
+guid: c5ae2d8fffd903e459303444fcdae457
+>>>>>>> d74f19ae4567deec8bdaf8c1f302d624a6ab07f4:Prototype/Assets/Scripts/Enemy/CombatDummyController.cs.meta
+>>>>>>> d74f19ae4567deec8bdaf8c1f302d624a6ab07f4
+=======
+guid: b9043b2c6d6249649ab25fe6749641e8
+>>>>>>> parent of a7403de (eiai belom jadi):Prototype/Assets/Scripts/Enemy/EnemyStat.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
