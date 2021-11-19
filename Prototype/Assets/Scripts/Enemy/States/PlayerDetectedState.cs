@@ -32,7 +32,7 @@ public class PlayerDetectedState : State
         base.Enter();
 
         performLongRangeAction = false;
-        // core havent been createdcore.Movement.SetVelocityX(0f);     
+        // core havent been created core.Movement.SetVelocityX(0f);     
     }
 
     public override void Exit()
