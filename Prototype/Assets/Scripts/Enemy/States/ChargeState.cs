@@ -22,8 +22,8 @@ public class ChargeState : State
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
-        // core havent been created isDetectingLedge = core.CollisionSenses.LedgeVertical;
-        // core havent been created isDetectingWall = core.CollisionSenses.WallFront;
+        isDetectingLedge = core.CollisionSenses.LedgeVertical;
+        isDetectingWall =core.CollisionSenses.WallFront;
 
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
@@ -33,7 +33,7 @@ public class ChargeState : State
         base.Enter();
 
         isChargeTimeOver = false;
-        // core havent been created core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
+        core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
     }
 
     public override void Exit()
@@ -45,7 +45,7 @@ public class ChargeState : State
     {
         base.LogicUpdate();
 
-        // core havent been created core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
+        core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
 
         if (Time.time >= startTime + stateData.chargeTime)
         {

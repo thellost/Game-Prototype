@@ -39,7 +39,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
         }
         else if (!isDetectingLedge)
         {
-            // core havent been created core.Movement.Flip();
+            core.Movement.Flip();
             stateMachine.ChangeState(enemy.moveState);
         }
         

@@ -23,7 +23,7 @@ public class PlayerDetectedState : State
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
         isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
-        // core havent been created isDetectingLedge = core.CollisionSenses.LedgeVertical;
+        isDetectingLedge = core.CollisionSenses.LedgeVertical;
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
@@ -32,7 +32,11 @@ public class PlayerDetectedState : State
         base.Enter();
 
         performLongRangeAction = false;
+<<<<<<< HEAD
         // core havent been created core.Movement.SetVelocityX(0f);     
+=======
+        core.Movement.SetVelocityX(0f);     
+>>>>>>> parent of 73d320d (fixing)
     }
 
     public override void Exit()

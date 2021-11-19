@@ -27,7 +27,7 @@ public class AttackState : State
 
         entity.atsm.attackState = this;
         isAnimationFinished = false;
-        // core havent been created core.Movement.SetVelocityX(0f);
+        core.Movement.SetVelocityX(0f);
     }
 
     public override void Exit()
@@ -38,7 +38,7 @@ public class AttackState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-       // core havent been created core.Movement.SetVelocityX(0f);
+        core.Movement.SetVelocityX(0f);
     }
 
     public override void PhysicsUpdate()

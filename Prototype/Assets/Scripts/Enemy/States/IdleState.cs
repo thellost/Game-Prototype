@@ -27,7 +27,7 @@ public class IdleState : State
     {
         base.Enter();
 
-        // core havent been created core.Movement.SetVelocityX(0f);
+        core.Movement.SetVelocityX(0f);
         isIdleTimeOver = false;        
         SetRandomIdleTime();
     }
@@ -38,7 +38,7 @@ public class IdleState : State
 
         if (flipAfterIdle)
         {
-            // core havent been createdcore.Movement.Flip();
+            core.Movement.Flip();
         }
     }
 
@@ -46,7 +46,7 @@ public class IdleState : State
     {
         base.LogicUpdate();
 
-        // core havent been created  core.Movement.SetVelocityX(0f);
+        core.Movement.SetVelocityX(0f);
 
         if (Time.time >= startTime + idleTime)
         {

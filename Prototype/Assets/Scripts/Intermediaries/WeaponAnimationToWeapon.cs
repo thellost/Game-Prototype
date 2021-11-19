@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,37 +41,4 @@ public class WeaponAnimationToWeapon : MonoBehaviour
         weapon.AnimationActionTrigger();
     }
 
-}
-
-internal class Weapon
-{
-    internal void AnimationActionTrigger()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void AnimationFinishTrigger()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void AnimationStartMovementTrigger()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void AnimationStopMovementTrigger()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void AnimationTurnOffFlipTrigger()
-    {
-        throw new NotImplementedException();
-    }
-
-    internal void AnimationTurnOnFlipTigger()
-    {
-        throw new NotImplementedException();
-    }
 }

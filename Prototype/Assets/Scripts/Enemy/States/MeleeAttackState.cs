@@ -60,7 +60,7 @@ public class MeleeAttackState : AttackState
 
             if(knockbackable != null)
             {
-                // core havent been created knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.FacingDirection);
+                knockbackable.Knockback(stateData.knockbackAngle, stateData.knockbackStrength, core.Movement.FacingDirection);
             }
         }
     }
