@@ -33,10 +33,14 @@ public class PlayerDetectedState : State
 
         performLongRangeAction = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
         // core havent been created core.Movement.SetVelocityX(0f);     
 =======
         core.Movement.SetVelocityX(0f);     
 >>>>>>> parent of 73d320d (fixing)
+=======
+        // core havent been createdcore.Movement.SetVelocityX(0f);     
+>>>>>>> parent of 55ec2fb (revert bagas changes)
     }
 
     public override void Exit()
