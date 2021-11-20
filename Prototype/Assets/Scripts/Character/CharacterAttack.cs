@@ -78,20 +78,17 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            spawnBlood(enemy);
-
-        }
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
-        foreach(Collider2D enemy in hitEnemies)
-        {
-            if (enemy.GetComponent<EnemyStat>().takeDamage(attackDamage))
+            if (enemy.transform.gameObject.GetComponent<EnemyStat>().takeDamage(attackDamage))
             {
+
+                spawnBlood(enemy);
                 if (CameraShake.Instance != null)
                 {
                     CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                 }
 
             }
+
         }
     }
 
@@ -112,7 +109,6 @@ public class CharacterAttack : MonoBehaviour
         direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        Debug.Log(direction);
 
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
