@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Chronos;
 
 [RequireComponent(typeof(Movement))]
 [RequireComponent(typeof(PlayerInput))]
@@ -42,6 +43,7 @@ public class PlayerVelocity : MonoBehaviour
 	private Vector3 oldVelocity;
 	private float velocityXSmoothing;
 
+	private Timeline time;
 	private Movement playerMovement;
 	private PlayerInput playerInput;
 	private Vector2 directionalInput;
@@ -50,6 +52,8 @@ public class PlayerVelocity : MonoBehaviour
 	{
 		playerMovement = GetComponent<Movement>();
 		playerInput = GetComponent<PlayerInput>();
+		time = GetComponent<Timeline>();
+
 		// see suvat calculations; s = ut + 1/2at^2, v^2 = u^2 + 2at, where u=0, scalar looking at only y dir
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -62,7 +66,7 @@ public class PlayerVelocity : MonoBehaviour
 
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
-		Vector3 displacement = (velocity + oldVelocity) * 0.5f * Time.deltaTime;
+		Vector3 displacement = (velocity + oldVelocity) * 0.5f * time.deltaTime;
 		// Move player using movement controller which checks for collisions then applies correct transform (displacement) translation
 		
 		playerMovement.Move(displacement, directionalInput);
@@ -73,7 +77,7 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			if (playerMovement.slidingDownMaxSlope)
 			{
-				velocity.y += playerMovement.collisionAngle.slopeNormal.y * -gravity * Time.deltaTime;
+				velocity.y += playerMovement.collisionAngle.slopeNormal.y * -gravity * time.deltaTime;
 			}
 			else
 			{
@@ -106,7 +110,7 @@ public class PlayerVelocity : MonoBehaviour
 			lastHorizontalVelocity = velocity.x;
         }
 
-		velocity.y += gravity * Time.deltaTime;
+		velocity.y += gravity * time.deltaTime;
 
 		// if (!isDashing)
         // {
@@ -189,7 +193,7 @@ public class PlayerVelocity : MonoBehaviour
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
 		playerInput.enabled = false;
-		if (Time.time - lastDashTime < dashCooldown)
+		if (time.time - lastDashTime < dashCooldown)
 		{
 			return;
 		}
@@ -226,7 +230,7 @@ public class PlayerVelocity : MonoBehaviour
 			velocity = Vector2.one * tempDashPower;
 			velocity = new Vector2(dashDirectionX * velocity.x, velocity.y * dashDirectionY);
 		}
-		lastDashTime = Time.time;
+		lastDashTime = time.time;
 		airJumpCount++;
     }
 
@@ -238,7 +242,7 @@ public class PlayerVelocity : MonoBehaviour
 
 	public void Roll()
     {
-		if (Time.time - lastRollTime < rollCooldown)
+		if (time.time - lastRollTime < rollCooldown)
 		{
 			return;
 		}
@@ -259,7 +263,7 @@ public class PlayerVelocity : MonoBehaviour
 		}
 
 		velocity = new Vector2(rollDirection, velocity.y);
-		lastRollTime = Time.time;
+		lastRollTime = time.time;
 
 		playerMovement.boxCollider.size = rollingColliderSize;
 		playerMovement.boxCollider.offset = rollingColliderOffset;
