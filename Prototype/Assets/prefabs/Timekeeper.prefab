@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 57053545066528669}
   - component: {fileID: 57053545066528670}
   - component: {fileID: 57053545066528671}
+  - component: {fileID: 8798736363140741622}
   m_Layer: 0
   m_Name: Timekeeper
   m_TagString: Untagged
@@ -81,3 +82,20 @@ MonoBehaviour:
   _parentKey: Root
   _parentBlend: 0
   _key: Enemies
+--- !u!114 &8798736363140741622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57053545066528664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0144e3ad8a88947298e2dca62625e6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _localTimeScale: 1
+  _paused: 0
+  _parentKey: Root
+  _parentBlend: 0
+  _key: Player
