@@ -78,15 +78,17 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            if (enemy.transform.gameObject.GetComponent<EnemyStat>().takeDamage(attackDamage))
-            {
-
-                spawnBlood(enemy);
-                if (CameraShake.Instance != null)
+            EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
+            if (enemyComponent != null) {
+                if (enemyComponent.takeDamage(attackDamage))
                 {
-                    CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
-                }
+                    spawnBlood(enemy);
+                    if (CameraShake.Instance != null)
+                    {
+                        CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
+                    }
 
+                }
             }
 
         }

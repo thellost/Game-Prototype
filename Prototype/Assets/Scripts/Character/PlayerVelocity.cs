@@ -54,6 +54,7 @@ public class PlayerVelocity : MonoBehaviour
 		playerInput = GetComponent<PlayerInput>();
 		time = GetComponent<Timeline>();
 
+
 		// see suvat calculations; s = ut + 1/2at^2, v^2 = u^2 + 2at, where u=0, scalar looking at only y dir
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
