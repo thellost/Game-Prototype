@@ -21,11 +21,15 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float rollCooldown = 2f;
 	[SerializeField] private int maxAirJump = 1;
 	[SerializeField] private PlayerAnimator playerAnimator;
+
 	[SerializeField] private Vector2 standingColliderSize;
 	[SerializeField] private Vector2 rollingColliderSize;
 	[SerializeField] private Vector2 standingColliderOffset;
 	[SerializeField] private Vector2 rollingColliderOffset;
-	
+
+	[SerializeField] private AudioClip jumpSfx;
+	[SerializeField] private AudioClip dashSfx;
+
 	private int airJumpCount;
 	private int dashCount;
 	private float lastDashTime;
@@ -164,6 +168,9 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			velocity.y = maxJumpVelocity;
 		}
+
+		// test sfx
+		SoundManager.Instance.PlaySFX(jumpSfx);
 	}
 
 	/// <summary>
@@ -233,6 +240,9 @@ public class PlayerVelocity : MonoBehaviour
 		}
 		lastDashTime = time.time;
 		airJumpCount++;
+
+		// test sfx
+		SoundManager.Instance.PlaySFX(dashSfx);
     }
 
 	private void ResetDashing()
