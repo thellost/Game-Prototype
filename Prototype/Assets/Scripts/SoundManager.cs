@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : Singleton<SoundManager>
 {
     public AudioSource bgmSource;
-    public AudioSource sfxSource;
     public AudioClip defaultBGM;
 
     private void Start()
@@ -13,16 +12,20 @@ public class SoundManager : Singleton<SoundManager>
         PlayBGM(defaultBGM);
     }
 
-    public void PlayBGM(AudioClip clip)
+    public void PlayBGM(AudioClip bgmClip)
     {
-        bgmSource.clip = clip;
+        bgmSource.clip = bgmClip;
         bgmSource.Play();
     }
 
-    public void PlaySFX(AudioClip sfxclip)
+    public void PlaySFX(AudioClip sfxClip)
     {
-        sfxSource.clip = sfxclip;
-        sfxSource.Play();
+        var go = new GameObject(sfxClip.name);
+        var audio = go.AddComponent<AudioSource>();
+
+        audio.clip = sfxClip;
+        audio.Play();
+        Destroy(go, sfxClip.length);
     }
 
 }

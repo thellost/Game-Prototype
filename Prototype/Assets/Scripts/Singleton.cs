@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
@@ -27,8 +26,6 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
                     var component = _instance.GetComponent<Singleton<T>>();
                     component.OnCreate();
-
-                    Debug.Log($"[Joyseed Core]Creating singleton of {typeof(T)}");
                 }
             }
 
