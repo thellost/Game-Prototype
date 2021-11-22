@@ -25,6 +25,7 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private Vector2 rollingColliderSize;
 	[SerializeField] private Vector2 standingColliderOffset;
 	[SerializeField] private Vector2 rollingColliderOffset;
+	[SerializeField] private AudioClip jumpSfx;
 	
 	private int airJumpCount;
 	private int dashCount;
@@ -164,6 +165,8 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			velocity.y = maxJumpVelocity;
 		}
+
+		SoundManager.Instance.PlaySFX(jumpSfx);
 	}
 
 	/// <summary>
