@@ -16,7 +16,7 @@ public class CharacterMovement : MonoBehaviour
 	bool jump = false;
 	bool crouch = false;
 	Rigidbody2D rb;
-    private void Start()
+    private void Awake()
     {
 		rb = GetComponent<Rigidbody2D>();
     }
