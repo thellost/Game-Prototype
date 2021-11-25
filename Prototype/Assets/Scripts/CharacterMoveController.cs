@@ -67,6 +67,10 @@ public class CharacterMoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         // calculate velocity vector
         Vector2 velocityVector = rig.velocity;
 

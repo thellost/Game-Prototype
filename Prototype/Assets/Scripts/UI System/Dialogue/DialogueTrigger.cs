@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Ink.Runtime;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -12,18 +11,25 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private TextAsset inkJSON;
 
     private bool playerInRange;
+    public static bool isActive = false;
 
     private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
+        isActive = true;
     }
 
     private void Update()
     {
-        if (playerInRange)
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
+
+            if (Input.GetKey(KeyCode.I) && isActive == true)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            }
         }
         else
         {
