@@ -198,8 +198,9 @@ public class PlayerVelocity : MonoBehaviour
 
 
 	//kutambahin optional argument yang berguna untuk attack dash
-	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
+	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, float customDashPower = 0)
     {
+		
 		playerInput.enabled = false;
 		if (time.time - lastDashTime < dashCooldown)
 		{
@@ -216,6 +217,18 @@ public class PlayerVelocity : MonoBehaviour
 			dashCount += 1;
 			tempDashPower = dashPower;
         }
+
+
+		//check untuk custom power
+		if (customDashPower == 0)
+		{
+			tempDashPower = dashPower;
+		}
+		else
+		{
+			tempDashPower = customDashPower;
+		}
+
 
 		isDashing = true;
 
@@ -249,6 +262,7 @@ public class PlayerVelocity : MonoBehaviour
     {
 		playerInput.enabled = true;
 		isDashing = false;
+
     }
 
 	public void Roll()

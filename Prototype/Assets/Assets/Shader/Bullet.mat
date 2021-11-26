@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: idle_experiment
-  m_Shader: {fileID: -6465566751694194690, guid: c03682b59ab18b14e88f6cf98a50043b, type: 3}
+  m_Name: Bullet
+  m_Shader: {fileID: -6465566751694194690, guid: 7b4cf35250e79864d83c674ce2234493, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,12 +19,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Emission:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a1c6b6e3792807c4ab52ecc1adef4e9a, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -41,5 +37,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_e7bd630cd6584571be3e1e6cd50fa8ae: {r: 1024, g: 686.6824, b: 0, a: 0}
+    - Color_fe643d909f40462dadc99d90b942df75: {r: 16, g: 16, b: 16, a: 0}
   m_BuildTextureStacks: []

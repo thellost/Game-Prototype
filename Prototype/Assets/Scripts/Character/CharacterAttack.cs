@@ -19,10 +19,13 @@ public class CharacterAttack : MonoBehaviour
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
     private Vector2 direction;
+
+    private Movement movement;
     // Update is called once per frame
 
     private void Start()
     {
+        movement = GetComponent<Movement>();
         playerVelocity = GetComponent<PlayerVelocity>();
         isAttacking = false;
     }
@@ -64,6 +67,7 @@ public class CharacterAttack : MonoBehaviour
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
         playerVelocity.OnDashInputDown(xside, yside);
     }
+
     public void triggerAttackRaycast()
     { 
         
@@ -79,6 +83,8 @@ public class CharacterAttack : MonoBehaviour
         foreach (RaycastHit2D enemy in hit)
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
+
+            Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
             if (enemyComponent != null) {
                 if (enemyComponent.takeDamage(attackDamage))
                 {
@@ -89,9 +95,13 @@ public class CharacterAttack : MonoBehaviour
                     }
 
                 }
+            } else if(bullet != null)
+            {
+                bullet.Deflected();
             }
 
         }
+
     }
 
     
