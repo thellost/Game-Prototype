@@ -21846,7 +21846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bfbb4fef17f0e24bbd90d000879d690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesSlowDownFactor: 0.2
+  enemiesSlowDownFactor: 0.01
   playerSlowDownFactor: 0.4
   slowDownDuration: 2
   playerStat: {fileID: 48816114}
@@ -24800,10 +24800,6 @@ PrefabInstance:
       propertyPath: enableInstancing
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2301770560331869517, guid: 595e96769af9e3840b61482fd472de53, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1425c58310bad7a4891beb9a3e771655, type: 2}
     - target: {fileID: 3986964784739341193, guid: 595e96769af9e3840b61482fd472de53, type: 3}
       propertyPath: m_Name
       value: Bullet
@@ -24860,10 +24856,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6963234873621466208, guid: 595e96769af9e3840b61482fd472de53, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1425c58310bad7a4891beb9a3e771655, type: 2}
     - target: {fileID: 6963234873621466208, guid: 595e96769af9e3840b61482fd472de53, type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 0

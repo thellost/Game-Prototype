@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private bool deflected;
     [SerializeField] float speed = 20;
+
+    [SerializeField] float cameraShakeIntensity = 5;
+    [SerializeField] float cameraShakeFrequency = 1;
+    [SerializeField] float cameraShakeTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +39,7 @@ public class Bullet : MonoBehaviour
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;
+            CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
         }
         deflected = true;
     }
