@@ -5,16 +5,18 @@ public class TimeManager : MonoBehaviour
 {
     public float enemiesSlowDownFactor = 0.2f;
     public float playerSlowDownFactor = 0.4f;
+    public float bulletSlowDownFactor = 0.1f;
     public float slowDownDuration = 3f;
     public PlayerStatManager playerStat;
 
     private bool isInSlowmo;
-    private Clock enemyClock, playerClock;
+    private Clock enemyClock, playerClock, bulletClock;
 
     private void Start()
     {
         enemyClock = Timekeeper.instance.Clock("Enemies");
         playerClock = Timekeeper.instance.Clock("Player");
+        bulletClock = Timekeeper.instance.Clock("Bullet");
     }
 
     void Update()
@@ -34,6 +36,7 @@ public class TimeManager : MonoBehaviour
                 isInSlowmo = true;
                 enemyClock.localTimeScale = enemiesSlowDownFactor;
                 playerClock.localTimeScale = playerSlowDownFactor;
+                bulletClock.localTimeScale = bulletSlowDownFactor;
                 Invoke("stopSlowMotion", slowDownDuration);
             }
         }
@@ -44,6 +47,7 @@ public class TimeManager : MonoBehaviour
     {
         enemyClock.localTimeScale = 1;
         playerClock.localTimeScale = 1;
+        bulletClock.localTimeScale = 1;
         isInSlowmo = false;
     }
 }

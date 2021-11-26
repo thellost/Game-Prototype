@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerVelocity))]
 public class PlayerInput : MonoBehaviour
@@ -39,14 +40,21 @@ public class PlayerInput : MonoBehaviour
         {
 			playerVelocity.OnDashInputDown();
         }
+		
 		if (Input.GetKeyDown(KeyCode.LeftControl))
         {
 			playerVelocity.Roll();
         }
+		
 		if (Input.GetKeyDown(KeyCode.X))
 		{
 			Debug.Log("test slow");
 			timeManager.DoSlowMotion();
 		}
+
+		if (Input.GetKeyDown(KeyCode.M))
+        {
+			SceneManager.LoadScene(1);
+        }
 	}
 }
