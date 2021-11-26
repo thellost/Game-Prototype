@@ -3424,7 +3424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026855623}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014726639, y: -1.1524734, z: -5.7939086}
+  m_LocalPosition: {x: -0.014145851, y: -1.1524734, z: -5.7939086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1418775065}
@@ -4530,7 +4530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258741972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014726639, y: -3.262473, z: -5.7939086}
+  m_LocalPosition: {x: -0.014145851, y: -3.262473, z: -5.7939086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1385955856}
@@ -24660,6 +24660,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.5
       objectReference: {fileID: 0}
@@ -24676,12 +24680,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].repeatInterval
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[1].repeatInterval
       value: 2.85
       objectReference: {fileID: 0}
     - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2727237612913529646, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
       propertyPath: EmissionModule.m_Bursts.Array.data[1].countCurve.scalar
