@@ -3,23 +3,20 @@ using Chronos;
 
 public class TimeManager : MonoBehaviour
 {
-    public float slowDownFactor = 0.5f;
-    public float slowDownDuration = 2f;
+    public float enemiesSlowDownFactor = 0.2f;
+    public float playerSlowDownFactor = 0.4f;
+    public float bulletSlowDownFactor = 0.1f;
+    public float slowDownDuration = 3f;
     public PlayerStatManager playerStat;
 
-    private float fixedDeltaTime;
     private bool isInSlowmo;
-    private Clock enemyClock;
-
-    void Awake()
-    {
-        // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
-        this.fixedDeltaTime = Time.fixedDeltaTime;
-    }
+    private Clock enemyClock, playerClock, bulletClock;
 
     private void Start()
     {
         enemyClock = Timekeeper.instance.Clock("Enemies");
+        playerClock = Timekeeper.instance.Clock("Player");
+        bulletClock = Timekeeper.instance.Clock("Bullet");
     }
 
     void Update()
@@ -32,13 +29,14 @@ public class TimeManager : MonoBehaviour
 
     public void DoSlowMotion()
     {
-
         if (playerStat.currentEnergy > 0)
         {
             if (!isInSlowmo)
             {
                 isInSlowmo = true;
-                enemyClock.localTimeScale = slowDownFactor;
+                enemyClock.localTimeScale = enemiesSlowDownFactor;
+                playerClock.localTimeScale = playerSlowDownFactor;
+                bulletClock.localTimeScale = bulletSlowDownFactor;
                 Invoke("stopSlowMotion", slowDownDuration);
             }
         }
@@ -48,6 +46,8 @@ public class TimeManager : MonoBehaviour
     public void stopSlowMotion()
     {
         enemyClock.localTimeScale = 1;
+        playerClock.localTimeScale = 1;
+        bulletClock.localTimeScale = 1;
         isInSlowmo = false;
     }
 }
