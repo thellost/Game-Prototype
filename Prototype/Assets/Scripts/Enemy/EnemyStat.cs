@@ -9,13 +9,10 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] float invicTimer = 1;
 
     public float currentHp;
-
-    public bool isInvulnerable;
     private float internalTimer;
     // Start is called before the first frame update
     void Start()
     {
-        internalTimer = 0;
         setPlayerStat();
     }
 
@@ -28,8 +25,7 @@ public class EnemyStat : MonoBehaviour
 
     public bool takeDamage(float dmg)
     {
-        Debug.Log(isInvulnerable);
-        if (!isInvulnerable)
+        if (internalTimer <= 0)
         {
             internalTimer = invicTimer;
             
@@ -50,12 +46,7 @@ public class EnemyStat : MonoBehaviour
     {
         if(internalTimer > 0)
         {
-            isInvulnerable = true;
             internalTimer -= Time.deltaTime;
-        }
-        else
-        {
-            isInvulnerable = false;
         }
     }
 }

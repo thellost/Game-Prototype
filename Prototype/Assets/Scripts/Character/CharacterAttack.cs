@@ -19,13 +19,10 @@ public class CharacterAttack : MonoBehaviour
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
     private Vector2 direction;
-
-    private Movement movement;
     // Update is called once per frame
 
     private void Start()
     {
-        movement = GetComponent<Movement>();
         playerVelocity = GetComponent<PlayerVelocity>();
         isAttacking = false;
     }
@@ -67,7 +64,6 @@ public class CharacterAttack : MonoBehaviour
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
         playerVelocity.OnDashInputDown(xside, yside);
     }
-
     public void triggerAttackRaycast()
     { 
         
@@ -82,26 +78,21 @@ public class CharacterAttack : MonoBehaviour
         //damage the enemies
         foreach (RaycastHit2D enemy in hit)
         {
-            EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
-
-            Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
-            if (enemyComponent != null) {
-                if (enemyComponent.takeDamage(attackDamage))
-                {
-                    spawnBlood(enemy);
-                    if (CameraShake.Instance != null)
-                    {
-                        CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
-                    }
-
-                }
-            } else if(bullet != null)
-            {
-                bullet.Deflected();
-            }
+            spawnBlood(enemy);
 
         }
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRangeCircle, enemiesLayer);
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            if (enemy.GetComponent<EnemyStat>().takeDamage(attackDamage))
+            {
+                if (CameraShake.Instance != null)
+                {
+                    CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
+                }
 
+            }
+        }
     }
 
     
@@ -118,16 +109,15 @@ public class CharacterAttack : MonoBehaviour
     private void spawnSlashAnimation()
     {
         //mouse position to rotation
-        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
+
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
-        gameobj.transform.localScale = transform.localScale;
+        gameobj.transform.localScale = new Vector3(0.3f, 0.3f, 0);
         gameobj.transform.parent = gameObject.transform;
-        gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
-
+        gameobj.transform.rotation = Quaternion.Euler(0, 0, -68.43f) * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
         gameobj.transform.localScale *= 1.5f;
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
 
@@ -160,11 +150,9 @@ public class CharacterAttack : MonoBehaviour
 
     private IEnumerator MoveAnimation(GameObject slash, Vector3 direction)
     {
-
         while (slash != null)
         {
-            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.2f);
-
+            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.05f);
             yield return new WaitForFixedUpdate();
         }
     }

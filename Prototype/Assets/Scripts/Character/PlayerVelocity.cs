@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Chronos;
 
 [RequireComponent(typeof(Movement))]
 [RequireComponent(typeof(PlayerInput))]
@@ -21,15 +20,11 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float rollCooldown = 2f;
 	[SerializeField] private int maxAirJump = 1;
 	[SerializeField] private PlayerAnimator playerAnimator;
-
 	[SerializeField] private Vector2 standingColliderSize;
 	[SerializeField] private Vector2 rollingColliderSize;
 	[SerializeField] private Vector2 standingColliderOffset;
 	[SerializeField] private Vector2 rollingColliderOffset;
-
-	[SerializeField] private AudioClip jumpSfx;
-	[SerializeField] private AudioClip dashSfx;
-
+	
 	private int airJumpCount;
 	private int dashCount;
 	private float lastDashTime;
@@ -47,7 +42,6 @@ public class PlayerVelocity : MonoBehaviour
 	private Vector3 oldVelocity;
 	private float velocityXSmoothing;
 
-	private Timeline time;
 	private Movement playerMovement;
 	private PlayerInput playerInput;
 	private Vector2 directionalInput;
@@ -56,9 +50,6 @@ public class PlayerVelocity : MonoBehaviour
 	{
 		playerMovement = GetComponent<Movement>();
 		playerInput = GetComponent<PlayerInput>();
-		time = GetComponent<Timeline>();
-
-
 		// see suvat calculations; s = ut + 1/2at^2, v^2 = u^2 + 2at, where u=0, scalar looking at only y dir
 		gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
 		maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
@@ -71,7 +62,7 @@ public class PlayerVelocity : MonoBehaviour
 
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
-		Vector3 displacement = (velocity + oldVelocity) * 0.5f * time.deltaTime;
+		Vector3 displacement = (velocity + oldVelocity) * 0.5f * Time.deltaTime;
 		// Move player using movement controller which checks for collisions then applies correct transform (displacement) translation
 		
 		playerMovement.Move(displacement, directionalInput);
@@ -82,7 +73,7 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			if (playerMovement.slidingDownMaxSlope)
 			{
-				velocity.y += playerMovement.collisionAngle.slopeNormal.y * -gravity * time.deltaTime;
+				velocity.y += playerMovement.collisionAngle.slopeNormal.y * -gravity * Time.deltaTime;
 			}
 			else
 			{
@@ -115,7 +106,7 @@ public class PlayerVelocity : MonoBehaviour
 			lastHorizontalVelocity = velocity.x;
         }
 
-		velocity.y += gravity * time.deltaTime;
+		velocity.y += gravity * Time.deltaTime;
 
 		// if (!isDashing)
         // {
@@ -168,9 +159,6 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			velocity.y = maxJumpVelocity;
 		}
-
-		// test sfx
-		SoundManager.Instance.PlaySFX(jumpSfx);
 	}
 
 	/// <summary>
@@ -198,11 +186,10 @@ public class PlayerVelocity : MonoBehaviour
 
 
 	//kutambahin optional argument yang berguna untuk attack dash
-	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, float customDashPower = 0)
+	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
-		
 		playerInput.enabled = false;
-		if (time.time - lastDashTime < dashCooldown)
+		if (Time.time - lastDashTime < dashCooldown)
 		{
 			return;
 		}
@@ -217,18 +204,6 @@ public class PlayerVelocity : MonoBehaviour
 			dashCount += 1;
 			tempDashPower = dashPower;
         }
-
-
-		//check untuk custom power
-		if (customDashPower == 0)
-		{
-			tempDashPower = dashPower;
-		}
-		else
-		{
-			tempDashPower = customDashPower;
-		}
-
 
 		isDashing = true;
 
@@ -251,23 +226,19 @@ public class PlayerVelocity : MonoBehaviour
 			velocity = Vector2.one * tempDashPower;
 			velocity = new Vector2(dashDirectionX * velocity.x, velocity.y * dashDirectionY);
 		}
-		lastDashTime = time.time;
+		lastDashTime = Time.time;
 		airJumpCount++;
-
-		// test sfx
-		SoundManager.Instance.PlaySFX(dashSfx);
     }
 
 	private void ResetDashing()
     {
 		playerInput.enabled = true;
 		isDashing = false;
-
     }
 
 	public void Roll()
     {
-		if (time.time - lastRollTime < rollCooldown)
+		if (Time.time - lastRollTime < rollCooldown)
 		{
 			return;
 		}
@@ -288,7 +259,7 @@ public class PlayerVelocity : MonoBehaviour
 		}
 
 		velocity = new Vector2(rollDirection, velocity.y);
-		lastRollTime = time.time;
+		lastRollTime = Time.time;
 
 		playerMovement.boxCollider.size = rollingColliderSize;
 		playerMovement.boxCollider.offset = rollingColliderOffset;

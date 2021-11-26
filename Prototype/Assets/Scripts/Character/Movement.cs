@@ -32,12 +32,11 @@ public class Movement : BoxColliderCasts
 		Debug.DrawRay(transform.position, -Vector2.up);
     }
 
-	/// <summary>
-	/// Checks for collisions then applies correct transform translation to move object
-	/// </summary>
-	public void Move(Vector2 displacement, Vector2 input)
+    /// <summary>
+    /// Checks for collisions then applies correct transform translation to move object
+    /// </summary>
+    public void Move(Vector2 displacement, Vector2 input)
 	{
-	
 		ResetDetection();
 
 		objectInput = input;
@@ -67,7 +66,7 @@ public class Movement : BoxColliderCasts
 		{
 			forceFall = false;
 		}
-       
+
 		// If the input is moving the player right and the player is facing left...
 		if (faceDirection > 0 && !isFacingRight)
         {
@@ -342,10 +341,11 @@ public class Movement : BoxColliderCasts
 
 	private void Flip()
     {
-			isFacingRight = !isFacingRight;
+		isFacingRight = !isFacingRight;
 
-			Vector3 theScale = transform.localScale;
-			theScale.x *= -1;
-			transform.localScale = theScale;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+
 	}
 }
