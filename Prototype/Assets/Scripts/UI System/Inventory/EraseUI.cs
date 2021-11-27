@@ -5,20 +5,51 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class EraseUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    private Canvas canvas;
     public Augment augment;
-    [SerializeField] private Eraser _eraserPrfab;
+    static private GameObject _augmentPrefab;
     //ini mengatur eraser yang dipakai
-    private Eraser CurrentEraser;
+    private Eraser selectedAugment;
+    private RectTransform rectTransform;
+    private RectTransform CanvasrectTransform;
+
+    private void Awake()
+    {
+        canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        CanvasrectTransform = GameObject.Find("Canvas").GetComponent<RectTransform>();
+        _augmentPrefab = GameObject.Find("AugmentDragIcon");
+
+        Debug.Log("AWAKE");
+    }
     public void OnBeginDrag(PointerEventData eventData)
 
     {
+        Debug.Log("OnBeginDrag");
 
-        GameObject newTowerObj = Instantiate(_eraserPrfab.gameObject);
+        
+        if (_augmentPrefab == null)
+        {
+            _augmentPrefab = GameObject.Find("AugmentDragIcon");
+        }
+        if (_augmentPrefab != null)
+        {
+            _augmentPrefab.SetActive(true);
+            rectTransform = _augmentPrefab.GetComponent<RectTransform>();
+            selectedAugment = _augmentPrefab.GetComponent<Eraser>();
+            _augmentPrefab.GetComponent<Image>().overrideSprite = augment.artwork;
+            
+            //rectTransform.anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            selectedAugment.ToggleOrderInLayer(true);
+            rectTransform.anchoredPosition = new Vector2 (eventData.position.x - CanvasrectTransform.anchoredPosition.x , eventData.position.y - CanvasrectTransform.anchoredPosition.y);
+            Debug.Log(CanvasrectTransform.anchoredPosition.x);
+            Debug.Log(CanvasrectTransform.anchoredPosition.y);
+        }
+    }
 
-        CurrentEraser = newTowerObj.GetComponent<Eraser>();
+    public void OnPointerDown(PointerEventData eventData)
+    {
 
-        CurrentEraser.ToggleOrderInLayer(true);
-
+        Debug.Log("OnPointerDown");
     }
 
     // Implementasi dari Interface IDragHandler
@@ -28,18 +59,9 @@ public class EraseUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     public void OnDrag(PointerEventData eventData)
 
     {
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 
-        Camera mainCamera = Camera.main;
-
-        Vector3 mousePosition = Input.mousePosition;
-
-        mousePosition.z = -mainCamera.transform.position.z;
-
-        Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-
-
-
-        CurrentEraser.transform.position = targetPosition;
+        Debug.Log("OnDRAG");
 
     }
     // Implementasi dari Interface IEndDragHandler
@@ -50,11 +72,12 @@ public class EraseUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     {
 
-        if (CurrentEraser.ToBeErased == null)
+        Debug.Log("OnEndDrag");
+        if (selectedAugment.ToBeErased == null)
 
         {
 
-            Destroy(CurrentEraser.gameObject);
+            _augmentPrefab.SetActive(false);
 
         }
 
@@ -63,15 +86,15 @@ public class EraseUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
 
 
-            CurrentEraser.ToggleOrderInLayer(false);
+            selectedAugment.ToggleOrderInLayer(false);
 
             //hapus object tower yang telah di tentukan
-            CurrentEraser.EraseTower();
-            
+            selectedAugment.EraseTower();
+
 
 
             //hapus object setelah selesai di gunakan
-            Destroy(CurrentEraser.gameObject);
+            _augmentPrefab.SetActive(false);
 
         }
 
