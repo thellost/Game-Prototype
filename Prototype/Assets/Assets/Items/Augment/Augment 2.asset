@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Defense Augment
   desciption: bolster your defence again plasma weapon
-  artwork: {fileID: 21300000, guid: ac39e3fcce5d9ec41bbb8914d390c601, type: 3}
+  artwork: {fileID: 0}
   attackModifier: 0
   defenseModifier: 10
   attackRangeModifier: 0

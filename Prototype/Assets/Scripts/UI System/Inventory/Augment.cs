@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu(fileName = "New Augment" , menuName = "Augment")]
 public class Augment : ScriptableObject
 {

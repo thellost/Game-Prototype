@@ -260,7 +260,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21705659}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1 &264781615
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,8 +291,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &292556218
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,10 +445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3b609701b056b844a5c434567d301e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
   eraserSprite: {fileID: 0}
-=======
->>>>>>> Stashed changes
 --- !u!114 &314477814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,11 +757,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMax.y
-<<<<<<< Updated upstream
       value: 1
-=======
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -775,7 +765,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.y
-<<<<<<< Updated upstream
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
@@ -785,17 +774,6 @@ PrefabInstance:
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 128
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -827,19 +805,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< Updated upstream
       value: 119.99994
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -358.65045
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -881,11 +851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-<<<<<<< Updated upstream
   m_IsActive: 0
-=======
-  m_IsActive: 1
->>>>>>> Stashed changes
 --- !u!224 &727769043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1172,7 +1138,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1121307793}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1001 &1145733747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6194,8 +6159,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
-=======
->>>>>>> Stashed changes
 --- !u!1001 &1256809756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6225,11 +6188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMax.y
-<<<<<<< Updated upstream
       value: 1
-=======
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6237,7 +6196,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.y
-<<<<<<< Updated upstream
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
@@ -6247,17 +6205,6 @@ PrefabInstance:
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 128
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6289,19 +6236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< Updated upstream
       value: 415.99994
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -358.65045
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6708,11 +6647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMax.y
-<<<<<<< Updated upstream
       value: 1
-=======
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6720,7 +6655,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchorMin.y
-<<<<<<< Updated upstream
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
@@ -6730,17 +6664,6 @@ PrefabInstance:
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_SizeDelta.y
       value: 128
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6772,19 +6695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.x
-<<<<<<< Updated upstream
       value: 267.99994
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -358.65045
-=======
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6809,7 +6724,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
   m_PrefabInstance: {fileID: 1384389454}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &1396402688
 GameObject:
   m_ObjectHideFlags: 0
@@ -6882,8 +6796,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> Stashed changes
 --- !u!1 &1419569006
 GameObject:
   m_ObjectHideFlags: 0

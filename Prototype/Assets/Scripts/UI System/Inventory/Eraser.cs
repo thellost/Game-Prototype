@@ -1,26 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Eraser : MonoBehaviour
 {
+    private Augment augment;
+    [SerializeField] SpriteRenderer eraserSprite;
 
     //menyimpan object yang mau di erase
     public Tower ToBeErased { get; private set; }
-    private void Start()
-    {
-    }
+
     public void ToggleOrderInLayer(bool toFront)
 
     {
+
+        int orderInLayer = toFront ? 2 : 0;
+
+        eraserSprite.sortingOrder = orderInLayer;
+
+
     }
-    public void SetErase()
+    public void SetErase(Tower newObject)
+
     {
+
+        ToBeErased = newObject;
 
     }
 
     public void EraseTower()
     {
+        ToBeErased.EraseThisGameObject();
     }
 }
