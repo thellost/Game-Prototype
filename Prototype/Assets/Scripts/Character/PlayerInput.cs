@@ -9,6 +9,7 @@ public class PlayerInput : MonoBehaviour
 	private TimeManager timeManager;
 	private PlayerVelocity playerVelocity;
 
+	private bool isMapOpened;
 
 	void Start()
 	{
@@ -54,7 +55,27 @@ public class PlayerInput : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.M))
         {
-			SceneManager.LoadScene(1);
+            if (isMapOpened)
+            {
+				CloseMap();
+            }
+
+            else
+            {
+				OpenMap();
+            }
         }
+	}
+
+	private void OpenMap()
+    {
+		isMapOpened = true;
+		SceneManager.LoadScene("Map", LoadSceneMode.Additive);
+	}
+
+	private void CloseMap()
+    {
+		isMapOpened = false;
+		SceneManager.UnloadSceneAsync("Map");
 	}
 }

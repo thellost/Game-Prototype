@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Movement : BoxColliderCasts
 {
@@ -32,10 +33,10 @@ public class Movement : BoxColliderCasts
 		Debug.DrawRay(transform.position, -Vector2.up);
     }
 
-	/// <summary>
-	/// Checks for collisions then applies correct transform translation to move object
-	/// </summary>
-	public void Move(Vector2 displacement, Vector2 input)
+    /// <summary>
+    /// Checks for collisions then applies correct transform translation to move object
+    /// </summary>
+    public void Move(Vector2 displacement, Vector2 input)
 	{
 	
 		ResetDetection();

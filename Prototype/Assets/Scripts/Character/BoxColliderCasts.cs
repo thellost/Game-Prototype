@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class BoxColliderCasts : MonoBehaviour
 {
-
 	public LayerMask collisionMask;
 
 	public float skinWidth = .015f;
