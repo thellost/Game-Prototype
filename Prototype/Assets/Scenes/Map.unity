@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 882472708}
   - component: {fileID: 882472710}
   - component: {fileID: 882472709}
+  - component: {fileID: 882472711}
   m_Layer: 5
   m_Name: R (2)
   m_TagString: Untagged
@@ -1376,6 +1377,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882472707}
   m_CullTransparentMesh: 1
+--- !u!114 &882472711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882472707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefsName: Coba Movement 2 - Zidan
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 882472709}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: d0dfd91417eb2ee40a8313f4a41c8cfe, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 882472709}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 1ae4f568c14b16b479dd657e3661668f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &909525374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zoomSpeed: 0.1
-  maxZoom: 2.5
+  maxZoomScale: 0
 --- !u!1 &1098068876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,7 +2166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: Room1
+  prefsName: Coba Movement 2
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -2532,7 +2576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: Room1
+  prefsName: Coba Movement 2
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -2655,6 +2699,7 @@ GameObject:
   - component: {fileID: 2010894523}
   - component: {fileID: 2010894526}
   - component: {fileID: 2010894525}
+  - component: {fileID: 2010894524}
   m_Layer: 5
   m_Name: C (2)
   m_TagString: Untagged
@@ -2681,6 +2726,49 @@ RectTransform:
   m_AnchoredPosition: {x: -352.5696, y: -8.517563}
   m_SizeDelta: {x: 45, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2010894524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010894522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefsName: Coba Movement 2 - Zidan
+  onTrue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2010894525}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: d0dfd91417eb2ee40a8313f4a41c8cfe, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onFalse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2010894525}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 1ae4f568c14b16b479dd657e3661668f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2010894525
 MonoBehaviour:
   m_ObjectHideFlags: 0
