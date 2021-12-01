@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using Chronos;
 
 
 public class Enemy_behaviour : MonoBehaviour {
@@ -24,12 +25,15 @@ public class Enemy_behaviour : MonoBehaviour {
     private bool inRange; //Check if Player is in range
     private bool cooling; //Check if Enemy is cooling after attack
     private float intTimer;
+    private Timeline time;
     #endregion
 
     void Awake()
     {
         intTimer = timer; 
         anim = GetComponent<Animator>();
+
+        time = GetComponent<Timeline>();
     }
 
     void Update () {
@@ -94,7 +98,7 @@ public class Enemy_behaviour : MonoBehaviour {
         {
             Vector2 targetPosition = new Vector2(target.transform.position.x, transform.position.y);
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * time.deltaTime);
         }
     }
 
@@ -109,7 +113,7 @@ public class Enemy_behaviour : MonoBehaviour {
 
     void Cooldown()
     {
-        timer -= Time.deltaTime;
+        timer -= time.deltaTime;
 
         if(timer <= 0 && cooling && attackMode)
         {

@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private Timeline time;
     private bool deflected;
-    [SerializeField] float speed = 20;
+    [SerializeField] float speed = 30;
 
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
@@ -25,13 +25,13 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        // test pakai moveposition
+        rb.MovePosition(rb.position + new Vector2(-speed, 0) * time.deltaTime);
     }
 
     private void FixedUpdate()
     {
-        // test pakai moveposition
-        rb.MovePosition(rb.position + new Vector2(-30, 0) * time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -44,7 +44,7 @@ public class Bullet : MonoBehaviour
         if (!deflected)
         {
             //rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
-            rb.MovePosition(rb.position + new Vector2(-rb.velocity.x, -rb.velocity.y) * time.deltaTime);
+            speed *= -1;
             Debug.Log("Deflected");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;

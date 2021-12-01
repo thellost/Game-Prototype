@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Chronos;
 public class CharacterAttack : MonoBehaviour
 {
     public Animator animator;
@@ -16,9 +16,12 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
+    [SerializeField] float slashAnimationSpeed;
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
     private Vector2 direction;
+    private Timeline time;
+
 
     private Movement movement;
     // Update is called once per frame
@@ -27,6 +30,7 @@ public class CharacterAttack : MonoBehaviour
     {
         movement = GetComponent<Movement>();
         playerVelocity = GetComponent<PlayerVelocity>();
+        time = GetComponent<Timeline>();
         isAttacking = false;
     }
     void Update()
@@ -125,7 +129,7 @@ public class CharacterAttack : MonoBehaviour
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
         gameobj.transform.localScale = transform.localScale;
-        gameobj.transform.parent = gameObject.transform;
+        //gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
 
         gameobj.transform.localScale *= 1.5f;
@@ -161,9 +165,10 @@ public class CharacterAttack : MonoBehaviour
     private IEnumerator MoveAnimation(GameObject slash, Vector3 direction)
     {
 
+        slash.transform.parent = null;
         while (slash != null)
         {
-            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, 0.2f);
+            slash.transform.position = Vector2.MoveTowards(slash.transform.position, (direction + transform.position) * attackRangeCircle, slashAnimationSpeed * time.deltaTime); //10f magic number
 
             yield return new WaitForFixedUpdate();
         }
