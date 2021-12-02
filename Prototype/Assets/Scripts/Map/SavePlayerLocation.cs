@@ -7,11 +7,13 @@ public class SavePlayerLocation : MonoBehaviour
 {
     private void Start()
     {
+        // save player function will called when room scene opened
         SavePlayerLoc();
     }
 
     private void SavePlayerLoc()
     {
+        // get active scene and save scene name to playerprefs
         PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
     }
     

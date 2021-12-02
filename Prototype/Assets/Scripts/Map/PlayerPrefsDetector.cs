@@ -14,14 +14,6 @@ public class PlayerPrefsDetector : MonoBehaviour
         CheckPrefs();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TestVisitMap();
-        }
-    }
-
     private void CheckPrefs()
     {
         int isVisited = PlayerPrefs.GetInt(prefsName);
@@ -33,10 +25,5 @@ public class PlayerPrefsDetector : MonoBehaviour
         {
             onTrue?.Invoke();
         }
-    }
-
-    private void TestVisitMap()
-    {
-        PlayerPrefs.SetInt(prefsName, 1);
     }
 }
