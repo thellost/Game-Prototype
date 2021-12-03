@@ -65,6 +65,10 @@ public class PlayerInput : MonoBehaviour
 				OpenMap();
             }
         }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+			playerVelocity.knockback();
+        }
 	}
 
 	private void OpenMap()

@@ -10,6 +10,7 @@ public class Movement : BoxColliderCasts
 	[HideInInspector] public Vector2 objectInput;
 	[HideInInspector] public bool slidingDownMaxSlope = false;
 	[HideInInspector] public bool forceFall = false;
+	[HideInInspector] public bool lockedFlip = false;
 
 	public bool isGrounded;
 	public float distanceToGround = 1f;
@@ -343,10 +344,13 @@ public class Movement : BoxColliderCasts
 
 	private void Flip()
     {
+		if (!lockedFlip)
+		{
 			isFacingRight = !isFacingRight;
 
 			Vector3 theScale = transform.localScale;
 			theScale.x *= -1;
 			transform.localScale = theScale;
+		}
 	}
 }

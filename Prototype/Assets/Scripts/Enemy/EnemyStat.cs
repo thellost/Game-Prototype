@@ -58,4 +58,13 @@ public class EnemyStat : MonoBehaviour
             isInvulnerable = false;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject gameObj = collision.gameObject;
+        if (gameObj.GetComponent<PlayerStatManager>() != null)
+        {
+            
+        }
+    }
 }

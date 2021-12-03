@@ -16,6 +16,7 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float accelerationTimeGrounded = .1f;
 	[SerializeField] private float forceFallSpeed = 20;
 	[SerializeField] private float dashPower = 10f;
+	[SerializeField] private float airDashPower = 10f;
 	[SerializeField] private float dashCooldown = 2f;
 	[SerializeField] private float rollPower = 10f;
 	[SerializeField] private float rollCooldown = 2f;
@@ -93,6 +94,7 @@ public class PlayerVelocity : MonoBehaviour
 		if (playerMovement.collisionDirection.below)
         {
 			airJumpCount = 0;
+			dashCount = 0;
         }
 
 		HandleAnimation();
@@ -198,7 +200,7 @@ public class PlayerVelocity : MonoBehaviour
 
 
 	//kutambahin optional argument yang berguna untuk attack dash
-	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, float customDashPower = 0)
+	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
     {
 		
 		playerInput.enabled = false;
@@ -208,26 +210,16 @@ public class PlayerVelocity : MonoBehaviour
 		}
 
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
-		if (true)
+		if (dashCount == 0)
         {
 			tempDashPower = dashPower;
-        }
-        else if(!playerMovement.collisionDirection.below )
-        {
 			dashCount += 1;
-			tempDashPower = dashPower;
-        }
 
-
-		//check untuk custom power
-		if (customDashPower == 0)
-		{
-			tempDashPower = dashPower;
 		}
 		else
-		{
-			tempDashPower = customDashPower;
-		}
+        {
+			tempDashPower = airDashPower ;
+        }
 
 
 		isDashing = true;
@@ -258,12 +250,18 @@ public class PlayerVelocity : MonoBehaviour
 		SoundManager.Instance.PlaySFX(dashSfx);
     }
 
+	public void knockback(float DirectionX = 0, float DirectionY = 0)
+    {
+		velocity = new Vector2(-5, 0);
+	}
+
 	private void ResetDashing()
     {
 		playerInput.enabled = true;
 		isDashing = false;
 
-    }
+		playerMovement.lockedFlip = false;
+	}
 
 	public void Roll()
     {

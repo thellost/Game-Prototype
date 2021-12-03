@@ -8,13 +8,19 @@ public class Parallax : MonoBehaviour
     private float length, startpos;
     public GameObject cam;
     public float parallaxEffect;
-
+    public bool isTileMap = true;
 
     // Start is called before the first frame update
     void Start()
     {
         startpos = transform.position.x;
-        length = GetComponent<TilemapRenderer>().bounds.size.x;
+        if (isTileMap)
+        {
+            length = GetComponent<TilemapRenderer>().bounds.size.x;
+        }else
+        {
+            length = GetComponent<SpriteRenderer>().bounds.size.x;
+        }
     }
 
     // Update is called once per frame
