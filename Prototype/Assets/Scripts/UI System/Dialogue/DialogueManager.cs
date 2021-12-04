@@ -29,11 +29,12 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
 
     private PlayerInput playerInput;
-
+    private CharacterAttack playerAttack;
     private void Awake() 
     {
 
         playerInput = GameObject.Find("Player").GetComponent<PlayerInput>();
+        playerAttack = GameObject.Find("Player").GetComponent<CharacterAttack>();
         if (instance != null)
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
@@ -84,6 +85,7 @@ public class DialogueManager : MonoBehaviour
     {
 
         playerInput.enabled = false;
+        playerAttack.enabled = false;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -101,6 +103,8 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
 
         playerInput.enabled = true;
+        playerAttack.enabled = true;
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
