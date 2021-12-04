@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -30,12 +31,9 @@ public class DialogueManager : MonoBehaviour
 
     private PlayerInput playerInput;
     private CharacterAttack playerAttack;
-<<<<<<< HEAD
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
 
-=======
->>>>>>> parent of 69b6e9f (inisi)
     private void Awake() 
     {
 
