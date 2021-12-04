@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 4267103544329921352}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
   cameraShakeIntensity: 5
   cameraShakeFrequency: 2
   cameraShakeTimer: 0.1
-  slashAnimationSpeed: 2
+  slashAnimationSpeed: 10
 --- !u!114 &4267103544329921358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -377,6 +377,7 @@ MonoBehaviour:
   objectInput: {x: 0, y: 0}
   slidingDownMaxSlope: 0
   forceFall: 0
+  lockedFlip: 0
   isGrounded: 0
   distanceToGround: 1
   maxSlopeAngle: 80
@@ -400,6 +401,7 @@ MonoBehaviour:
   accelerationTimeGrounded: 0.1
   forceFallSpeed: 20
   dashPower: 20
+  airDashPower: 10
   dashCooldown: 0
   rollPower: 25
   rollCooldown: 0

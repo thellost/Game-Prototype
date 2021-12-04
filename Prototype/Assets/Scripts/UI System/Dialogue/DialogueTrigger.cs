@@ -22,10 +22,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(playerInRange);
         if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
         {
             visualCue.SetActive(true);
 
+            Debug.Log("I");
             if (Input.GetKey(KeyCode.I) && isActive == true)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
@@ -39,6 +41,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.tag == "Player")
         {
             playerInRange = true;
