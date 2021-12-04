@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -28,8 +29,14 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
 
+<<<<<<< Updated upstream
     private PlayerInput playerInput;
     private CharacterAttack playerAttack;
+=======
+    public event Action OnShowDialog;
+    public event Action OnCloseDialog;
+
+>>>>>>> Stashed changes
     private void Awake() 
     {
 
@@ -200,8 +207,7 @@ public class DialogueManager : MonoBehaviour
     public void MakeChoice(int choiceIndex)
     {
         currentStory.ChooseChoiceIndex(choiceIndex);
-        // NOTE: The below two lines were added to fix a bug after the Youtube video was made
-        Input.GetKeyDown(KeyCode.DownArrow); // this is specific to my InputManager script
+        Input.GetKeyDown(KeyCode.DownArrow); 
         ContinueStory();
     }
 }
