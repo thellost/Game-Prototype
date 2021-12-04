@@ -24,11 +24,13 @@ public class BulletTimeLight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.O))
         {
-            StartCoroutine(fadeIntensity(true));
+            StopAllCoroutines();
+            StartCoroutine(Lerp(true));
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
-            StartCoroutine(fadeIntensity(false));
+            StopAllCoroutines();
+            StartCoroutine(Lerp(false));
         }
     }
 
@@ -70,27 +72,50 @@ public class BulletTimeLight : MonoBehaviour
 
     IEnumerator Lerp(bool isFading)
     {
+        Debug.Log("tEST");
         float timeElapsed = 0;
-
-        while (timeElapsed < fadeDuration)
+        if (!isFading)
         {
+            while (timeElapsed < fadeDuration)
+            {
+
+                for (int a = 0; a < allLight.Count; a++)
+                {
+                    allLight[a].intensity = Mathf.Lerp(allLight[a].intensity, desiredIntensity, timeElapsed / fadeDuration);
+                }
+
+                timeElapsed += Time.deltaTime;
+
+                yield return null;
+            }
 
             for (int a = 0; a < allLight.Count; a++)
             {
-                allLight[a].intensity = Mathf.Lerp(allLight[a].intensity, desiredIntensity, timeElapsed / fadeDuration);
+
+                allLight[a].intensity = desiredIntensity;
             }
 
-            timeElapsed += Time.deltaTime;
-
-            yield return null;
-        }
-
-        for (int a = 0; a < allLight.Count; a++)
+        } else
         {
+            while (timeElapsed < fadeDuration)
+            {
 
-            allLight[a].intensity = desiredIntensity;
+                for (int a = 0; a < allLight.Count; a++)
+                {
+                    allLight[a].intensity = Mathf.Lerp(allLight[a].intensity, previousIntensity[a], timeElapsed / fadeDuration);
+                }
+
+                timeElapsed += Time.deltaTime;
+
+                yield return null;
+            }
+
+            for (int a = 0; a < allLight.Count; a++)
+            {
+
+                allLight[a].intensity = previousIntensity[a];
+            }
+
         }
-
-    }
-
+    } 
 }
