@@ -29,14 +29,11 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TAG = "portrait";
     private const string LAYOUT_TAG = "layout";
 
-<<<<<<< Updated upstream
     private PlayerInput playerInput;
     private CharacterAttack playerAttack;
-=======
     public event Action OnShowDialog;
     public event Action OnCloseDialog;
 
->>>>>>> Stashed changes
     private void Awake() 
     {
 
