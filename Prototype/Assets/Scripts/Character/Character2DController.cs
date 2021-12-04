@@ -53,7 +53,7 @@ public class Character2DController : MonoBehaviour
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             return;
-        } 
+        }
 
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
