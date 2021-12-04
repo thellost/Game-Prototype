@@ -1,4 +1,4 @@
-Argggh! #speaker:Dr. Green #portrait:green_neutral #layout:left
+Argggh! #speaker:Green #portrait:green_neutral #layout:left
 -> main
 
 === main ===
