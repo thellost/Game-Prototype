@@ -69,6 +69,11 @@ public class PlayerInput : MonoBehaviour
         {
 			playerVelocity.knockback();
         }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+			SceneManager.LoadScene("Augment");
+        }
 	}
 
 	private void OpenMap()
