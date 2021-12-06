@@ -1,22 +1,17 @@
 using UnityEngine;
-using Chronos;
 
 public class TimeManager : MonoBehaviour
 {
-    public float enemiesSlowDownFactor = 0.2f;
-    public float playerSlowDownFactor = 0.4f;
-    public float bulletSlowDownFactor = 0.1f;
-    public float slowDownDuration = 3f;
+    public float slowDownFactor = 0.5f;
+    public float slowDownDuration = 2f;
     public PlayerStatManager playerStat;
 
-    private bool isInSlowmo;
-    private Clock enemyClock, playerClock, bulletClock;
+    private float fixedDeltaTime;
 
-    private void Start()
+    void Awake()
     {
-        enemyClock = Timekeeper.instance.Clock("Enemies");
-        playerClock = Timekeeper.instance.Clock("Player");
-        bulletClock = Timekeeper.instance.Clock("Bullet");
+        // Make a copy of the fixedDeltaTime, it defaults to 0.02f, but it can be changed in the editor
+        this.fixedDeltaTime = Time.fixedDeltaTime;
     }
 
     void Update()
@@ -31,23 +26,23 @@ public class TimeManager : MonoBehaviour
     {
         if (playerStat.currentEnergy > 0)
         {
-            if (!isInSlowmo)
-            {
-                isInSlowmo = true;
-                enemyClock.localTimeScale = enemiesSlowDownFactor;
-                playerClock.localTimeScale = playerSlowDownFactor;
-                bulletClock.localTimeScale = bulletSlowDownFactor;
-                Invoke("stopSlowMotion", slowDownDuration);
-            }
+            //Time.timeScale = slowDownFactor;
+            //Time.fixedDeltaTime = Time.fixedDeltaTime * Time.timeScale;
+
+            if (Time.timeScale == 1.0f)
+                Time.timeScale = slowDownFactor;
+            else
+                Time.timeScale = 1.0f;
+            // Adjust fixed delta time according to timescale
+            // The fixed delta time will now be 0.02 real-time seconds per frame
+            Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
         }
         
     }
 
     public void stopSlowMotion()
     {
-        enemyClock.localTimeScale = 1;
-        playerClock.localTimeScale = 1;
-        bulletClock.localTimeScale = 1;
-        isInSlowmo = false;
+        Time.timeScale = 1.0f;
+        Time.fixedDeltaTime = this.fixedDeltaTime * Time.timeScale;
     }
 }
