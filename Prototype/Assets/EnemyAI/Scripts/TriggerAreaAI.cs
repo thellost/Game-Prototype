@@ -16,6 +16,7 @@ public class TriggerAreaAI : MonoBehaviour
         {
             enemyParent.setState(EnemyAI.State.ChaseTarget);
             gameObject.SetActive(false);
-            
+
         }
     }
+}
