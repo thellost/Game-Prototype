@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Chronos;
 
 public class Enemy_behaviour : MonoBehaviour
 {
@@ -24,13 +24,15 @@ public class Enemy_behaviour : MonoBehaviour
     private bool attackMode;
     private bool cooling; 
     private float intTimer;
+    private Timeline time;
     #endregion
-
+    RequireComponent Timeline;
     void Awake()
     {
         SelectTarget();
         intTimer = timer; 
         anim = GetComponent<Animator>();
+        time = GetComponent<Timeline>();
     }
 
     void Update()
@@ -86,7 +88,7 @@ public class Enemy_behaviour : MonoBehaviour
         {
             Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
 
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * time.deltaTime);
         }
     }
 

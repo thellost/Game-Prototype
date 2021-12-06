@@ -62,11 +62,11 @@ public class PlayerStatManager : MonoBehaviour
     {
         energyProgressUI.value = currentEnergy;
         internalTimer += Time.deltaTime;
-        if(internalTimer > invicTimer)
-        {
-            internalTimer = 0;
-            takeDamage(5);
-        }
+        //if(internalTimer > invicTimer)
+        //{
+        //    internalTimer = 0;
+        //    takeDamage(5);
+        //}
         if (Input.GetKeyDown(KeyCode.X))
         {
             useEnergy();

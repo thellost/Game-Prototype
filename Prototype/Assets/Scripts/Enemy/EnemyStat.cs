@@ -9,7 +9,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] float invicTimer = 1;
 
     public float currentHp;
-
+    public float damage;
     public bool isInvulnerable;
     private float internalTimer;
     // Start is called before the first frame update

@@ -34,7 +34,7 @@ public class AIPatrol : MonoBehaviour
 
     void Patrol()
     {
-        if (mustTurn) ;
+        if (mustTurn)
         {
             Flip();
         }
