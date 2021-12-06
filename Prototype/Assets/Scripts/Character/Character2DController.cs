@@ -50,6 +50,11 @@ public class Character2DController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 

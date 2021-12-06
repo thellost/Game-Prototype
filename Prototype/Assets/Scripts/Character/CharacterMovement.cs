@@ -12,17 +12,22 @@ public class CharacterMovement : MonoBehaviour
 	public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
+	float verticalMove = 0f;
 	bool jump = false;
 	bool crouch = false;
-
-	// Update is called once per frame
-	void Update()
+	Rigidbody2D rb;
+    private void Awake()
+    {
+		rb = GetComponent<Rigidbody2D>();
+    }
+    // Update is called once per frame
+    void Update()
 	{
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
+		verticalMove = rb.velocity.y;
 		animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
+		animator.SetFloat("SpeedY", Mathf.Abs(verticalMove));
 		if (Input.GetButtonDown("Jump"))
 		{
 			jump = true;
