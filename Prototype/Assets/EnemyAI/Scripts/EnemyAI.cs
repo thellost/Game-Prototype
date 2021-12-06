@@ -13,7 +13,6 @@ public class EnemyAI : MonoBehaviour {
         Patroling,
         ChaseTarget,
         AttackTarget,
-        GoingBackToStart,
     }
 
     private Vector3 startingPosition;
@@ -33,24 +32,13 @@ public class EnemyAI : MonoBehaviour {
 
     private void Update() {
         switch (state) {
-        default:
-        case State.Patroling:
-
-            float reachedPositionDistance = 10f;
-            if (Vector3.Distance(transform.position, roamPosition) < reachedPositionDistance) {
-                // Reached Roam Position
-                roamPosition = GetRoamingPosition();
-            }
-
-            FindTarget();
-            break;
-        case State.ChaseTarget:
-            break;
-        case State.AttackTarget:
-            break;
-        case State.GoingBackToStart:
-           
-            break;
+            default:
+            case State.Patroling:
+                break;
+            case State.ChaseTarget:
+                break;
+            case State.AttackTarget:
+                break;
         }
     }
 
