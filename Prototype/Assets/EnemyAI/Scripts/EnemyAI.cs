@@ -108,7 +108,12 @@ public class EnemyAI : MonoBehaviour {
                 {
                     rb.velocity = new Vector2(-knockbackForce, 0);
                 }
-                timeElapsed += Time.deltaTime;
+                timeElapsed += time.deltaTime;
+
+                if(timeElapsed > knockbackDuration)
+                {
+                    setState(State.ChaseTarget);
+                }
                 Debug.Log(knockbackForce);
                 anim.SetTrigger("knockback");
                 

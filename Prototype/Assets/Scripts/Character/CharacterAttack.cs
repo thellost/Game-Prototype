@@ -77,12 +77,11 @@ public class CharacterAttack : MonoBehaviour
         Vector3 directionAnimation = direction.normalized * attackRangeCircle;
         
         //check enemies
-        RaycastHit2D[] hit = Physics2D.CircleCastAll(directionAnimation + transform.position, attackRangeCircle, new Vector2(0, 0), 0f, enemiesLayer);
-
-       
+        Collider2D[] hit = Physics2D.OverlapCircleAll(directionAnimation + transform.position, attackRangeCircle, enemiesLayer);
+        Debug.Log(directionAnimation);
 
         //damage the enemies
-        foreach (RaycastHit2D enemy in hit)
+        foreach (Collider2D enemy in hit)
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
@@ -149,13 +148,13 @@ public class CharacterAttack : MonoBehaviour
         gameobj.transform.position = transform.position - (0.5f * temp3);
     }
 
-    private void spawnBlood(RaycastHit2D enemy)
+    private void spawnBlood(Collider2D enemy)
     {
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        GameObject gameobj = Instantiate(bloodParticle, new Vector3(enemy.point.x + attackRangeCircle, enemy.point.y, -2), Quaternion.Euler(-90f, 0, 0));
+        GameObject gameobj = Instantiate(bloodParticle, new Vector3(enemy.transform.position.x + attackRangeCircle, enemy.transform.position.y, -2), Quaternion.Euler(-90f, 0, 0));
         gameobj.transform.rotation = Quaternion.Euler(-90f, 0, 0) * rotation;
 
     }
