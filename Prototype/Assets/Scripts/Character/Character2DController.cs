@@ -15,7 +15,8 @@ public class Character2DController : MonoBehaviour
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 	[SerializeField] private List<Collider2D> m_JumpDisableCollider;            // A collider that will be disabled when crouching
 
-	public CharacterMovement movescript;
+    public static Character2DController instance;
+    public CharacterMovement movescript;
 	private Rigidbody2D m_Rigidbody2D;
 
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
@@ -46,7 +47,9 @@ public class Character2DController : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
-	}
+
+        instance = this;
+    }
 
 	private void FixedUpdate()
 	{
