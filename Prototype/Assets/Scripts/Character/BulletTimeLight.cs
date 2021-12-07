@@ -72,7 +72,6 @@ public class BulletTimeLight : MonoBehaviour
 
     IEnumerator Lerp(bool isFading)
     {
-        Debug.Log("tEST");
         float timeElapsed = 0;
         if (!isFading)
         {

@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 4267103544329921363}
   - component: {fileID: 4267103544329921362}
   - component: {fileID: 4267103544329921365}
-  - component: {fileID: 4267103544329921364}
   - component: {fileID: 4267103544329921357}
   - component: {fileID: 4267103544329921358}
   - component: {fileID: 4267103544329921360}
@@ -276,32 +275,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4267103544329921364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267103544329921371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.017672956, y: -0.3188268, z: 0}
-  - {x: 0.06388205, y: -0.3234477, z: 0}
-  - {x: 0.02091831, y: 0.12065557, z: 0}
-  - {x: -0.024321377, y: 0.10639024, z: 0}
-  m_ShapePathHash: -1823353155
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 177036
 --- !u!114 &4267103544329921357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 2049
+    m_Bits: 2048
   skinWidth: 0.015
   distanceBetweenRays: 0.25
   boxCollider: {fileID: 0}

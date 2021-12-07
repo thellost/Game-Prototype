@@ -15,14 +15,12 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] GameObject slashParticle;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
-    [SerializeField] float cameraShakeTimer;
+    [SerializeField] float cameraShakeTimer = 0.1f;
     [SerializeField] float slashAnimationSpeed;
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
     private Vector2 direction;
     private Timeline time;
-
-
     private Movement movement;
     // Update is called once per frame
 
@@ -87,11 +85,20 @@ public class CharacterAttack : MonoBehaviour
         foreach (RaycastHit2D enemy in hit)
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
-
+            EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
             Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
+
+            
+
+            //handle damage and camera shake also buller
             if (enemyComponent != null) {
                 if (enemyComponent.takeDamage(attackDamage))
                 {
+                    //handle the AI
+                    if (enemeyAI != null)
+                    {
+                        enemeyAI.setState(EnemyAI.State.knockback);
+                    }
                     spawnBlood(enemy);
                     if (CameraShake.Instance != null)
                     {
