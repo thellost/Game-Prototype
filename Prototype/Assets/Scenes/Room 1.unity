@@ -1022,9 +1022,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.120000005, y: -0.31099868}
+  m_Offset: {x: -0.120000005, y: -0.37611693}
   serializedVersion: 2
-  m_Radius: 0.4
+  m_Radius: 0.46511823
 --- !u!1001 &379876420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4896,7 +4896,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1312441489
 Transform:
   m_ObjectHideFlags: 0
@@ -20899,6 +20899,7 @@ GameObject:
   - component: {fileID: 1487414006}
   - component: {fileID: 1487414005}
   - component: {fileID: 1487414004}
+  - component: {fileID: 1487414007}
   m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
@@ -20991,6 +20992,32 @@ MonoBehaviour:
   _globalClockKey: Enemies
   _rewindable: 1
   _recordingDuration: 30
+--- !u!61 &1487414007
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487414003}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.18933287, y: 1.2161328}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1934645, y: 2.842129}
+  m_EdgeRadius: 0
 --- !u!95 &1487414008
 Animator:
   serializedVersion: 3
@@ -21022,7 +21049,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 1.2726548
+  m_Mass: 2.2133148
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 2
@@ -38085,8 +38112,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1635966214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.41, y: 8.56, z: 2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -11.56, y: 12.78, z: 2}
+  m_LocalScale: {x: 5.846, y: 3.4545, z: 1}
   m_Children: []
   m_Father: {fileID: 1261402011}
   m_RootOrder: 0

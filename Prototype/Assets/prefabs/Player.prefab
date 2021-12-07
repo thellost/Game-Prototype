@@ -352,7 +352,7 @@ MonoBehaviour:
   forceFall: 0
   lockedFlip: 0
   isGrounded: 0
-  distanceToGround: 1
+  distanceToGround: 1.5
   maxSlopeAngle: 80
 --- !u!114 &4267103544329921367
 MonoBehaviour:
