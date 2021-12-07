@@ -72,6 +72,7 @@ public class PlayerVelocity : MonoBehaviour
 
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
+
 		Vector3 displacement = (velocity + oldVelocity) * 0.5f * time.deltaTime;
 		// Move player using movement controller which checks for collisions then applies correct transform (displacement) translation
 		
@@ -110,6 +111,10 @@ public class PlayerVelocity : MonoBehaviour
 		oldVelocity = velocity;
 		// ms when player is on the ground faster vs. in air
 		float smoothTime = (playerMovement.collisionDirection.below) ? accelerationTimeGrounded : accelerationTimeAirborne;
+        if (isDashing)
+        {
+			smoothTime = accelerationTimeAirborne;
+        }
 		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, smoothTime / time.timeScale);
 
 		if (velocity.x != 0)

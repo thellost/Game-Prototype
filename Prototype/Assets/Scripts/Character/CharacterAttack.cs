@@ -165,7 +165,13 @@ public class CharacterAttack : MonoBehaviour
 
     private IEnumerator WaitForAttackCooldown()
     {
-        yield return new WaitForSeconds(attackSpeed);
+        float timeElapsed = 0;
+        while (timeElapsed < attackSpeed)
+        {
+            timeElapsed += time.deltaTime;
+
+            yield return null;
+        }
         isAttacking = false;
     }
 
