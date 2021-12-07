@@ -40,7 +40,12 @@ public class TimeManager : MonoBehaviour
                     enemyClock.localTimeScale = enemiesSlowDownFactor;
                     playerClock.localTimeScale = playerSlowDownFactor;
                     bulletClock.localTimeScale = bulletSlowDownFactor;
-                    Invoke("stopSlowMotion", slowDownDuration);
+                    //Invoke("stopSlowMotion", slowDownDuration);
+                }
+
+                else
+                {
+                    stopSlowMotion();
                 }
             }
         }
