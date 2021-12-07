@@ -3,6 +3,7 @@ using Chronos;
 
 public class TimeManager : MonoBehaviour
 {
+    public bool slowMotionActivated;
     public float enemiesSlowDownFactor = 0.2f;
     public float playerSlowDownFactor = 0.4f;
     public float bulletSlowDownFactor = 0.1f;
@@ -29,18 +30,20 @@ public class TimeManager : MonoBehaviour
 
     public void DoSlowMotion()
     {
-        if (playerStat.currentEnergy > 0)
+        if (slowMotionActivated)
         {
-            if (!isInSlowmo)
+            if (playerStat.currentEnergy > 0)
             {
-                isInSlowmo = true;
-                enemyClock.localTimeScale = enemiesSlowDownFactor;
-                playerClock.localTimeScale = playerSlowDownFactor;
-                bulletClock.localTimeScale = bulletSlowDownFactor;
-                Invoke("stopSlowMotion", slowDownDuration);
+                if (!isInSlowmo)
+                {
+                    isInSlowmo = true;
+                    enemyClock.localTimeScale = enemiesSlowDownFactor;
+                    playerClock.localTimeScale = playerSlowDownFactor;
+                    bulletClock.localTimeScale = bulletSlowDownFactor;
+                    Invoke("stopSlowMotion", slowDownDuration);
+                }
             }
         }
-        
     }
 
     public void stopSlowMotion()
