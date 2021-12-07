@@ -11,7 +11,6 @@ public class Greyscale : MonoBehaviour
     {
         tilemap = GetComponent<Tilemap>();
         Color newColor = tilemap.color;
-        print(newColor.grayscale);
     }
 
     // Update is called once per frame
