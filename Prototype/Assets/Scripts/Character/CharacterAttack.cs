@@ -97,6 +97,7 @@ public class CharacterAttack : MonoBehaviour
                     if (enemeyAI != null)
                     {
                         enemeyAI.setState(EnemyAI.State.knockback);
+                        enemeyAI.setAttackDirection(directionAnimation);
                     }
                     spawnBlood(enemy);
                     if (CameraShake.Instance != null)

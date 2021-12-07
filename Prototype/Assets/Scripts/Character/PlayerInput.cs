@@ -38,9 +38,9 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+		{
 			playerVelocity.OnDashInputDown();
-        }
+		}
 		
 		if (Input.GetKeyDown(KeyCode.LeftControl))
         {

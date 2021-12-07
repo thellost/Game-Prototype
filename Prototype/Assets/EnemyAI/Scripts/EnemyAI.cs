@@ -24,9 +24,10 @@ public class EnemyAI : MonoBehaviour {
 
     private Vector3 startingPosition;
     private Vector3 roamPosition;
+    private Vector3 attackDir;
     private float nextShootTime;
     private float attackTimer;
-    private float knockbackSpeed;
+    private float knockbackForceprivate;
     private float timeElapsed;
     private State state;
     private Transform target;
@@ -42,6 +43,7 @@ public class EnemyAI : MonoBehaviour {
         anim = gameObject.GetComponent<Animator>();
         time = gameObject.GetComponent<Timeline>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        knockbackForceprivate = knockbackForce;
     }
 
     private void Start()
@@ -79,8 +81,8 @@ public class EnemyAI : MonoBehaviour {
                 if (attackTimer <= 0 && Vector2.Distance(target.position, transform.position) < attackDistance)
                 {
 
-                    anim.SetBool("attacking", true);
                     isAttacking = true;
+                    anim.SetBool("attacking", true);
                     attackTimer = attackSpeed;
                     anim.SetTrigger("Attack");
                 }
@@ -88,7 +90,9 @@ public class EnemyAI : MonoBehaviour {
                 {
 
                     anim.SetBool("attacking", false);
+                    isAttacking = false;
                     setState(State.ChaseTarget);
+                    break;
                 }
                 if (!isAttacking)
                 {
@@ -96,17 +100,18 @@ public class EnemyAI : MonoBehaviour {
                 }
                
                 break;
+
             case State.knockback:
-
-
-                knockbackForce = Mathf.Lerp(knockbackForce,0, timeElapsed/knockbackDuration);
+                //math for smoothing
+                float temp = Mathf.SmoothStep(knockbackForce,0, timeElapsed/knockbackDuration);
+                temp *= time.timeScale;
                 if (!isFacingRight)
                 {
-                    rb.velocity = new Vector2(knockbackForce, 0);
+                    rb.velocity = new Vector2(temp, rb.velocity.y);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(-knockbackForce, 0);
+                    rb.velocity = new Vector2(-temp, rb.velocity.y);
                 }
                 timeElapsed += time.deltaTime;
 
@@ -163,15 +168,24 @@ public class EnemyAI : MonoBehaviour {
     }
     private void flip()
     {
-        isFacingRight = !isFacingRight;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
+        if (!isAttacking)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 theScale = transform.localScale;
+            theScale.x *= -1;
+            transform.localScale = theScale;
+        }
     }
 
     public void setTarget(Transform point)
     {
         target = point;
+    }
+
+    public void setAttackDirection(Vector3 direction)
+    {
+        attackDir = direction;
+        checkFlip();
     }
     public void setState(State stateParameter)
     {

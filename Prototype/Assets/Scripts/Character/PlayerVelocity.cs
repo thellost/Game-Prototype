@@ -110,7 +110,7 @@ public class PlayerVelocity : MonoBehaviour
 		oldVelocity = velocity;
 		// ms when player is on the ground faster vs. in air
 		float smoothTime = (playerMovement.collisionDirection.below) ? accelerationTimeGrounded : accelerationTimeAirborne;
-		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, smoothTime);
+		velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, smoothTime / time.timeScale);
 
 		if (velocity.x != 0)
         {
@@ -172,7 +172,10 @@ public class PlayerVelocity : MonoBehaviour
 		}
 
 		// test sfx
-		SoundManager.Instance.PlaySFX(jumpSfx);
+		if (jumpSfx != null)
+		{
+			SoundManager.Instance.PlaySFX(jumpSfx);
+		}
 	}
 
 	/// <summary>
@@ -276,8 +279,6 @@ public class PlayerVelocity : MonoBehaviour
 		}
 
 		isRolling = true;
-		Invoke("ResetRolling", 0.3f);
-
 		var rollDirection = rollPower;
 
 		if (lastHorizontalVelocity < 0)

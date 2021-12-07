@@ -480,7 +480,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: isDashing
+    m_ConditionEvent: isRolling
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4478523544514272526}
@@ -754,10 +754,10 @@ AnimatorStateMachine:
     m_Position: {x: 40, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3002316341433343770}
-    m_Position: {x: 100, y: 270, z: 0}
+    m_Position: {x: 570, y: 370, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2066899150256479291}
-    m_Position: {x: 610, y: 20, z: 0}
+    m_Position: {x: 570, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8755308408846209735}
     m_Position: {x: 680, y: 70, z: 0}

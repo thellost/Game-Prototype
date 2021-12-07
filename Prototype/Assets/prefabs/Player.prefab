@@ -376,8 +376,8 @@ MonoBehaviour:
   dashPower: 20
   airDashPower: 10
   dashCooldown: 0
-  rollPower: 25
-  rollCooldown: 0
+  rollPower: 20
+  rollCooldown: 0.5
   maxAirJump: 0
   playerAnimator: {fileID: 4267103544329921359}
   standingColliderSize: {x: 3, y: 7}
