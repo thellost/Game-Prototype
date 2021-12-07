@@ -8,13 +8,16 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] float maxPlayerHP = 100;
     [SerializeField] float invicTimer = 1;
 
+
     public float currentHp;
     public float damage;
     public bool isInvulnerable;
     private float internalTimer;
+    private EnemyAI ai;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        ai = GetComponent<EnemyAI>();
         internalTimer = 0;
         setPlayerStat();
     }
@@ -25,20 +28,23 @@ public class EnemyStat : MonoBehaviour
         currentHp = maxPlayerHP;
 
     }
-
+    public bool checkAlive()
+    {
+        if (currentHp <= 0)
+        {
+            return false;
+        }
+        return true;
+    }
     public bool takeDamage(float dmg)
     {
-        Debug.Log(isInvulnerable);
         if (!isInvulnerable)
         {
             internalTimer = invicTimer;
             
             currentHp -= dmg;
 
-            if (currentHp <= 0)
-            {
-                Destroy(gameObject);
-            }
+            
             return true;
         }
         return false;
@@ -59,12 +65,4 @@ public class EnemyStat : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        GameObject gameObj = collision.gameObject;
-        if (gameObj.GetComponent<PlayerStatManager>() != null)
-        {
-            
-        }
-    }
 }

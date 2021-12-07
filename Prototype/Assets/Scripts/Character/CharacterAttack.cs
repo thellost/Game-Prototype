@@ -78,7 +78,6 @@ public class CharacterAttack : MonoBehaviour
         
         //check enemies
         Collider2D[] hit = Physics2D.OverlapCircleAll(directionAnimation + transform.position, attackRangeCircle, enemiesLayer);
-        Debug.Log(directionAnimation);
 
         //damage the enemies
         foreach (Collider2D enemy in hit)

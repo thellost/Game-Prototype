@@ -19,6 +19,7 @@ public class EnemyAI : MonoBehaviour {
         ChaseTarget,
         AttackTarget,
         knockback,
+        dead,
         idle
     }
 
@@ -35,15 +36,19 @@ public class EnemyAI : MonoBehaviour {
     private Timeline time;
     private bool isFacingRight;
     private bool isAttacking;
+    private bool dead;
     private Rigidbody2D rb;
+    private EnemyStat stats;
 
     private void Awake() {
+        stats = gameObject.GetComponent<EnemyStat>();
         state = State.AttackTarget;
         target = GameObject.Find("Player").GetComponent<Transform>();
         anim = gameObject.GetComponent<Animator>();
         time = gameObject.GetComponent<Timeline>();
         rb = gameObject.GetComponent<Rigidbody2D>();
         knockbackForceprivate = knockbackForce;
+        dead = false ;
     }
 
     private void Start()
@@ -55,7 +60,12 @@ public class EnemyAI : MonoBehaviour {
     private void Update() {
         //attack timer untuk jeda attack
         attackTimer -= time.deltaTime;
-
+        if (!stats.checkAlive() && !dead)
+        {
+            Debug.Log("aa");
+            dead = true;
+            setState(State.dead);
+        }
         switch (state) {
             default:
             case State.Patroling:
@@ -105,25 +115,33 @@ public class EnemyAI : MonoBehaviour {
                 //math for smoothing
                 float temp = Mathf.SmoothStep(knockbackForce,0, timeElapsed/knockbackDuration);
                 temp *= time.timeScale;
-                if (!isFacingRight)
-                {
-                    rb.velocity = new Vector2(temp, rb.velocity.y);
-                }
-                else
-                {
-                    rb.velocity = new Vector2(-temp, rb.velocity.y);
-                }
+                knockback(temp);
+
                 timeElapsed += time.deltaTime;
 
                 if(timeElapsed > knockbackDuration)
                 {
                     setState(State.ChaseTarget);
                 }
-                Debug.Log(knockbackForce);
                 anim.SetTrigger("knockback");
                 
                 break;
             case State.idle:
+                break;
+            case State.dead:
+                if(timeElapsed > knockbackDuration)
+                {
+                    return;
+                }
+                anim.SetTrigger("dead");
+                //math for smoothing
+                float tempDead = Mathf.SmoothStep(knockbackForce, 0, timeElapsed / knockbackDuration);
+                tempDead *= time.timeScale;
+
+                knockback(tempDead);
+
+                knockback(tempDead/2 , true);
+                timeElapsed += time.deltaTime;
                 break;
         }
     }
@@ -137,7 +155,26 @@ public class EnemyAI : MonoBehaviour {
         return Vector3.left;
     }
 
+    private void knockback(float power, bool yAxis = false)
+    {
+        if (!yAxis)
+        {
+            if (!isFacingRight)
+            {
+                rb.velocity = new Vector2(power, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(-power, rb.velocity.y);
+            }
+        } else
+        {
+            rb.velocity = new Vector2(rb.velocity.x, power);
+        }
+    }
 
+
+    
     private void moveTowardTarget()
     {
         anim.SetTrigger("walk");
@@ -165,6 +202,18 @@ public class EnemyAI : MonoBehaviour {
         {
             flip();
         }
+    }
+
+
+    //ini di panggil di animasi
+    private void disableHitBox()
+    {
+        hitBox.enabled = false;
+    }
+    private void enableHitBox()
+    {
+
+        hitBox.enabled = enabled;
     }
     private void flip()
     {

@@ -16,13 +16,13 @@ public class AttackAITrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.GetComponent<PlayerStatManager>());
         if (collision.gameObject.tag == "Player")
         {
             PlayerStatManager playerStatManager;
             playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
             if (playerStatManager != null)
             {
+
                 playerStatManager.takeDamage(stats.damage);
             }
         }

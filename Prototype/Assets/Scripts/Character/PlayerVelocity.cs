@@ -208,14 +208,15 @@ public class PlayerVelocity : MonoBehaviour
 
 
 	//kutambahin optional argument yang berguna untuk attack dash
-	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0)
+	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
 		
-		playerInput.enabled = false;
-		if (time.time - lastDashTime < dashCooldown)
+		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;
 		}
+
+		playerInput.enabled = false;
 
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (dashCount == 0)
@@ -262,6 +263,8 @@ public class PlayerVelocity : MonoBehaviour
     {
 		velocity = new Vector2(-5, 0);
 	}
+
+
 
 	private void ResetDashing()
     {

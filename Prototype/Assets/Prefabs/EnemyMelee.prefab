@@ -134,7 +134,7 @@ MonoBehaviour:
   maxPlayerHP: 20
   invicTimer: 1
   currentHp: 0
-  damage: 0
+  damage: 10
   isInvulnerable: 0
 --- !u!212 &1859622400746898896
 SpriteRenderer:
@@ -282,7 +282,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859622400974562228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
