@@ -2046,8 +2046,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1476892113}
   m_HandleRect: {fileID: 1476892112}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.49580815
+  m_Value: 0.99999934
+  m_Size: 0.49580818
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11538,7 +11538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -26412,8 +26412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 270, y: 270}
+  m_AnchoredPosition: {x: 1.485, y: 15.863}
+  m_SizeDelta: {x: 338.3, y: 301.726}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1611079575
 MonoBehaviour:
@@ -26463,7 +26463,7 @@ Animator:
   m_GameObject: {fileID: 1611079573}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad354730b29ce6d4a836392741d263f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: b1e81bf2ec38efb4b86fdf1474274751, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -28070,8 +28070,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 621137042}
   m_HandleRect: {fileID: 621137041}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.29808146
+  m_Value: 0.9999999
+  m_Size: 0.29808152
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
