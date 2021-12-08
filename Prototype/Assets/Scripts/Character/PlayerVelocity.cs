@@ -20,6 +20,7 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private float dashCooldown = 2f;
 	[SerializeField] private float rollPower = 10f;
 	[SerializeField] private float rollCooldown = 2f;
+	[SerializeField] private float knockbackCooldown = 0.15f;
 	[SerializeField] private int maxAirJump = 1;
 	[SerializeField] private PlayerAnimator playerAnimator;
 
@@ -35,11 +36,13 @@ public class PlayerVelocity : MonoBehaviour
 	private int dashCount;
 	private float lastDashTime;
 	private float lastRollTime;
+	private float lastKnockbackTime;
 	private float lastHorizontalVelocity;
 	private float tempDashPower;
 	private bool isDashing;
 	private bool isRolling;
 	private bool isInAir;
+	private bool isInKnockback;
 
 	private float gravity;
 	private float maxJumpVelocity;
@@ -69,7 +72,7 @@ public class PlayerVelocity : MonoBehaviour
 	void Update()
 	{
 		CalculateVelocity();
-
+		checkKnockback();
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
 
@@ -141,6 +144,14 @@ public class PlayerVelocity : MonoBehaviour
 	/// </summary>
 	public void SetDirectionalInput(Vector2 input)
 	{
+		//check apakah knockback udh selesai
+		
+		if(input != Vector2.zero)
+        {
+
+			playerMovement.lockedFlip = false;
+		}
+
 		directionalInput = input;
 	}
 
@@ -261,12 +272,27 @@ public class PlayerVelocity : MonoBehaviour
 
 	public void knockback(float DirectionX = 0, float DirectionY = 0)
     {
-		velocity = new Vector2(-5, 0);
+
+		playerInput.enabled = false;
+		isInKnockback = true;
+		lastKnockbackTime = time.time;
+		playerMovement.lockedFlip = true;
+		velocity = new Vector2(DirectionX, DirectionY);
 	}
+	private void checkKnockback()
+    {
 
+		Debug.Log(isInKnockback);
+		if (isInKnockback && (time.time - lastKnockbackTime) > knockbackCooldown)
+		{
 
+			isInKnockback = false;
+			playerInput.enabled = true;
+		}
+	}
+	
 
-	private void ResetDashing()
+private void ResetDashing()
     {
 		playerInput.enabled = true;
 		isDashing = false;

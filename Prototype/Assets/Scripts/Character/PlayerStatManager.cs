@@ -10,10 +10,16 @@ public class PlayerStatManager : MonoBehaviour
     [SerializeField] float maxPlayerHP = 100;
     [SerializeField] float maxPlayerEnergy = 50;
     [SerializeField] float invicTimer = 1;
+    [SerializeField] float knockbackPower = 10;
 
+    
+    [SerializeField] float cameraShakeIntensity = 5;
+    [SerializeField] float cameraShakeFrequency = 1;
+    [SerializeField] float cameraShakeTimer = 0.1f;
 
     [Header("Energy Parameter")]
     [SerializeField] float energyDrainRate = 0.5f;
+    [SerializeField] float energyRegenRate = 0.5f;
 
     [Header("UI Reference")]
     [SerializeField] private Slider hpProgressUI = null;
@@ -24,11 +30,13 @@ public class PlayerStatManager : MonoBehaviour
     public float currentEnergy;
     private bool isUsingEnergy;
     private float internalTimer;
+    private PlayerVelocity player;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         isUsingEnergy = false;
         setPlayerStat();
+        player = GetComponent<PlayerVelocity>();
     }
 
     private void setPlayerStat()
@@ -45,10 +53,16 @@ public class PlayerStatManager : MonoBehaviour
 
     }
 
-    public void takeDamage(float dmg)
+    public void takeDamage(float dmg, Vector3 enemyPosition)
     {
+        CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
         currentHp -= dmg;
         hpProgressUI.value = currentHp;
+        Vector2 direction = transform.position - enemyPosition;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float xside = Mathf.Cos(angle * Mathf.PI / 180) * knockbackPower;
+        float yside = Mathf.Sin(angle * Mathf.PI / 180) * knockbackPower;
+        player.knockback(xside , yside);
     }
 
     public void useEnergy()

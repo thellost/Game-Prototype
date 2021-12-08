@@ -23,7 +23,7 @@ public class AttackAITrigger : MonoBehaviour
             if (playerStatManager != null)
             {
 
-                playerStatManager.takeDamage(stats.damage);
+                playerStatManager.takeDamage(stats.damage, transform.position);
             }
         }
     }
