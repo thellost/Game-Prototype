@@ -1,16 +1,16 @@
-Argggh! #speaker:Dr. Green #portrait:green_neutral #layout:left
+Dimana professor ?! #speaker:Felicia #portrait:CiaNetral #layout:left
 -> main
 
 === main ===
 Siapa kamu ?
 + [Sekutu]
-    god, kamu menggagetkan ku saja #portrait:green_happy
+    god, kamu menggagetkan ku saja #portrait:CiaNetral
 + [Musuh]
-    Panggil bantuan ! Ada penyusup #portrait:green_sad
+    Panggil bantuan ! Ada penyusup #portrait:CiaNetral
     
-- Siapa aku tidak penting! Dimana professor ? #speaker:Yellow #portrait:yellow_neutral #layout:right
+- Siapa aku tidak penting! #speaker:Enemy #portrait:EnemyNetral #layout:right
 
-Well, do you have any more questions? #speaker:Green #portrait:green_neutral #layout:left
+Well, do you have any more questions? #speaker:Felicia #portrait:CiaNetral #layout:left
 + [Yes]
     -> main
 + [No]
