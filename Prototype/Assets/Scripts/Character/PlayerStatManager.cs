@@ -28,15 +28,21 @@ public class PlayerStatManager : MonoBehaviour
     public TimeManager timeManager;
     public float currentHp;
     public float currentEnergy;
+
+    public bool isDead;
     private bool isUsingEnergy;
     private float internalTimer;
     private PlayerVelocity player;
+    private CharacterAttack attack;
+    private PlayerAnimator animator;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         isUsingEnergy = false;
         setPlayerStat();
         player = GetComponent<PlayerVelocity>();
+        attack = GetComponent<CharacterAttack>();
+        animator = GetComponent<PlayerAnimator>();
     }
 
     private void setPlayerStat()
@@ -87,6 +93,13 @@ public class PlayerStatManager : MonoBehaviour
             
         }
 
+        if(currentHp <= 0)
+        {
+            dead();
+            
+        }
+
+
         if (isUsingEnergy)
         {
             currentEnergy -= energyDrainRate * Time.unscaledDeltaTime;
@@ -97,5 +110,13 @@ public class PlayerStatManager : MonoBehaviour
             }
         }
 
+    }
+
+    public void dead()
+    {
+        animator.SetDead(true);
+        animator.enabled = false;
+        attack.enabled = false;
+        isDead = true;
     }
 }
