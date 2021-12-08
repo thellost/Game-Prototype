@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.19
   attackDistance: 1.5
-  attackSpeed: 1
-  knockbackForce: 10
+  attackSpeed: 0.85
+  knockbackForce: 15
   knockbackDuration: 0.5
   hitBox: {fileID: 1859622400974562231}
   detectionBox: {fileID: 1859622401628412004}

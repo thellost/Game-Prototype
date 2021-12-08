@@ -238,6 +238,7 @@ public class EnemyAI : MonoBehaviour {
     public void setState(State stateParameter)
     {
         isAttacking = false;
+        disableHitBox();
         state = stateParameter;
         timeElapsed = 0;
     }
