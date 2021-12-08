@@ -16,7 +16,6 @@ public class BulletTimeLight : MonoBehaviour
             Debug.Log(previousIntensity);
             previousIntensity.Add(allLight[i].intensity);
         }
-        StartCoroutine(fadeIntensity(true));
     }
 
     // Update is called once per frame
@@ -34,41 +33,7 @@ public class BulletTimeLight : MonoBehaviour
         }
     }
 
-    IEnumerator fadeIntensity(bool isFading)
-    {
-        float velocity = 0.0f;
-        // fade from opaque to transparent
-        if (isFading)
-        {
-            // loop over second backwards
-            for (float i = fadeDuration; i >= 0; i -= Time.deltaTime)
-            {
-
-                // set color with i as alpha
-                //img.color = new Color(1, 1, 1, i);
-                for (int a = 0; a < allLight.Count; a++)
-                {
-                    float temp = Mathf.SmoothDamp(allLight[a].intensity, desiredIntensity, ref velocity, fadeDuration);
-                    allLight[a].intensity = temp;
-                }
-                yield return new WaitForEndOfFrame();
-            }
-        }
-        // fade from transparent to opaque
-        else
-        {
-            // loop over 2 second
-            for (float i = 0; i <= fadeDuration; i += Time.deltaTime)
-            {
-                for (int a = 0; a < allLight.Count; a++)
-                {
-                    float temp = Mathf.SmoothDamp(allLight[a].intensity, previousIntensity[a], ref velocity, fadeDuration);
-                    allLight[a].intensity = temp;
-                }
-                yield return new WaitForEndOfFrame();
-            }
-        }
-    }
+ 
 
     IEnumerator Lerp(bool isFading)
     {
@@ -80,7 +45,8 @@ public class BulletTimeLight : MonoBehaviour
 
                 for (int a = 0; a < allLight.Count; a++)
                 {
-                    allLight[a].intensity = Mathf.Lerp(allLight[a].intensity, desiredIntensity, timeElapsed / fadeDuration);
+                    float temp = Mathf.SmoothStep(allLight[a].intensity, desiredIntensity, timeElapsed / fadeDuration);
+                    allLight[a].intensity = temp;
                 }
 
                 timeElapsed += Time.deltaTime;
@@ -101,7 +67,8 @@ public class BulletTimeLight : MonoBehaviour
 
                 for (int a = 0; a < allLight.Count; a++)
                 {
-                    allLight[a].intensity = Mathf.Lerp(allLight[a].intensity, previousIntensity[a], timeElapsed / fadeDuration);
+                    float temp = Mathf.SmoothStep(allLight[a].intensity, previousIntensity[a], timeElapsed / fadeDuration);
+                    allLight[a].intensity = temp;
                 }
 
                 timeElapsed += Time.deltaTime;

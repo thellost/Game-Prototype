@@ -3993,7 +3993,7 @@
     },
     "m_Name": "Saturation",
     "m_DefaultReferenceName": "Vector1_7d9cea4f766d472f9675935af83e45e8",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Saturation",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

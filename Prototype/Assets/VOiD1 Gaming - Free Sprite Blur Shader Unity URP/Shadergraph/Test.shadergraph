@@ -638,7 +638,7 @@
     },
     "m_Name": "Greyscale",
     "m_DefaultReferenceName": "Vector1_469f3a6a76f74478a1e87549b60f2bcd",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_Greyscale",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
