@@ -317,7 +317,12 @@ MonoBehaviour:
   maxPlayerHP: 100
   maxPlayerEnergy: 100
   invicTimer: 1
+  knockbackPower: 35
+  cameraShakeIntensity: 7
+  cameraShakeFrequency: 1.1
+  cameraShakeTimer: 0.1
   energyDrainRate: 5
+  energyRegenRate: 0.5
   hpProgressUI: {fileID: 0}
   energyProgressUI: {fileID: 0}
   timeManager: {fileID: 0}
@@ -378,6 +383,7 @@ MonoBehaviour:
   dashCooldown: 0.75
   rollPower: 20
   rollCooldown: 0.5
+  knockbackCooldown: 0.15
   maxAirJump: 0
   playerAnimator: {fileID: 4267103544329921359}
   standingColliderSize: {x: 3, y: 7}

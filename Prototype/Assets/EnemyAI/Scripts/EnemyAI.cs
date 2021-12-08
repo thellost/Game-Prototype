@@ -88,6 +88,7 @@ public class EnemyAI : MonoBehaviour {
                 break;
 
             case State.AttackTarget:
+                Debug.Log(isAttacking);
                 if (attackTimer <= 0 && Vector2.Distance(target.position, transform.position) < attackDistance)
                 {
 
@@ -100,7 +101,6 @@ public class EnemyAI : MonoBehaviour {
                 {
 
                     anim.SetBool("attacking", false);
-                    isAttacking = false;
                     setState(State.ChaseTarget);
                     break;
                 }
@@ -238,6 +238,7 @@ public class EnemyAI : MonoBehaviour {
     }
     public void setState(State stateParameter)
     {
+        isAttacking = false;
         state = stateParameter;
         timeElapsed = 0;
     }
