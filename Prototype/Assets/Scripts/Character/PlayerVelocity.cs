@@ -72,7 +72,7 @@ public class PlayerVelocity : MonoBehaviour
 	void Update()
 	{
 		CalculateVelocity();
-		checkKnockback();
+		// checkKnockback();
 		// r = r0 + 1/2(v+v0)t, note Vector version used here
 		// displacement = 1/2(v+v0)t since the playerMovementController uses Translate which moves from r0
 
@@ -146,13 +146,14 @@ public class PlayerVelocity : MonoBehaviour
 	{
 		//check apakah knockback udh selesai
 		
-		if(input != Vector2.zero)
-        {
-
-			playerMovement.lockedFlip = false;
-		}
-
 		directionalInput = input;
+	}
+
+	private void enableMovement()
+	{
+		isInKnockback = false;
+		playerMovement.lockedFlip = false;
+		playerInput.enabled = true;
 	}
 
 	/// <summary>
@@ -272,7 +273,7 @@ public class PlayerVelocity : MonoBehaviour
 
 	public void knockback(float DirectionX = 0, float DirectionY = 0)
     {
-
+		playerAnimator.SetKnockback();
 		playerInput.enabled = false;
 		isInKnockback = true;
 		lastKnockbackTime = time.time;

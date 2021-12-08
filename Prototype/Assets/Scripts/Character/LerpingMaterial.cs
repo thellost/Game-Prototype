@@ -18,17 +18,22 @@ public class LerpingMaterial : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.O))
         {
             StopAllCoroutines();
-            StartCoroutine(Lerp(true));
+            StartCoroutine(LerpMaterial(true));
         }
         if (Input.GetKeyDown(KeyCode.P))
         {
             StopAllCoroutines();
-            StartCoroutine(Lerp(false));
+            StartCoroutine(LerpMaterial(false));
         }
     }
+    public void setMaterialEffect(bool isFading)
+    {
 
+        StopAllCoroutines();
+        StartCoroutine(LerpMaterial(isFading));
+    }
 
-    IEnumerator Lerp(bool isFading)
+    IEnumerator LerpMaterial(bool isFading)
     {
         float timeElapsed = 0;
         val = greyscaleMaterial.GetFloat("_Greyscale");

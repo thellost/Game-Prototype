@@ -36,4 +36,14 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetFloat("SpeedY", speedY);
     }
 
+    public void SetKnockback()
+    {
+        animator.SetTrigger("knockback");
+    }
+    public void SetDead(bool dead)
+    {
+
+        animator.SetBool("dead", dead);
+    }
+
 }

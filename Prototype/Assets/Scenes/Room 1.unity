@@ -41500,9 +41500,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1859622400746898899, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1859622400746898903, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_Name
       value: EnemyMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859622400746898909, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1859622400746898910, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_RootOrder
@@ -41558,6 +41566,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1859622400974562231, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859622401898865436, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1859622402498068404, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
@@ -41759,6 +41771,14 @@ PrefabInstance:
       propertyPath: energyProgressUI
       value: 
       objectReference: {fileID: 1759035259}
+    - target: {fileID: 4267103544329921358, guid: 83a31e26739faf248a89f9fdf31dfa37, type: 3}
+      propertyPath: cameraShakeFrequency
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267103544329921358, guid: 83a31e26739faf248a89f9fdf31dfa37, type: 3}
+      propertyPath: cameraShakeIntensity
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4267103544329921362, guid: 83a31e26739faf248a89f9fdf31dfa37, type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -100,7 +100,6 @@ public class EnemyAI : MonoBehaviour {
                 {
 
                     anim.SetBool("attacking", false);
-                    isAttacking = false;
                     setState(State.ChaseTarget);
                     break;
                 }
@@ -238,6 +237,7 @@ public class EnemyAI : MonoBehaviour {
     }
     public void setState(State stateParameter)
     {
+        isAttacking = false;
         state = stateParameter;
         timeElapsed = 0;
     }
