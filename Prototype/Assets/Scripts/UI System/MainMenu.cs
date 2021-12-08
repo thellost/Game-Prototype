@@ -7,7 +7,7 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Volume Setting")]
+    /*[Header("Volume Setting")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
     [SerializeField] private float defaultVolume = 1.0f;
@@ -35,20 +35,20 @@ public class MainMenu : MonoBehaviour
     private float _brightnessLevel;
 
     [Header("Confirmation")]
-    [SerializeField] private GameObject comfirmationPrompt = null;
+    [SerializeField] private GameObject comfirmationPrompt = null;*/
 
     [Header("Level To Load")]
     public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSaveGameDialog = null;
 
-    [Header("Resolution Dropdowns")]
+    /*[Header("Resolution Dropdowns")]
     public TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
+    private Resolution[] resolutions;*/
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
+        /*resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
@@ -68,14 +68,14 @@ public class MainMenu : MonoBehaviour
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.RefreshShownValue();*/
     }
 
-    public void SetResolution(int resolutionIndex)
+    /*public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    }*/
 
     public void NewGameDialogYes()
     {
@@ -101,7 +101,7 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume)
+    /*public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
         volumeTextValue.text = volume.ToString("0.0");
@@ -203,5 +203,5 @@ public class MainMenu : MonoBehaviour
         comfirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2);
         comfirmationPrompt.SetActive(false);
-    }
+    }*/
 }

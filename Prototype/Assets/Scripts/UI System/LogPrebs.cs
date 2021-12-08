@@ -6,7 +6,7 @@ using TMPro;
 
 public class LogPrebs : MonoBehaviour
 {
-    [Header("General Setting")]
+    /*[Header("General Setting")]
     [SerializeField] private bool canUse = false;
     [SerializeField] private MainMenu menuController;
 
@@ -100,5 +100,5 @@ public class LogPrebs : MonoBehaviour
                 invertYToggle.isOn = false;
             }
         }
-    }
+    }*/
 }
