@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Coba Movement 2.unity
     guid: 1b0ce1c213e7039479c405762273a690
   - enabled: 1
-    path: Assets/Scenes/eiai.unity
+    path: Assets/Scenes/eiai main.unity
     guid: cc99f5543a1793b40a5e53a46d5b7d9c
   - enabled: 1
     path: Assets/Scenes/Map.unity
     guid: 96026eefb33fe624ba057b148bbbeb6f
+  - enabled: 1
+    path: Assets/Scenes/Augment.unity
+    guid: 67cccfb354d40a34c83d98d85100aed2
   m_configObjects: {}
