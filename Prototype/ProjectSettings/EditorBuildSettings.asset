@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Augment.unity
     guid: 67cccfb354d40a34c83d98d85100aed2
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9c7ba8bbadc525443af22236fa304b30
   m_configObjects: {}
