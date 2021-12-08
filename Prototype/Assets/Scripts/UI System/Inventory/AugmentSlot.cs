@@ -13,5 +13,6 @@ public class AugmentSlot : MonoBehaviour, IDropHandler
         //}
         Debug.Log("OnDrop");
         eventData.pointerDrag.GetComponent<DragItem>().droppedOnSlot = true;
+        
     }
 }

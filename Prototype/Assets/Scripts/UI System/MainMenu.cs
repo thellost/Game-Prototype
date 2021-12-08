@@ -7,11 +7,11 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Volume Setting")]
+    /*[Header("Volume Setting")]
     [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] private Slider volumeSlider = null;
-    [SerializeField] private float defaultVolume = 50f;
-    
+    [SerializeField] private float defaultVolume = 1.0f;
+
     [Header("Gameplay Setting")]
     [SerializeField] private TMP_Text controllerSenTextValue = null;
     [SerializeField] private Slider controllerSenSlider = null;
@@ -35,20 +35,20 @@ public class MainMenu : MonoBehaviour
     private float _brightnessLevel;
 
     [Header("Confirmation")]
-    [SerializeField] private GameObject confirmationPrompt = null;
+    [SerializeField] private GameObject comfirmationPrompt = null;*/
 
     [Header("Level To Load")]
     public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSaveGameDialog = null;
 
-    [Header("Resolution Dropdowns")]
+    /*[Header("Resolution Dropdowns")]
     public TMP_Dropdown resolutionDropdown;
-    private Resolution[] resolutions;
+    private Resolution[] resolutions;*/
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
+        /*resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
@@ -68,14 +68,14 @@ public class MainMenu : MonoBehaviour
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
+        resolutionDropdown.RefreshShownValue();*/
     }
 
-    public void SetResolution(int resolutionIndex)
+    /*public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    }*/
 
     public void NewGameDialogYes()
     {
@@ -101,10 +101,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume(float volume)
+    /*public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0");
+        volumeTextValue.text = volume.ToString("0.0");
     }
 
     public void VolumeApply()
@@ -164,27 +164,10 @@ public class MainMenu : MonoBehaviour
 
     public void ResetButton(string MenuType)
     {
-        if (MenuType == "Audio")
-        {
-            AudioListener.volume = defaultVolume;
-            volumeSlider.value = defaultVolume;
-            volumeTextValue.text = defaultVolume.ToString("0");
-            VolumeApply();
-        }
-
-        if (MenuType == "Gameplay")
-        {
-            controllerSenTextValue.text = defaultSen.ToString("0");
-            controllerSenSlider.value = defaultSen;
-            mainControllerSen = defaultSen;
-            invertYToggle.isOn = false;
-            GameplayApply();
-        }
-
         if (MenuType == "Graphics")
         {
             brightnessSlider.value = defaultBrightness;
-            brightnessTextValue.text = defaultBrightness.ToString("0");
+            brightnessTextValue.text = defaultBrightness.ToString("0.0");
 
             qualityDropdown.value = 1;
             QualitySettings.SetQualityLevel(1);
@@ -197,12 +180,28 @@ public class MainMenu : MonoBehaviour
             resolutionDropdown.value = resolutions.Length;
             GraphicsApply();
         }
+
+        if (MenuType == "Audio")
+        {
+            AudioListener.volume = defaultVolume;
+            volumeSlider.value = defaultVolume;
+            volumeTextValue.text = defaultVolume.ToString("0.0");
+            VolumeApply();
+        }
+
+        if (MenuType == "Gameplay")
+        {
+            controllerSenTextValue.text = defaultSen.ToString("0");
+            controllerSenSlider.value = defaultSen;
+            invertYToggle.isOn = false;
+            GameplayApply();
+        }
     }
 
     public IEnumerator ConfirmationBox()
     {
-        confirmationPrompt.SetActive(true);
+        comfirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2);
-        confirmationPrompt.SetActive(false);
-    }
+        comfirmationPrompt.SetActive(false);
+    }*/
 }
