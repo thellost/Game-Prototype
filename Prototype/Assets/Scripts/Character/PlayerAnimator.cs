@@ -40,5 +40,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator.SetTrigger("knockback");
     }
+    public void SetDead(bool dead)
+    {
+
+        animator.SetBool("dead", dead);
+    }
 
 }

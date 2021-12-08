@@ -33,7 +33,11 @@ public class BulletTimeLight : MonoBehaviour
         }
     }
 
- 
+    public void startEffect(bool isFading)
+    {
+        StopAllCoroutines();
+        StartCoroutine(Lerp(isFading));
+    }
 
     IEnumerator Lerp(bool isFading)
     {

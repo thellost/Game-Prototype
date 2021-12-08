@@ -88,7 +88,6 @@ public class EnemyAI : MonoBehaviour {
                 break;
 
             case State.AttackTarget:
-                Debug.Log(isAttacking);
                 if (attackTimer <= 0 && Vector2.Distance(target.position, transform.position) < attackDistance)
                 {
 

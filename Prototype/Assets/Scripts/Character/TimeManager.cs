@@ -12,12 +12,16 @@ public class TimeManager : MonoBehaviour
 
     private bool isInSlowmo;
     private Clock enemyClock, playerClock, bulletClock;
+    private BulletTimeLight bulletTimeEffect;
+    private LerpingMaterial materialEffect;
 
     private void Start()
     {
         enemyClock = Timekeeper.instance.Clock("Enemies");
         playerClock = Timekeeper.instance.Clock("Player");
         bulletClock = Timekeeper.instance.Clock("Bullet");
+        bulletTimeEffect = GetComponent<BulletTimeLight>();
+        materialEffect = GetComponent<LerpingMaterial>();
     }
 
     void Update()
@@ -37,6 +41,8 @@ public class TimeManager : MonoBehaviour
                 if (!isInSlowmo)
                 {
                     isInSlowmo = true;
+                    bulletTimeEffect.startEffect(false);
+                    materialEffect.setMaterialEffect(false);
                     enemyClock.localTimeScale = enemiesSlowDownFactor;
                     playerClock.localTimeScale = playerSlowDownFactor;
                     bulletClock.localTimeScale = bulletSlowDownFactor;
@@ -53,6 +59,9 @@ public class TimeManager : MonoBehaviour
 
     public void stopSlowMotion()
     {
+
+        bulletTimeEffect.startEffect(true);
+        materialEffect.setMaterialEffect(true);
         enemyClock.localTimeScale = 1;
         playerClock.localTimeScale = 1;
         bulletClock.localTimeScale = 1;
