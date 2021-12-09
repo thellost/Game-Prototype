@@ -10,7 +10,7 @@ public class TimeManager : MonoBehaviour
     public float slowDownDuration = 3f;
     public PlayerStatManager playerStat;
 
-    private bool isInSlowmo;
+    public bool isInSlowmo;
     private Clock enemyClock, playerClock, bulletClock;
     private BulletTimeLight bulletTimeEffect;
     private LerpingMaterial materialEffect;

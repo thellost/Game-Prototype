@@ -12,6 +12,7 @@ public class EnemyStat : MonoBehaviour
     public float currentHp;
     public float damage;
     public bool isInvulnerable;
+    public bool dead;
     private float internalTimer;
     private EnemyAI ai;
     // Start is called before the first frame update
@@ -20,6 +21,7 @@ public class EnemyStat : MonoBehaviour
         ai = GetComponent<EnemyAI>();
         internalTimer = 0;
         setPlayerStat();
+        dead = false;
     }
 
     private void setPlayerStat()
@@ -32,20 +34,33 @@ public class EnemyStat : MonoBehaviour
     {
         if (currentHp <= 0)
         {
+            dead = true;
+
+            this.enabled = false;
             return false;
         }
         return true;
     }
+
+    private void disableRigidbody()
+    {
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+    }
     public bool takeDamage(float dmg)
     {
-        if (!isInvulnerable)
+        if (!dead)
         {
-            internalTimer = invicTimer;
-            
-            currentHp -= dmg;
+            if (!isInvulnerable)
+            {
+                isInvulnerable = true;
+                internalTimer = invicTimer;
 
-            
-            return true;
+                currentHp -= dmg;
+
+
+                Debug.Log("tas");
+                return true;
+            }
         }
         return false;
     }
@@ -56,7 +71,6 @@ public class EnemyStat : MonoBehaviour
     {
         if(internalTimer > 0)
         {
-            isInvulnerable = true;
             internalTimer -= Time.deltaTime;
         }
         else

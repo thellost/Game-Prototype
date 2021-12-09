@@ -30,7 +30,6 @@ public class PlayerStatManager : MonoBehaviour
     public float currentEnergy;
 
     public bool isDead;
-    private bool isUsingEnergy;
     private float internalTimer;
     private PlayerVelocity player;
     private CharacterAttack attack;
@@ -38,7 +37,6 @@ public class PlayerStatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isUsingEnergy = false;
         setPlayerStat();
         player = GetComponent<PlayerVelocity>();
         attack = GetComponent<CharacterAttack>();
@@ -72,11 +70,7 @@ public class PlayerStatManager : MonoBehaviour
         player.knockback(xside , yside);
     }
 
-    public void useEnergy()
-    {
-        isUsingEnergy = !isUsingEnergy;
-       
-    }
+
 
     // Update is called once per frame
     void Update()
@@ -88,12 +82,6 @@ public class PlayerStatManager : MonoBehaviour
         //    internalTimer = 0;
         //    takeDamage(5);
         //}
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            useEnergy();
-            
-        }
-
         if(currentHp <= 0)
         {
             dead();
@@ -101,7 +89,7 @@ public class PlayerStatManager : MonoBehaviour
         }
 
 
-        if (isUsingEnergy)
+        if (timeManager.isInSlowmo)
         {
             currentEnergy -= energyDrainRate * Time.unscaledDeltaTime;
             
