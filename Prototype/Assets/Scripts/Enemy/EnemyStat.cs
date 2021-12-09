@@ -8,7 +8,7 @@ public class EnemyStat : MonoBehaviour
     [SerializeField] float maxPlayerHP = 100;
     [SerializeField] float invicTimer = 1;
 
-
+    public AudioClip enemyTakeDamageSfx;
     public float currentHp;
     public float damage;
     public bool isInvulnerable;
@@ -59,8 +59,8 @@ public class EnemyStat : MonoBehaviour
 
 
                 Debug.Log("tas");
-                return true;
-            }
+            SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
+            return true;
         }
         return false;
     }

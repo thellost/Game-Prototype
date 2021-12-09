@@ -15,6 +15,7 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayBGM(AudioClip bgmClip)
     {
         bgmSource.clip = bgmClip;
+        bgmSource.volume = 0.5f;
         bgmSource.Play();
     }
 
@@ -23,9 +24,9 @@ public class SoundManager : Singleton<SoundManager>
         var go = new GameObject(sfxClip.name);
         var audio = go.AddComponent<AudioSource>();
 
+        audio.volume = 1.0f;
         audio.clip = sfxClip;
         audio.Play();
         Destroy(go, sfxClip.length);
     }
-
 }
