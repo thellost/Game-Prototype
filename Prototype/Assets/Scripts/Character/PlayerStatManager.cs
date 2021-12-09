@@ -61,6 +61,7 @@ public class PlayerStatManager : MonoBehaviour
 
     public void takeDamage(float dmg, Vector3 enemyPosition)
     {
+        BloodEffect.Instance.setBlood();
         CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
         currentHp -= dmg;
         hpProgressUI.value = currentHp;
