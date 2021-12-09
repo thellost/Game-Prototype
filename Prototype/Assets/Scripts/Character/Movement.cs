@@ -62,7 +62,10 @@ public class Movement : BoxColliderCasts
 			CheckVerticalCollisions(ref displacement);
 		}
 
-		transform.Translate(displacement);
+		if (Time.timeScale != 0)
+		{
+			transform.Translate(displacement);
+		}
 
 		// Reset grounded variables
 		if (collisionDirection.below == true)
