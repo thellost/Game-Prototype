@@ -17,6 +17,7 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer = 0.1f;
     [SerializeField] float slashAnimationSpeed;
+
     private bool isAttacking;
     private PlayerVelocity playerVelocity;
     private Vector2 direction;
@@ -71,8 +72,7 @@ public class CharacterAttack : MonoBehaviour
     }
 
     public void triggerAttackRaycast()
-    { 
-        
+    {
         //mouse position
         Vector3 directionAnimation = direction.normalized * attackRangeCircle;
         
@@ -85,7 +85,6 @@ public class CharacterAttack : MonoBehaviour
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
             Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
-
             
 
             //handle damage and camera shake also buller

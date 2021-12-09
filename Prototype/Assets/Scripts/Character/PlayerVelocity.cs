@@ -29,8 +29,11 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private Vector2 standingColliderOffset;
 	[SerializeField] private Vector2 rollingColliderOffset;
 
+	[SerializeField] private AudioSource audioSource;
+	[SerializeField] private AudioClip runningSfx;
 	[SerializeField] private AudioClip jumpSfx;
 	[SerializeField] private AudioClip dashSfx;
+	[SerializeField] private AudioClip slashSfx;
 
 	private int airJumpCount;
 	private int dashCount;
@@ -43,6 +46,7 @@ public class PlayerVelocity : MonoBehaviour
 	private bool isRolling;
 	private bool isInAir;
 	private bool isInKnockback;
+	private bool isMoving;
 
 	private float gravity;
 	private float maxJumpVelocity;
@@ -80,6 +84,30 @@ public class PlayerVelocity : MonoBehaviour
 		// Move player using movement controller which checks for collisions then applies correct transform (displacement) translation
 		
 		playerMovement.Move(displacement, directionalInput);
+
+		// check if player is running
+		if(directionalInput.x != 0)
+        {
+			isMoving = true;
+        } 
+		else
+        {
+			isMoving = false;
+        }
+
+        // play running sfx
+        if (isMoving)
+        {
+			if (!audioSource.isPlaying)
+			{
+				audioSource.clip = runningSfx;
+				audioSource.Play();
+			}
+		}
+		else
+        {
+			audioSource.Stop();
+        }
 
 		bool verticalCollision = playerMovement.collisionDirection.above || playerMovement.collisionDirection.below;
 
@@ -222,7 +250,7 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
-		
+
 		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;
@@ -267,8 +295,16 @@ public class PlayerVelocity : MonoBehaviour
 		lastDashTime = time.time;
 		airJumpCount++;
 
-		// test sfx
-		SoundManager.Instance.PlaySFX(dashSfx);
+        // test sfx
+        
+
+        if (normalDash == false)
+        {
+			SoundManager.Instance.PlaySFX(slashSfx);
+		} else
+        {
+			SoundManager.Instance.PlaySFX(dashSfx);
+        }
     }
 
 	public void knockback(float DirectionX = 0, float DirectionY = 0)

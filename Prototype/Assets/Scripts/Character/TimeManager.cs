@@ -3,6 +3,8 @@ using Chronos;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip bulletTimeSfx;
+
     public bool slowMotionActivated;
     public float enemiesSlowDownFactor = 0.2f;
     public float playerSlowDownFactor = 0.4f;
@@ -47,6 +49,8 @@ public class TimeManager : MonoBehaviour
                     playerClock.localTimeScale = playerSlowDownFactor;
                     bulletClock.localTimeScale = bulletSlowDownFactor;
                     //Invoke("stopSlowMotion", slowDownDuration);
+
+                    SoundManager.Instance.PlaySFX(bulletTimeSfx);
                 }
 
                 else
