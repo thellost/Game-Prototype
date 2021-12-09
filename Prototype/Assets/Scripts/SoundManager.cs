@@ -15,16 +15,16 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayBGM(AudioClip bgmClip)
     {
         bgmSource.clip = bgmClip;
-        bgmSource.volume = 0.5f;
+        bgmSource.volume = 0.04f;
         bgmSource.Play();
     }
 
-    public void PlaySFX(AudioClip sfxClip)
+    public void PlaySFX(AudioClip sfxClip, float volume = 1)
     {
         var go = new GameObject(sfxClip.name);
         var audio = go.AddComponent<AudioSource>();
 
-        audio.volume = 1.0f;
+        audio.volume = volume;
         audio.clip = sfxClip;
         audio.Play();
         Destroy(go, sfxClip.length);

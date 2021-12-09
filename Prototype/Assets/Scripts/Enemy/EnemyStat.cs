@@ -59,8 +59,9 @@ public class EnemyStat : MonoBehaviour
 
 
                 Debug.Log("tas");
-            SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
-            return true;
+                SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
+                return true;
+            }
         }
         return false;
     }

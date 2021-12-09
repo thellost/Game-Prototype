@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour {
 
     private void Awake() {
         stats = gameObject.GetComponent<EnemyStat>();
-        state = State.AttackTarget;
+        state = State.idle;
         target = GameObject.Find("Player").GetComponent<Transform>();
         anim = gameObject.GetComponent<Animator>();
         time = gameObject.GetComponent<Timeline>();
@@ -65,6 +65,7 @@ public class EnemyAI : MonoBehaviour {
             Debug.Log("aa");
             dead = true;
             setState(State.dead);
+
         }
         switch (state) {
             default:

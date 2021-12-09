@@ -10,7 +10,6 @@ public class SceneLoader : MonoBehaviour
         if(collision.gameObject.tag == "PrevRoom")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            Debug.Log("test pindah");
         }
         
         else if (collision.gameObject.tag == "NextRoom")

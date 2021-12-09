@@ -96,7 +96,7 @@ public class PlayerVelocity : MonoBehaviour
         }
 
         // play running sfx
-        if (isMoving)
+        if (isMoving && playerMovement.collisionDirection.below)
         {
 			if (!audioSource.isPlaying)
 			{
@@ -219,7 +219,7 @@ public class PlayerVelocity : MonoBehaviour
 		// test sfx
 		if (jumpSfx != null)
 		{
-			SoundManager.Instance.PlaySFX(jumpSfx);
+			SoundManager.Instance.PlaySFX(jumpSfx, 0.2f);
 		}
 	}
 

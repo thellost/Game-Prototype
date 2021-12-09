@@ -55,7 +55,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.76367843
+  m_Mass: 1.8986474
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 2
@@ -101,7 +101,7 @@ MonoBehaviour:
   knockbackForce: 15
   knockbackDuration: 0.5
   hitBox: {fileID: 1859622400974562231}
-  detectionBox: {fileID: 1859622401628412004}
+  detectionBox: {fileID: 0}
 --- !u!114 &1859622400746898898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayerHP: 20
   invicTimer: 1
+  enemyTakeDamageSfx: {fileID: 8300000, guid: 9274d691f4494794dba97a46efd541c3, type: 3}
   currentHp: 0
   damage: 10
   isInvulnerable: 0
@@ -324,7 +325,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1859622401628412005}
-  - component: {fileID: 1859622401628412004}
+  - component: {fileID: 405842319570386510}
+  - component: {fileID: 8112486924595685641}
   m_Layer: 10
   m_Name: triggerArea
   m_TagString: Untagged
@@ -346,8 +348,20 @@ Transform:
   m_Father: {fileID: 1859622400746898910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1859622401628412004
-BoxCollider2D:
+--- !u!114 &405842319570386510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859622401628411930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbb232d17a6e284fbfcfb0c0d4e20ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &8112486924595685641
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -359,7 +373,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.7213688, y: 3.9696894}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -369,9 +383,13 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.5923157, y: 8.939377}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.04389642, y: -0.7357481}
+      - {x: 0.05207005, y: 5.132079}
+      - {x: 0.50764966, y: 6.512058}
+      - {x: 6.56777, y: 10.266365}
+      - {x: 6.545015, y: -0.8738409}
 --- !u!1 &1859622401681579072
 GameObject:
   m_ObjectHideFlags: 0

@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a80e20b7caee7b1499fe2693c96ef73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerHP: 100
+  maxPlayerHP: 40
   maxPlayerEnergy: 100
   invicTimer: 1
   knockbackPower: 35
@@ -345,7 +345,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   skinWidth: 0.015
-  distanceBetweenRays: 0.25
+  distanceBetweenRays: 0.15
   boxCollider: {fileID: 0}
   horizontalRayCount: 0
   verticalRayCount: 0
@@ -373,9 +373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 9
-  maxJumpHeight: 3
+  maxJumpHeight: 3.5
   minJumpHeight: 0.1
-  timeToJumpApex: 0.35
+  timeToJumpApex: 0.4
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
   forceFallSpeed: 20
@@ -393,7 +393,7 @@ MonoBehaviour:
   rollingColliderOffset: {x: 0.25, y: -1.6}
   audioSource: {fileID: 4267103544329921361}
   runningSfx: {fileID: 8300000, guid: ff228425183735a40abbea33258460a8, type: 3}
-  jumpSfx: {fileID: 8300000, guid: 9274d691f4494794dba97a46efd541c3, type: 3}
+  jumpSfx: {fileID: 8300000, guid: 3125295a0ec4c9d499f04661feabf443, type: 3}
   dashSfx: {fileID: 8300000, guid: 9d85956a2d5583844bd252f492c4da2e, type: 3}
   slashSfx: {fileID: 8300000, guid: 34ccdd74379dab940a970cbfd374b0a4, type: 3}
 --- !u!114 &4267103544329921366
@@ -445,7 +445,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3f54f8c2049684a4486810e41b7446b3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.51
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
