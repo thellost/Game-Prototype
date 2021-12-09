@@ -7,11 +7,12 @@ public class AugmentSlot : MonoBehaviour, IDropHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
-        //if(eventData.pointerDrag != null)
-        //{
-        //    eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
-        //}
+        if(eventData.pointerDrag != null)
+        {
+            eventData.pointerDrag.GetComponent<DragItem>().droppedOnSlot = true;
+            //eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+        }
         Debug.Log("OnDrop");
-        eventData.pointerDrag.GetComponent<DragItem>().droppedOnSlot = true;
+        
     }
 }
