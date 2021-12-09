@@ -9,7 +9,7 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
     private Vector3 defaultPosition;
-    public bool droppedOnSlot;
+    [HideInInspector] public bool droppedOnSlot;
 
     private void Awake()
     {
