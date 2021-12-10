@@ -48,7 +48,7 @@ public class PlayerInput : MonoBehaviour
 			timeManager.DoSlowMotion();
 		}
 
-		if (Input.GetKeyDown(KeyCode.M))
+		/*if (Input.GetKeyDown(KeyCode.M))
         {
             if (isMapOpened)
             {
@@ -59,16 +59,16 @@ public class PlayerInput : MonoBehaviour
             {
 				OpenMap();
             }
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.L))
         {
 			playerVelocity.knockback();
         }
 
-        if (Input.GetKeyDown(KeyCode.Tab))
+        /*if (Input.GetKeyDown(KeyCode.Tab))
         {
 			SceneManager.LoadScene("Augment");
-        }
+        }*/
 	}
 
 	private void OpenMap()
