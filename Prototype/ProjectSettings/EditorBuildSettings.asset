@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9c7ba8bbadc525443af22236fa304b30
   - enabled: 1
+    path: Assets/Scenes/DialogSystem.unity
+    guid: 37bdc59db9b2d8648bfc8651e6883d45
+  - enabled: 1
     path: Assets/Scenes/Coba_Level_1.unity
     guid: f065357bd3bb37a4a82a4d413f12bdcb
   - enabled: 1

@@ -177,7 +177,7 @@ MonoBehaviour:
   qualityDropdown: {fileID: 41144580}
   fullScreenToggle: {fileID: 1380715754}
   confirmationPrompt: {fileID: 535661549}
-  _newGameLevel: Coba_Level_1
+  _newGameLevel: DialogSystem
   noSaveGameDialog: {fileID: 1502222003}
   transitionAnimator: {fileID: 111667363}
   transitionTime: 1

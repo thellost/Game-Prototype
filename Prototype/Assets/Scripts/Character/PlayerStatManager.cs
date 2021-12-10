@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatManager : MonoBehaviour
 {
@@ -111,6 +112,17 @@ public class PlayerStatManager : MonoBehaviour
         animator.SetDead(true);
         animator.enabled = false;
         attack.enabled = false;
+        if (!isDead)
+        {
+            StartCoroutine(resetScene());
+        }
         isDead = true;
+
+    }
+
+    IEnumerator resetScene()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

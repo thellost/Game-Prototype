@@ -1807,8 +1807,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1476892113}
   m_HandleRect: {fileID: 1476892112}
   m_Direction: 2
-  m_Value: 0.9999997
-  m_Size: 0.49580818
+  m_Value: 1
+  m_Size: 0.49580815
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2373,7 +2373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 348026814}
   transitionTime: 1
-  splashTime: 2
+  splashTime: 4
   dialogTrigger: {fileID: 1622842591}
   video: {fileID: 189575113}
 --- !u!1 &1089075967
@@ -2595,6 +2595,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1111640100}
   - component: {fileID: 1111640101}
+  - component: {fileID: 1111640102}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2637,6 +2638,18 @@ MonoBehaviour:
   - {fileID: 539105670}
   - {fileID: 1096936829}
   - {fileID: 1563262124}
+--- !u!114 &1111640102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111640099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298a9977f207cda4bb25deb606d9354a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1211906240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3514,6 +3527,7 @@ GameObject:
   - component: {fileID: 1622842590}
   - component: {fileID: 1622842592}
   - component: {fileID: 1622842591}
+  - component: {fileID: 1622842593}
   m_Layer: 6
   m_Name: Trigger
   m_TagString: Untagged
@@ -3575,6 +3589,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &1622842593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622842589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 298a9977f207cda4bb25deb606d9354a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1644214548
 GameObject:
   m_ObjectHideFlags: 0
@@ -4392,7 +4418,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 621137041}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.29808152
+  m_Size: 0.2980815
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
