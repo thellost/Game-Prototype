@@ -62,8 +62,8 @@ public class EnemyAI : MonoBehaviour {
         attackTimer -= time.deltaTime;
         if (!stats.checkAlive() && !dead)
         {
-            Debug.Log("aa");
             dead = true;
+            money.Instance.addMoney(9);
             setState(State.dead);
 
         }

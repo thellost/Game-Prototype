@@ -177,8 +177,10 @@ MonoBehaviour:
   qualityDropdown: {fileID: 41144580}
   fullScreenToggle: {fileID: 1380715754}
   confirmationPrompt: {fileID: 535661549}
-  _newGameLevel: Room 1
+  _newGameLevel: Coba_Level_1
   noSaveGameDialog: {fileID: 1502222003}
+  transitionAnimator: {fileID: 111667363}
+  transitionTime: 1
   resolutionDropdown: {fileID: 416097140}
 --- !u!4 &98278275
 Transform:
@@ -187,13 +189,19 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98278273}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 438.93808, y: 135.6059, z: -5.756577}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 538134599}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &111667363 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4274408271831688283, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+  m_PrefabInstance: {fileID: 8267737271750471484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &154400998 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8267737271629928410, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
@@ -359,6 +367,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8267737271921026257, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
   m_PrefabInstance: {fileID: 8267737271750471484}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &538134599 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8267737273458993812, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+  m_PrefabInstance: {fileID: 8267737271750471484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &770236575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8267737272222830499, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
@@ -483,14 +496,14 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8267737271750471484
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 98278275}
     m_Modifications:
     - target: {fileID: 8267737271709630008, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -570,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8267737273458993812, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8267737273458993812, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
       propertyPath: m_AnchorMax.x

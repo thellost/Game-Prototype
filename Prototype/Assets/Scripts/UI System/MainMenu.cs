@@ -41,6 +41,8 @@ public class MainMenu : MonoBehaviour
     public string _newGameLevel;
     private string levelToLoad;
     [SerializeField] private GameObject noSaveGameDialog = null;
+    [SerializeField] Animator transitionAnimator;
+    [SerializeField] float transitionTime = 1f;
 
     [Header("Resolution Dropdowns")]
     public TMP_Dropdown resolutionDropdown;
@@ -79,7 +81,7 @@ public class MainMenu : MonoBehaviour
 
     public void NewGameDialogYes()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        StartCoroutine(LoadLevel(_newGameLevel));
     }
 
     public void LoadGameDialogYes()
@@ -87,7 +89,7 @@ public class MainMenu : MonoBehaviour
         if(PlayerPrefs.HasKey("SavedLevel"))
         {
             levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(levelToLoad);
+            StartCoroutine(LoadLevel(levelToLoad));
         }
         else
         {
@@ -204,5 +206,12 @@ public class MainMenu : MonoBehaviour
         confirmationPrompt.SetActive(true);
         yield return new WaitForSeconds(2);
         confirmationPrompt.SetActive(false);
+    }
+    IEnumerator LoadLevel(string levelName)
+    {
+        transitionAnimator.SetTrigger("start");
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(levelName);
     }
 }

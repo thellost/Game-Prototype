@@ -98,6 +98,11 @@ public class PlayerStatManager : MonoBehaviour
                 timeManager.stopSlowMotion();
             }
         }
+        else
+        {
+            currentEnergy += (energyRegenRate * Time.unscaledDeltaTime);
+            currentEnergy = Mathf.Clamp(currentEnergy, 0, maxPlayerEnergy);
+        }
 
     }
 

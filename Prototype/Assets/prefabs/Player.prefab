@@ -322,7 +322,7 @@ MonoBehaviour:
   cameraShakeFrequency: 1.1
   cameraShakeTimer: 0.1
   energyDrainRate: 5
-  energyRegenRate: 0.5
+  energyRegenRate: 3
   hpProgressUI: {fileID: 0}
   energyProgressUI: {fileID: 0}
   timeManager: {fileID: 0}

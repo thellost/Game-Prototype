@@ -27,10 +27,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             visualCue.SetActive(true);
 
-            Debug.Log("I");
             if (Input.GetKey(KeyCode.I) && isActive == true)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                enterDialog();
             }
         }
         else
@@ -54,5 +53,10 @@ public class DialogueTrigger : MonoBehaviour
         {
             playerInRange = false;
         }
+    }
+
+    public void enterDialog()
+    {
+        DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
     }
 }
