@@ -36,9 +36,13 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake() 
     {
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
 
-        playerInput = GameObject.Find("Player").GetComponent<PlayerInput>();
-        playerAttack = GameObject.Find("Player").GetComponent<CharacterAttack>();
+            playerInput = player.GetComponent<PlayerInput>();
+            playerAttack = player.GetComponent<CharacterAttack>();
+        }
         if (instance != null)
         {
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
@@ -56,10 +60,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-
         // get the layout animator
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
-
         // get all of the choices text 
         choicesText = new TextMeshProUGUI[choices.Length];
         int index = 0;
@@ -87,9 +89,11 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-
-        playerInput.enabled = false;
-        playerAttack.enabled = false;
+        if (playerInput != null && playerAttack != null)
+        {
+            playerInput.enabled = false;
+            playerAttack.enabled = false;
+        }
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -97,7 +101,10 @@ public class DialogueManager : MonoBehaviour
         // reset portrait, layout, and speaker
         displayNameText.text = "???";
         portraitAnimator.Play("default");
-        layoutAnimator.Play("right");
+        if (layoutAnimator != null)
+        {
+            layoutAnimator.Play("right");
+        }
 
         ContinueStory();
     }
@@ -105,9 +112,11 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
-
-        playerInput.enabled = true;
-        playerAttack.enabled = true;
+        if(playerAttack != null && playerInput != null)
+        {
+            playerInput.enabled = true;
+            playerAttack.enabled = true;
+        }
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -155,6 +164,7 @@ public class DialogueManager : MonoBehaviour
                     portraitAnimator.Play(tagValue);
                     break;
                 case LAYOUT_TAG:
+                    Debug.Log(layoutAnimator);
                     layoutAnimator.Play(tagValue);
                     break;
                 default:
