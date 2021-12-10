@@ -42,11 +42,6 @@ public class PlayerInput : MonoBehaviour
 			playerVelocity.OnDashInputDown(0,0,true);
 		}
 		
-		if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-			playerVelocity.Roll();
-        }
-		
 		if (Input.GetKeyDown(KeyCode.X))
 		{
 			Debug.Log("test slow");

@@ -15,7 +15,7 @@ public class SoundManager : Singleton<SoundManager>
     public void PlayBGM(AudioClip bgmClip)
     {
         bgmSource.clip = bgmClip;
-        bgmSource.volume = 0.04f;
+        bgmSource.volume = 0.5f;
         bgmSource.Play();
     }
 

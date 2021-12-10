@@ -1,9 +1,12 @@
-﻿GLITCH CITY, 2051
--> london
+﻿
+-> GLITCH
+=== GLITCH ===
+... #speaker:Felicia #portrait:CiaNetral #layout:leftZidan
+So.. this is where they called Glitch City.
+A place mentioned by "that" message.
+Seems like i have no other choice..
+Exploring Glitch City is the first thing to do.
 
-=== london ===
-Monsieur Phileas Fogg returned home early from the Reform Club, and in a new-fangled steam-carriage, besides!  
-"Passepartout," said he. "We are going around the world!"
 
 -> END
 
