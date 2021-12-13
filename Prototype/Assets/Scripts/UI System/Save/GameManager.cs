@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        respawnPoint = Character2DController.instance.transform.position;
+        //respawnPoint = Character2DController.instance.transform.position;
 
 
 
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator RespawnCo()
     {
-        Character2DController.instance.gameObject.SetActive(false);
+       // Character2DController.instance.gameObject.SetActive(false);
 
         lives--;
         livesText.text = "x " + lives;
@@ -53,8 +53,8 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        Character2DController.instance.transform.position = respawnPoint;
+        //Character2DController.instance.transform.position = respawnPoint;
 
-        Character2DController.instance.gameObject.SetActive(true);
+        //Character2DController.instance.gameObject.SetActive(true);
     }
 }

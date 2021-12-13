@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 
 public class LerpingMaterial : MonoBehaviour
 {
@@ -11,21 +9,6 @@ public class LerpingMaterial : MonoBehaviour
     public Material greyscaleMaterial;
     public Material blurShaderGraph;
     private float val;
-
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            StopAllCoroutines();
-            StartCoroutine(LerpMaterial(true));
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StopAllCoroutines();
-            StartCoroutine(LerpMaterial(false));
-        }
-    }
     public void setMaterialEffect(bool isFading)
     {
 

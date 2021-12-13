@@ -5,6 +5,15 @@ TextureImporter:
   - first:
       213: 8492898954573507420
     second: asset_sprite_149
+  - first:
+      213: -7026853318921143537
+    second: asset_sprite_kayu_1
+  - first:
+      213: 5651528061689146414
+    second: asset_sprite_kayu_2
+  - first:
+      213: -8847943545812192714
+    second: asset_sprite_ngangkat
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -16010,6 +16019,69 @@ TextureImporter:
       bones: []
       spriteID: c5be3a41a96dcd570800000000000000
       internalID: 8492898954573507420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_sprite_kayu_1
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 2752
+        width: 256
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b3ee4e22a9b7e90800000000000000
+      internalID: -7026853318921143537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_sprite_kayu_2
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 2688
+        width: 256
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2c222b34d24e6e40800000000000000
+      internalID: 5651528061689146414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_sprite_ngangkat
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 2242
+        width: 640
+        height: 573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6327727393ac53580800000000000000
+      internalID: -8847943545812192714
       vertices: []
       indices: 
       edges: []

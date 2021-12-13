@@ -9,27 +9,12 @@ public class BulletTimeLight : MonoBehaviour
     [SerializeField] float desiredIntensity = 0.1f;
     private List<float> previousIntensity = new List<float> { };
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < allLight.Count; i++)
         {
             Debug.Log(previousIntensity);
             previousIntensity.Add(allLight[i].intensity);
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Lerp(true));
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            StopAllCoroutines();
-            StartCoroutine(Lerp(false));
         }
     }
 
