@@ -23,7 +23,7 @@ public class BoxDestroy : MonoBehaviour
 
             if(health <=0)
             {
-                Explode
+                //Explode
             }
         }
     }
