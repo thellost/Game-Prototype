@@ -9,11 +9,11 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
     [SerializeField] float moveSpeed;
     [SerializeField] float attackDistance;
-    [SerializeField] float attackSpeed;
+    [SerializeField] protected float attackSpeed;
     [SerializeField] float knockbackForce = 1f;
     [SerializeField] float knockbackDuration = 2f;
+    [SerializeField] bool flipLock = false;
     [SerializeField] Collider2D hitBox;
-    [SerializeField] Collider2D detectionBox;
     public enum State {
         Patroling,
         ChaseTarget,
@@ -27,15 +27,15 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     private Vector3 roamPosition;
     private Vector3 attackDir;
     private float nextShootTime;
-    private float attackTimer;
+    protected float attackTimer;
     private float knockbackForceprivate;
     private float timeElapsed;
     private State state;
     private Transform target;
-    private Animator anim;
+    protected Animator anim;
     private Timeline time;
     private bool isFacingRight;
-    private bool isAttacking;
+    protected bool isAttacking;
     private bool dead;
     private Rigidbody2D rb;
     private EnemyStat stats;
@@ -64,6 +64,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     private void Update() {
         //attack timer untuk jeda attack
         attackTimer -= time.deltaTime;
+        Debug.Log(state);
         if (!stats.checkAlive() && !dead)
         {
             dead = true;
@@ -75,7 +76,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
             default:
             case State.Patroling:
                 moveTowardTarget();
-                if(Vector2.Distance(target.position, transform.position) < attackDistance)
+                if(checkPlayerDistance())
                 {
                     setState(State.AttackTarget);
                 }
@@ -83,7 +84,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
             case State.ChaseTarget:
 
-                if (Vector2.Distance(target.position, transform.position) < attackDistance)
+                if (checkPlayerDistance())
                 {
                     setState(State.AttackTarget);
                     break;
@@ -93,26 +94,19 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                 break;
 
             case State.AttackTarget:
-                if (attackTimer <= 0 && Vector2.Distance(target.position, transform.position) < attackDistance)
-                {
 
-                    isAttacking = true;
-                    anim.SetBool("attacking", true);
-                    attackTimer = attackSpeed;
-                    anim.SetTrigger("Attack");
+                if (attackTimer <= 0 && checkPlayerDistance() && !isAttacking)
+                {
+                    attack();
                 }
-                else if (Vector2.Distance(target.position, transform.position) > attackDistance)
+                else if (!checkPlayerDistance())
                 {
-
+                    setAttackFalse();
                     anim.SetBool("attacking", false);
                     setState(State.ChaseTarget);
                     break;
                 }
-                if (!isAttacking)
-                {
-                    checkFlip();
-                }
-               
+                checkFlip();
                 break;
 
             case State.knockback:
@@ -127,8 +121,9 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                 {
                     setState(State.ChaseTarget);
                 }
+
                 anim.SetTrigger("knockback");
-                
+
                 break;
             case State.idle:
                 break;
@@ -221,7 +216,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     }
     private void flip()
     {
-        if (!isAttacking)
+        if (!isAttacking || !flipLock)
         {
             isFacingRight = !isFacingRight;
             Vector3 theScale = transform.localScale;
@@ -246,6 +241,23 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         disableHitBox();
         state = stateParameter;
         timeElapsed = 0;
+    }
+
+    public virtual bool checkPlayerDistance()
+    {
+        if(Vector2.Distance(target.position, transform.position) < attackDistance)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public virtual void attack()
+    {
+        isAttacking = true;
+        anim.SetBool("attacking", true);
+        attackTimer = attackSpeed;
+        anim.SetTrigger("Attack");
     }
 
 }

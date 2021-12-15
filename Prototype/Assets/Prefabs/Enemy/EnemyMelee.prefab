@@ -100,8 +100,8 @@ MonoBehaviour:
   attackSpeed: 0.85
   knockbackForce: 15
   knockbackDuration: 0.5
+  flipLock: 1
   hitBox: {fileID: 1859622400974562231}
-  detectionBox: {fileID: 0}
 --- !u!114 &1859622400746898898
 MonoBehaviour:
   m_ObjectHideFlags: 0
