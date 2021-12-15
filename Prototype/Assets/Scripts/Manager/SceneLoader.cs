@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] float transitionTime = 1f;
     private void Start()
     {
-        transitionAnimator = GameObject.Find("Crossfade").GetComponent<Animator>();
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
