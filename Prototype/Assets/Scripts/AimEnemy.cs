@@ -14,14 +14,27 @@ public class AimEnemy : MonoBehaviour
     private Vector2 _startPos;
     private void Start()
     {
-        _startPos = area.position;
     }
     void Update()
     {
-        transform.right = target.position - transform.position;
+
+        _startPos = area.position;
+
+        // Mengubah posisi mouse ke world position
+        rotate();
+        move();
+        
+    }
+
+    private void rotate()
+    {
+        transform.right = -(target.position - transform.position);
         transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
         transform.Rotate(new Vector3(0, 0, offset));
-        // Mengubah posisi mouse ke world position
+    }
+
+    private void move()
+    {
         Vector2 p = target.position;
         //Hitung supaya 'karet' ketapel berada dalam radius yang ditentukan
         Vector2 dir = p - _startPos;

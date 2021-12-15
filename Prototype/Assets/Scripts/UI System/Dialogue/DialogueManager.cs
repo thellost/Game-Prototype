@@ -118,7 +118,7 @@ public class DialogueManager : MonoBehaviour
             playerAttack.enabled = true;
         }
 
-        gameObject.GetComponent<IOnDialogExit>().dialogExit();
+        gameObject.GetComponent<IOnDialogExit>().DialogExit();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";

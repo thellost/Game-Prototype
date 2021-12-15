@@ -85,7 +85,6 @@ public class CharacterAttack : MonoBehaviour
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
             Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
-            
 
             //handle damage and camera shake also buller
             if (enemyComponent != null) {

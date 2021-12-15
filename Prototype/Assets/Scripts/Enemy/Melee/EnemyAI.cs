@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
 
-public class EnemyAI : MonoBehaviour {
+public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
     [SerializeField] float moveSpeed;
     [SerializeField] float attackDistance;
@@ -49,6 +49,10 @@ public class EnemyAI : MonoBehaviour {
         rb = gameObject.GetComponent<Rigidbody2D>();
         knockbackForceprivate = knockbackForce;
         dead = false ;
+    }
+    public void OnHit(int damage)
+    {
+
     }
 
     private void Start()

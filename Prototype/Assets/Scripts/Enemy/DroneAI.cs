@@ -36,7 +36,7 @@ public class DroneAI : MonoBehaviour
     private void OnPathComplete(Path p)
     {
         // check if didn't get any error
-        if (p.error)
+        if (!p.error)
         {
             path = p;
             currentWaypoint = 0;
@@ -45,12 +45,14 @@ public class DroneAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         if(path == null)
         {
+            UpdatePath();
             return;
         }
 
-        if(currentWaypoint >= path.vectorPath.Count)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             isReachedEndOfPath = true;
             return;
@@ -62,7 +64,6 @@ public class DroneAI : MonoBehaviour
 
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * enemySpeed * Time.deltaTime;
-
         rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
