@@ -38,6 +38,6 @@ Material:
     m_Floats:
     - Vector1_1844C1E0: 0.17
     - Vector1_7d9cea4f766d472f9675935af83e45e8: 1
-    - _Saturation: 0.9999908
+    - _Saturation: 0.99990135
     m_Colors: []
   m_BuildTextureStacks: []
