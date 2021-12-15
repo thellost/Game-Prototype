@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyStat : MonoBehaviour
+public class EnemyStat : MonoBehaviour, IDamageAble<int>
 {
     [Header("Enemy Basic Stat")]
     [SerializeField] float maxPlayerHP = 100;
@@ -78,6 +78,11 @@ public class EnemyStat : MonoBehaviour
         {
             isInvulnerable = false;
         }
+    }
+
+    public void OnHit(int damage)
+    {
+        //ini kena hit
     }
 
 }

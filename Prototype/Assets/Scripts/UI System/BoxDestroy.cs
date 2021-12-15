@@ -1,30 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = System.Random;
 
 public class BoxDestroy : MonoBehaviour
 {
-    [SerializeField]
-    int health = 1;
+    public GameObject brokenboxs;
 
-    [SerializeField]
-    Object Destroy;
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        
+        if (col.collider.tag == "Slash")
+            BreakIt ();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.CompareTag("Attack"))
-        {
-            health--;
+        if (other.tag == "Slash")
+            BreakIt ();
+    }
 
-            if(health <=0)
-            {
-                //Explode
-            }
+    private void BreakIt()
+    {
+        Destroy(this.gameObject);
+        GameObject broke = (GameObject)
+        Instantiate(brokenboxs, transform.position, Quaternion.identity);
+        foreach (Transform child in broke.transform)
+        {
+
         }
     }
 }

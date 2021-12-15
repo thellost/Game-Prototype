@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour, IDamageAble<float>
 {
     private Rigidbody2D rb;
     private Timeline time;
@@ -52,5 +52,8 @@ public class Bullet : MonoBehaviour
             CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
         }
         deflected = true;
+    }
+    public void OnHit(float test) {
+        Deflected();
     }
 }

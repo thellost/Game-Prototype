@@ -4,5 +4,5 @@ using UnityEngine;
 
 interface IOnDialogExit
 {
-    void dialogExit(); // interface method (does not have a body)
+    void DialogExit(); // interface method (does not have a body)
 }
