@@ -60,7 +60,11 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
 
                 Debug.Log("tas");
                 SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
-               Instantiate(popupDmg, transform.position, Quaternion.identity);
+                if(popupDmg != null)
+                {
+
+                    Instantiate(popupDmg, transform.position, Quaternion.identity);
+                }
                 
                 return true;
             }

@@ -414,7 +414,10 @@ MonoBehaviour:
   attackSpeed: 0.85
   knockbackForce: 15
   knockbackDuration: 0.5
+  flipLock: 0
   hitBox: {fileID: 3815347114257662479}
+  detectionBox: {fileID: 0}
+  popupMoney: {fileID: 0}
 --- !u!114 &3815347114636059754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,6 +454,7 @@ MonoBehaviour:
   damage: 10
   isInvulnerable: 0
   dead: 0
+  popupDmg: {fileID: 0}
 --- !u!212 &3815347114636059752
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -14,8 +14,6 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     [SerializeField] float knockbackDuration = 2f;
     [SerializeField] bool flipLock = false;
     [SerializeField] Collider2D hitBox;
-<<<<<<< Updated upstream
-=======
     [SerializeField] Collider2D detectionBox;
     [SerializeField] GameObject popupMoney;
 
@@ -99,8 +97,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                 break;
 
             case State.AttackTarget:
-                Debug.Log(!isAttacking);
-                if (attackTimer <= 0 && checkPlayerDistance() && !isAttacking)
+                if (attackTimer <= 0 && checkPlayerDistance() && (!isAttacking || !flipLock))
                 {
                     Debug.Log("attack");
                     attack();
@@ -112,6 +109,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                     setState(State.ChaseTarget);
                     break;
                 }
+
                 checkFlip();
                 break;
 
