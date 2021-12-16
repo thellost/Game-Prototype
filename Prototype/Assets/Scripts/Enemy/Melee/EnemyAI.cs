@@ -94,9 +94,10 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                 break;
 
             case State.AttackTarget:
-
+                Debug.Log(!isAttacking);
                 if (attackTimer <= 0 && checkPlayerDistance() && !isAttacking)
                 {
+                    Debug.Log("attack");
                     attack();
                 }
                 else if (!checkPlayerDistance())
