@@ -14,6 +14,8 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     [SerializeField] float knockbackDuration = 2f;
     [SerializeField] bool flipLock = false;
     [SerializeField] Collider2D hitBox;
+<<<<<<< Updated upstream
+=======
     [SerializeField] Collider2D detectionBox;
     [SerializeField] GameObject popupMoney;
 
