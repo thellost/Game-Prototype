@@ -14,6 +14,11 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     [SerializeField] float knockbackDuration = 2f;
     [SerializeField] bool flipLock = false;
     [SerializeField] Collider2D hitBox;
+<<<<<<< Updated upstream
+=======
+    [SerializeField] Collider2D detectionBox;
+    [SerializeField] GameObject popupMoney;
+
     public enum State {
         Patroling,
         ChaseTarget,
@@ -142,6 +147,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
                 knockback(tempDead/2 , true);
                 timeElapsed += time.deltaTime;
+                Instantiate(popupMoney, transform.position, Quaternion.identity);
                 break;
         }
     }
