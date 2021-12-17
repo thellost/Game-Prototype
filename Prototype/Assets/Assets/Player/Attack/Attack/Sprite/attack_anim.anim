@@ -21,35 +21,35 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 77b8173c48de03d45959dc0d4a2d9442, type: 3}
-    - time: 0.03125
+    - time: 0.025
       value: {fileID: 21300000, guid: 598cb18df43ed284ea44f0c856b00817, type: 3}
-    - time: 0.0625
+    - time: 0.05
       value: {fileID: 21300000, guid: 2193605ffbcbafb418efcf0c67c361eb, type: 3}
-    - time: 0.09375
+    - time: 0.075
       value: {fileID: 21300000, guid: 48d8c5d307c420646b6eef94f1eddd73, type: 3}
-    - time: 0.125
+    - time: 0.1
       value: {fileID: 21300000, guid: 6111bb9cd426edd46a7d494d9b465fe5, type: 3}
-    - time: 0.15625
+    - time: 0.125
       value: {fileID: 21300000, guid: 46929c434c0b7cf43ae35b5131d9d763, type: 3}
-    - time: 0.1875
+    - time: 0.15
       value: {fileID: 21300000, guid: aa6414f58165fb84a97217391f251beb, type: 3}
-    - time: 0.21875
+    - time: 0.175
       value: {fileID: 21300000, guid: d7447d4cbb8791840b71e4a659241d63, type: 3}
-    - time: 0.25
+    - time: 0.2
       value: {fileID: 21300000, guid: ca8c3866aff69da43bc02025495da54a, type: 3}
-    - time: 0.28125
+    - time: 0.225
       value: {fileID: 21300000, guid: c6b5036151fac844793e51e9a6c28b0a, type: 3}
-    - time: 0.3125
+    - time: 0.25
       value: {fileID: 21300000, guid: 42ad0c43fe7416e438f2476ef3d31b6f, type: 3}
-    - time: 0.34375
+    - time: 0.3
       value: {fileID: 21300000, guid: d62505e97100e1545bcfdcaabaa7967d, type: 3}
-    - time: 0.375
+    - time: 0.35
       value: {fileID: 21300000, guid: c2cfdac298ff4ba438d66a0ef6a548a5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 32
+  m_SampleRate: 40
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -82,7 +82,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.40625
+    m_StopTime: 0.375
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,35 +102,42 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.03125
+  - time: 0.025
     functionName: spawnSlashAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.03125
+  - time: 0.025
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.0625
+  - time: 0.05
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.125
+  - time: 0.1
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.1875
+  - time: 0.15
+    functionName: triggerAttackRaycast
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.2
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -144,21 +151,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.3125
+  - time: 0.3
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.375
-    functionName: triggerAttackRaycast
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.375
+  - time: 0.35
     functionName: ResetDashing
     data: 
     objectReferenceParameter: {fileID: 0}
