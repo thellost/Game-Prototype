@@ -9,9 +9,8 @@ public class BulletScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private GameObject target;
-    private Timeline time;
     private Vector2 previousSpeed;
-
+    private Timeline time;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +26,8 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity *= time.timeScale;
-        if (time.timeScale == 1)
+        rb.velocity *= Time.timeScale;
+        if(Time.timeScale == 1)
         {
             rb.velocity = previousSpeed;
         }
