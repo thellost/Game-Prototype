@@ -8,7 +8,7 @@ public class TriggerAreaDrone : MonoBehaviour
 
     private void Awake()
     {
-        enemyParent = GetComponent<DroneAI>();
+        enemyParent = GetComponentInParent<DroneAI>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
