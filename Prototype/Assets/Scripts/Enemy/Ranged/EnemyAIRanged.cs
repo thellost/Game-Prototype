@@ -10,9 +10,12 @@ public class EnemyAIRanged : EnemyAI {
     [SerializeField] GameObject bone;
     public override void attack()
     {
+        Debug.Log("hai aku attack");
         toggleSprite(false);
         base.attack();
-        
+
+        isAttacking = false;
+
     }
     public override void chaseTarget()
     {

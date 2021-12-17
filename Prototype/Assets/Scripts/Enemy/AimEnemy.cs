@@ -1,30 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Chronos;
 public class AimEnemy : MonoBehaviour
 {
     // The target marker.
     [SerializeField] Transform area;
     [SerializeField] EnemyAI ai;
+    [SerializeField] Timeline time;
+    [SerializeField] float turnRate;
     // Angular speed in radians per sec.
     public float offset = 80f;
     public float radius = 1;
+    private Animator anim;
 
     private Vector2 _startPos;
 
     private Transform target;
+
+    private Coroutine LookCoroutine;
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Start()
     {
+
         target = ai.target;
+    }
+    private void disableAnimator()
+    {
+        Debug.Log("disabled");
+        anim.enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        anim.enabled = true;
     }
     void Update()
     {
 
         // Mengubah posisi gun ke world position
             _startPos = area.position;
+        if(LookCoroutine == null)
+        {
             rotate();
-            move();
+        }
+        move();
         
     }
 
@@ -39,7 +63,8 @@ public class AimEnemy : MonoBehaviour
         {
             transform.right = -(target.position - transform.position);
         }
-        transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+        // Smoothly rotate towards the target point.
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z),turnRate * time.deltaTime);
         transform.Rotate(new Vector3(0, 0, offset));
     }
 
@@ -52,5 +77,6 @@ public class AimEnemy : MonoBehaviour
             dir = dir.normalized * radius;
         transform.position = _startPos + dir;
     }
+
 
 }

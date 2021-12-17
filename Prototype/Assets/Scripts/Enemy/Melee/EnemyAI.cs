@@ -67,11 +67,13 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     private void Update() {
         //attack timer untuk jeda attack
         attackTimer -= time.deltaTime;
-        Debug.Log(state);
         if (!stats.checkAlive() && !dead)
         {
             dead = true;
-            money.Instance.addMoney(9);
+            if (money.Instance != null)
+            {
+                money.Instance.addMoney(9);
+            }
             setState(State.dead);
 
         }
@@ -143,7 +145,10 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
                 knockback(tempDead/2 , true);
                 timeElapsed += time.deltaTime;
-                Instantiate(popupMoney, transform.position, Quaternion.identity);
+                if(popupMoney != null)
+                {
+                    Instantiate(popupMoney, transform.position, Quaternion.identity);
+                }
                 break;
         }
     }

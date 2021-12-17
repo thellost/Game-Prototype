@@ -8,31 +8,29 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     private Rigidbody2D rb;
     private Timeline time;
     private bool deflected;
-    [SerializeField] float speed = 30;
+    [SerializeField] float bulletSpeed = 30;
 
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
+
+    private Vector2 speedDirection;
     // Start is called before the first frame update
     void Start()
     {
         time = GetComponent<Timeline>();
         rb = GetComponent<Rigidbody2D>();
-
         //rb.velocity = new Vector2(-30, 0);
+        speedDirection = Vector2.zero;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        // test pakai moveposition
-        rb.MovePosition(rb.position + new Vector2(-speed, 0) * time.deltaTime);
-    }
 
     private void FixedUpdate()
     {
+        // test pakai moveposition
+        rb.MovePosition(rb.position + speedDirection * bulletSpeed * time.fixedDeltaTime);
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -44,7 +42,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         if (!deflected)
         {
             //rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
-            speed *= -1;
+            speedDirection *= -1;
             Debug.Log("Deflected");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
@@ -55,5 +53,14 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     }
     public void OnHit(float test) {
         Deflected();
+    }
+
+    public void setTarget(Transform target)
+    {
+        Vector3 direction = target.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float xside = Mathf.Cos(angle * Mathf.PI / 180);
+        float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        speedDirection = new Vector2(xside, yside);
     }
 }

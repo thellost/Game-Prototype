@@ -68,6 +68,7 @@ public class CharacterAttack : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float xside = Mathf.Cos(angle * Mathf.PI / 180);
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
+       
         playerVelocity.OnDashInputDown(xside, yside);
     }
 

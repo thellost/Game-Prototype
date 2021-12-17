@@ -31,6 +31,7 @@ public class DroneAI : MonoBehaviour
     {
         graph = GetComponent<GridGraph>();
         seeker = GetComponent<Seeker>();
+        Debug.Log(seeker);
         rb = GetComponent<Rigidbody2D>();
         time = GetComponent<Timeline>();
         player = GameObject.FindGameObjectWithTag("Player");
