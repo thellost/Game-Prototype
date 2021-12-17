@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 3815347114636059750}
   - component: {fileID: 3815347114636059749}
   - component: {fileID: 3815347114636059748}
-  - component: {fileID: 3815347114636059751}
+  - component: {fileID: 1364415951803693216}
   - component: {fileID: 3815347114636059754}
   - component: {fileID: 3815347114636059753}
   - component: {fileID: 3815347114636059752}
@@ -397,7 +397,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3815347114636059751
+--- !u!114 &1364415951803693216
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -406,16 +406,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3815347114636059759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161070b37dd7b0144b6705a26ad548b9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5235a3119981b2649926f60816a03da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4.19
-  attackDistance: 1.5
+  attackDistance: 10
   attackSpeed: 0.85
   knockbackForce: 15
   knockbackDuration: 0.5
+  flipLock: 0
   hitBox: {fileID: 3815347114257662479}
   detectionBox: {fileID: 0}
+  popupMoney: {fileID: 0}
 --- !u!114 &3815347114636059754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,6 +454,7 @@ MonoBehaviour:
   damage: 10
   isInvulnerable: 0
   dead: 0
+  popupDmg: {fileID: 0}
 --- !u!212 &3815347114636059752
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -5,16 +5,21 @@ using Pathfinding;
 
 public class DroneAI : MonoBehaviour
 {
-    public Transform target;
+    public GameObject bullet, bulletParent;
+    public Transform droneTarget1;
     public Transform enemyGraphic;
     public float enemySpeed;
     public float nextWaypointDistance;
 
-    Path path;
-    Seeker seeker;
-    Rigidbody2D rb;
-    int currentWaypoint = 0;
-    bool isReachedEndOfPath = false;
+    private Path path;
+    private Seeker seeker;
+    private Rigidbody2D rb;
+    private int currentWaypoint = 0;
+    private bool isReachedEndOfPath = false;
+
+    [SerializeField] private float shootingRange;
+    [SerializeField] private float fireRate = 1f;
+    private float nextFireTime;
 
     private void Start()
     {
@@ -29,8 +34,9 @@ public class DroneAI : MonoBehaviour
     {
         if (seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, droneTarget1.position, OnPathComplete);
         }
+
     }
 
     private void OnPathComplete(Path p)
@@ -72,13 +78,32 @@ public class DroneAI : MonoBehaviour
             currentWaypoint++;
         }
 
-        if(force.x <= 0.01f)
+        float distanceFromTarget = Vector2.Distance(droneTarget1.position, transform.position);
+        if (distanceFromTarget <= shootingRange && nextFireTime < Time.time)
         {
-            enemyGraphic.localScale = new Vector3(-1f, 1f, 1f);
+            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+        }
+
+        // flip enemy
+        if (force.x <= 0.01f)
+        {
+            enemyGraphic.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         } 
         else if(force.x >= -0.01f)
         {
-            enemyGraphic.localScale = new Vector3(1f, 1f, 1f);
+            enemyGraphic.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
+    }
+
+    private void Flip()
+    {
+
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, shootingRange);
     }
 }
