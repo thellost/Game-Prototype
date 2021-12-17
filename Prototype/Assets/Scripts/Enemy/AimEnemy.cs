@@ -5,30 +5,40 @@ using UnityEngine;
 public class AimEnemy : MonoBehaviour
 {
     // The target marker.
-    public Transform target;
-    public Transform area;
+    [SerializeField] Transform area;
+    [SerializeField] EnemyAI ai;
     // Angular speed in radians per sec.
     public float offset = 80f;
     public float radius = 1;
 
     private Vector2 _startPos;
+
+    private Transform target;
     private void Start()
     {
+        target = ai.target;
     }
     void Update()
     {
 
-        _startPos = area.position;
-
-        // Mengubah posisi mouse ke world position
-        rotate();
-        move();
+        // Mengubah posisi gun ke world position
+            _startPos = area.position;
+            rotate();
+            move();
         
     }
 
     private void rotate()
     {
-        transform.right = -(target.position - transform.position);
+        if (ai.isFacingRight)
+        {
+
+            transform.right = (target.position - transform.position);
+        }
+        else
+        {
+            transform.right = -(target.position - transform.position);
+        }
         transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
         transform.Rotate(new Vector3(0, 0, offset));
     }
@@ -42,4 +52,5 @@ public class AimEnemy : MonoBehaviour
             dir = dir.normalized * radius;
         transform.position = _startPos + dir;
     }
+
 }

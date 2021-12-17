@@ -34,10 +34,10 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     private float knockbackForceprivate;
     private float timeElapsed;
     private State state;
-    private Transform target;
+    public Transform target {get;private set; }
     protected Animator anim;
     private Timeline time;
-    private bool isFacingRight;
+    public bool isFacingRight { get; private set; }
     protected bool isAttacking;
     private bool dead;
     private Rigidbody2D rb;
@@ -97,16 +97,14 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
                 break;
 
             case State.AttackTarget:
-                if (attackTimer <= 0 && checkPlayerDistance() && (!isAttacking || !flipLock))
+                if (attackTimer <= 0 && checkPlayerDistance() && (!isAttacking || flipLock))
                 {
-                    Debug.Log("attack");
                     attack();
                 }
                 else if (!checkPlayerDistance())
                 {
-                    setAttackFalse();
-                    anim.SetBool("attacking", false);
-                    setState(State.ChaseTarget);
+                   
+                    chaseTarget();
                     break;
                 }
 
@@ -150,9 +148,10 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         }
     }
 
-    private void setAttackFalse()
+    protected void setAttackFalse()
     {
         isAttacking = false;
+        anim.SetBool("attacking", false);
     }
 
     private Vector3 GetRoamingPosition() {
@@ -181,6 +180,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     
     private void moveTowardTarget()
     {
+        
         anim.SetTrigger("walk");
 
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Enemy_attack"))
@@ -240,7 +240,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         attackDir = direction;
         checkFlip();
     }
-    public void setState(State stateParameter)
+    public virtual void setState(State stateParameter)
     {
         isAttacking = false;
         disableHitBox();
@@ -259,10 +259,18 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
     public virtual void attack()
     {
+        anim.ResetTrigger("walk");
         isAttacking = true;
         anim.SetBool("attacking", true);
         attackTimer = attackSpeed;
         anim.SetTrigger("Attack");
+    }
+
+    public virtual void chaseTarget()
+    {
+        setAttackFalse();
+        anim.SetBool("attacking", false);
+        setState(State.ChaseTarget);
     }
 
 }
