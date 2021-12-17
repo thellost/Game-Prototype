@@ -8,14 +8,13 @@ public class DroneAI : MonoBehaviour
 {
     public Animator anim;
     public GameObject bullet, bulletParent;
-    public Transform droneTarget1, droneTarget2;
+    public Transform droneTarget1;
     public Transform enemyGraphic;
     public float enemySpeed;
     public float nextWaypointDistance;
     public bool isAlerted = false;
 
     private GameObject player;
-    private GridGraph graph;
     private Path path;
     private Seeker seeker;
     private Rigidbody2D rb;
@@ -29,7 +28,6 @@ public class DroneAI : MonoBehaviour
 
     private void Start()
     {
-        graph = GetComponent<GridGraph>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         time = GetComponent<Timeline>();
@@ -42,16 +40,6 @@ public class DroneAI : MonoBehaviour
         }
     }
 
-    private void ChaseTarget()
-    {
-        // if(player.transform.position <= graph.size)
-        // {
-            
-        // }
-
-        // if not in alert, statenya boolean, jika alerted, maka update path. 
-        // defaultnya false, tapi kalau collisionnya masuk, jadi trigger. 
-    }
 
     private void UpdatePath()
     {
@@ -93,6 +81,7 @@ public class DroneAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * enemySpeed * time.deltaTime;
         rb.AddForce(force);
+        Debug.Log(dir);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)
