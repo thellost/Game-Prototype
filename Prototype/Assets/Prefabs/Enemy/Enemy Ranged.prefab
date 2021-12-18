@@ -532,6 +532,8 @@ MonoBehaviour:
   popupMoney: {fileID: 0}
   selfSprite: {fileID: 3815347114636059752}
   bone: {fileID: 287116695806584780}
+  initialAttackTime: 0
+  aim: {fileID: 8797441716953172915}
 --- !u!114 &3815347114636059754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayerHP: 20
   invicTimer: 1
-  enemyTakeDamageSfx: {fileID: 8300000, guid: 9274d691f4494794dba97a46efd541c3, type: 3}
+  enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 10
   isInvulnerable: 0
@@ -1066,10 +1068,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 1824482675446204211}
+  gunMuzzle: {fileID: 7871555270782784114}
   ai: {fileID: 1364415951803693216}
   time: {fileID: 3815347114636059754}
   turnRate: 0
-  offset: 80
+  bullet: {fileID: 3986964784739341193, guid: 595e96769af9e3840b61482fd472de53, type: 3}
+  offset: 85
   radius: 0.3
 --- !u!114 &5254347048122806536
 MonoBehaviour:

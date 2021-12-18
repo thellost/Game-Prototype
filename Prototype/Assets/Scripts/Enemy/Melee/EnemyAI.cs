@@ -26,27 +26,29 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         idle
     }
 
+    public bool isFacingRight { get; private set; }
+    public Transform target { get; private set; }
+
+    protected bool isAttacking;
+
     private Vector3 startingPosition;
     private Vector3 roamPosition;
     private Vector3 attackDir;
     private float nextShootTime;
-    protected float attackTimer;
+    private float attackTimer;
     private float knockbackForceprivate;
     private float timeElapsed;
     private State state;
-    public Transform target {get;private set; }
-    protected Animator anim;
+    private Animator anim;
     private Timeline time;
-    public bool isFacingRight { get; private set; }
-    protected bool isAttacking;
     private bool dead;
     private Rigidbody2D rb;
     private EnemyStat stats;
 
-    private void Awake() {
+    protected virtual void Awake() {
         stats = gameObject.GetComponent<EnemyStat>();
         state = State.idle;
-        target = GameObject.Find("Player").GetComponent<Transform>();
+        target = GameObject.Find("Player").transform.GetChild(0).gameObject.transform;
         anim = gameObject.GetComponent<Animator>();
         time = gameObject.GetComponent<Timeline>();
         rb = gameObject.GetComponent<Rigidbody2D>();

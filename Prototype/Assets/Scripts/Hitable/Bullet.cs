@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         time = GetComponent<Timeline>();
         rb = GetComponent<Rigidbody2D>();
         //rb.velocity = new Vector2(-30, 0);
-        speedDirection = Vector2.zero;
     }
 
 
@@ -61,6 +60,9 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float xside = Mathf.Cos(angle * Mathf.PI / 180);
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = transform.rotation * rotation;
         speedDirection = new Vector2(xside, yside);
+        Debug.Log(speedDirection);
     }
 }

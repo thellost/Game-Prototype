@@ -8,9 +8,12 @@ using Chronos;
 public class EnemyAIRanged : EnemyAI {
     [SerializeField] SpriteRenderer selfSprite;
     [SerializeField] GameObject bone;
+    [SerializeField] float initialAttackTime;
+    [SerializeField] AimEnemy aim;
     public override void attack()
     {
         Debug.Log("hai aku attack");
+        fire();
         toggleSprite(false);
         base.attack();
 
@@ -36,7 +39,7 @@ public class EnemyAIRanged : EnemyAI {
     }
     private void fire()
     {
-
+        aim.fire();
     }
 
 
