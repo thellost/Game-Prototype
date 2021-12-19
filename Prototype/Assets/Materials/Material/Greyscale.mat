@@ -50,6 +50,6 @@ Material:
     m_Floats:
     - Vector1_3e39d2bb291a475e87eb3edf39e15e9d: 3
     - Vector1_469f3a6a76f74478a1e87549b60f2bcd: 1
-    - _Greyscale: 0.0000006556511
+    - _Greyscale: 0.99994487
     m_Colors: []
   m_BuildTextureStacks: []

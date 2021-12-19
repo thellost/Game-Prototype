@@ -8,19 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playable/MainMenu.unity
     guid: 9c7ba8bbadc525443af22236fa304b30
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playable/Intro Scene.unity
     guid: 37bdc59db9b2d8648bfc8651e6883d45
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playable/Level 1.unity
     guid: f065357bd3bb37a4a82a4d413f12bdcb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playable/Level 2.unity
     guid: 9bb6cf92a29b95746ab5ca5ffb7da2ec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playable/End Scene.unity
     guid: 38386354c9bc6f9479fa76d50968d6a4
+  - enabled: 1
+    path: Assets/Scenes/Test/Level 1 - Azzam.unity
+    guid: d571e7f00a6d7434d9c8a94285a01054
   m_configObjects: {}
