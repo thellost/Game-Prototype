@@ -71,3 +71,4 @@ Prototype/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 Prototype/[Aa]ssets/[Ss]treamingAssets/aa.meta
 Prototype/[Aa]ssets/[Ss]treamingAssets/aa/*
+Prototype/Assets/Materials/Material/Greyscale.mat
