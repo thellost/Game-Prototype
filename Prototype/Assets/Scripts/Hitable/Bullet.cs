@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         Deflected();
     }
 
-    public void setTarget(Transform target)
+    public void setTarget(ref Transform target)
     {
         Vector3 direction = target.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

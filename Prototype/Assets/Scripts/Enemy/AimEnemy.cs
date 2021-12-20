@@ -6,7 +6,7 @@ public class AimEnemy : MonoBehaviour
 {
     // The target marker.
     [SerializeField] Transform area;
-    [SerializeField] Transform gunMuzzle;
+    [SerializeField] GameObject gunMuzzle;
     [SerializeField] EnemyAI ai;
     [SerializeField] Timeline time;
     [SerializeField] float turnRate;
@@ -96,13 +96,8 @@ public class AimEnemy : MonoBehaviour
         if (target != null)
         {
             GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-            bulletTemp.GetComponent<Bullet>().setTarget(target);
-            bullet.GetComponent<Transform>().position = gunMuzzle.position;
-            Debug.Log(bullet.GetComponent<Transform>().position);
-            if (transform.localScale.x < 0)
-            {
-                bulletTemp.transform.localScale *= -1;
-            }
+            bulletTemp.GetComponent<Bullet>().setTarget(ref target);
+            bullet.GetComponent<Transform>().position = gunMuzzle.transform.position;
         }
     }
 }

@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: {fileID: 1824482675446204211}
-  gunMuzzle: {fileID: 7871555270782784114}
+  gunMuzzle: {fileID: 6430540736062732660}
   ai: {fileID: 1364415951803693216}
   time: {fileID: 3815347114636059754}
   turnRate: 0
