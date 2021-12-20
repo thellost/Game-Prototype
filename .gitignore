@@ -72,3 +72,5 @@ Prototype/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 Prototype/[Aa]ssets/[Ss]treamingAssets/aa.meta
 Prototype/[Aa]ssets/[Ss]treamingAssets/aa/*
 Prototype/Assets/Materials/Material/Greyscale.mat
+Prototype/Assets/Assets/Enemy/Melee/Attack/Materials/Attack00.mat
+Prototype/Assets/Materials/Material/Greyscale.mat
