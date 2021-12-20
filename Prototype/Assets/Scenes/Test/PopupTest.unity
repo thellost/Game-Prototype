@@ -36296,6 +36296,10 @@ PrefabInstance:
       propertyPath: floatingPoints
       value: 
       objectReference: {fileID: 618157109}
+    - target: {fileID: 1859622400746898897, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
+      propertyPath: enemyTakeDamageSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
     - target: {fileID: 1859622400746898899, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_IsTrigger
       value: 0
