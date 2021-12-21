@@ -102,6 +102,8 @@ MonoBehaviour:
   knockbackDuration: 0.5
   flipLock: 1
   hitBox: {fileID: 1859622400974562231}
+  detectionBox: {fileID: 0}
+  popupMoney: {fileID: 0}
 --- !u!114 &1859622400746898898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +135,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPlayerHP: 20
   invicTimer: 1
-  enemyTakeDamageSfx: {fileID: 8300000, guid: 9274d691f4494794dba97a46efd541c3, type: 3}
+  enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 10
   isInvulnerable: 0
   dead: 0
+  popupDmg: {fileID: 0}
 --- !u!212 &1859622400746898896
 SpriteRenderer:
   m_ObjectHideFlags: 0
