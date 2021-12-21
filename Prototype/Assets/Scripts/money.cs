@@ -19,6 +19,10 @@ public class money : MonoBehaviour
     {
         currentMoney += num;
         display.text = currentMoney.ToString();
+        if (PopupHandler.Instance != null)
+        {
+            PopupHandler.Instance.PopupMoney(gameObject, num.ToString());
+        }
     }
 
     private void OnDestroy()
