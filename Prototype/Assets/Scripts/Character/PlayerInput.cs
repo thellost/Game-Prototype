@@ -47,6 +47,10 @@ public class PlayerInput : MonoBehaviour
 			Debug.Log("test slow");
 			timeManager.DoSlowMotion();
 		}
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+			playerVelocity.Roll();
+        }
 
 		/*if (Input.GetKeyDown(KeyCode.M))
         {
