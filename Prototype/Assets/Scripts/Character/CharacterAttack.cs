@@ -130,7 +130,6 @@ public class CharacterAttack : MonoBehaviour
         direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
         gameobj.transform.localScale = transform.localScale;

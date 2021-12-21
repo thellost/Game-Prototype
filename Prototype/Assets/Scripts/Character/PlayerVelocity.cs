@@ -255,9 +255,12 @@ public class PlayerVelocity : MonoBehaviour
 		{
 			return;
 		}
-
+		//set old velocity to 0 so it doesnt affect the dash
+		
 		playerInput.enabled = false;
-
+		oldVelocity = new Vector3(0, 0, 0);
+		velocity = new Vector3(0, 0, 0);
+		directionalInput.x = 0;
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (dashCount == 0)
         {
@@ -377,7 +380,7 @@ public class PlayerVelocity : MonoBehaviour
 		playerAnimator.SetJumping(!playerMovement.isGrounded);
 		// playerAnimator.SetRunning(directionalInput.x != 0);
 		playerAnimator.SetSpeedX(Mathf.Abs(directionalInput.x));
-		playerAnimator.SetSpeedY(Mathf.Abs(velocity.y));
+		playerAnimator.SetSpeedY(velocity.y);
 		playerAnimator.SetRolling(isRolling);
 	}
 }
