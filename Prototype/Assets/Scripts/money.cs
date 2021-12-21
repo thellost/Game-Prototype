@@ -21,7 +21,7 @@ public class money : MonoBehaviour
         display.text = currentMoney.ToString();
         if (PopupHandler.Instance != null)
         {
-            PopupHandler.Instance.PopupMoney(gameObject, num.ToString());
+            PopupHandler.Instance.PopupMoney(num.ToString());
         }
     }
 
