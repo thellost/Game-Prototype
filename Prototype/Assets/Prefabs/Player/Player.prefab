@@ -441,7 +441,7 @@ MonoBehaviour:
   accelerationTimeAirborne: 0.2
   accelerationTimeGrounded: 0.1
   forceFallSpeed: 20
-  dashPower: 20
+  dashPower: 17
   airDashPower: 10
   dashCooldown: 0.75
   rollPower: 20
