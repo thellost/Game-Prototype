@@ -13,7 +13,6 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     public float damage;
     public bool isInvulnerable;
     public bool dead;
-    public GameObject popupDmg;
     private float internalTimer;
     private EnemyAI ai;
     // Start is called before the first frame update
@@ -60,10 +59,10 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
 
                 Debug.Log("tas");
                 SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
-                if(popupDmg != null)
+                if(PopupHandler.Instance != null)
                 {
 
-                    Instantiate(popupDmg, transform.position, Quaternion.identity);
+                    PopupHandler.Instance.PopupDmg(gameObject, dmg.ToString());
                 }
                 
                 return true;
