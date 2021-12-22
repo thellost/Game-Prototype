@@ -258,8 +258,6 @@ public class PlayerVelocity : MonoBehaviour
 		//set old velocity to 0 so it doesnt affect the dash
 		
 		playerInput.enabled = false;
-		oldVelocity = new Vector3(0, 0, 0);
-		velocity = new Vector3(0, 0, 0);
 		directionalInput.x = 0;
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (dashCount == 0)

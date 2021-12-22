@@ -26,10 +26,14 @@ public class PopupHandler : MonoBehaviour
         obj.GetComponent<TextMeshPro>().text = dmg;
         //instatiate
     }
-    public void PopupMoney( string num)
+    public void PopupMoney(string num)
     {
-        GameObject objm= Instantiate(popupMoney);
-        objm.GetComponent<TextMeshPro>().text = "+" + num;
+        if (popupMoney != null)
+        {
+
+            GameObject objm = Instantiate(popupMoney);
+            objm.GetComponent<TextMeshPro>().text = "+" + num;
+        }
         //instatiate
     }
 

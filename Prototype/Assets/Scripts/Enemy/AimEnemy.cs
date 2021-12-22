@@ -10,7 +10,7 @@ public class AimEnemy : MonoBehaviour
     [SerializeField] EnemyAI ai;
     [SerializeField] Timeline time;
     [SerializeField] float turnRate;
-
+    [SerializeField] float initialTimer = 1.5f;
     private Transform bulletSpawnDump;
     [SerializeField] GameObject bullet;
     // Angular speed in radians per sec.
@@ -21,7 +21,7 @@ public class AimEnemy : MonoBehaviour
     private Vector2 _startPos;
 
     private Transform target;
-
+    private float timer;
     private Coroutine LookCoroutine;
     private void Awake()
     {
@@ -35,6 +35,7 @@ public class AimEnemy : MonoBehaviour
         {
             bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
         }
+        timer = 1;
     }
 
     private void Start()
@@ -46,11 +47,13 @@ public class AimEnemy : MonoBehaviour
     {
         Debug.Log("disabled");
         anim.enabled = false;
+        timer = 1;
     }
 
     private void OnEnable()
     {
         anim.enabled = true;
+        timer = initialTimer;
     }
     void Update()
     {
@@ -62,6 +65,7 @@ public class AimEnemy : MonoBehaviour
             rotate();
         }
         move();
+        timer -= time.deltaTime;
         
     }
 
@@ -93,11 +97,15 @@ public class AimEnemy : MonoBehaviour
 
     public void fire()
     {
-        if (target != null)
+        if (timer < 0)
         {
-            GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-            bulletTemp.GetComponent<Bullet>().setTarget(ref target);
-            bullet.GetComponent<Transform>().position = gunMuzzle.transform.position;
+
+            if (target != null)
+            {
+                GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
+                bulletTemp.GetComponent<Bullet>().setTarget(ref target);
+                bullet.GetComponent<Transform>().position = gunMuzzle.transform.position;
+            }
         }
     }
 }
