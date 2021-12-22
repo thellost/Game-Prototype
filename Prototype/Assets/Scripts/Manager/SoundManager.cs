@@ -6,7 +6,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource bgmSource;
     public AudioClip defaultBGM;
 
-    private void Start()
+    private void Awake()
     {
         PlayBGM(defaultBGM);
     }
