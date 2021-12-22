@@ -19,10 +19,10 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < namaLevel.Count; i++)
         {
-            if (namaLevel[i] == GameManager.Instance.GetCurrentLevel())
+            if (namaLevel[i] == GameManager.Instance.GetPreviousLevel())
             {
                 player.transform.position = posisiLevel[i].position;
-                Debug.Log(player.transform.position);
+                Debug.Log(posisiLevel[i].position);
             }
         }
         GameManager.Instance.SetLevel();

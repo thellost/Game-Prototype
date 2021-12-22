@@ -58,6 +58,11 @@ public class GameManager : Singleton<GameManager>
         currentLevel = SceneManager.GetActiveScene().name;
     }
 
+    public string GetPreviousLevel()
+    {
+        return prevLevel;
+    }
+
     public string GetCurrentLevel()
     {
         return currentLevel;
