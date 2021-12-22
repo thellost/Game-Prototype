@@ -8,14 +8,17 @@ public class BulletTimeLight : MonoBehaviour
     [SerializeField] float fadeDuration = 2f;
     [SerializeField] float desiredIntensity = 0.1f;
     private List<float> previousIntensity = new List<float> { };
+    
     // Start is called before the first frame update
     void Awake()
     {
+        
         for (int i = 0; i < allLight.Count; i++)
         {
-            Debug.Log(previousIntensity);
             previousIntensity.Add(allLight[i].intensity);
         }
+
+        
     }
 
     public void startEffect(bool isFading)

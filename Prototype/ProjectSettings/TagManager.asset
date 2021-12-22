@@ -8,6 +8,7 @@ TagManager:
   - NextRoom
   - FallDetector
   - Slash
+  - Waypoint
   - TestNextLvl
   layers:
   - Default
