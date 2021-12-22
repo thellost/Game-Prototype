@@ -12,13 +12,13 @@ public class GameManager : Singleton<GameManager>
 
     [HideInInspector] public static string prevLevel;
     [HideInInspector] public static string currentLevel;
-    public static string test;
 
     //private LevelManager levelManager;
 
     protected override void Awake()
     {
         base.Awake();
+        LoadData();
     }
 
     void Start()
@@ -35,7 +35,7 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        Debug.Log(test);
+
     }
 
     /*public void CreatePlayer(GameObject initialPlayer, Vector3 location)
@@ -52,7 +52,7 @@ public class GameManager : Singleton<GameManager>
         initialPlayer.GetComponent<Movement>().InitializePlayer();
     }*/
 
-    public void setLevel()
+    public void SetLevel()
     {
         prevLevel = currentLevel;
         currentLevel = SceneManager.GetActiveScene().name;
@@ -61,6 +61,11 @@ public class GameManager : Singleton<GameManager>
     public string GetCurrentLevel()
     {
         return currentLevel;
+    }
+
+    private void LoadData()
+    {
+        SetLevel();
     }
 
     public void Respawn()

@@ -21,10 +21,11 @@ public class LevelManager : MonoBehaviour
         {
             if (namaLevel[i] == GameManager.Instance.GetCurrentLevel())
             {
-                posisiLevel[i] = player.transform;
+                player.transform.position = posisiLevel[i].position;
+                Debug.Log(player.transform.position);
             }
         }
-        GameManager.Instance.setLevel();
+        GameManager.Instance.SetLevel();
     }
 
     /*[SerializeField] private List<Transform> availableSpawnLocation = new List<Transform>();
