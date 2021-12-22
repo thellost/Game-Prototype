@@ -24,7 +24,7 @@ public class Checkpoint : MonoBehaviour
         {
             anim.SetTrigger("Hit");
 
-            GameManager.instance.respawnPoint = transform.position;
+            GameManager.Instance.respawnPoint = transform.position;
         }
     }
 }
