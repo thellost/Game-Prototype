@@ -10,10 +10,16 @@ public class GameManager : Singleton<GameManager>
     public Text livesText;
     public Vector3 respawnPoint;
 
-    [HideInInspector] public string prevLevel;
-    [HideInInspector] public string currentLevel;
+    [HideInInspector] public static string prevLevel;
+    [HideInInspector] public static string currentLevel;
+    public static string test;
 
     //private LevelManager levelManager;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     void Start()
     {
@@ -25,6 +31,11 @@ public class GameManager : Singleton<GameManager>
             livesText.text = "x " + lives;
         }
     
+    }
+
+    private void Update()
+    {
+        Debug.Log(test);
     }
 
     /*public void CreatePlayer(GameObject initialPlayer, Vector3 location)
@@ -45,6 +56,11 @@ public class GameManager : Singleton<GameManager>
     {
         prevLevel = currentLevel;
         currentLevel = SceneManager.GetActiveScene().name;
+    }
+
+    public string GetCurrentLevel()
+    {
+        return currentLevel;
     }
 
     public void Respawn()

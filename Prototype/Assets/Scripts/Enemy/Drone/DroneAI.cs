@@ -29,7 +29,7 @@ public class DroneAI : MonoBehaviour
     private void Start()
     {
         seeker = GetComponent<Seeker>();
-        Debug.Log(seeker);
+        //Debug.Log(seeker);
         rb = GetComponent<Rigidbody2D>();
         time = GetComponent<Timeline>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -82,7 +82,7 @@ public class DroneAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * enemySpeed * time.deltaTime;
         rb.AddForce(force);
-        Debug.Log(dir);
+        //Debug.Log(dir);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)

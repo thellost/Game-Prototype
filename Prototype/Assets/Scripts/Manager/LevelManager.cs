@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < namaLevel.Count; i++)
         {
-            if (namaLevel[i] == GameManager.Instance.currentLevel)
+            if (namaLevel[i] == GameManager.Instance.GetCurrentLevel())
             {
                 posisiLevel[i] = player.transform;
             }
