@@ -9,6 +9,7 @@ TagManager:
   - FallDetector
   - Slash
   - Waypoint
+  - TestNextLvl
   layers:
   - Default
   - TransparentFX

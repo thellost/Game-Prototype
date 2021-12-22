@@ -23,9 +23,13 @@ public class Movement : BoxColliderCasts
 	private bool descendSlope = false;
 	private bool isFacingRight = true;
 
-	public override void Start()
+	private GameManager gameManager;
+	private GameObject player;
+
+    public override void Start()
 	{
-		base.Start();	
+		base.Start();
+		gameManager = FindObjectOfType<GameManager>();
 	}
 
     public void Update()
@@ -356,4 +360,9 @@ public class Movement : BoxColliderCasts
 			transform.localScale = theScale;
 		}
 	}
+
+	/*public void InitializePlayer()
+    {
+		player = FindObjectOfType<Movement>().gameObject;
+    }*/
 }
