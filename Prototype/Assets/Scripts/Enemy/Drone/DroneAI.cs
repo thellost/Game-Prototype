@@ -6,9 +6,10 @@ using Chronos;
 
 public class DroneAI : MonoBehaviour
 {
+    public static Transform droneTarget1;
+    public static Transform target;
     public Animator anim;
     public GameObject bullet, bulletParent;
-    public Transform droneTarget1;
     public Transform enemyGraphic;
     public float enemySpeed;
     public float nextWaypointDistance;
@@ -25,7 +26,18 @@ public class DroneAI : MonoBehaviour
     [SerializeField] private float shootingRange;
     [SerializeField] private float fireRate = 1f;
     private float nextFireTime;
+    private void Awake()
+    {
+        if (droneTarget1 == null)
+        {
+            droneTarget1 = GameObject.Find("Drone Target 1").GetComponent<Transform>();
+        }
+        if(target == null)
+        {
+            target = GameObject.Find("Target").GetComponent<Transform>();
 
+        }
+    }
     private void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -81,7 +93,7 @@ public class DroneAI : MonoBehaviour
 
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * enemySpeed * time.deltaTime;
-        rb.AddForce(force);
+        rb.velocity=force;
         //Debug.Log(dir);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
@@ -93,7 +105,9 @@ public class DroneAI : MonoBehaviour
         float distanceFromTarget = Vector2.Distance(droneTarget1.position, transform.position);
         if (distanceFromTarget <= shootingRange && nextFireTime < time.time)
         {
-            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+            GameObject bulletTemp = Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+
+            bulletTemp.GetComponent<Bullet>().setTarget(ref target);
             nextFireTime = time.time + fireRate;
         }
 

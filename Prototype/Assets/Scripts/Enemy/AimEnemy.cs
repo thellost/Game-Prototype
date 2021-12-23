@@ -11,6 +11,7 @@ public class AimEnemy : MonoBehaviour
     [SerializeField] Timeline time;
     [SerializeField] float turnRate;
     [SerializeField] float initialTimer = 1.5f;
+    [SerializeField] GameObject muzzleParticle;
     private Transform bulletSpawnDump;
     [SerializeField] GameObject bullet;
     // Angular speed in radians per sec.
@@ -20,6 +21,7 @@ public class AimEnemy : MonoBehaviour
 
     private Vector2 _startPos;
 
+    private ParticleSystem generatedParticle;
     private Transform target;
     private float timer;
     private Coroutine LookCoroutine;
@@ -36,6 +38,7 @@ public class AimEnemy : MonoBehaviour
             bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
         }
         timer = 1;
+        generatedParticle = null;
     }
 
     private void Start()
@@ -45,7 +48,6 @@ public class AimEnemy : MonoBehaviour
     }
     private void disableAnimator()
     {
-        Debug.Log("disabled");
         anim.enabled = false;
         timer = 1;
     }
@@ -105,7 +107,32 @@ public class AimEnemy : MonoBehaviour
                 GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
                 bulletTemp.GetComponent<Bullet>().setTarget(ref target);
                 bullet.GetComponent<Transform>().position = gunMuzzle.transform.position;
-            }
+                GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
+                
+                particle.GetComponent<Transform>().position = gunMuzzle.transform.position;
+                particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+                particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
+                //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);
+            } 
         }
+    }
+
+    public void EmitFX(Quaternion rotation , Vector3 bulletPosition)
+    {
+
+        generatedParticle.transform.position = bulletPosition;
+        generatedParticle.transform.rotation = Quaternion.Euler(0, 90, rotation.eulerAngles.z);
+
+        Debug.Log(generatedParticle.isPlaying);
+        if (generatedParticle.isPlaying)
+        {
+            generatedParticle.Stop();
+        } else
+        {
+            generatedParticle.Play();
+        }
+
+        // You can set a fixed duration here if your particle system is looping
+        // (I assumed it was not so I used the duration of the particle system to detect the end of it)
     }
 }
