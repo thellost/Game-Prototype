@@ -12,6 +12,12 @@ public class AimEnemy : MonoBehaviour
     [SerializeField] float turnRate;
     [SerializeField] float initialTimer = 1.5f;
     [SerializeField] GameObject muzzleParticle;
+
+
+    [SerializeField] float cameraShakeIntensity = 5;
+    [SerializeField] float cameraShakeFrequency = 1;
+    [SerializeField] float cameraShakeTimer = 0.1f;
+
     private Transform bulletSpawnDump;
     [SerializeField] GameObject bullet;
     // Angular speed in radians per sec.
@@ -104,14 +110,18 @@ public class AimEnemy : MonoBehaviour
 
             if (target != null)
             {
-                GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-                bulletTemp.GetComponent<Bullet>().setTarget(ref target);
-                bullet.GetComponent<Transform>().position = gunMuzzle.transform.position;
+                
                 GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
                 
                 particle.GetComponent<Transform>().position = gunMuzzle.transform.position;
                 particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
                 particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
+
+                GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
+                bulletTemp.GetComponent<Bullet>().setTarget(ref target);
+                bullet.GetComponent<Transform>().position = particle.transform.position;
+
+                CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                 //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);
             } 
         }

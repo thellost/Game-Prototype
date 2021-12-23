@@ -1,0 +1,1332 @@
+fileFormatVersion: 2
+guid: ee6a4df56ef9bd24bbe7bb826ca9efbd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5855193950080456385
+    second: asset_cyber-00_1_0
+  - first:
+      213: 1438191250601406501
+    second: asset_cyber-00_1_5
+  - first:
+      213: -1048029386513577935
+    second: asset_cyber-00_1_9
+  - first:
+      213: 4108263896600020432
+    second: asset_cyber-00_1_10
+  - first:
+      213: -4811151399504716118
+    second: asset_cyber-00_1_11
+  - first:
+      213: 5909399988984705448
+    second: asset_cyber-00_1_12
+  - first:
+      213: 1594909570091836854
+    second: asset_cyber-00_1_13
+  - first:
+      213: 8170574583079533561
+    second: asset_cyber-00_1_14
+  - first:
+      213: -5285257919652186169
+    second: asset_cyber-00_1_15
+  - first:
+      213: 4711080928512786464
+    second: asset_cyber-00_1_16
+  - first:
+      213: 8978215686926383849
+    second: asset_cyber-00_1_17
+  - first:
+      213: -3745074966299970729
+    second: asset_cyber-00_1_18
+  - first:
+      213: 5339300688067018340
+    second: asset_cyber-00_1_19
+  - first:
+      213: 3144075790690259627
+    second: asset_cyber-00_1_20
+  - first:
+      213: -7787602997697293097
+    second: asset_cyber-00_1_21
+  - first:
+      213: -508006291999006380
+    second: asset_cyber-00_1_22
+  - first:
+      213: 1574469607433988738
+    second: asset_cyber-00_1_23
+  - first:
+      213: -3956608486242121858
+    second: asset_cyber-00_1_24
+  - first:
+      213: 8355989175601599170
+    second: asset_cyber-00_1_25
+  - first:
+      213: -1765301633162936856
+    second: asset_cyber-00_1_26
+  - first:
+      213: 5515770704087374724
+    second: asset_cyber-00_1_27
+  - first:
+      213: 8218280658402295048
+    second: asset_cyber-00_1_28
+  - first:
+      213: -6138526236762825858
+    second: asset_cyber-00_1_29
+  - first:
+      213: 8032322737236015547
+    second: asset_cyber-00_1_30
+  - first:
+      213: -5955880939004343971
+    second: asset_cyber-00_1_31
+  - first:
+      213: -4425357320561696136
+    second: asset_cyber-00_1_32
+  - first:
+      213: 8517730455308590876
+    second: asset_cyber-00_1_33
+  - first:
+      213: 8808578256472328611
+    second: asset_cyber-00_1_34
+  - first:
+      213: -900174346452349088
+    second: asset_cyber-00_1_35
+  - first:
+      213: -818791126731677768
+    second: asset_cyber-00_1_36
+  - first:
+      213: -6785560219582131679
+    second: asset_cyber-00_1_37
+  - first:
+      213: 6980006167147004379
+    second: asset_cyber-00_1_38
+  - first:
+      213: -940794961472459238
+    second: asset_cyber-00_1_39
+  - first:
+      213: 1952095599563135759
+    second: asset_cyber-00_1_40
+  - first:
+      213: 5222455185772135112
+    second: asset_cyber-00_1_41
+  - first:
+      213: 8672134400652477529
+    second: asset_cyber-00_1_42
+  - first:
+      213: 2109445416883180232
+    second: asset_cyber-00_1_43
+  - first:
+      213: 2046265359786772537
+    second: asset_cyber-00_1_44
+  - first:
+      213: -3183204818448794648
+    second: asset_cyber-00_1_45
+  - first:
+      213: 1597554286501997177
+    second: asset_cyber-00_1_46
+  - first:
+      213: 5339784053069353478
+    second: asset_cyber-00_1_47
+  - first:
+      213: -880423041782254133
+    second: asset_cyber-00_1_48
+  - first:
+      213: 3248859059892353711
+    second: asset_cyber-00_1_49
+  - first:
+      213: 6608937883461789177
+    second: asset_cyber-00_1_50
+  - first:
+      213: 7554486285017202514
+    second: asset_cyber-00_1_51
+  - first:
+      213: -7800924062039362953
+    second: asset_cyber-00_1_52
+  - first:
+      213: -8007893092512382002
+    second: asset_cyber-00_1_53
+  - first:
+      213: -6069937461138660200
+    second: asset_cyber-00_1_54
+  - first:
+      213: -121678631568959964
+    second: asset_cyber-00_1_55
+  - first:
+      213: 3919925252753592740
+    second: asset_cyber-00_1_1
+  - first:
+      213: -946317369860447032
+    second: asset_cyber-00_1_2
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: asset_cyber-00_1_0
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 850
+        width: 98
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6df8d10e3d14150800000000000000
+      internalID: 5855193950080456385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 98
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520fb23925b75f310800000000000000
+      internalID: 1438191250601406501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 670
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13800be53d6a471f0800000000000000
+      internalID: -1048029386513577935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_10
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 673
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d508685f3c730930800000000000000
+      internalID: 4108263896600020432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_11
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 677
+        width: 100
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaed5efea4b5b3db0800000000000000
+      internalID: -4811151399504716118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_12
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 676
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a1712b0bf7620250800000000000000
+      internalID: 5909399988984705448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_13
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 574
+        width: 180
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5e136cdc1422610800000000000000
+      internalID: 1594909570091836854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_14
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 571
+        width: 183
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb7a433b46b36170800000000000000
+      internalID: 8170574583079533561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_15
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 567
+        width: 182
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7bfc0bcedf6a6b0800000000000000
+      internalID: -5285257919652186169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_16
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 437
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0204f14e42f116140800000000000000
+      internalID: 4711080928512786464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_17
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 449
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea36104997099c70800000000000000
+      internalID: 8978215686926383849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_18
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 449
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7537b701922d60cc0800000000000000
+      internalID: -3745074966299970729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_19
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 449
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ebb3ddfa1091a40800000000000000
+      internalID: 5339300688067018340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_20
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 443
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba29ffa064002ab20800000000000000
+      internalID: 3144075790690259627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 433
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d45c768550ece390800000000000000
+      internalID: -7787602997697293097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_22
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 445
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4516cbd08f233f8f0800000000000000
+      internalID: -508006291999006380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_23
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 422
+        width: 43
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a60cc14c3a9d510800000000000000
+      internalID: 1574469607433988738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_24
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 442
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e770e367b8d4719c0800000000000000
+      internalID: -3956608486242121858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_25
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 442
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c21ebe12ef66f370800000000000000
+      internalID: 8355989175601599170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_26
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 442
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8edf7e184836087e0800000000000000
+      internalID: -1765301633162936856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_27
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 436
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48b52a74b34fb8c40800000000000000
+      internalID: 5515770704087374724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_28
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 442
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d388c67b23d0270800000000000000
+      internalID: 8218280658402295048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_29
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 442
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b165539e29fcaa0800000000000000
+      internalID: -6138526236762825858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_30
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 442
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9fe32f8fa887f60800000000000000
+      internalID: 8032322737236015547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_31
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 442
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59402277d5785da0800000000000000
+      internalID: -5955880939004343971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_32
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 442
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 872eeb7a6f8f592c0800000000000000
+      internalID: -4425357320561696136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_33
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 442
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1fd13168be053670800000000000000
+      internalID: 8517730455308590876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_34
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 378
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a94341214b5e3a70800000000000000
+      internalID: 8808578256472328611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_35
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 390
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06fc9c38330f183f0800000000000000
+      internalID: -900174346452349088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_36
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 390
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf9ae1fec113a4f0800000000000000
+      internalID: -818791126731677768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_37
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 390
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12219c58ee8d4d1a0800000000000000
+      internalID: -6785560219582131679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_38
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 376
+        width: 37
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd145da90a6fdd060800000000000000
+      internalID: 6980006167147004379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_39
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 381
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ee4f297ff91f2f0800000000000000
+      internalID: -940794961472459238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_40
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 319
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b509bea9c371b10800000000000000
+      internalID: 1952095599563135759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_41
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 357
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2485b5253e97840800000000000000
+      internalID: 5222455185772135112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_42
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 340
+        width: 25
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954065b5a4c995870800000000000000
+      internalID: 8672134400652477529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_43
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 352
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2d56a2e61464d10800000000000000
+      internalID: 2109445416883180232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_44
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 352
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 938074ec08bc56c10800000000000000
+      internalID: 2046265359786772537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_45
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 352
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eb3c0d351cf2d3d0800000000000000
+      internalID: -3183204818448794648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_46
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 352
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97aaa5cc827ab2610800000000000000
+      internalID: 1597554286501997177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_47
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 352
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6029e7c0e49ba1a40800000000000000
+      internalID: 5339784053069353478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_48
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 334
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc5ff7e78eb18c3f0800000000000000
+      internalID: -880423041782254133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_49
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 262
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa713e0a14461d20800000000000000
+      internalID: 3248859059892353711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_50
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 178
+        width: 140
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5ac564df9a7bb50800000000000000
+      internalID: 6608937883461789177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_51
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 163
+        width: 327
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fb207304de6d860800000000000000
+      internalID: 7554486285017202514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_52
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 118
+        width: 140
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772b85a85ec8db390800000000000000
+      internalID: -7800924062039362953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_53
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 68
+        width: 224
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3ce75f8af3ed090800000000000000
+      internalID: -8007893092512382002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_54
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 59
+        width: 140
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8946efbf90043cba0800000000000000
+      internalID: -6069937461138660200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_55
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 0
+        width: 140
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4269394ede5bf4ef0800000000000000
+      internalID: -121678631568959964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 860
+        width: 87
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1167caf3f566630800000000000000
+      internalID: 3919925252753592740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_cyber-00_1_2
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 862
+        width: 88
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4afacad510ed2f0800000000000000
+      internalID: -946317369860447032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

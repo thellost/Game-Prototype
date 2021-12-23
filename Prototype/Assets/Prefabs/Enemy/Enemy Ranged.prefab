@@ -1073,6 +1073,9 @@ MonoBehaviour:
   turnRate: 0
   initialTimer: 1.5
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
+  cameraShakeIntensity: 2
+  cameraShakeFrequency: 1
+  cameraShakeTimer: 0.05
   bullet: {fileID: 3986964784739341193, guid: 595e96769af9e3840b61482fd472de53, type: 3}
   offset: 85
   radius: 0.3
