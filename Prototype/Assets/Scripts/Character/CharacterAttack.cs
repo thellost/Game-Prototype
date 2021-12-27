@@ -132,7 +132,7 @@ public class CharacterAttack : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         //instantiate the shit out of slash, i should get paid for this
         GameObject gameobj = Instantiate(slashParticle) as GameObject;
-        gameobj.transform.localScale = transform.localScale;
+        gameobj.transform.localScale = new Vector3(transform.localScale.x * 0.6f, transform.localScale.y*1.4f, transform.localScale.z);
         gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
 

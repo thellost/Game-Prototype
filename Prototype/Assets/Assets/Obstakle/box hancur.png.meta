@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: fab7ccbbf4f3289449538513cf75a818
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5869759376956714895
+    second: box hancur_0
+  - first:
+      213: -1359905380812335301
+    second: box hancur_1
+  - first:
+      213: -2087706162173264249
+    second: box hancur_2
+  - first:
+      213: -8772369750660695069
+    second: box hancur_3
+  - first:
+      213: 2207809796983831961
+    second: box hancur_4
+  - first:
+      213: 8308947618662019383
+    second: box hancur_5
+  - first:
+      213: 1088590995620234776
+    second: box hancur_6
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: box hancur_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 110
+        width: 111
+        height: 115
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 15.237389, y: -47.9993}
+        - {x: -0.0013809204, y: -44.05406}
+        - {x: -14.320229, y: -42.25374}
+        - {x: -26.65456, y: -48.87825}
+        - {x: -36.338276, y: -38.586136}
+        - {x: -45.409927, y: -33.40512}
+        - {x: -55.5, y: -32.733566}
+        - {x: -55.5, y: 56.50705}
+        - {x: -23.123405, y: 54.198486}
+        - {x: -4.098572, y: 50.49283}
+        - {x: 9.229172, y: 42.548843}
+        - {x: 21.336334, y: 36.888504}
+        - {x: 21.498116, y: 19.2211}
+        - {x: 26.96566, y: 8.859833}
+        - {x: 32.30114, y: 3.8946075}
+        - {x: 32.7929, y: -9.752182}
+        - {x: 35.291534, y: -20.229324}
+        - {x: 43.244614, y: -33.06964}
+        - {x: 53.89444, y: -42.110664}
+        - {x: 39.069473, y: -57.19014}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1701a7b22fc6a8ea0800000000000000
+      internalID: -5869759376956714895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_1
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 216
+        width: 116
+        height: 53
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29.278252, y: -23.441757}
+        - {x: 15.237389, y: -18.95433}
+        - {x: 2.4327087, y: -13.112503}
+        - {x: -9.452049, y: -5.8102417}
+        - {x: -30.305695, y: -2.4025116}
+        - {x: -46.18521, y: -1.4555969}
+        - {x: -58, y: -0.7004852}
+        - {x: -58, y: 26.5}
+        - {x: -23.123405, y: 26.5}
+        - {x: -4.098572, y: 26.5}
+        - {x: 9.229172, y: 26.5}
+        - {x: 28.638603, y: 26.5}
+        - {x: 40.97084, y: 13.622711}
+        - {x: 48.09163, y: 3.0700378}
+        - {x: 53.234314, y: -10.223114}
+        - {x: 49.58812, y: -18.2715}
+        - {x: 43.567444, y: -25.58432}
+      physicsShape:
+      - - {x: 53, y: -24.5}
+        - {x: 53, y: -20.5}
+        - {x: 58, y: -20.5}
+        - {x: 58, y: -24.5}
+      - - {x: -50, y: -20.5}
+        - {x: -50, y: 23.5}
+        - {x: 54, y: 23.5}
+        - {x: 54, y: -20.5}
+      - - {x: -48, y: 6.5}
+        - {x: -48, y: 13.5}
+        - {x: 7, y: 13.5}
+        - {x: 7, y: 6.5}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37d980e245a02de0800000000000000
+      internalID: -1359905380812335301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 193
+        width: 112
+        height: 77
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4.3832855, y: -14.640381}
+        - {x: -3.4051056, y: -12.673706}
+        - {x: -38.840363, y: -12.673706}
+        - {x: -31.61589, y: -3.2840424}
+        - {x: -30.969543, y: 6.0320587}
+        - {x: -36.410156, y: 18.578613}
+        - {x: -53.617203, y: 38.5}
+        - {x: 56, y: 38.5}
+        - {x: 56, y: -36.275192}
+        - {x: 15.963287, y: -20.487442}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78eb4408e4af603e0800000000000000
+      internalID: -2087706162173264249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_3
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 117
+        width: 125
+        height: 85
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12.106857, y: -22.398697}
+        - {x: -3.6261902, y: -31.29599}
+        - {x: -25.359467, y: -38.628914}
+        - {x: -42.801514, y: -20.421524}
+        - {x: -46.17723, y: -12.250839}
+        - {x: -47.87178, y: 5.7355804}
+        - {x: -53.812927, y: 13.552856}
+        - {x: -57.971466, y: 24.604599}
+        - {x: -60.192398, y: 40.730484}
+        - {x: -37.216095, y: 36.69713}
+        - {x: 4.7438965, y: 36.973465}
+        - {x: 32.792953, y: 24.081772}
+        - {x: 62.5, y: 14.506012}
+        - {x: 62.5, y: -28.793762}
+        - {x: 46.418472, y: -20.48851}
+        - {x: 28.689285, y: -8.887985}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ebbc759038424680800000000000000
+      internalID: -8772369750660695069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_4
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 30
+        width: 106
+        height: 102
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.859497, y: -49.595085}
+        - {x: -47.04724, y: -40.825417}
+        - {x: -32.10617, y: -35.06809}
+        - {x: -25.009415, y: -29.52322}
+        - {x: -19.727997, y: -18.963829}
+        - {x: -19.408005, y: -3.2128143}
+        - {x: -16.013794, y: 7.204674}
+        - {x: -16.471542, y: 18.4058}
+        - {x: -21.692703, y: 24.421608}
+        - {x: -1.8489532, y: 33.58084}
+        - {x: 19.358109, y: 50.07675}
+        - {x: 35.93367, y: 38.533386}
+        - {x: 53, y: 30.432404}
+        - {x: 53, y: -49.73558}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d39d81057b3ae10800000000000000
+      internalID: 2207809796983831961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 30
+        width: 96
+        height: 85
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -48, y: -42.5}
+        - {x: -48, y: 37.5}
+        - {x: -36, y: 36.5}
+        - {x: -27, y: 30.5}
+        - {x: -19, y: 21.5}
+        - {x: -10, y: 25.5}
+        - {x: -3, y: 28.5}
+        - {x: 14, y: 23.5}
+        - {x: 26, y: 21.5}
+        - {x: 44, y: 14.5}
+        - {x: 39, y: 10.5}
+        - {x: 31, y: -6.5}
+        - {x: 17, y: -20.5}
+        - {x: 5, y: -25.5}
+        - {x: 1, y: -30.5}
+        - {x: 2, y: -42.5}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7317da326df4f4370800000000000000
+      internalID: 8308947618662019383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: box hancur_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 30
+        width: 81
+        height: 76
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38.830536, y: 17.626991}
+        - {x: 35.476974, y: 9.486404}
+        - {x: 35.354965, y: -4.4835625}
+        - {x: 32.984222, y: -14.165829}
+        - {x: 22.897842, y: -24.1745}
+        - {x: 9.186584, y: -28.42493}
+        - {x: 2.6378174, y: -37.81806}
+        - {x: -38.885437, y: -37.81806}
+        - {x: -40.5, y: -31.767654}
+        - {x: -39.77224, y: -24.000435}
+        - {x: -28.54963, y: -17.996082}
+        - {x: -15.088585, y: -7.597927}
+        - {x: -5.899765, y: 5.918747}
+        - {x: -3.3731842, y: 14.02343}
+        - {x: 12.846252, y: 25.06327}
+        - {x: 19.962967, y: 32.88929}
+        - {x: 32.88141, y: 36.54447}
+        - {x: 39.280457, y: 27.663841}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81602af2eb37b1f00800000000000000
+      internalID: 1088590995620234776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

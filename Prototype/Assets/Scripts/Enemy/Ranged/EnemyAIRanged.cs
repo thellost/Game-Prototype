@@ -10,15 +10,21 @@ public class EnemyAIRanged : EnemyAI {
     [SerializeField] GameObject bone;
     [SerializeField] float initialAttackTime;
     [SerializeField] AimEnemy aim;
+
+    private bool lateAttack = false ;
     public override void attack()
     {
         Debug.Log("hai aku attack");
         fire();
         toggleSprite(false);
         base.attack();
-
         isAttacking = false;
 
+    }
+
+    private void LateUpdate()
+    {
+        
     }
     public override void chaseTarget()
     {
