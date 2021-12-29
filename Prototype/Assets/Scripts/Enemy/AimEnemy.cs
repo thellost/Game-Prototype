@@ -7,7 +7,7 @@ public class AimEnemy : MonoBehaviour
     // The target marker.
     [SerializeField] Transform area;
     [SerializeField] GameObject gunMuzzle;
-    [SerializeField] EnemyAI ai;
+    [SerializeField] EnemyAIRanged ai;
     [SerializeField] Timeline time;
     [SerializeField] float turnRate;
     [SerializeField] float initialTimer = 1.5f;

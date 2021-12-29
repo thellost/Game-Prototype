@@ -26,7 +26,12 @@ public class idleBehaviorBoss : StateMachineBehaviour
         internalTimer += time.deltaTime;
         if(internalTimer > delay)
         {
-            animator.SetTrigger("dashAttack");
+            float value = Random.value;
+            if(value <= 1f)
+            {
+
+                animator.SetTrigger("dashAttack");
+            }
         }
     }
 

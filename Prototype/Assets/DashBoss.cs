@@ -26,8 +26,7 @@ public class DashBoss : StateMachineBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target, dashSpeed * time.deltaTime);
         if (Mathf.Abs(Vector3.Distance(target, transform.position)) < 0.001f)
         {
-            animator.SetTrigger("dashAttack");
-            Debug.Log("TRUE");
+            animator.SetTrigger("idle");
         }
     }
 

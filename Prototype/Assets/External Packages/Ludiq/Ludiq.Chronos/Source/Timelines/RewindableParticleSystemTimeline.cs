@@ -174,6 +174,7 @@ namespace Chronos
             {
 				if (source.isPlaying)
 				{
+				
 					source.Pause(true);
 				}
 
