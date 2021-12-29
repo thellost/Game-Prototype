@@ -7,7 +7,7 @@ public class AimEnemy : MonoBehaviour
     // The target marker.
     [SerializeField] Transform area;
     [SerializeField] GameObject gunMuzzle;
-    [SerializeField] EnemyAIRanged ai;
+    [SerializeField] EnemyAI ai;
     [SerializeField] Timeline time;
     [SerializeField] float turnRate;
     [SerializeField] float initialTimer = 1.5f;
@@ -33,7 +33,8 @@ public class AimEnemy : MonoBehaviour
     private Coroutine LookCoroutine;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        
+        anim = gameObject.GetComponent<Animator>();
         GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
         if (bulletSpawnDumpObject == null)
         {

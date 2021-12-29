@@ -192,7 +192,6 @@ public class PlayerVelocity : MonoBehaviour
 	public void OnJumpInputDown()
 	{
 
-		createDust();
 		if (playerMovement.collisionDirection.below)
 		{
 			Jump();
@@ -206,6 +205,8 @@ public class PlayerVelocity : MonoBehaviour
 
 	private void Jump()
     {
+
+		createDust();
 		if (playerMovement.slidingDownMaxSlope)
 		{
 			// Jumping away from max slope dir
@@ -388,9 +389,10 @@ public class PlayerVelocity : MonoBehaviour
 
 	private void createDust()
     {
-        if (!dustEffect.isPlaying)
+
+		dustEffect.Stop();
+		if (!dustEffect.isPlaying)
         {
-			dustEffect.Stop();
 			dustEffect.Play();
 		}
     }
