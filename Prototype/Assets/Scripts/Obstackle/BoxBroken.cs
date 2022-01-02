@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class BoxBroken : MonoBehaviour
 {
@@ -16,11 +15,6 @@ public class BoxBroken : MonoBehaviour
     float shakeAmount = .01f;
 
     Vector2 startPos;
-
-    void Awake()
-    {
-        audioSource = GetComponent <AudioSource>();
-    }
 
     void Update()
     {
@@ -40,7 +34,6 @@ public class BoxBroken : MonoBehaviour
         if (other.tag == "Slash")
             startPos = transform.position;
             health--;
-            audioSource.Play();
 
             if(health <= 0)
             {
