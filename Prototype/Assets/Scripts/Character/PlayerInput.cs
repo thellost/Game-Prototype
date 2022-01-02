@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
 	private PlayerVelocity playerVelocity;
 
 	private bool isMapOpened;
-
+	public Ghost ghost;
 	void Start()
 	{
 		playerVelocity = GetComponent<PlayerVelocity>();
@@ -24,6 +24,10 @@ public class PlayerInput : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{
+			if (ghost != null)
+			{
+				ghost.makeGhost = true;
+			}
 			playerVelocity.OnJumpInputDown();
 		}
 
