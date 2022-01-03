@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Chronos;
+using UnityEngine;
 public class DashBoss : StateMachineBehaviour
 {
     [SerializeField] float dashSpeed =10;
@@ -15,7 +13,8 @@ public class DashBoss : StateMachineBehaviour
 
         transform = animator.GetComponent<Transform>();
         time = animator.GetComponent<Timeline>();
-        if(Vector3.Distance(target, transform.position) < 0.5f)
+        Debug.Log(Vector3.Distance(target, transform.position));
+        if(Vector3.Distance(target, transform.position) < 0.1f)
         {
             target = GameObject.FindGameObjectsWithTag("Waypoint")[1].transform.position;
         }
@@ -25,9 +24,9 @@ public class DashBoss : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         transform.position = Vector2.MoveTowards(transform.position, target, dashSpeed * time.deltaTime);
-        if(Vector3.Distance(target, transform.position) < 0.05f)
+        if (Mathf.Abs(Vector3.Distance(target, transform.position)) < 0.001f)
         {
-            animator.SetTrigger("dashAttack");
+            animator.SetTrigger("idle");
         }
     }
 

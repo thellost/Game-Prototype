@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 9070084620114536747}
   - component: {fileID: 2242922395763303085}
   - component: {fileID: 9123938111580494276}
-  m_Layer: 0
+  - component: {fileID: 2691315171025207755}
+  m_Layer: 13
   m_Name: box hancur_bawahkanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084620114536745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.514, y: -0.594, z: 0}
+  m_LocalPosition: {x: 1.562, y: -0.657, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -165,6 +166,20 @@ PolygonCollider2D:
       - {x: 0.53111684, y: -0.161057}
       - {x: 0.7086597, y: -0.004667295}
       - {x: 0.7231244, y: 0}
+--- !u!114 &2691315171025207755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084620114536745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 0, y: 50}
+  torque: 50
 --- !u!1 &9070084620183260298
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +192,8 @@ GameObject:
   - component: {fileID: 9070084620183260300}
   - component: {fileID: 4091065559132290887}
   - component: {fileID: 5169800790251240671}
-  m_Layer: 0
+  - component: {fileID: 8258829491778667291}
+  m_Layer: 13
   m_Name: box hancur_bawahkiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084620183260298}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.894, y: -0.704, z: 0}
+  m_LocalPosition: {x: 0.836, y: -0.733, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -321,6 +337,20 @@ PolygonCollider2D:
       - {x: 0.72626007, y: -0.20531078}
       - {x: 0.9149087, y: -0.27715546}
       - {x: 0.7244852, y: -0.203771}
+--- !u!114 &8258829491778667291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084620183260298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -20, y: 10}
+  torque: -50
 --- !u!1 &9070084620480072666
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +363,8 @@ GameObject:
   - component: {fileID: 9070084620480072668}
   - component: {fileID: 6454879330356973961}
   - component: {fileID: 3117694432924677770}
-  m_Layer: 0
+  - component: {fileID: 4265928221175522275}
+  m_Layer: 13
   m_Name: box hancur_tengahkanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084620480072666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.386, y: -0.252, z: 0}
+  m_LocalPosition: {x: 1.444, y: -0.228, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -489,6 +520,20 @@ PolygonCollider2D:
       - {x: 1.2380031, y: -0.28393644}
       - {x: 1.2419969, y: -0.2999329}
       - {x: 1.25, y: -0.28791234}
+--- !u!114 &4265928221175522275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084620480072666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 0, y: 89}
+  torque: -100
 --- !u!1 &9070084620559937640
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +546,8 @@ GameObject:
   - component: {fileID: 9070084620559937642}
   - component: {fileID: 1218902855848749540}
   - component: {fileID: 6336423547568657764}
-  m_Layer: 0
+  - component: {fileID: 7990237712641372929}
+  m_Layer: 13
   m_Name: box hancur_ataskiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +562,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084620559937640}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.894, y: 0.064, z: 0}
+  m_LocalPosition: {x: 0.868, y: 0.141, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -652,6 +698,20 @@ PolygonCollider2D:
       - {x: -0.0003187582, y: -0.0032839328}
       - {x: 0.87070745, y: -0.0006428361}
       - {x: 0.49063906, y: -0.32004812}
+--- !u!114 &7990237712641372929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084620559937640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -100, y: 100}
+  torque: -200
 --- !u!1 &9070084620589511729
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,7 +724,8 @@ GameObject:
   - component: {fileID: 9070084620589511731}
   - component: {fileID: 7380830577435210414}
   - component: {fileID: 9133802798442729244}
-  m_Layer: 0
+  - component: {fileID: 1851913222691611298}
+  m_Layer: 13
   m_Name: box hancur_tengahkiri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084620589511729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.891, y: -0.114, z: 0}
+  m_LocalPosition: {x: 0.8, y: -0.08, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -830,6 +891,20 @@ PolygonCollider2D:
       - {x: 0.5492512, y: -0.09133285}
       - {x: 0.45779958, y: -0.05341743}
       - {x: 0.2018491, y: -0.01522181}
+--- !u!114 &1851913222691611298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084620589511729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -100, y: 50}
+  torque: -100
 --- !u!1 &9070084620818349608
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +954,8 @@ GameObject:
   - component: {fileID: 9070084621301370721}
   - component: {fileID: 3633295451883151526}
   - component: {fileID: 6229325243470417634}
-  m_Layer: 0
+  - component: {fileID: 5984707134515125908}
+  m_Layer: 13
   m_Name: box hancur_ataskanan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -894,7 +970,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084621301370751}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.475, y: 0.064, z: 0}
+  m_LocalPosition: {x: 1.594, y: 0.141, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -1019,6 +1095,20 @@ PolygonCollider2D:
       - {x: 1.1177112, y: -0.7486026}
       - {x: 1.1177219, y: -0.74274534}
       - {x: 1.12, y: 0}
+--- !u!114 &5984707134515125908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084621301370751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: 0, y: 100}
+  torque: -200
 --- !u!1 &9070084621709762502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1121,8 @@ GameObject:
   - component: {fileID: 9070084621709762504}
   - component: {fileID: 2860113871308213007}
   - component: {fileID: 9038081202413337880}
-  m_Layer: 0
+  - component: {fileID: 1541648167894511601}
+  m_Layer: 13
   m_Name: box hancur_tengahbawah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9070084621709762502}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.22, y: -0.766, z: 0}
+  m_LocalPosition: {x: 1.215, y: -0.814, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 9070084620818349611}
@@ -1187,3 +1278,17 @@ PolygonCollider2D:
       - {x: 0.13711181, y: -0.5482478}
       - {x: 0.2976294, y: -0.40453592}
       - {x: 0.13742769, y: -0.5461856}
+--- !u!114 &1541648167894511601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070084621709762502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35ceb2e2bd1b45b41bdf514654f61242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceDirection: {x: -50, y: 50}
+  torque: -50

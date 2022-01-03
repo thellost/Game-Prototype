@@ -10,7 +10,7 @@ public class PlayerInput : MonoBehaviour
 	private PlayerVelocity playerVelocity;
 
 	private bool isMapOpened;
-
+	public Ghost ghost;
 	void Start()
 	{
 		playerVelocity = GetComponent<PlayerVelocity>();
@@ -24,6 +24,10 @@ public class PlayerInput : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{
+			if (ghost != null)
+			{
+				ghost.makeGhost = true;
+			}
 			playerVelocity.OnJumpInputDown();
 		}
 
@@ -39,18 +43,17 @@ public class PlayerInput : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.LeftShift))
 		{
-			playerVelocity.OnDashInputDown(0,0,true);
-		}
-		
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			Debug.Log("test slow");
 			timeManager.DoSlowMotion();
 		}
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-			playerVelocity.Roll();
-        }
+		
+		if (Input.GetKeyDown(KeyCode.LeftControl))
+		{
+			playerVelocity.OnDashInputDown(0, 0, true);
+		}
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+		//	playerVelocity.Roll();
+        //}
 
 		/*if (Input.GetKeyDown(KeyCode.M))
         {

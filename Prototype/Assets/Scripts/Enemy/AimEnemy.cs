@@ -33,7 +33,8 @@ public class AimEnemy : MonoBehaviour
     private Coroutine LookCoroutine;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        
+        anim = gameObject.GetComponent<Animator>();
         GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
         if (bulletSpawnDumpObject == null)
         {

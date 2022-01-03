@@ -35,6 +35,8 @@ public class PlayerVelocity : MonoBehaviour
 	[SerializeField] private AudioClip dashSfx;
 	[SerializeField] private AudioClip slashSfx;
 
+	[SerializeField] ParticleSystem dustEffect; 
+
 	private int airJumpCount;
 	private int dashCount;
 	private float lastDashTime;
@@ -189,6 +191,7 @@ public class PlayerVelocity : MonoBehaviour
 	/// </summary>
 	public void OnJumpInputDown()
 	{
+
 		if (playerMovement.collisionDirection.below)
 		{
 			Jump();
@@ -202,6 +205,8 @@ public class PlayerVelocity : MonoBehaviour
 
 	private void Jump()
     {
+
+		createDust();
 		if (playerMovement.slidingDownMaxSlope)
 		{
 			// Jumping away from max slope dir
@@ -250,7 +255,7 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
-
+		createDust();
 		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;
@@ -258,7 +263,7 @@ public class PlayerVelocity : MonoBehaviour
 		//set old velocity to 0 so it doesnt affect the dash
 		
 		playerInput.enabled = false;
-		directionalInput.x = 0;
+		//directionalInput.x = 0;
 		//cek ground collision nya ku ganti sedikit karena kalau misalnya di ground dia bisa dash dalam bentuk roll , tapi dengan power se fraksi air dash atau sama
 		if (dashCount == 0)
         {
@@ -381,4 +386,14 @@ public class PlayerVelocity : MonoBehaviour
 		playerAnimator.SetSpeedY(velocity.y);
 		playerAnimator.SetRolling(isRolling);
 	}
+
+	private void createDust()
+    {
+
+		dustEffect.Stop();
+		if (!dustEffect.isPlaying)
+        {
+			dustEffect.Play();
+		}
+    }
 }
