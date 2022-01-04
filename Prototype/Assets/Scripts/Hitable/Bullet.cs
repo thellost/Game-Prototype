@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     private Timeline time;
     private bool deflected;
     [SerializeField] float bulletSpeed = 30;
-
+    [SerializeField] float damage = 10f;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
@@ -63,5 +63,23 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = transform.rotation * rotation;
         speedDirection = new Vector2(xside, yside);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerStatManager playerStatManager;
+            playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
+            if (playerStatManager != null)
+            {
+
+                playerStatManager.takeDamage(damage, transform.position);
+            }
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
     }
 }

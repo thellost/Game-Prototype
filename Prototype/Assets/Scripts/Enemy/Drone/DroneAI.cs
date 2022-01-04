@@ -53,6 +53,11 @@ public class DroneAI : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+
+        
+    }
 
     private void UpdatePath()
     {
@@ -92,7 +97,7 @@ public class DroneAI : MonoBehaviour
         }
 
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = dir * enemySpeed * time.deltaTime;
+        Vector2 force = dir * enemySpeed * time.fixedDeltaTime;
         rb.velocity=force;
         //Debug.Log(dir);
 
@@ -112,11 +117,11 @@ public class DroneAI : MonoBehaviour
         }
 
         // flip enemy
-        if (rb.velocity.x <= 0.01f)
+        if (rb.velocity.x <= 0.1f)
         {
             enemyGraphic.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         } 
-        else if(rb.velocity.x >= -0.01f)
+        else
         {
             enemyGraphic.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
