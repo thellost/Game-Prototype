@@ -33,8 +33,7 @@ public class AimEnemy : MonoBehaviour
     private Coroutine LookCoroutine;
     private void Awake()
     {
-        if (!PauseMenu.isPaused)
-        {
+      
             anim = gameObject.GetComponent<Animator>();
             GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
             if (bulletSpawnDumpObject == null)
@@ -47,7 +46,7 @@ public class AimEnemy : MonoBehaviour
             }
             timer = 1;
             generatedParticle = null;
-        }
+        
     }
 
     private void Start()
@@ -107,26 +106,29 @@ public class AimEnemy : MonoBehaviour
     }
 
     public void fire()
-    { 
-        if (timer < 0)
+    {
+        if (!PauseMenu.isPaused)
         {
-
-            if (target != null)
+            if (timer < 0)
             {
-                
-                GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
-                
-                particle.GetComponent<Transform>().position = gunMuzzle.transform.position;
-                particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
-                particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
 
-                GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-                bulletTemp.GetComponent<Bullet>().setTarget(ref target);
-                bullet.GetComponent<Transform>().position = particle.transform.position;
+                if (target != null)
+                {
 
-                CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
-                //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);
-            } 
+                    GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
+
+                    particle.GetComponent<Transform>().position = gunMuzzle.transform.position;
+                    particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+                    particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
+
+                    GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
+                    bulletTemp.GetComponent<Bullet>().setTarget(ref target);
+                    bullet.GetComponent<Transform>().position = particle.transform.position;
+
+                    CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
+                    //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);
+                }
+            }
         }
     }
 
