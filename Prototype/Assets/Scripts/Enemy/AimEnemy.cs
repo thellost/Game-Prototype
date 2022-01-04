@@ -33,19 +33,21 @@ public class AimEnemy : MonoBehaviour
     private Coroutine LookCoroutine;
     private void Awake()
     {
-        
-        anim = gameObject.GetComponent<Animator>();
-        GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
-        if (bulletSpawnDumpObject == null)
+        if (!PauseMenu.isPaused)
         {
-            bulletSpawnDump = transform;
+            anim = gameObject.GetComponent<Animator>();
+            GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
+            if (bulletSpawnDumpObject == null)
+            {
+                bulletSpawnDump = transform;
+            }
+            else
+            {
+                bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
+            }
+            timer = 1;
+            generatedParticle = null;
         }
-        else
-        {
-            bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
-        }
-        timer = 1;
-        generatedParticle = null;
     }
 
     private void Start()
@@ -105,7 +107,7 @@ public class AimEnemy : MonoBehaviour
     }
 
     public void fire()
-    {
+    { 
         if (timer < 0)
         {
 
