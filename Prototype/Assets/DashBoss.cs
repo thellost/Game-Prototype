@@ -13,8 +13,7 @@ public class DashBoss : StateMachineBehaviour
 
         transform = animator.GetComponent<Transform>();
         time = animator.GetComponent<Timeline>();
-        Debug.Log(Vector3.Distance(target, transform.position));
-        if(Vector3.Distance(target, transform.position) < 0.1f)
+        if(Vector3.Distance(target, transform.position) < 0.2f)
         {
             target = GameObject.FindGameObjectsWithTag("Waypoint")[1].transform.position;
         }

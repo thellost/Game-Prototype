@@ -4,12 +4,13 @@ using UnityEngine;
 using Chronos;
 public class idleBehaviorBoss : StateMachineBehaviour
 {
-    [SerializeField] float delay = 0.2f;
+    [SerializeField] float delay = 2f;
     public bool isFacingRight = false;
     private Transform target;
     private Transform transform;
     private Timeline time;
     private float internalTimer;
+    private bool decided;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
@@ -17,6 +18,7 @@ public class idleBehaviorBoss : StateMachineBehaviour
         transform = animator.GetComponent<Transform>();
         time = animator.GetComponent<Timeline>();
         internalTimer = 0;
+        decided = false;
         checkFlip();
     }
 
@@ -26,20 +28,27 @@ public class idleBehaviorBoss : StateMachineBehaviour
         internalTimer += time.deltaTime;
         if(internalTimer > delay)
         {
-            float value = Random.value;
-            if(value <= 1f)
+            if (!decided)
             {
-
-                animator.SetTrigger("dashAttack");
+                decided = true;
+                float value = Random.value;
+                if (value <= 0.5f)
+                {
+                    animator.SetTrigger("dashAttack");
+                }
+                else
+                {
+                    animator.SetTrigger("jump");
+                }
             }
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        internalTimer = 0;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

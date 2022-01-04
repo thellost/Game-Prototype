@@ -57,7 +57,6 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
 
                 currentHp -= dmg;
 
-                Debug.Log("tas");
                 SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
                 if(PopupHandler.Instance != null)
                 {

@@ -63,6 +63,5 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = transform.rotation * rotation;
         speedDirection = new Vector2(xside, yside);
-        Debug.Log(speedDirection);
     }
 }

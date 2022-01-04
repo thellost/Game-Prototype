@@ -206,7 +206,7 @@ public class PlayerVelocity : MonoBehaviour
 	private void Jump()
     {
 
-		createDust();
+		createDust(true);
 		if (playerMovement.slidingDownMaxSlope)
 		{
 			// Jumping away from max slope dir
@@ -255,7 +255,7 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
-		createDust();
+		createDust(false);
 		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;
@@ -387,12 +387,24 @@ public class PlayerVelocity : MonoBehaviour
 		playerAnimator.SetRolling(isRolling);
 	}
 
-	private void createDust()
+	private void createDust(bool isJump)
     {
 
 		dustEffect.Stop();
 		if (!dustEffect.isPlaying)
         {
+            if (isJump)
+            {
+
+				var main = dustEffect.main;
+				main.duration = 0.05f;
+			}
+            else
+            {
+
+				var main = dustEffect.main;
+				main.duration = 0.2f;
+			}
 			dustEffect.Play();
 		}
     }
