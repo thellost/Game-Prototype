@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 4267103544329921353}
   - component: {fileID: 4267103544329921361}
   - component: {fileID: 4267103544329921352}
+  - component: {fileID: 8593777871832514013}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -472,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912b25a2bb2ba5a44946b063ba74b8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ghost: {fileID: 0}
 --- !u!114 &4267103544329921359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,6 +614,22 @@ MonoBehaviour:
   _globalClockKey: Player
   _rewindable: 1
   _recordingDuration: 30
+--- !u!114 &8593777871832514013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267103544329921371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897f0e97d9653643ba8bf9980181553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostDelay: 0.1
+  ghostDelaySeconds: 0.2
+  ghost: {fileID: 8956748589522898649, guid: 6d0fafbe7bf97db4da03127d12edf203, type: 3}
+  makeGhost: 0
 --- !u!1 &4267103544536451320
 GameObject:
   m_ObjectHideFlags: 0
