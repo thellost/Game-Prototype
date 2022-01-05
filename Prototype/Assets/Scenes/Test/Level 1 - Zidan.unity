@@ -837,6 +837,10 @@ PrefabInstance:
       propertyPath: playerStat
       value: 
       objectReference: {fileID: 304605100}
+    - target: {fileID: 6065637175630813494, guid: 90a776dec1549cb49a116ccaec6caca9, type: 3}
+      propertyPath: ghostEffect
+      value: 
+      objectReference: {fileID: 646423117}
     - target: {fileID: 6065637175630813495, guid: 90a776dec1549cb49a116ccaec6caca9, type: 3}
       propertyPath: namaLevel.Array.size
       value: 3
@@ -25943,6 +25947,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &646423117 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8593777871832514013, guid: 83a31e26739faf248a89f9fdf31dfa37, type: 3}
+  m_PrefabInstance: {fileID: 755324605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897f0e97d9653643ba8bf9980181553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &649425470 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2426345623673470207, guid: c4c126ddb9f0944408a4bb7e60f41de6, type: 3}
