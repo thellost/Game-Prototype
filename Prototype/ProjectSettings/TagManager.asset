@@ -11,6 +11,7 @@ TagManager:
   - Waypoint
   - TestNextLvl
   - Ground
+  - Spawner
   layers:
   - Default
   - TransparentFX

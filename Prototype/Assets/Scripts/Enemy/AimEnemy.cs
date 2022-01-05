@@ -31,9 +31,10 @@ public class AimEnemy : MonoBehaviour
     private Transform target;
     private float timer;
     private Coroutine LookCoroutine;
+    private bulletManager bulletManager;
     private void Awake()
     {
-      
+        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<bulletManager>();
             anim = gameObject.GetComponent<Animator>();
             GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
             if (bulletSpawnDumpObject == null)
@@ -121,9 +122,8 @@ public class AimEnemy : MonoBehaviour
                     particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
                     particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
 
-                    GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-                    bulletTemp.GetComponent<Bullet>().setTarget(ref target);
-                    bullet.GetComponent<Transform>().position = particle.transform.position;
+
+                    bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
 
                     CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                     //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);

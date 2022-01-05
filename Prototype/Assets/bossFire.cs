@@ -17,10 +17,11 @@ public class bossFire : MonoBehaviour
     [SerializeField] float interval = 0.2f;
     private float timer;
     private Timeline time;
-
+    private bulletManager bulletManager;
     // Start is called before the first frame update
     void Awake()
     {
+        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<bulletManager>();
         GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
         time = GetComponent<Timeline>();
         if (bulletSpawnDumpObject == null)
@@ -49,9 +50,7 @@ public class bossFire : MonoBehaviour
                 particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
                 particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
 
-                GameObject bulletTemp = Instantiate(bullet, bulletSpawnDump);
-                bulletTemp.GetComponent<Bullet>().setTarget(ref target);
-                bullet.GetComponent<Transform>().position = particle.transform.position;
+                bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
 
                 CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
             }

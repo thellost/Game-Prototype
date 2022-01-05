@@ -13,11 +13,12 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
-
+    private bulletManager bulletManager;
     private Vector2 speedDirection;
     // Start is called before the first frame update
     void Start()
     {
+        bulletManager = GetComponentInParent<bulletManager>();
         time = GetComponent<Timeline>();
         rb = GetComponent<Rigidbody2D>();
         //rb.velocity = new Vector2(-30, 0);
@@ -60,8 +61,9 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float xside = Mathf.Cos(angle * Mathf.PI / 180);
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        //quarternion is really weird
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = transform.rotation * rotation;
+        transform.rotation = rotation;
         speedDirection = new Vector2(xside, yside);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -75,11 +77,12 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
 
                 playerStatManager.takeDamage(damage, transform.position);
             }
-            Destroy(gameObject);
+            bulletManager.ReturnToPool(gameObject);
         }
-        else if (collision.gameObject.tag == "Ground")
+        else
         {
-            Destroy(gameObject);
+            Debug.Log("ground");
+            bulletManager.ReturnToPool(gameObject);
         }
     }
 }
