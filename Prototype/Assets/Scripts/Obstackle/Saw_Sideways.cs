@@ -46,7 +46,7 @@ public class Saw_Sideways : MonoBehaviour
         {
             PlayerStatManager playerStatManager;
             playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
-            if (playerStatManager != null)
+            if (playerStatManager)
             {
 
                 playerStatManager.takeDamage(damage, transform.position);

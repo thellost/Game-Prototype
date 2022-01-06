@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Playable/MainMenu.unity
     guid: 9c7ba8bbadc525443af22236fa304b30
   - enabled: 0
@@ -26,13 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/Level/cadangan/Level 1 - Azzam.unity
     guid: d571e7f00a6d7434d9c8a94285a01054
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test/Test Drone.unity
     guid: 98c065fe232a8d143886c67b34ee73ae
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test/Test Drone 1.unity
     guid: 87758b7118e39e449b4b139df7f8bb0f
   m_configObjects: {}

@@ -14,6 +14,9 @@ TextureImporter:
   - first:
       213: -8847943545812192714
     second: asset_sprite_ngangkat
+  - first:
+      213: -6482649425114497684
+    second: asset_sprite_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -16082,6 +16085,27 @@ TextureImporter:
       bones: []
       spriteID: 6327727393ac53580800000000000000
       internalID: -8847943545812192714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asset_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 2238
+        width: 579
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6df8a4c1b00906a0800000000000000
+      internalID: -6482649425114497684
       vertices: []
       indices: 
       edges: []
