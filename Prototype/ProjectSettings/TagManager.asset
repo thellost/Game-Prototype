@@ -10,6 +10,8 @@ TagManager:
   - Slash
   - Waypoint
   - TestNextLvl
+  - Ground
+  - Spawner
   layers:
   - Default
   - TransparentFX

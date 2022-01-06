@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class money : MonoBehaviour
+public class Money : MonoBehaviour
 {
-    public static money Instance { get; private set; }
+    public static Money Instance { get; private set; }
     private int currentMoney;
     [SerializeField] TextMeshProUGUI display;
     // Start is called before the first frame update

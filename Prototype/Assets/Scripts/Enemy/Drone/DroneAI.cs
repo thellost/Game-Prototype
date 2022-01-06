@@ -10,11 +10,14 @@ public class DroneAI : MonoBehaviour
     public static Transform target;
     public Animator anim;
     public GameObject bullet, bulletParent;
+
+    [SerializeField] GameObject muzzleParticle;
     public Transform enemyGraphic;
     public float enemySpeed;
     public float nextWaypointDistance;
     public bool isAlerted = false;
-
+    [HideInInspector]
+    public float offset = 80f;
     private GameObject player;
     private Path path;
     private Seeker seeker;
@@ -26,8 +29,12 @@ public class DroneAI : MonoBehaviour
     [SerializeField] private float shootingRange;
     [SerializeField] private float fireRate = 1f;
     private float nextFireTime;
+    private Transform bulletSpawnDump;
+    private BulletManager bulletManager;
     private void Awake()
     {
+        bulletSpawnDump = GameObject.FindGameObjectWithTag("Spawner").transform;
+        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
         if (droneTarget1 == null)
         {
             droneTarget1 = GameObject.Find("Drone Target 1").GetComponent<Transform>();
@@ -53,6 +60,11 @@ public class DroneAI : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+
+        
+    }
 
     private void UpdatePath()
     {
@@ -92,7 +104,7 @@ public class DroneAI : MonoBehaviour
         }
 
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = dir * enemySpeed * time.deltaTime;
+        Vector2 force = dir * enemySpeed * time.fixedDeltaTime;
         rb.velocity=force;
         //Debug.Log(dir);
 
@@ -105,18 +117,21 @@ public class DroneAI : MonoBehaviour
         float distanceFromTarget = Vector2.Distance(droneTarget1.position, transform.position);
         if (distanceFromTarget <= shootingRange && nextFireTime < time.time)
         {
-            GameObject bulletTemp = Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+            GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
 
-            bulletTemp.GetComponent<Bullet>().setTarget(ref target);
+            particle.GetComponent<Transform>().position = transform.position;
+            particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+            particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
+            bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
             nextFireTime = time.time + fireRate;
         }
 
         // flip enemy
-        if (rb.velocity.x <= 0.01f)
+        if (rb.velocity.x <= 0.1f)
         {
             enemyGraphic.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
         } 
-        else if(rb.velocity.x >= -0.01f)
+        else
         {
             enemyGraphic.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }

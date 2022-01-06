@@ -6,7 +6,7 @@ using Chronos;
 public class UImanager : MonoBehaviour
 {
     [SerializeField] GameObject inventory;
-    [SerializeField] GameObject pause;
+   /*SerializeField] GameObject pause;*/
     [SerializeField] GameObject map;
 
     private Clock enemyClock, playerClock, bulletClock;
@@ -25,6 +25,7 @@ public class UImanager : MonoBehaviour
                 OpenInventory();
             }
         }
+        /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -34,7 +35,7 @@ public class UImanager : MonoBehaviour
             {
                 Pause();
             }
-        }
+        }*/
     }
 
     public void ToggleActiveMap()
@@ -43,14 +44,14 @@ public class UImanager : MonoBehaviour
     }
 
     // resume & pause
-    private void Pause()
-    {
-        pause.SetActive(true);
-        Time.timeScale = 0;
-        /*enemyClock.localTimeScale = 0;
-        playerClock.localTimeScale = 0;
-        bulletClock.localTimeScale = 0;*/
-        isPaused = true;
+    /* private void Pause()
+     {
+         pause.SetActive(true);
+         Time.timeScale = 0;
+         /*enemyClock.localTimeScale = 0;
+         playerClock.localTimeScale = 0;
+         bulletClock.localTimeScale = 0;
+    isPaused = true;
     }
 
     public void Resume()
@@ -59,19 +60,20 @@ public class UImanager : MonoBehaviour
         Time.timeScale = 1;
         /*enemyClock.localTimeScale = 1;
         playerClock.localTimeScale = 1;
-        bulletClock.localTimeScale = 1;*/
+        bulletClock.localTimeScale = 1;
         isPaused = false;
-    }
+}
+*/
 
     // inventory
-    private void OpenInventory()
+private void OpenInventory()
     {
         inventory.SetActive(true);
         Time.timeScale = 0;
         /*enemyClock.localTimeScale = 0;
         playerClock.localTimeScale = 0;
         bulletClock.localTimeScale = 0;*/
-        isPaused = true;
+isPaused = true;
     }
 
     private void CloseInventory()

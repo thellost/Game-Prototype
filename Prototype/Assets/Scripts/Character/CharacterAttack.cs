@@ -34,9 +34,12 @@ public class CharacterAttack : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!PauseMenu.isPaused)
         {
-            Attack();
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+            }
         }
     }
 

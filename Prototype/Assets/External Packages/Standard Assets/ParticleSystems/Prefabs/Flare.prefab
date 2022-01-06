@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
-  - component: {fileID: 2361510943974486121}
+  - component: {fileID: 3903071948778683438}
   m_Layer: 0
   m_Name: Sparks
   m_TagString: Untagged
@@ -49,7 +49,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &2361510943974486121
+--- !u!114 &3903071948778683438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4806,10 +4806,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c364e7a8609b1f94fa72d62049a91de5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6090da511f8374135a15dd8655adcd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
+  _mode: 1
+  _globalClockKey: Enemies
+  _rewindable: 0
+  _recordingDuration: 30
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -4821,7 +4825,7 @@ GameObject:
   - component: {fileID: 400004}
   - component: {fileID: 19800002}
   - component: {fileID: 19900002}
-  - component: {fileID: 1615172214106771694}
+  - component: {fileID: 7232489500278893144}
   m_Layer: 0
   m_Name: Smoke
   m_TagString: Untagged
@@ -4859,7 +4863,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -9580,7 +9584,7 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!114 &1615172214106771694
+--- !u!114 &7232489500278893144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9589,10 +9593,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c364e7a8609b1f94fa72d62049a91de5, type: 3}
+  m_Script: {fileID: 11500000, guid: 6090da511f8374135a15dd8655adcd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _recordingInterval: 0.5
+  _mode: 1
+  _globalClockKey: Enemies
+  _rewindable: 0
+  _recordingDuration: 30
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
@@ -9605,6 +9613,7 @@ GameObject:
   - component: {fileID: 19800004}
   - component: {fileID: 19900004}
   - component: {fileID: 5991244934874675463}
+  - component: {fileID: 2978231441543862861}
   m_Layer: 0
   m_Name: Flare
   m_TagString: Untagged
@@ -9638,13 +9647,13 @@ ParticleSystem:
   serializedVersion: 7
   lengthInSec: 0.05
   simulationSpeed: 1
-  stopAction: 1
+  stopAction: 0
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14349,5 +14358,17 @@ MonoBehaviour:
   _recordingInterval: 0.5
   _mode: 1
   _globalClockKey: Enemies
-  _rewindable: 1
+  _rewindable: 0
   _recordingDuration: 30
+--- !u!114 &2978231441543862861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fda26f0ab3118408d6db8925a9cbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

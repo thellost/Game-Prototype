@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Chronos;
 
 public class PlayerStatManager : MonoBehaviour
 {
@@ -31,17 +32,20 @@ public class PlayerStatManager : MonoBehaviour
     public float currentEnergy;
 
     public bool isDead;
+    private bool isInvulnerable;
     private float internalTimer;
     private PlayerVelocity player;
     private CharacterAttack attack;
     private PlayerAnimator animator;
+    private Timeline time;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         setPlayerStat();
         player = GetComponent<PlayerVelocity>();
         attack = GetComponent<CharacterAttack>();
         animator = GetComponent<PlayerAnimator>();
+        time = GetComponent<Timeline>();
     }
 
     private void setPlayerStat()
@@ -60,15 +64,20 @@ public class PlayerStatManager : MonoBehaviour
 
     public void takeDamage(float dmg, Vector3 enemyPosition)
     {
-        BloodEffect.Instance.setBlood();
-        CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
-        currentHp -= dmg;
-        hpProgressUI.value = currentHp;
-        Vector2 direction = transform.position - enemyPosition;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        float xside = Mathf.Cos(angle * Mathf.PI / 180) * knockbackPower;
-        float yside = Mathf.Sin(angle * Mathf.PI / 180) * knockbackPower;
-        player.knockback(xside , yside);
+        if (!isInvulnerable)
+        {
+            isInvulnerable = true;
+            internalTimer = 0;
+            BloodEffect.Instance.setBlood();
+            CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
+            currentHp -= dmg;
+            hpProgressUI.value = currentHp;
+            Vector2 direction = transform.position - enemyPosition;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float xside = Mathf.Cos(angle * Mathf.PI / 180) * knockbackPower;
+            float yside = Mathf.Sin(angle * Mathf.PI / 180) * knockbackPower;
+            player.knockback(xside, yside);
+        }
     }
 
 
@@ -77,12 +86,11 @@ public class PlayerStatManager : MonoBehaviour
     void Update()
     {
         energyProgressUI.value = currentEnergy;
-        internalTimer += Time.deltaTime;
-        //if(internalTimer > invicTimer)
-        //{
-        //    internalTimer = 0;
-        //    takeDamage(5);
-        //}
+        internalTimer += time.deltaTime;
+        if(internalTimer > invicTimer)
+        {
+            isInvulnerable = false;
+        }
         if(currentHp <= 0)
         {
             dead();

@@ -9,15 +9,16 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     private Timeline time;
     private bool deflected;
     [SerializeField] float bulletSpeed = 30;
-
+    [SerializeField] float damage = 10f;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
-
+    private BulletManager bulletManager;
     private Vector2 speedDirection;
     // Start is called before the first frame update
     void Start()
     {
+        bulletManager = GetComponentInParent<BulletManager>();
         time = GetComponent<Timeline>();
         rb = GetComponent<Rigidbody2D>();
         //rb.velocity = new Vector2(-30, 0);
@@ -60,9 +61,69 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float xside = Mathf.Cos(angle * Mathf.PI / 180);
         float yside = Mathf.Sin(angle * Mathf.PI / 180);
+        //quarternion is really weird
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = transform.rotation * rotation;
+        transform.rotation = rotation;
         speedDirection = new Vector2(xside, yside);
-        Debug.Log(speedDirection);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+
+            PlayerStatManager playerStatManager;
+            playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
+            if (playerStatManager != null)
+            {
+
+                playerStatManager.takeDamage(damage, transform.position);
+            }
+            bulletManager.ReturnToPool(gameObject);
+        }
+        else if (collision.gameObject.tag == "Ground")
+        {
+            Debug.Log("ground");
+            bulletManager.ReturnToPool(gameObject);
+        }
+        else if (deflected && collision.gameObject.tag == "Enemy")
+        {
+            EnemyStat enemyStat = collision.gameObject.GetComponent<EnemyStat>();
+            if (enemyStat != null)
+            {
+                enemyStat.takeDamage(damage);
+            }
+
+            bulletManager.ReturnToPool(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+
+            PlayerStatManager playerStatManager;
+            playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
+            if (playerStatManager != null)
+            {
+
+                playerStatManager.takeDamage(damage, transform.position);
+            }
+            bulletManager.ReturnToPool(gameObject);
+        }
+        else if(collision.gameObject.tag == "Ground")
+        {
+            Debug.Log("ground");
+            bulletManager.ReturnToPool(gameObject);
+        } else if(deflected && collision.gameObject.tag == "Enemy")
+        {
+            EnemyStat enemyStat = collision.gameObject.GetComponent<EnemyStat>();
+            if (enemyStat != null)
+            {
+                enemyStat.takeDamage(damage);
+            }
+
+            bulletManager.ReturnToPool(gameObject);
+        }
     }
 }

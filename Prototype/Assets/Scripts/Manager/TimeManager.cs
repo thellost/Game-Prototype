@@ -1,10 +1,10 @@
 using UnityEngine;
 using Chronos;
 
-public class TimeManager : MonoBehaviour
+public class TimeManager : Singleton<TimeManager>
 {
     [SerializeField] private AudioClip bulletTimeSfx;
-
+    [SerializeField] Ghost ghostEffect;
     public bool slowMotionActivated;
     public float enemiesSlowDownFactor = 0.2f;
     public float playerSlowDownFactor = 0.4f;
@@ -42,6 +42,11 @@ public class TimeManager : MonoBehaviour
             {
                 if (!isInSlowmo)
                 {
+                    if (ghostEffect != null)
+                    {
+
+                        ghostEffect.makeGhost = true;
+                    }
                     isInSlowmo = true;
                     bulletTimeEffect.startEffect(false);
                     materialEffect.setMaterialEffect(false);
@@ -63,7 +68,11 @@ public class TimeManager : MonoBehaviour
 
     public void stopSlowMotion()
     {
+        if (ghostEffect != null)
+        {
 
+            ghostEffect.makeGhost = false;
+        }
         bulletTimeEffect.startEffect(true);
         materialEffect.setMaterialEffect(true);
         enemyClock.localTimeScale = 1;

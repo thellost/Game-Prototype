@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField] private Canvas canvas;
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Image image;
+    public Sprite chip, equippedChip;
     private Vector3 defaultPosition;
     [HideInInspector] public bool droppedOnSlot;
 
@@ -20,6 +23,8 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     void Start()
     {
         defaultPosition = GetComponent<RectTransform>().localPosition;
+        image = GetComponent<Image>();
+        image.sprite = chip;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -51,12 +56,24 @@ public class DragItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("OnPointerDown");
     }
 
+    public void ChangeToEquippedChipSprite()
+    {
+        if (image.sprite == chip)
+        {
+            image.sprite = equippedChip;
+        }
+    }
+
     IEnumerator Return()
     {
         yield return new WaitForEndOfFrame();
         if (droppedOnSlot == false)
         {
             rectTransform.anchoredPosition = defaultPosition;
+            if (image.sprite == equippedChip)
+            {
+                image.sprite = chip;
+            }
         }
     }
 }

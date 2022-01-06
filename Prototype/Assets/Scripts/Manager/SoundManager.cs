@@ -6,8 +6,9 @@ public class SoundManager : Singleton<SoundManager>
     public AudioSource bgmSource;
     public AudioClip defaultBGM;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         PlayBGM(defaultBGM);
     }
 
