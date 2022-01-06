@@ -13,6 +13,7 @@ public class CharacterAttack : MonoBehaviour
     public float animationOffset;
     [SerializeField] GameObject bloodParticle;
     [SerializeField] GameObject slashParticle;
+    [SerializeField] GameObject slashEffect;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer = 0.1f;
@@ -23,6 +24,7 @@ public class CharacterAttack : MonoBehaviour
     private Vector2 direction;
     private Timeline time;
     private Movement movement;
+    private Quaternion slashParticleAngle;
     // Update is called once per frame
 
     private void Start()
@@ -99,6 +101,11 @@ public class CharacterAttack : MonoBehaviour
                     {
                         enemeyAI.setState(EnemyAI.State.knockback);
                         enemeyAI.setAttackDirection(directionAnimation);
+                        if (!slashEffect.activeInHierarchy)
+                        {
+                            slashEffect.transform.rotation = slashParticleAngle;
+                            slashEffect.SetActive(true);
+                        }
                     }
                     spawnBlood(enemy);
                     if (CameraShake.Instance != null)
@@ -138,10 +145,10 @@ public class CharacterAttack : MonoBehaviour
         gameobj.transform.localScale = new Vector3(transform.localScale.x * 0.6f, transform.localScale.y*1.4f, transform.localScale.z);
         gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
-
+        slashParticleAngle = gameobj.transform.rotation * rotation;
         gameobj.transform.localScale *= 1.5f;
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
-
+        
         //set  transform behind player
         Vector2 temp2 = direction;
         setTraditionalNormalize(ref temp2);
