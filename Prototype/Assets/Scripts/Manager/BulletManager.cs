@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletManager : MonoBehaviour
+public class BulletManager : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     // pool list

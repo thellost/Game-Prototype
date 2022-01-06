@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletTrigger : MonoBehaviour
+public class BulletTrigger : MonoBehaviour
 {
     [SerializeField] float damage;
     Collider2D hitBox;

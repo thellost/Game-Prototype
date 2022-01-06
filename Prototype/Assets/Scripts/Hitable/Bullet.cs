@@ -13,12 +13,12 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer;
-    private bulletManager bulletManager;
+    private BulletManager bulletManager;
     private Vector2 speedDirection;
     // Start is called before the first frame update
     void Start()
     {
-        bulletManager = GetComponentInParent<bulletManager>();
+        bulletManager = GetComponentInParent<BulletManager>();
         time = GetComponent<Timeline>();
         rb = GetComponent<Rigidbody2D>();
         //rb.velocity = new Vector2(-30, 0);
@@ -70,6 +70,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     {
         if (collision.gameObject.tag == "Player")
         {
+
             PlayerStatManager playerStatManager;
             playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
             if (playerStatManager != null)
@@ -79,9 +80,49 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
             }
             bulletManager.ReturnToPool(gameObject);
         }
-        else
+        else if (collision.gameObject.tag == "Ground")
         {
             Debug.Log("ground");
+            bulletManager.ReturnToPool(gameObject);
+        }
+        else if (deflected && collision.gameObject.tag == "Enemy")
+        {
+            EnemyStat enemyStat = collision.gameObject.GetComponent<EnemyStat>();
+            if (enemyStat != null)
+            {
+                enemyStat.takeDamage(damage);
+            }
+
+            bulletManager.ReturnToPool(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+
+            PlayerStatManager playerStatManager;
+            playerStatManager = collision.gameObject.GetComponent<PlayerStatManager>();
+            if (playerStatManager != null)
+            {
+
+                playerStatManager.takeDamage(damage, transform.position);
+            }
+            bulletManager.ReturnToPool(gameObject);
+        }
+        else if(collision.gameObject.tag == "Ground")
+        {
+            Debug.Log("ground");
+            bulletManager.ReturnToPool(gameObject);
+        } else if(deflected && collision.gameObject.tag == "Enemy")
+        {
+            EnemyStat enemyStat = collision.gameObject.GetComponent<EnemyStat>();
+            if (enemyStat != null)
+            {
+                enemyStat.takeDamage(damage);
+            }
+
             bulletManager.ReturnToPool(gameObject);
         }
     }

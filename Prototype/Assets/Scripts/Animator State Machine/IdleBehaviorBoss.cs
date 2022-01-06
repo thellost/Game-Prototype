@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
-public class idleBehaviorBoss : StateMachineBehaviour
+public class IdleBehaviorBoss : StateMachineBehaviour
 {
     [SerializeField] float delay = 2f;
     public bool isFacingRight = false;

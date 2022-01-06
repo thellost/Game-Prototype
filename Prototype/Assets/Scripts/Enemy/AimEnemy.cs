@@ -31,10 +31,10 @@ public class AimEnemy : MonoBehaviour
     private Transform target;
     private float timer;
     private Coroutine LookCoroutine;
-    private bulletManager bulletManager;
+    private BulletManager bulletManager;
     private void Awake()
     {
-        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<bulletManager>();
+        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
             anim = gameObject.GetComponent<Animator>();
             GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
             if (bulletSpawnDumpObject == null)

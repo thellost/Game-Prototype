@@ -11,7 +11,7 @@ public class JumpBossAttack : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         followScript = animator.GetComponent<FollowBoss>();
-        isFacingRight = animator.GetBehaviour<idleBehaviorBoss>().isFacingRight;
+        isFacingRight = animator.GetBehaviour<IdleBehaviorBoss>().isFacingRight;
         route = 0;
         if (isFacingRight)
         {

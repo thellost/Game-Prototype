@@ -72,9 +72,9 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         if (!stats.checkAlive() && !dead)
         {
             dead = true;
-            if (money.Instance != null)
+            if (Money.Instance != null)
             {
-                money.Instance.addMoney(9);
+                Money.Instance.addMoney(9);
             }
             setState(State.dead);
 

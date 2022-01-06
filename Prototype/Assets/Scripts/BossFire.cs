@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
-public class bossFire : MonoBehaviour
+public class BossFire : MonoBehaviour
 {
     private Transform bulletSpawnDump;
 
@@ -17,11 +17,11 @@ public class bossFire : MonoBehaviour
     [SerializeField] float interval = 0.2f;
     private float timer;
     private Timeline time;
-    private bulletManager bulletManager;
+    private BulletManager bulletManager;
     // Start is called before the first frame update
     void Awake()
     {
-        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<bulletManager>();
+        bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
         GameObject bulletSpawnDumpObject = GameObject.Find("BulletSpawn");
         time = GetComponent<Timeline>();
         if (bulletSpawnDumpObject == null)

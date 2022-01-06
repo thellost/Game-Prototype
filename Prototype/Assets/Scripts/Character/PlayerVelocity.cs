@@ -390,7 +390,7 @@ public class PlayerVelocity : MonoBehaviour
 	private void createDust(bool isJump)
     {
 
-		dustEffect.Stop();
+		dustEffect.Stop(true , ParticleSystemStopBehavior.StopEmittingAndClear);
 		if (!dustEffect.isPlaying)
         {
             if (isJump)

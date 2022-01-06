@@ -306,7 +306,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 6200000, guid: 253a8f844c368284c9a3fd9cd1555c92, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.25, y: 0.2}
@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: randomSeed
-      value: -735146245
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: lengthInSec
@@ -734,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: autoRandomSeed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: ShapeModule.m_Scale.x
@@ -853,7 +853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: randomSeed
-      value: -735146245
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: lengthInSec
@@ -861,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: autoRandomSeed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7451604338354618984, guid: 63f251eb5d6ee144eb7aca80d0ac45e9, type: 3}
       propertyPath: ShapeModule.m_Scale.x
