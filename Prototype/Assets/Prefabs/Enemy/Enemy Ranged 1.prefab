@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2402774231239753037
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5462238722221435271}
-  m_Layer: 10
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5462238722221435271
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2402774231239753037}
-  m_LocalRotation: {x: -0.021152359, y: 0.023283828, z: -0.3435216, w: 0.9386178}
-  m_LocalPosition: {x: 5.02, y: -0.05, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8435313376166599031}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -178.641, y: 183.34, z: -220.244}
 --- !u!212 &496965136404092617
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,6 +81,36 @@ MonoBehaviour:
     showGizmo: 1
   - color: {r: 0, g: 1, b: 0, a: 1}
     showGizmo: 1
+--- !u!1 &2402774231239753037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5462238722221435271}
+  m_Layer: 10
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5462238722221435271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2402774231239753037}
+  m_LocalRotation: {x: -0.021152359, y: 0.023283828, z: -0.3435216, w: 0.9386178}
+  m_LocalPosition: {x: 5.02, y: -0.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8435313376166599031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -178.641, y: 183.34, z: -220.244}
 --- !u!1 &3537840679572901610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   ai: {fileID: 1658832861239453784}
   time: {fileID: 3537840681294705810}
   turnRate: 0
-  initialTimer: 1.5
+  initialTimer: 1
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   cameraShakeIntensity: 2
   cameraShakeFrequency: 1

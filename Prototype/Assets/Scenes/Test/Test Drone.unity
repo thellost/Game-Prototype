@@ -21964,11 +21964,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1859622400746898910, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.2
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 1859622400746898910, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7.09
       objectReference: {fileID: 0}
     - target: {fileID: 1859622400746898910, guid: 53c2255c3653a1d4286e801de37ff0e1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22941,6 +22941,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &304605103 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8593777871832514013, guid: 83a31e26739faf248a89f9fdf31dfa37, type: 3}
+  m_PrefabInstance: {fileID: 755324605}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304605099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7897f0e97d9653643ba8bf9980181553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &304605114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46933,7 +46944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTimeSfx: {fileID: 8300000, guid: 5bbf913add8da7a4aa0daf4334fad618, type: 3}
-  ghostEffect: {fileID: 0}
+  ghostEffect: {fileID: 304605103}
   slowMotionActivated: 1
   enemiesSlowDownFactor: 0.15
   playerSlowDownFactor: 0.25
@@ -47743,6 +47754,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7132947704051056037, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7801738742975358142, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
@@ -47762,6 +47777,14 @@ PrefabInstance:
     - target: {fileID: 8184695447460430554, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
       propertyPath: m_Name
       value: Pause Menu Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806731927917076288, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 101.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806731927917076288, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.385605
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ee42776af99994fbfc1528fcadf652, type: 3}
@@ -80769,6 +80792,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 225541031}
     m_Modifications:
+    - target: {fileID: 3537840681294705811, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5364647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537840681294705811, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
+      propertyPath: m_Size.y
+      value: 6.1105375
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537840681294705811, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537840681294705811, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.017832816
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537840681294705811, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.41807127
+      objectReference: {fileID: 0}
     - target: {fileID: 3537840681294705815, guid: f6f1164c1ad243e459a0da587184535c, type: 3}
       propertyPath: m_Name
       value: Enemy Ranged

@@ -11,6 +11,7 @@ public class Ghost : MonoBehaviour
     void Start()
     {
         ghostDelaySeconds = ghostDelay;
+        
     }
 
     // Update is called once per frame
