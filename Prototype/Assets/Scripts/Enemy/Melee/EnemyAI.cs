@@ -264,7 +264,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
         return false;
     }
 
-    public virtual void attack()
+    protected virtual void attack()
     {
         anim.ResetTrigger("walk");
         isAttacking = true;

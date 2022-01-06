@@ -12,9 +12,8 @@ public class EnemyAIRanged : EnemyAI {
     [SerializeField] AimEnemy aim;
 
     private bool lateAttack = false ;
-    public override void attack()
+    protected override void attack()
     {
-        Debug.Log("hai aku attack");
         fire();
         toggleSprite(false);
         base.attack();
