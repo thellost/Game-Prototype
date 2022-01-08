@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 3537840681294705811}
   m_Layer: 10
   m_Name: Enemy Ranged 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   ai: {fileID: 1658832861239453784}
   time: {fileID: 3537840681294705810}
   turnRate: 0
-  initialTimer: 1
+  initialTimer: 0.35
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   cameraShakeIntensity: 2
   cameraShakeFrequency: 1

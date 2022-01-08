@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupDmg: {fileID: 3764427021440999061, guid: 0f3a424f15975b94682630268a7e31ea, type: 3}
+  popupMoney: {fileID: 0}
 --- !u!114 &6065637176253499746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTimeSfx: {fileID: 8300000, guid: 5bbf913add8da7a4aa0daf4334fad618, type: 3}
+  ghostEffect: {fileID: 0}
   slowMotionActivated: 1
   enemiesSlowDownFactor: 0.15
   playerSlowDownFactor: 0.25
@@ -208,7 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeDuration: 1
   greyscaleMaterial: {fileID: 2100000, guid: d97a2fa602a0986439def3b8068ffc84, type: 2}
-  blurShaderGraph: {fileID: 2100000, guid: f924ba152eec4ed4c9e92d187de654a4, type: 2}
+  blurShaderGraph: {fileID: 2100000, guid: 72376e8188a356a409783bb934d1653b, type: 2}
 --- !u!1 &6065637176416686654
 GameObject:
   m_ObjectHideFlags: 0

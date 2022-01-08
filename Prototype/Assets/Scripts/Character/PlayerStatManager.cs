@@ -32,7 +32,7 @@ public class PlayerStatManager : MonoBehaviour
     public float currentEnergy;
 
     public bool isDead;
-    private bool isInvulnerable;
+    public bool isInvulnerable { get; private set; }
     private float internalTimer;
     private PlayerVelocity player;
     private CharacterAttack attack;
@@ -78,6 +78,12 @@ public class PlayerStatManager : MonoBehaviour
             float yside = Mathf.Sin(angle * Mathf.PI / 180) * knockbackPower;
             player.knockback(xside, yside);
         }
+    }
+    
+    public void setInvulnerable()
+    {
+        isInvulnerable = true;
+        internalTimer = 0;
     }
 
 

@@ -19,7 +19,6 @@ public class BloodEffect : MonoBehaviour
     // Update is called once per frame
     public void setBlood ()
     {
-        Debug.Log("test");
         StopAllCoroutines();
         StartCoroutine(startFading());
     }

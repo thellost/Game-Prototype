@@ -63,13 +63,19 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
 
                     PopupHandler.Instance.PopupDmg(gameObject, dmg.ToString());
                 }
-                
+                if (ai != null)
+                {
+                    ai.setState(EnemyAI.State.knockback);
+                }
+
                 return true;
             }
            
         }
         return false;
     }
+
+
 
 
     // Update is called once per frame

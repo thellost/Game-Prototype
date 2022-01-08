@@ -12,6 +12,8 @@ TagManager:
   - TestNextLvl
   - Ground
   - Spawner
+  - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - Ground
   - Camera
   - GroundOnly
-  - 
+  - Projectile
   - 
   - 
   - 

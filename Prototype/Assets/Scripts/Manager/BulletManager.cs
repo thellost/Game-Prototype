@@ -20,7 +20,6 @@ public class BulletManager : MonoBehaviour
 
         if (pool.ContainsKey(item.name))
         {
-            Debug.Log(pool[item.name].Count);
             // if item available in pool
             if (pool[item.name].Count > 0)
             {

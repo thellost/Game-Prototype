@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     private BulletManager bulletManager;
     private Vector2 speedDirection;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         bulletManager = GetComponentInParent<BulletManager>();
         time = GetComponent<Timeline>();
@@ -31,6 +31,11 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
         rb.MovePosition(rb.position + speedDirection * bulletSpeed * time.fixedDeltaTime);
     }
 
+    private void OnEnable()
+    {
+        deflected = false;
+    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,6 +44,7 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
 
     public void Deflected()
     {
+        Debug.Log("deflected");
         if (!deflected)
         {
             //rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
@@ -68,7 +74,8 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Player" && !deflected)
         {
 
             PlayerStatManager playerStatManager;
@@ -76,17 +83,25 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
             if (playerStatManager != null)
             {
 
+                if (playerStatManager.isInvulnerable) 
+                {
+                    return;
+                }
+
                 playerStatManager.takeDamage(damage, transform.position);
             }
             bulletManager.ReturnToPool(gameObject);
+            return;
         }
         else if (collision.gameObject.tag == "Ground")
         {
-            Debug.Log("ground");
             bulletManager.ReturnToPool(gameObject);
+
+            return;
         }
-        else if (deflected && collision.gameObject.tag == "Enemy")
+        if (deflected && collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("TEST ENEMY HIT");
             EnemyStat enemyStat = collision.gameObject.GetComponent<EnemyStat>();
             if (enemyStat != null)
             {

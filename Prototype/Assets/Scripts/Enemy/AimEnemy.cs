@@ -45,7 +45,6 @@ public class AimEnemy : MonoBehaviour
             {
                 bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
             }
-            timer = 1;
             generatedParticle = null;
         
     }
@@ -53,12 +52,13 @@ public class AimEnemy : MonoBehaviour
     private void Start()
     {
 
+        timer = initialTimer;
         target = ai.target;
     }
     private void disableAnimator()
     {
         anim.enabled = false;
-        timer = 1;
+        timer = initialTimer;
     }
 
     private void OnEnable()

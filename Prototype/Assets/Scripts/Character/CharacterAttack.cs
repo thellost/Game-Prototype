@@ -9,11 +9,11 @@ public class CharacterAttack : MonoBehaviour
     public float attackRangeCircle;
     public Transform attackPoint;
     public LayerMask enemiesLayer;
+    public LayerMask bulletLayer;
     public float attackDamage;
     public float animationOffset;
     [SerializeField] GameObject bloodParticle;
     [SerializeField] GameObject slashParticle;
-    [SerializeField] GameObject slashEffect;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer = 0.1f;
@@ -24,7 +24,7 @@ public class CharacterAttack : MonoBehaviour
     private Vector2 direction;
     private Timeline time;
     private Movement movement;
-    private Quaternion slashParticleAngle;
+   
     // Update is called once per frame
 
     private void Start()
@@ -84,14 +84,14 @@ public class CharacterAttack : MonoBehaviour
         
         //check enemies
         Collider2D[] hit = Physics2D.OverlapCircleAll(directionAnimation + transform.position, attackRangeCircle, enemiesLayer);
+        //check Bullet
+        Collider2D[] hitBullet = Physics2D.OverlapCircleAll(directionAnimation + transform.position, attackRangeCircle, bulletLayer);
 
         //damage the enemies
         foreach (Collider2D enemy in hit)
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
-            Bullet bullet = enemy.transform.gameObject.GetComponent<Bullet>();
-                
             //handle damage and camera shake also buller
             if (enemyComponent != null) {
                 if (enemyComponent.takeDamage(attackDamage))
@@ -99,13 +99,7 @@ public class CharacterAttack : MonoBehaviour
                     //handle the AI
                     if (enemeyAI != null)
                     {
-                        enemeyAI.setState(EnemyAI.State.knockback);
                         enemeyAI.setAttackDirection(directionAnimation);
-                        if (!slashEffect.activeInHierarchy)
-                        {
-                            slashEffect.transform.rotation = slashParticleAngle;
-                            slashEffect.SetActive(true);
-                        }
                     }
                     spawnBlood(enemy);
                     if (CameraShake.Instance != null)
@@ -114,16 +108,34 @@ public class CharacterAttack : MonoBehaviour
                     }
 
                 }
-            } else if(bullet != null)
+            } 
+
+        }
+        foreach(Collider2D projectile in hitBullet)
+        {
+
+            Bullet bullet = projectile.transform.gameObject.GetComponent<Bullet>();
+            if (bullet != null)
             {
                 bullet.Deflected();
             }
-
         }
 
     }
 
-    
+    private Vector3 setLocalToParent(Vector3 scale)
+    {
+        if (transform.localScale.x < 0)
+        {
+            scale = new Vector3(scale.x * -1, scale.y, scale.z);
+        }
+        else
+        {
+
+            scale = new Vector3(Mathf.Abs(scale.x), scale.y, scale.z);
+        }
+        return scale;
+    }
     private void setTraditionalNormalize(ref Vector2 vector2)
     {
         float temp = Mathf.Abs(vector2.x) + Mathf.Abs(vector2.y);
@@ -145,8 +157,9 @@ public class CharacterAttack : MonoBehaviour
         gameobj.transform.localScale = new Vector3(transform.localScale.x * 0.6f, transform.localScale.y*1.4f, transform.localScale.z);
         gameobj.transform.parent = gameObject.transform;
         gameobj.transform.rotation = gameobj.transform.rotation * rotation; //magic number -68.43f karena rotasi dari animasinya ga lurus
-        slashParticleAngle = gameobj.transform.rotation * rotation;
         gameobj.transform.localScale *= 1.5f;
+
+        gameobj.transform.localScale = setLocalToParent(gameobj.transform.localScale);
         StartCoroutine(MoveAnimation(gameobj, direction.normalized));
         
         //set  transform behind player

@@ -60,12 +60,14 @@ public class PlayerVelocity : MonoBehaviour
 	private Timeline time;
 	private Movement playerMovement;
 	private PlayerInput playerInput;
+	private PlayerStatManager playerStat;
 	private Vector2 directionalInput;
 
 	void Start()
 	{
 		playerMovement = GetComponent<Movement>();
 		playerInput = GetComponent<PlayerInput>();
+		playerStat = GetComponent<PlayerStatManager>();
 		time = GetComponent<Timeline>();
 
 
@@ -256,6 +258,10 @@ public class PlayerVelocity : MonoBehaviour
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
 		createDust(false);
+        if (normalDash)
+        {
+			playerStat.setInvulnerable();
+        }
 		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;

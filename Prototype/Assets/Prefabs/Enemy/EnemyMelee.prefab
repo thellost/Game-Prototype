@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1859622400746898899}
   m_Layer: 10
   m_Name: EnemyMelee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,6 @@ MonoBehaviour:
   damage: 10
   isInvulnerable: 0
   dead: 0
-  popupDmg: {fileID: 0}
 --- !u!212 &1859622400746898896
 SpriteRenderer:
   m_ObjectHideFlags: 0
