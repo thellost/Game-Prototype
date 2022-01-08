@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused;
-    
+    [SerializeField] Slider VolumeMusic;
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -51,5 +53,20 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
 
+    }
+
+    public void ChangeVolume()
+    {
+        AudioListener.volume = VolumeMusic.value;
+        save();
+    }
+    private void load()
+    {
+        VolumeMusic.value = PlayerPrefs.GetFloat("musicVolume");
+    }
+
+    private void save()
+    {
+        PlayerPrefs.SetFloat("musicVolume", VolumeMusic.value);
     }
 }
