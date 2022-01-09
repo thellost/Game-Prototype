@@ -72,7 +72,6 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player" && !deflected)
         {
 
