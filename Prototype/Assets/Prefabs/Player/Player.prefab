@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayerHP: 100
-  maxPlayerEnergy: 100
+  maxPlayerEnergy: 40
   invicTimer: 0.5
   knockbackPower: 35
   cameraShakeIntensity: 7

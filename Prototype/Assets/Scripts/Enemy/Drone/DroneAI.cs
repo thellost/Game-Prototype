@@ -117,12 +117,10 @@ public class DroneAI : MonoBehaviour
         float distanceFromTarget = Vector2.Distance(droneTarget1.position, transform.position);
         if (distanceFromTarget <= shootingRange && nextFireTime < time.time)
         {
-            GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
-
-            particle.GetComponent<Transform>().position = transform.position;
-            particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+            GameObject particle = bulletManager.GenerateVXFromPool(muzzleParticle, bulletSpawnDump, transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z));
             particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
-            bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
+
+            bulletManager.GenerateBulletFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
             nextFireTime = time.time + fireRate;
         }
 

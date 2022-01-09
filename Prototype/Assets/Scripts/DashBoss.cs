@@ -9,14 +9,20 @@ public class DashBoss : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        target = GameObject.FindGameObjectsWithTag("Waypoint")[0].transform.position;
+        if (animator.GetBehaviour<IdleBehaviorBoss>().isFacingRight)
+        {
+
+            target = GameObject.FindGameObjectsWithTag("Waypoint")[0].transform.position;
+        }
+        else
+        {
+
+            target = GameObject.FindGameObjectsWithTag("Waypoint")[1].transform.position;
+        }
 
         transform = animator.GetComponent<Transform>();
         time = animator.GetComponent<Timeline>();
-        if(Vector3.Distance(target, transform.position) < 0.2f)
-        {
-            target = GameObject.FindGameObjectsWithTag("Waypoint")[1].transform.position;
-        }
+        
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

@@ -44,12 +44,10 @@ public class Bullet : MonoBehaviour, IDamageAble<float>
 
     public void Deflected()
     {
-        Debug.Log("deflected");
         if (!deflected)
         {
             //rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
             speedDirection *= -1;
-            Debug.Log("Deflected");
             Vector3 theScale = transform.localScale;
             theScale.x *= -1;
             transform.localScale = theScale;

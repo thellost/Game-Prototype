@@ -6,7 +6,7 @@ public class BossFire : MonoBehaviour
 {
     private Transform bulletSpawnDump;
 
-    public float offset = 80f;
+    private float offset = 80f;
     [SerializeField] GameObject muzzleParticle;
     [SerializeField] GameObject bullet;
 
@@ -44,13 +44,12 @@ public class BossFire : MonoBehaviour
             if (target != null)
             {
 
-                GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
-
-                particle.GetComponent<Transform>().position = transform.position;
-                particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+               
+                GameObject particle = bulletManager.GenerateVXFromPool(muzzleParticle, bulletSpawnDump, transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z));
                 particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
 
-                bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
+
+                bulletManager.GenerateBulletFromPool(bullet, bulletSpawnDump, transform.position, ref target);
 
                 CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
             }
