@@ -25,6 +25,19 @@ public class UImanager : MonoBehaviour
                 OpenInventory();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (isPaused)
+            {
+                CloseMap();
+            }
+            else
+            {
+                OpenMap();
+            }
+        }
+
         /*
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -36,11 +49,6 @@ public class UImanager : MonoBehaviour
                 Pause();
             }
         }*/
-    }
-
-    public void ToggleActiveMap()
-    {
-        map.SetActive(!inventory.activeInHierarchy);
     }
 
     // resume & pause
@@ -83,6 +91,21 @@ isPaused = true;
         /*enemyClock.localTimeScale = 1;
         playerClock.localTimeScale = 1;
         bulletClock.localTimeScale = 1;*/
+        isPaused = false;
+    }
+
+    // map
+    private void OpenMap()
+    {
+        map.SetActive(true);
+        Time.timeScale = 0;
+        isPaused = true;
+    }
+
+    private void CloseMap()
+    {
+        map.SetActive(false);
+        Time.timeScale = 1;
         isPaused = false;
     }
 }
