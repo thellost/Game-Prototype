@@ -52,6 +52,15 @@ public class BossBasicAttack : StateMachineBehaviour
             if(attackNumber <= 0)
             {
                 animator.SetBool("inBasicAttack", false);
+                if (Random.value <= 0.5f)
+                {
+                    randomXposition = waypoint1.x;
+
+                }
+                else
+                {
+                    randomXposition = waypoint2.x;
+                }
             }
         }
         else if(attackNumber <= 0)

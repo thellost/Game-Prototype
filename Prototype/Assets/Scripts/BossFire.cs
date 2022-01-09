@@ -6,7 +6,7 @@ public class BossFire : MonoBehaviour
 {
     private Transform bulletSpawnDump;
 
-    private float offset = 80f;
+    private float offset = 180f;
     [SerializeField] GameObject muzzleParticle;
     [SerializeField] GameObject bullet;
 

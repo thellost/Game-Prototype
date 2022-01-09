@@ -6,19 +6,16 @@ public class ShootScript: MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     [SerializeField] GameObject flare;
-    [SerializeField] GameObject muzzle;
-
+    [SerializeField] Transform muzzle;
+    [SerializeField] Transform target;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
     [SerializeField] float cameraShakeTimer = 0.1f;
-    private float offset = 80f;
+    private float offset = 180f;
     private BulletManager bulletManager;
     private Transform bulletSpawnDump;
-    private Transform target;
     private void Awake()
     {
-        Transform[] list = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Transform>();
-        target = list[1];
         bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
         bulletSpawnDump = bulletManager.gameObject.GetComponent<Transform>();
     }

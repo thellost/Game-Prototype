@@ -12,12 +12,12 @@ public class DroneAI : MonoBehaviour
     public GameObject bullet, bulletParent;
 
     [SerializeField] GameObject muzzleParticle;
-    public Transform enemyGraphic;
-    public float enemySpeed;
-    public float nextWaypointDistance;
+    [SerializeField] Transform enemyGraphic;
+    [SerializeField] float enemySpeed;
+    [SerializeField] float nextWaypointDistance;
     public bool isAlerted = false;
     [HideInInspector]
-    public float offset = 80f;
+    [SerializeField] float offset = 80f;
     private GameObject player;
     private Path path;
     private Seeker seeker;
@@ -52,6 +52,7 @@ public class DroneAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         time = GetComponent<Timeline>();
         player = GameObject.FindGameObjectWithTag("Player");
+
 
         if (!isAlerted)
         {
@@ -106,8 +107,6 @@ public class DroneAI : MonoBehaviour
         Vector2 dir = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = dir * enemySpeed * time.fixedDeltaTime;
         rb.velocity=force;
-        //Debug.Log(dir);
-
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if (distance < nextWaypointDistance)
         {
@@ -123,7 +122,7 @@ public class DroneAI : MonoBehaviour
             bulletManager.GenerateBulletFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
             nextFireTime = time.time + fireRate;
         }
-
+        
         // flip enemy
         if (rb.velocity.x <= 0.1f)
         {
