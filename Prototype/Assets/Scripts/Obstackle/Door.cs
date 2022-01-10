@@ -12,13 +12,6 @@ public class Door : MonoBehaviour
 		animator = GetComponent<Animator> ();
 	}
 
-	void DisableCollider2D(){
-		GetComponent<Collider2D>().enabled = false; //disable collider agar pintu terbuka bisa dilewati
-	}
-
-	void EnableCollider2D(){
-		GetComponent<Collider2D>().enabled = true; //enable collider agar pintu tertutup tidak bisa dilewati
-	}
 
 	public void Open(){
 		animator.SetInteger ("AnimState", 1); //animasi pintu terbuka
