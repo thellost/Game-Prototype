@@ -387,7 +387,7 @@ MonoBehaviour:
   maxPlayerHP: 100
   maxPlayerEnergy: 40
   invicTimer: 0.5
-  knockbackPower: 10
+  knockbackPower: 15
   cameraShakeIntensity: 7
   cameraShakeFrequency: 1.1
   cameraShakeTimer: 0.1

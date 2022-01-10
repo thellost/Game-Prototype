@@ -23,6 +23,7 @@ public class BossBasicAttack : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+
         target = GameObject.FindGameObjectsWithTag("Player")[0].transform;
         waypoint1 = GameObject.FindGameObjectsWithTag("Waypoint")[0].transform.position;
         transform = animator.GetComponent<Transform>();
@@ -44,7 +45,6 @@ public class BossBasicAttack : StateMachineBehaviour
                 break;
             }
         }
-
         if (attackNumber > 0)
         {
             attackNumber -= 1;
@@ -70,6 +70,19 @@ public class BossBasicAttack : StateMachineBehaviour
             {
                 randomXposition = waypoint1.x;
                 
+            }
+            else
+            {
+                randomXposition = waypoint2.x;
+            }
+        }
+        if (animator.GetBool("resetAttack1"))
+        {
+            animator.SetBool("resetAttack1", false);
+            if (Random.value <= 0.5f)
+            {
+                randomXposition = waypoint1.x;
+
             }
             else
             {
