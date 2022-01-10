@@ -16,12 +16,16 @@ public class TutorialFadeScript : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            anim.SetTrigger("fadeIn");
             anim.enabled = true;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        anim.ResetTrigger("fadeIn"); 
         anim.SetTrigger("fadeOut");
     }
+
+
 }
