@@ -43,10 +43,6 @@ Material:
     - Vector1_1844C1E0: 0.13
     - Vector1_5e5ffdd28fdb4441b108683a873b0d3b: 0
     - Vector1_7d9cea4f766d472f9675935af83e45e8: 1
-<<<<<<< Updated upstream
-    - _Saturation: 0.99997044
-=======
-    - _Saturation: 0.99901456
->>>>>>> Stashed changes
+    - _Saturation: 0.99999976
     m_Colors: []
   m_BuildTextureStacks: []
