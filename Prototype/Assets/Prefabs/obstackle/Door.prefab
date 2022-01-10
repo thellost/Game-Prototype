@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 187221293}
   - component: {fileID: 3015326615295843212}
   - component: {fileID: 3514662341573120548}
-  m_Layer: 9
-  m_Name: contrener (2)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Container 2
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d97a2fa602a0986439def3b8068ffc84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -143,9 +143,9 @@ GameObject:
   - component: {fileID: 980494871}
   - component: {fileID: 880634532591956456}
   - component: {fileID: 2458268510843551931}
-  m_Layer: 9
-  m_Name: contrener (1)
-  m_TagString: Untagged
+  m_Layer: 11
+  m_Name: Container 1
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d97a2fa602a0986439def3b8068ffc84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -273,7 +273,7 @@ GameObject:
   - component: {fileID: 323034466303215457}
   m_Layer: 11
   m_Name: stuffToLift
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -305,9 +305,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9018035166162246417}
   - component: {fileID: 9018035166162246430}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: bawah
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ GameObject:
   - component: {fileID: 9018035166337485638}
   m_Layer: 11
   m_Name: Door
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -454,9 +454,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9018035166777499632}
   - component: {fileID: 9018035166777499633}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: atas
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,7 +494,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: d97a2fa602a0986439def3b8068ffc84, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -536,9 +536,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9018035166930233298}
   - component: {fileID: 9018035166930233299}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: Door Trigger
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
