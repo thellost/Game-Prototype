@@ -50,6 +50,10 @@ Material:
     m_Floats:
     - Vector1_3e39d2bb291a475e87eb3edf39e15e9d: 3
     - Vector1_469f3a6a76f74478a1e87549b60f2bcd: 1
+<<<<<<< Updated upstream
     - _Greyscale: 0.99997044
+=======
+    - _Greyscale: 0.99901456
+>>>>>>> Stashed changes
     m_Colors: []
   m_BuildTextureStacks: []
