@@ -231,7 +231,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4267103544329921371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.84, y: 13.31, z: -2}
+  m_LocalPosition: {x: -51.77002, y: 11.720001, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 5}
   m_Children:
   - {fileID: 5711130402391882405}
@@ -507,6 +507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 0}
   transitionTime: 1
+  sceneIndex: 0
 --- !u!82 &4267103544329921361
 AudioSource:
   m_ObjectHideFlags: 0
