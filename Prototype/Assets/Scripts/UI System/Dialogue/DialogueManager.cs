@@ -95,6 +95,8 @@ public class DialogueManager : MonoBehaviour
             playerAttack.enabled = false;
         }
         currentStory = new Story(inkJSON.text);
+        string currentSentence = currentStory.Continue();
+
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -107,7 +109,21 @@ public class DialogueManager : MonoBehaviour
         }
 
         ContinueStory();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(currentSentence));
     }
+
+    // Type out the sentence letter by letter and make character idle if they were talking
+    IEnumerator TypeSentence(string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
+    }
+    
 
     private IEnumerator ExitDialogueMode()
     {
