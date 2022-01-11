@@ -57,6 +57,9 @@ TagManager:
   - name: Decoration
     uniqueID: 106862085
     locked: 0
+  - name: Midground
+    uniqueID: 1478949061
+    locked: 0
   - name: Ground
     uniqueID: 384443211
     locked: 0
@@ -74,9 +77,6 @@ TagManager:
     locked: 0
   - name: Projectile
     uniqueID: 2953966829
-    locked: 0
-  - name: Midground
-    uniqueID: 1478949061
     locked: 0
   - name: Cursor
     uniqueID: 4022881431
