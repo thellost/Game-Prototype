@@ -11,7 +11,6 @@ public class EnemyAIRanged : EnemyAI {
     [SerializeField] float initialAttackTime;
     [SerializeField] AimEnemy aim;
 
-    private bool lateAttack = false ;
     protected override void attack()
     {
         fire();

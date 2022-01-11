@@ -257,11 +257,7 @@ public class PlayerVelocity : MonoBehaviour
 	//kutambahin optional argument yang berguna untuk attack dash
 	public void OnDashInputDown(float dashDirectionX = 0 , float dashDirectionY = 0, bool normalDash = false)
     {
-		createDust(false);
-        if (normalDash)
-        {
-			playerStat.setInvulnerable();
-        }
+        
 		if (time.time - lastDashTime < dashCooldown && normalDash)
 		{
 			return;
@@ -315,12 +311,15 @@ public class PlayerVelocity : MonoBehaviour
 			SoundManager.Instance.PlaySFX(slashSfx);
 		} else
         {
+			playerStat.setInvulnerable();
 			SoundManager.Instance.PlaySFX(dashSfx);
         }
-    }
+		createDust(false);
+	}
 
 	public void knockback(float DirectionX = 0, float DirectionY = 0)
     {
+		directionalInput.x = 0;
 		playerAnimator.SetKnockback();
 		playerInput.enabled = false;
 		isInKnockback = true;

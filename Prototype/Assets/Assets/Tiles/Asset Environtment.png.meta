@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 6f65e6d5c46cace40b7dd207c103d02e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3947301679430877293
+    second: Asset Environtment_fix_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -19379,6 +19382,27 @@ TextureImporter:
       bones: []
       spriteID: 9ba81452c2a3d07d0800000000000000
       internalID: -2950638219579782471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Asset Environtment_fix_1
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 1408
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60c7c7b6f1a7c630800000000000000
+      internalID: 3947301679430877293
       vertices: []
       indices: 
       edges: []

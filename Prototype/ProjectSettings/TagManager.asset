@@ -72,3 +72,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Projectile
+    uniqueID: 2953966829
+    locked: 0
+  - name: Midground
+    uniqueID: 1478949061
+    locked: 0

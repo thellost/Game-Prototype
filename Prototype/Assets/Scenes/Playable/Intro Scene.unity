@@ -693,7 +693,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &348026813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3399,6 +3399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTimeSfx: {fileID: 0}
+  ghostEffect: {fileID: 0}
   slowMotionActivated: 0
   enemiesSlowDownFactor: 0.1
   playerSlowDownFactor: 0.15

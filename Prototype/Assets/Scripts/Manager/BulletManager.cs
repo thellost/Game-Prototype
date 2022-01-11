@@ -6,26 +6,27 @@ public class BulletManager : MonoBehaviour
 {
     [SerializeField] GameObject bullet;
     // pool list
-    private Dictionary<string, List<GameObject>> pool;
-    
+    private Dictionary<string, List<GameObject>> Pool;
+
     private void Start()
     {
         // init pool
-        pool = new Dictionary<string, List<GameObject>>();
-       
+        Pool = new Dictionary<string, List<GameObject>>();
+
+        Pool = new Dictionary<string, List<GameObject>>();
+
     }
     // pool function
-    public GameObject GenerateFromPool(GameObject item, Transform parent, Vector3 position, ref Transform target)
+    public GameObject GenerateBulletFromPool(GameObject item, Transform parent, Vector3 position, ref Transform target)
     {
-
-        if (pool.ContainsKey(item.name))
+        if (Pool.ContainsKey(item.name))
         {
             // if item available in pool
-            if (pool[item.name].Count > 0)
+            if (Pool[item.name].Count > 0)
             {
-                GameObject newItemFromPool = pool[item.name][0];
-                pool[item.name].Remove(newItemFromPool);
-               
+                GameObject newItemFromPool = Pool[item.name][0];
+                Pool[item.name].Remove(newItemFromPool);
+
                 newItemFromPool.SetActive(true);
                 newItemFromPool.transform.position = position;
 
@@ -40,7 +41,7 @@ public class BulletManager : MonoBehaviour
         else
         {
             // if item list not defined, create new one
-            pool.Add(item.name, new List<GameObject>());
+            Pool.Add(item.name, new List<GameObject>());
         }
 
 
@@ -55,15 +56,49 @@ public class BulletManager : MonoBehaviour
         newItem.name = item.name;
         return newItem;
     }
-    public void ReturnToPool(GameObject item)
+
+    public GameObject GenerateVXFromPool(GameObject item, Transform parent, Vector3 position, Quaternion rotation)
     {
-        if (!pool.ContainsKey(item.name))
+
+        if (Pool.ContainsKey(item.name))
         {
-            Debug.LogError("INVALID POOL ITEM!!");
+            // if item available in pool
+            if (Pool[item.name].Count > 0)
+            {
+                GameObject newItemFromPool = Pool[item.name][0];
+                Pool[item.name].Remove(newItemFromPool);
+
+                newItemFromPool.SetActive(true);
+                newItemFromPool.transform.position = position;
+                newItemFromPool.transform.rotation = rotation;
+                return newItemFromPool;
+            }
+        }
+        else
+        {
+            // if item list not defined, create new one
+            Pool.Add(item.name, new List<GameObject>());
         }
 
 
-        pool[item.name].Add(item);
+        // create new one if no item available in pool
+        GameObject newItem = Instantiate(item, parent);
+        newItem.transform.position = position;
+        newItem.transform.rotation = rotation;
+
+        newItem.name = item.name;
+        return newItem;
+    }
+    public void ReturnToPool(GameObject item)
+    {
+        if (!Pool.ContainsKey(item.name) && (!Pool.ContainsKey(item.name)))
+        {
+            Debug.LogError("INVALID POOL ITEM!!");
+            return;
+        } 
+
+
+        Pool[item.name].Add(item);
         item.SetActive(false);
     }
 }

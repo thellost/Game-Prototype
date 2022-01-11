@@ -12,7 +12,8 @@ public class GameManager : Singleton<GameManager>
 
     [HideInInspector] public static string prevLevel;
     [HideInInspector] public static string currentLevel;
-
+    [HideInInspector] public static float currentHP;
+    [HideInInspector] public static float currentEnergy;
     //private LevelManager levelManager;
 
     protected override void Awake()
@@ -56,6 +57,13 @@ public class GameManager : Singleton<GameManager>
     {
         prevLevel = currentLevel;
         currentLevel = SceneManager.GetActiveScene().name;
+        Debug.Log(currentLevel);
+    }
+
+    public void setPlayerStat(float HP, float Energy)
+    {
+        currentEnergy = Energy;
+        currentHP = HP;
     }
 
     public string GetPreviousLevel()

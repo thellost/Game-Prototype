@@ -60,7 +60,6 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
                 SoundManager.Instance.PlaySFX(enemyTakeDamageSfx);
                 if(PopupHandler.Instance != null)
                 {
-
                     PopupHandler.Instance.PopupDmg(gameObject, dmg.ToString());
                 }
                 if (ai != null)

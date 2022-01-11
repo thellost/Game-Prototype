@@ -215,6 +215,7 @@ GameObject:
   - component: {fileID: 4267103544329921352}
   - component: {fileID: 8593777871832514013}
   - component: {fileID: 2875736635146195419}
+  - component: {fileID: 2655494724425396863}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -384,9 +385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxPlayerHP: 100
-  maxPlayerEnergy: 100
+  maxPlayerEnergy: 40
   invicTimer: 0.5
-  knockbackPower: 35
+  knockbackPower: 15
   cameraShakeIntensity: 7
   cameraShakeFrequency: 1.1
   cameraShakeTimer: 0.1
@@ -656,6 +657,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &2655494724425396863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267103544329921371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6981c895a6337644e889f511004bea1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStat: {fileID: 0}
+  playerAttack: {fileID: 0}
 --- !u!1 &4267103544536451320
 GameObject:
   m_ObjectHideFlags: 0

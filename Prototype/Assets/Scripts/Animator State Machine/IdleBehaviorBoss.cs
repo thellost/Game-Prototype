@@ -32,7 +32,11 @@ public class IdleBehaviorBoss : StateMachineBehaviour
             {
                 decided = true;
                 float value = Random.value;
-                if (value <= 0.5f)
+                if(value <= 0.33f)
+                {
+                    animator.SetTrigger("shootAttack");
+                }
+                else if (value <= 0.66f)
                 {
                     animator.SetTrigger("dashAttack");
                 }
@@ -62,23 +66,26 @@ public class IdleBehaviorBoss : StateMachineBehaviour
     //    // Implement code that sets up animation IK (inverse kinematics)
     //}
 
-    private void checkFlip()
+    public void checkFlip()
     {
         //ini mengechek flip
         if ((target.position.x - transform.position.x) < 0 && isFacingRight)
         {
-            flip();
+
+            Vector3 theScale = transform.localScale;
+            theScale.x = Mathf.Abs(theScale.x) * -1;
+
+            isFacingRight = false;
+            transform.localScale = theScale;
         }
         else if ((target.position.x - transform.position.x) > 0 && !isFacingRight)
         {
-            flip();
-        }
-    }
-    private void flip()
-    {
-            isFacingRight = !isFacingRight;
+
             Vector3 theScale = transform.localScale;
-            theScale.x *= -1;
+            theScale.x = Mathf.Abs(theScale.x);
+
+            isFacingRight = true;
             transform.localScale = theScale;
+        }
     }
 }

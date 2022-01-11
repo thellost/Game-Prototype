@@ -38,7 +38,6 @@ public class FollowBoss: MonoBehaviour
     }
     public void bossJump()
     {
-        Debug.Log(smbJump.getRoute());
         StartCoroutine(GoByTheRoute(smbJump.getRoute(), disableOnFinish));
     }
     private IEnumerator GoByTheRoute(int routeNum, bool disableOnFinish = false)
@@ -94,6 +93,11 @@ public class FollowBoss: MonoBehaviour
         {
             gunLeft.SetActive(true);
         }
+    }
+
+    private void fireGun()
+    {
+        
     }
 
 }

@@ -116,14 +116,11 @@ public class AimEnemy : MonoBehaviour
                 if (target != null)
                 {
 
-                    GameObject particle = Instantiate(muzzleParticle, bulletSpawnDump);
 
-                    particle.GetComponent<Transform>().position = gunMuzzle.transform.position;
-                    particle.GetComponent<Transform>().transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z);
+                    GameObject particle = bulletManager.GenerateVXFromPool(muzzleParticle, bulletSpawnDump, gunMuzzle.transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z));
                     particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));
 
-
-                    bulletManager.GenerateFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
+                    bulletManager.GenerateBulletFromPool(bullet, bulletSpawnDump, particle.transform.position, ref target);
 
                     CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                     //EmitFX(bulletTemp.GetComponent<Transform>().rotation, bulletTemp.GetComponent<Transform>().position);
