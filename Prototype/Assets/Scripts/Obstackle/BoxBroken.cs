@@ -16,6 +16,11 @@ public class BoxBroken : MonoBehaviour
 
     Vector2 startPos;
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
         if(isShaking)
