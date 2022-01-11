@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Glow
+  m_Name: Cursor Glow
   m_Shader: {fileID: -6465566751694194690, guid: 1659962f391d3394bbbc1bf92c518947, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -41,5 +41,5 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats: []
     m_Colors:
-    - Color_7f095a8e7d91402891adc9027879bb12: {r: 0.48640686, g: 0.48640686, b: 0.5019305, a: 0}
+    - Color_7f095a8e7d91402891adc9027879bb12: {r: 0.36704117, g: 0.37001315, b: 0.37892914, a: 0}
   m_BuildTextureStacks: []

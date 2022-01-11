@@ -78,3 +78,6 @@ TagManager:
   - name: Midground
     uniqueID: 1478949061
     locked: 0
+  - name: Cursor
+    uniqueID: 4022881431
+    locked: 0
