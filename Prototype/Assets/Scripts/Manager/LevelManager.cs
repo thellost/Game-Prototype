@@ -17,15 +17,16 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
+
+        GameManager.Instance.SetLevel();
         for (int i = 0; i < namaLevel.Count; i++)
         {
+            Debug.Log(namaLevel[i] == GameManager.Instance.GetPreviousLevel());
             if (namaLevel[i] == GameManager.Instance.GetPreviousLevel())
             {
                 player.transform.position = posisiLevel[i].position;
-                Debug.Log(posisiLevel[i].position);
             }
         }
-        GameManager.Instance.SetLevel();
     }
 
     /*[SerializeField] private List<Transform> availableSpawnLocation = new List<Transform>();

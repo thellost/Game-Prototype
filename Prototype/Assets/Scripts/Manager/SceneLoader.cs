@@ -7,21 +7,18 @@ public class SceneLoader : MonoBehaviour
 {
     [SerializeField] Animator transitionAnimator;
     [SerializeField] float transitionTime = 1f;
+    [SerializeField] int sceneIndex;
     private void Start()
     {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "PrevRoom")
+
+        if (collision.CompareTag("Player"))
         {
-           StartCoroutine( LoadLevel(SceneManager.GetActiveScene().buildIndex - 1));
-        }
-        
-        else if (collision.gameObject.tag == "NextRoom")
-        {
-            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+
+            StartCoroutine(LoadLevel(sceneIndex));
         }
     }
 

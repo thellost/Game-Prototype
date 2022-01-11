@@ -59,6 +59,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 0}
   transitionTime: 1
+  roomName: 
+--- !u!114 &7184210693848792603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3146475780387385065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddb9b67e2cb4a0408c2268313fa0934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionAnimator: {fileID: 0}
+  transitionTime: 1
+  roomName: 
 --- !u!1 &6065637175314262957
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +455,11 @@ PrefabInstance:
 --- !u!4 &3146475780805526611 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9189594844827667763, guid: 679326120e462a24591558b2a74afdbc, type: 3}
+  m_PrefabInstance: {fileID: 6065637176253499744}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3146475780387385065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9189594845749077897, guid: 679326120e462a24591558b2a74afdbc, type: 3}
   m_PrefabInstance: {fileID: 6065637176253499744}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3146475779578930215 stripped
