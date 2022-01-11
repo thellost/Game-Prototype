@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyStat : MonoBehaviour, IDamageAble<int>
 {
     [Header("Enemy Basic Stat")]
-    [SerializeField] float maxPlayerHP = 100;
+    public float maxEnemyHp = 100;
     [SerializeField] float invicTimer = 1;
 
     public AudioClip enemyTakeDamageSfx;
@@ -27,7 +27,7 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     private void setPlayerStat()
     {
         //perlu di ubah kedepannya karena bakal ada implementasi save
-        currentHp = maxPlayerHP;
+        currentHp = maxEnemyHp;
 
     }
     public bool checkAlive()

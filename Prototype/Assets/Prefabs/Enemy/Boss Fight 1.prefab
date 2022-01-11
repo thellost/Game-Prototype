@@ -1629,6 +1629,7 @@ GameObject:
   - component: {fileID: 7343417565466737118}
   - component: {fileID: 7343417565466737113}
   - component: {fileID: 7343417565466737112}
+  - component: {fileID: 2540039263069497553}
   m_Layer: 10
   m_Name: Boss
   m_TagString: Untagged
@@ -1775,7 +1776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ae2d8fffd903e459303444fcdae457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerHP: 1000
+  maxPlayerHP: 500
   invicTimer: 1
   enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
@@ -1848,6 +1849,18 @@ MonoBehaviour:
   cameraShakeIntensity: 5
   cameraShakeFrequency: 1
   cameraShakeTimer: 0.1
+--- !u!114 &2540039263069497553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7343417565466737105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c8ae2722ccb124a85177decfa2955d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7343417565544806323
 GameObject:
   m_ObjectHideFlags: 0
