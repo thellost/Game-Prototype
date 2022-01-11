@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 0}
   transitionTime: 1
-  roomName: 
+  sceneIndex: 0
 --- !u!114 &7184210693848792603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transitionAnimator: {fileID: 0}
   transitionTime: 1
-  roomName: 
+  sceneIndex: 0
 --- !u!1 &6065637175314262957
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 9189594844827667762, guid: 679326120e462a24591558b2a74afdbc, type: 3}
       propertyPath: m_Name
       value: SceneLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 9189594844827667762, guid: 679326120e462a24591558b2a74afdbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9189594844827667763, guid: 679326120e462a24591558b2a74afdbc, type: 3}
       propertyPath: m_RootOrder
