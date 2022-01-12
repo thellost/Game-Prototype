@@ -10,7 +10,8 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     [Header("Volume Setting")]
-    [SerializeField] private Slider volumeSlider = null;
+    [SerializeField] private TMP_Text volumeTextValue = null;
+    [SerializeField] Slider volumSlider;
     [SerializeField] private float defaultVolume = 50f;
 
     [Header("Gameplay Setting")]
@@ -21,17 +22,9 @@ public class PauseMenu : MonoBehaviour
     [Header("Toggle Setting")]
     [SerializeField] private Toggle invertYToggle = null;
 
-
-    [Space(10)]
-    [SerializeField] private TMP_Dropdown qualityDropdown;
-    [SerializeField] private Toggle fullScreenToggle;
-
-    private int _qualityLevel;
-    private bool _isFullScreen;
-    private float _brightnessLevel;
     public GameObject pauseMenu;
     public static bool isPaused;
-    [SerializeField] Slider VolumeMusic;
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -74,17 +67,21 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    public void SetVolume(float volume)
+  
+    public void ChangeVolume()
     {
-        AudioListener.volume = volume;
+        AudioListener.volume = volumSlider.value;
+        save();
+    }
+    private void load()
+    {
+        volumSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
-    public void VolumeApply()
+    private void save()
     {
-        PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
-        Debug.Log(PlayerPrefs.GetFloat("masterVolume"));
+        PlayerPrefs.SetFloat("musicVolume", volumSlider.value);
     }
-
     public void SetControllerSen(float sensitivity)
     {
         mainControllerSen = Mathf.RoundToInt(sensitivity);
@@ -108,8 +105,9 @@ public class PauseMenu : MonoBehaviour
         if (MenuType == "Audio")
         {
             AudioListener.volume = defaultVolume;
-            volumeSlider.value = defaultVolume;
-            VolumeApply();
+            volumSlider.value = defaultVolume;
+            volumeTextValue.text = defaultVolume.ToString("0");
+            save();
         }
 
         if (MenuType == "Gameplay")
