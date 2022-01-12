@@ -6,6 +6,7 @@ public class CinemachineSwitch : MonoBehaviour
 {
 
     [SerializeField] Animator animator;
+    [SerializeField] GameObject bossBar;
     private bool inPlayer;
     // Start is called before the first frame update
     void Awake()
@@ -14,11 +15,20 @@ public class CinemachineSwitch : MonoBehaviour
     }
     private void OnEnable()
     {
+        if(bossBar != null)
+        {
+            bossBar.SetActive(true);
+        }
         SwitchState();
     }
 
     private void OnDisable()
     {
+
+        if (bossBar != null)
+        {
+            bossBar.SetActive(false);
+        }
         SwitchState();
     }
     public void SwitchState()
