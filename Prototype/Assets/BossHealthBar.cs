@@ -6,8 +6,7 @@ public class BossHealthBar : MonoBehaviour
 {
     [Header("UI Reference")]
     [SerializeField] private Slider hpProgressUI = null;
-
-
+    
     private bool isDead;
     private Animator anim;
     private EnemyStat stats;
@@ -30,9 +29,8 @@ public class BossHealthBar : MonoBehaviour
         }
         hpProgressUI.value = stats.currentHp;
     }
-
-    private void FixedUpdate()
+    private void endFightBoss()
     {
-        
+        this.transform.parent.gameObject.SetActive(false);
     }
 }
