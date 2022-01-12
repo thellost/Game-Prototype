@@ -106,12 +106,13 @@ public class MainMenu : Singleton<MainMenu>
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
-        volumeTextValue.text = volume.ToString("0");
+        volumeTextValue.text = volume.ToString("0.0");
     }
 
     public void VolumeApply()
     {
         PlayerPrefs.SetFloat("masterVolume", AudioListener.volume);
+        Debug.Log(PlayerPrefs.GetFloat("masterVolume"));
         StartCoroutine(ConfirmationBox());
     }
 
