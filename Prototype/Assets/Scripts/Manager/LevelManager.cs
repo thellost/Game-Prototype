@@ -7,7 +7,8 @@ public class LevelManager : MonoBehaviour
 {
     
     public List<string> namaLevel;
-    public List<Transform> posisiLevel;
+    public List<Transform> posisiLevelIndex0;
+    public List<Transform> posisiLevelIndex1;
 
     public GameObject player;
 
@@ -19,14 +20,25 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         int doorIndex = GameManager.Progress.lastDoorIndex;
-        GameManager.Instance.SetLevel();
+        Debug.Log(GameManager.Instance.GetPreviousLevel());
         for (int i = 0; i < namaLevel.Count; i++)
         {
             if (namaLevel[i] == GameManager.Instance.GetPreviousLevel())
             {
-                player.transform.position = posisiLevel[i].position;
+                if(doorIndex == 0)
+                {
+
+                    player.transform.position = posisiLevelIndex0[i].position;
+                }
+                else
+                {
+
+                    player.transform.position = posisiLevelIndex1[i].position;
+                }
             }
         }
+
+        GameManager.Instance.SetLevel();
     }
 
     /*[SerializeField] private List<Transform> availableSpawnLocation = new List<Transform>();
