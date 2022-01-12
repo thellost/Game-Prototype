@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
     private void Awake() 
     {
         GameObject player = GameObject.Find("Player");
+        
         if (player != null)
         {
 
@@ -95,9 +96,14 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        if (playerInput != null && playerAttack != null)
+
+        if (playerInput != null)
         {
             playerInput.enabled = false;
+        }
+        if (playerAttack != null)
+        {
+
             playerAttack.enabled = false;
         }
         currentStory = new Story(inkJSON.text);
@@ -118,9 +124,13 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
-        if(playerAttack != null && playerInput != null)
+        if (playerInput != null)
         {
             playerInput.enabled = true;
+        }
+        if (playerAttack != null)
+        {
+
             playerAttack.enabled = true;
         }
 
@@ -223,6 +233,7 @@ private IEnumerator DisplayLine(string line)
                     displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
+                    Debug.Log(tagValue);
                     portraitAnimator.Play(tagValue);
                     break;
                 case LAYOUT_TAG:
