@@ -8,8 +8,12 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField] private float typingSpeed = 0.04f;
+
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private GameObject continueIcon;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
     [SerializeField] private Animator portraitAnimator;
@@ -21,8 +25,10 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
-    public static bool isActive = false;
+    private bool canContinueToNextLine = false;
+    private Coroutine displayLineCoroutine;
 
+    public static bool isActive = false;
     private static DialogueManager instance;
 
     private const string SPEAKER_TAG = "speaker";
@@ -95,8 +101,6 @@ public class DialogueManager : MonoBehaviour
             playerAttack.enabled = false;
         }
         currentStory = new Story(inkJSON.text);
-        string currentSentence = currentStory.Continue();
-
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
 
@@ -109,22 +113,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         ContinueStory();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(currentSentence));
-    }
-
-    // Type out the sentence letter by letter and make character idle if they were talking
-    IEnumerator TypeSentence(string sentence)
-    {
-        dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return null;
-        }
     }
     
-
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);
@@ -145,9 +135,11 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             // set text for the current dialogue line
-            dialogueText.text = currentStory.Continue();
-            // display choices, if any, for this dialogue line
-            DisplayChoices();
+            if (displayLineCoroutine != null) 
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             // handle tags
             HandleTags(currentStory.currentTags);
         }
@@ -156,7 +148,60 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(ExitDialogueMode());
         }
     }
+private IEnumerator DisplayLine(string line) 
+    {
+        // set the text to the full line, but set the visible characters to 0
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
+        // hide items while text is typing
+        continueIcon.SetActive(false);
+        HideChoices();
 
+        canContinueToNextLine = false;
+
+        bool isAddingRichTextTag = false;
+
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            // if the submit button is pressed, finish up displaying the line right away
+            if (Input.GetKeyDown(KeyCode.Space)) 
+            {
+                dialogueText.maxVisibleCharacters = line.Length;
+                break;
+            }
+
+            // check for rich text tag, if found, add it without waiting
+            if (letter == '<' || isAddingRichTextTag) 
+            {
+                isAddingRichTextTag = true;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            // if not rich text, add the next letter and wait a small time
+            else 
+            {
+                dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+        }
+
+        // actions to take after the entire line has finished displaying
+        continueIcon.SetActive(true);
+        DisplayChoices();
+
+        canContinueToNextLine = true;
+    }
+
+     private void HideChoices() 
+    {
+        foreach (GameObject choiceButton in choices) 
+        {
+            choiceButton.SetActive(false);
+        }
+    }
     private void HandleTags(List<string> currentTags)
     {
         // loop through each tag and handle it accordingly

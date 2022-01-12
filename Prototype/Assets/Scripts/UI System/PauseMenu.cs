@@ -1,16 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 
 
 public class PauseMenu : MonoBehaviour
 {
+    [Header("Volume Setting")]
+    [SerializeField] private TMP_Text volumeTextValue = null;
+    [SerializeField] Slider volumSlider;
+    [SerializeField] private float defaultVolume = 50f;
+
+    [Header("Gameplay Setting")]
+    [SerializeField] private Slider controllerSenSlider = null;
+    [SerializeField] private int defaultSen = 4;
+    public int mainControllerSen = 4;
+
+    [Header("Toggle Setting")]
+    [SerializeField] private Toggle invertYToggle = null;
+
     public GameObject pauseMenu;
     public static bool isPaused;
-    [SerializeField] Slider VolumeMusic;
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -44,29 +58,65 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
-    public void GoMainMenu()
+
+    public void QuitGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-    }    
-    public void QuitGame()
-    {
-        Application.Quit();
 
     }
 
+
+  
     public void ChangeVolume()
     {
-        AudioListener.volume = VolumeMusic.value;
+        AudioListener.volume = volumSlider.value;
         save();
     }
     private void load()
     {
-        VolumeMusic.value = PlayerPrefs.GetFloat("musicVolume");
+        volumSlider.value = PlayerPrefs.GetFloat("musicVolume");
     }
 
     private void save()
     {
-        PlayerPrefs.SetFloat("musicVolume", VolumeMusic.value);
+        PlayerPrefs.SetFloat("musicVolume", volumSlider.value);
+    }
+    public void SetControllerSen(float sensitivity)
+    {
+        mainControllerSen = Mathf.RoundToInt(sensitivity);
+    }
+
+    public void GameplayApply()
+    {
+        if (invertYToggle.isOn)
+        {
+            PlayerPrefs.SetInt("masterInvertY", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("masterInvertY", 0);
+        }
+        PlayerPrefs.SetFloat("masterSen", mainControllerSen);
+
+    }
+    public void ResetButton(string MenuType)
+    {
+        if (MenuType == "Audio")
+        {
+            AudioListener.volume = defaultVolume;
+            volumSlider.value = defaultVolume;
+            volumeTextValue.text = defaultVolume.ToString("0");
+            save();
+        }
+
+        if (MenuType == "Gameplay")
+        {
+            controllerSenSlider.value = defaultSen;
+            mainControllerSen = defaultSen;
+            invertYToggle.isOn = false;
+            GameplayApply();
+        }
+
     }
 }
