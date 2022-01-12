@@ -48,7 +48,7 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     }
     public bool takeDamage(float dmg)
     {
-        if (!dead)
+        if (checkAlive())
         {
             if (!isInvulnerable)
             {

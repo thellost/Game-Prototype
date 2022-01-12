@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 9189594845749077898}
   - component: {fileID: 9189594845749077899}
   - component: {fileID: 9189594845749077892}
+  - component: {fileID: 5271709260631321651}
   m_Layer: 0
   m_Name: PreviousRoom
   m_TagString: PrevRoom
@@ -111,7 +112,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9189594845749077897}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -124,6 +125,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5271709260631321651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189594845749077897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddb9b67e2cb4a0408c2268313fa0934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionAnimator: {fileID: 0}
+  transitionTime: 1
+  sceneIndex: 0
 --- !u!1 &9189594846020660551
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +151,7 @@ GameObject:
   - component: {fileID: 9189594846020660544}
   - component: {fileID: 9189594846020660546}
   - component: {fileID: 9189594846020660545}
+  - component: {fileID: 8441447118440339718}
   m_Layer: 0
   m_Name: NextRoom
   m_TagString: NextRoom
@@ -203,3 +220,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8441447118440339718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9189594846020660551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddb9b67e2cb4a0408c2268313fa0934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionAnimator: {fileID: 0}
+  transitionTime: 1
+  sceneIndex: 3

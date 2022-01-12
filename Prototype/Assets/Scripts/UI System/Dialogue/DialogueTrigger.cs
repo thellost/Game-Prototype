@@ -27,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             visualCue.SetActive(true);
 
-            if (Input.GetKey(KeyCode.I) && isActive == true)
+            if (Input.GetKey(KeyCode.E) && isActive == true)
             {
                 enterDialog();
             }

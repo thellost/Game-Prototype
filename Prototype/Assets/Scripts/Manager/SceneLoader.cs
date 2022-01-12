@@ -8,6 +8,8 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] Animator transitionAnimator;
     [SerializeField] float transitionTime = 1f;
     [SerializeField] int sceneIndex;
+    //ini index door keberapa
+    [SerializeField] int doorIndex;
     private void Start()
     {
     }
@@ -28,7 +30,10 @@ public class SceneLoader : MonoBehaviour
         {
             transitionAnimator.SetTrigger("start");
         }
+
         yield return new WaitForSeconds(transitionTime);
+        GameManager.Progress.lastDoorIndex = doorIndex;
+        GameManager.Save();
         SceneManager.LoadScene(index);
     }
 
