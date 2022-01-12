@@ -11,13 +11,16 @@ public class Money : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        currentMoney = PlayerPrefs.GetInt("money");
+        currentMoney = GameManager.Progress.Money;
+
         display.text = currentMoney.ToString();
     }
 
    public void addMoney(int num)
     {
         currentMoney += num;
+        
+        GameManager.Progress.Money += num;
         display.text = currentMoney.ToString();
         if (PopupHandler.Instance != null)
         {
@@ -25,8 +28,4 @@ public class Money : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("money", currentMoney);
-    }
 }
