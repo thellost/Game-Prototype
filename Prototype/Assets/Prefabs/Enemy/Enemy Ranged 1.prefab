@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ae2d8fffd903e459303444fcdae457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerHP: 20
+  maxEnemyHp: 15
   invicTimer: 1
   enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
@@ -589,7 +589,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 8682e0df45156754ea75e3794cf9bfbc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

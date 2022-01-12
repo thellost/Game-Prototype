@@ -226,6 +226,11 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
         hitBox.enabled = enabled;
     }
+
+    private void disableGameObject()
+    {
+        gameObject.SetActive(false);
+    }
     private void flip()
     {
         if (!isAttacking || !flipLock)
