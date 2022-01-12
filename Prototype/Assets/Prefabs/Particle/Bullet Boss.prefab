@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 4623780936853588098, guid: 595e96769af9e3840b61482fd472de53, type: 3}
+      propertyPath: damage
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5593656988667790502, guid: 595e96769af9e3840b61482fd472de53, type: 3}
       propertyPath: m_RootOrder
       value: 0
