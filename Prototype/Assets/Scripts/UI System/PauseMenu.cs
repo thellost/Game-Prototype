@@ -10,7 +10,6 @@ using TMPro;
 public class PauseMenu : MonoBehaviour
 {
     [Header("Volume Setting")]
-    [SerializeField] private TMP_Text volumeTextValue = null;
     [SerializeField] Slider volumSlider;
     [SerializeField] private float defaultVolume = 50f;
 
@@ -106,7 +105,6 @@ public class PauseMenu : MonoBehaviour
         {
             AudioListener.volume = defaultVolume;
             volumSlider.value = defaultVolume;
-            volumeTextValue.text = defaultVolume.ToString("0");
             save();
         }
 
