@@ -14,7 +14,13 @@ public class SavePlayerLocation : MonoBehaviour
     private void SavePlayerLoc()
     {
         // get active scene and save scene name to playerprefs
-        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
+        GameManager.Progress.lastLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        if (!GameManager.Progress.levels.ContainsKey(SceneManager.GetActiveScene().name))
+        {
+
+            GameManager.Progress.levels.Add(SceneManager.GetActiveScene().name, true);
+        }
+        //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name, 1);
     }
     
 }

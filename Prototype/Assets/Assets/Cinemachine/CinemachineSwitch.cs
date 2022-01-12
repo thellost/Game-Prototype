@@ -31,6 +31,9 @@ public class CinemachineSwitch : MonoBehaviour
         }
         SwitchState();
     }
+
+    
+
     public void SwitchState()
     {
         if (inPlayer)

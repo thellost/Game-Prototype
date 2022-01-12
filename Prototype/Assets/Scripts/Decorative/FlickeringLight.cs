@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class FlickeringLight : MonoBehaviour
 {
-    public float lightIntensity;
-    public float flickerIntensity;
+    public float lightIntensity = 1;
+    public float flickerIntensity = 0.5f;
 
-    public float lightTime;
-    public float flickerTime;
+    public float lightTime = 2;
+    public float flickerTime = 0.08f;
 
     System.Random rg;
 
