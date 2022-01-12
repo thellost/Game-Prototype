@@ -69,7 +69,6 @@ public class GameManager : Singleton<GameManager>
     {
         prevLevel = currentLevel;
         currentLevel = SceneManager.GetActiveScene().name;
-        Debug.Log(currentLevel);
     }
 
     public void setPlayerStat(float HP, float Energy)
