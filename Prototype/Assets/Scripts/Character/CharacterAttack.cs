@@ -92,6 +92,7 @@ public class CharacterAttack : MonoBehaviour
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
+            
             //handle damage and camera shake also buller
             if (enemyComponent != null) {
                 if (enemyComponent.takeDamage(attackDamage))
@@ -106,7 +107,6 @@ public class CharacterAttack : MonoBehaviour
                     {
                         CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                     }
-
                 }
             } 
 
@@ -121,6 +121,30 @@ public class CharacterAttack : MonoBehaviour
             }
         }
 
+        foreach (Collider2D drone in hit)
+        {
+            DroneAI droneAI = drone.gameObject.GetComponent<DroneAI>();
+            if (droneAI != null)
+            {
+                Destroy(drone.gameObject);
+                Debug.Log("destroy drone");
+            }
+            /*EnemyStat enemyComponent = drone.gameObject.GetComponent<EnemyStat>();
+            DroneAI droneAI = drone.gameObject.GetComponent<DroneAI>();
+            if (droneAI != null)
+            {
+                if (enemyComponent != null)
+                {
+                    if (enemyComponent.takeDamage(attackDamage))
+                    {
+                        Destroy(drone.gameObject);
+                        Debug.Log("destroy drone");
+                    }
+                }
+
+            }*/
+        }
+        
     }
 
     private Vector3 setLocalToParent(Vector3 scale)
