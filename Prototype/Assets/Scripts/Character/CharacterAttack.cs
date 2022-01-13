@@ -105,6 +105,7 @@ public class CharacterAttack : MonoBehaviour
                     }
                     if(droneAI != null)
                     {
+                        
                         //lakukan sesuai dengan drone damage
                     }
                     else
