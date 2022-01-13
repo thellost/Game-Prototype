@@ -1,11 +1,14 @@
-﻿
--> GLITCH
-=== GLITCH ===
-... #speaker:Felicia #portrait:CiaNetral #layout:leftZidan
-So.. this is where they called Glitch City.
-A place mentioned by "that" message.
-Seems like i have no other choice..
-Exploring Glitch City is the first thing to do.
+... #speaker:Felicia #portrait:CiaNetral #layout:left
+-> main
+
+=== main ===
+So.. this is where they called Glitch City.#portrait:CiaNetral
+
+- A place mentioned by "that" message.#portrait:CiaNetral
+
+- Seems like i have no other choice..#portrait:CiaNetral
+
+- Exploring Glitch City is the first thing to do.#portrait:CiaNetral
 
 
 -> END
