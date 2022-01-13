@@ -8,7 +8,7 @@ public class Money : MonoBehaviour
     private int currentMoney;
     [SerializeField] TextMeshProUGUI display;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         Instance = this;
         currentMoney = GameManager.Progress.Money;
