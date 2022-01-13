@@ -25,7 +25,7 @@ public class DroneAI : MonoBehaviour
     private Timeline time;
     private int currentWaypoint = 0;
     private bool isReachedEndOfPath = false;
-
+    private EnemyStat stats;
     [SerializeField] private float shootingRange;
     [SerializeField] private float fireRate = 1f;
     private float nextFireTime;
@@ -64,7 +64,11 @@ public class DroneAI : MonoBehaviour
     private void Update()
     {
 
-        
+        if (stats.dead)
+        {
+            Destroy(gameObject);
+            //panggil fungsi mati
+        }
     }
 
     private void UpdatePath()
