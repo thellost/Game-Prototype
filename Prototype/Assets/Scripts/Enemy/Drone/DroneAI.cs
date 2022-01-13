@@ -31,8 +31,12 @@ public class DroneAI : MonoBehaviour
     private float nextFireTime;
     private Transform bulletSpawnDump;
     private BulletManager bulletManager;
+    private EnemyStat stats;
+    private bool dead;
+
     private void Awake()
     {
+        stats = gameObject.GetComponent<EnemyStat>();
         bulletSpawnDump = GameObject.FindGameObjectWithTag("Spawner").transform;
         bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
         if (droneTarget1 == null)
@@ -63,8 +67,19 @@ public class DroneAI : MonoBehaviour
 
     private void Update()
     {
+        if (!stats.checkAlive() && !dead)
+        {
+            dead = true;
+            if (Money.Instance != null)
+            {
+                Money.Instance.addMoney(9);
+            }
+        }
+    }
 
-        
+    public void OnHit(int damage)
+    {
+
     }
 
     private void UpdatePath()
