@@ -46,6 +46,10 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     private EnemyStat stats;
 
     protected virtual void Awake() {
+        if (transform.localScale.x < 0)
+        {
+            isFacingRight = true;
+        }
         stats = gameObject.GetComponent<EnemyStat>();
         state = State.idle;
         target = GameObject.Find("Player").transform.GetChild(0).gameObject.transform;

@@ -31,7 +31,6 @@ public class DroneAI : MonoBehaviour
     private float nextFireTime;
     private Transform bulletSpawnDump;
     private BulletManager bulletManager;
-    private EnemyStat stats;
     private bool dead;
 
     private void Awake()

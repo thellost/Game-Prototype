@@ -280,14 +280,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8172993091227883716}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5ae2d8fffd903e459303444fcdae457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnemyHp: 10
   invicTimer: 1
-  enemyTakeDamageSfx: {fileID: 0}
+  enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 0
   isInvulnerable: 0
