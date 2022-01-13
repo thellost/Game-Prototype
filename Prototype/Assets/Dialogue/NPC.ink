@@ -1,4 +1,4 @@
-Looking for something? #speaker:Bartender #portrait:NPCNetral #layout:left
+Looking for something? #speaker:Bartender #portrait:NPCNetral #layout:leftBar
 -> main
 
 === main ===
@@ -8,7 +8,7 @@ Looking for something?
 + [Guide]
     When you entering Slum area, you should be careful with the gang #portrait:NPCNetral
 
-- Well, do you have any more questions? #speaker:Bartender #portrait:NPCHappy #layout:left
+- Well, do you have any more questions? #speaker:Bartender #portrait:NPCHappy #layout:left1
 + [Yes]
     -> main
 + [No]

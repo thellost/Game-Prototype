@@ -12,7 +12,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
     public static bool isActive = false;
-
+    public bool noInput = false;
+    
     private void Awake()
     {
         playerInRange = false;
@@ -26,8 +27,9 @@ public class DialogueTrigger : MonoBehaviour
         {
             visualCue.SetActive(true);
 
-            if (Input.GetKey(KeyCode.E) && isActive == true)
+            if ((Input.GetKey(KeyCode.E) && isActive == true) || noInput)
             {
+                noInput = false;
                 enterDialog();
             }
         }
