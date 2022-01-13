@@ -450,7 +450,7 @@ MonoBehaviour:
   forceFallSpeed: 20
   dashPower: 20
   airDashPower: 10
-  dashCooldown: 0.75
+  dashCooldown: 0.1
   rollPower: 20
   rollCooldown: 0.5
   knockbackCooldown: 0.15
