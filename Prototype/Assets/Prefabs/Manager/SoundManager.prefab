@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgmSource: {fileID: 5714119065122400894}
   defaultBGM: {fileID: 8300000, guid: 98b2ff704f3d6dd46993df3ae9fb0a12, type: 3}
+  bgmVolume: 0.5
 --- !u!82 &5714119065122400894
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2034,6 +2034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   bossBar: {fileID: 0}
+  bossBgm: {fileID: 0}
 --- !u!1 &7343417565712409083
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,6 +2248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   bullet: {fileID: 3399724480471253069, guid: ea0b8504e544e5d41bbaf787b1524444, type: 3}
+  shootSound: {fileID: 8300000, guid: e6771925617aa0b47b55cc8a4b71639e, type: 3}
   target: {fileID: 7343417565430079067}
   cameraShakeIntensity: 0.5
   cameraShakeFrequency: 1
@@ -2523,6 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   bullet: {fileID: 3399724480471253069, guid: ea0b8504e544e5d41bbaf787b1524444, type: 3}
+  shootSound: {fileID: 8300000, guid: e6771925617aa0b47b55cc8a4b71639e, type: 3}
   target: {fileID: 7343417564577187454}
   cameraShakeIntensity: 0.5
   cameraShakeFrequency: 1
