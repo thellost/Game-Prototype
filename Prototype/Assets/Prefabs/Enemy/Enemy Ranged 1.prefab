@@ -523,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 4.19
   attackDistance: 10
-  attackSpeed: 0.85
+  attackSpeed: 0.65
   knockbackForce: 15
   knockbackDuration: 0.5
   flipLock: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   ai: {fileID: 1658832861239453784}
   time: {fileID: 3537840681294705810}
   turnRate: 0
-  initialTimer: 0.35
+  initialTimer: 0.1
   muzzleParticle: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   cameraShakeIntensity: 2
   cameraShakeFrequency: 1

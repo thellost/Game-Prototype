@@ -74,7 +74,6 @@ public class PlayerStatManager : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             float xside = Mathf.Cos(angle * Mathf.PI / 180) * knockbackPower;
             float yside = Mathf.Sin(angle * Mathf.PI / 180) * knockbackPower;
-            Debug.Log(new Vector2(Mathf.Cos(angle * Mathf.PI / 180), Mathf.Sin(angle * Mathf.PI / 180)));
 
             player.knockback(xside, yside);
         }

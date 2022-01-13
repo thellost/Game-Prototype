@@ -14,6 +14,7 @@ public class Parallax : MonoBehaviour
     void Start()
     {
         startpos = transform.position.x;
+        if(cam == null) { cam = Camera.main.gameObject; }
         if (isTileMap)
         {
             length = GetComponent<TilemapRenderer>().bounds.size.x;

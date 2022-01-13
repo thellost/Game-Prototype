@@ -20,7 +20,6 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         int doorIndex = GameManager.Progress.lastDoorIndex;
-        Debug.Log(GameManager.Instance.GetPreviousLevel());
         for (int i = 0; i < namaLevel.Count; i++)
         {
             if (namaLevel[i] == GameManager.Instance.GetPreviousLevel())

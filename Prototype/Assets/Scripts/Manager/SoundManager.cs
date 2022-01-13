@@ -14,9 +14,12 @@ public class SoundManager : Singleton<SoundManager>
 
     public void PlayBGM(AudioClip bgmClip)
     {
-        bgmSource.clip = bgmClip;
-        bgmSource.volume = 0.5f;
-        bgmSource.Play();
+        if (!bgmSource.isPlaying)
+        {
+            bgmSource.clip = bgmClip;
+            bgmSource.volume = 0.5f;
+            bgmSource.Play();
+        }
     }
 
     public void PlaySFX(AudioClip sfxClip, float volume = 1)

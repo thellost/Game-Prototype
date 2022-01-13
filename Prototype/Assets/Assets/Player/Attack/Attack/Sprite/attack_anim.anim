@@ -123,6 +123,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.075
+    functionName: triggerAttackRaycast
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.1
     functionName: triggerAttackRaycast
     data: 
@@ -166,6 +173,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.25
+    functionName: triggerAttackRaycast
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.275
     functionName: triggerAttackRaycast
     data: 
     objectReferenceParameter: {fileID: 0}
