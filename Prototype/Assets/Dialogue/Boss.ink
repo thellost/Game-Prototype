@@ -1,18 +1,17 @@
-Dimana professor ?! #speaker:Felicia #portrait:CiaNetral #layout:left
+Are you the one who send that message to Professor?” #speaker:Felicia #portrait:CiaAngry #layout:Left
 -> main
 
 === main ===
-Siapa kamu ?
-+ [Sekutu]
-    god, kamu menggagetkan ku saja #portrait:CiaNetral
-+ [Musuh]
-    Panggil bantuan ! Ada penyusup #portrait:CiaNetral
-    
-- Siapa aku tidak penting! #speaker:Enemy #portrait:EnemyNetral #layout:right
+Who are you? Where is Professor? Its not your business! #speaker:BOSS #portrait:Boss #layout:Left
 
-Well, do you have any more questions? #speaker:Felicia #portrait:CiaNetral #layout:left
-+ [Yes]
-    -> main
-+ [No]
-    Goodbye then!
+Tell me where is Professor or else you’ll die with my sword! #speaker:Felicia #portrait:CiaAngry #layout:Left
+    
+Who are you actually? #speaker:BOSS #portrait:Boss #layout:Left
+
+That’s not important!. Why Professor involved with you? #speaker:Felicia #portrait:CiaAngry #layout:Left
+
+So you didn’t know huh? Well, let me tell you something, kid. That Professor is not as good as you think. Selling weapon in black market is our routine. In other word, he is one of our kind! #speaker:BOSS #portrait:Boss #layout:Left
+
+Shut Up!. Professor is not that kind of people #speaker:Felicia #portrait:CiaAngry #layout:Left
+
     -> END
