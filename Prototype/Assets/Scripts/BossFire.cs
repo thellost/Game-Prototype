@@ -9,7 +9,7 @@ public class BossFire : MonoBehaviour
     private float offset = 180f;
     [SerializeField] GameObject muzzleParticle;
     [SerializeField] GameObject bullet;
-
+    [SerializeField] AudioClip shootSound;
     [SerializeField] Transform target;
     [SerializeField] float cameraShakeIntensity = 5;
     [SerializeField] float cameraShakeFrequency = 1;
@@ -32,6 +32,10 @@ public class BossFire : MonoBehaviour
         {
             bulletSpawnDump = bulletSpawnDumpObject.GetComponent<Transform>();
         }
+    }
+    private void OnEnable()
+    {
+        SoundManager.Instance.PlaySFX(shootSound,1,true);
     }
 
     // Update is called once per frame
