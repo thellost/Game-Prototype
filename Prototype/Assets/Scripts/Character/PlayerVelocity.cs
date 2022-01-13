@@ -300,7 +300,10 @@ public class PlayerVelocity : MonoBehaviour
 			velocity = Vector2.one * tempDashPower;
 			velocity = new Vector2(dashDirectionX * velocity.x, velocity.y * dashDirectionY);
 		}
-		lastDashTime = time.time;
+        if (!normalDash)
+		{
+			lastDashTime = time.time;
+		}
 		airJumpCount++;
 
         // test sfx

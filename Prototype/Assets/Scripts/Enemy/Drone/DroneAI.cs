@@ -25,14 +25,17 @@ public class DroneAI : MonoBehaviour
     private Timeline time;
     private int currentWaypoint = 0;
     private bool isReachedEndOfPath = false;
-
+    private EnemyStat stats;
     [SerializeField] private float shootingRange;
     [SerializeField] private float fireRate = 1f;
     private float nextFireTime;
     private Transform bulletSpawnDump;
     private BulletManager bulletManager;
+    private bool dead;
+
     private void Awake()
     {
+        stats = gameObject.GetComponent<EnemyStat>();
         bulletSpawnDump = GameObject.FindGameObjectWithTag("Spawner").transform;
         bulletManager = GameObject.FindGameObjectWithTag("Spawner").GetComponent<BulletManager>();
         if (droneTarget1 == null)
@@ -63,8 +66,24 @@ public class DroneAI : MonoBehaviour
 
     private void Update()
     {
+        if (!stats.checkAlive() && !dead)
+        {
+            dead = true;
+            if (Money.Instance != null)
+            {
+                Money.Instance.addMoney(9);
+            }
+        }
+    }
 
-        
+    public void OnHit(int damage)
+    {
+
+        if (stats.dead)
+        {
+            Destroy(gameObject);
+            //panggil fungsi mati
+        }
     }
 
     private void UpdatePath()

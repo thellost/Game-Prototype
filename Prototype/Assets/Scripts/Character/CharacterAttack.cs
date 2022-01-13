@@ -92,6 +92,7 @@ public class CharacterAttack : MonoBehaviour
         {
             EnemyStat enemyComponent = enemy.transform.gameObject.GetComponent<EnemyStat>();
             EnemyAI enemeyAI = enemy.transform.gameObject.GetComponent<EnemyAI>();
+            DroneAI droneAI = enemy.transform.gameObject.GetComponent<DroneAI>();
             //handle damage and camera shake also buller
             if (enemyComponent != null) {
                 if (enemyComponent.takeDamage(attackDamage))
@@ -99,14 +100,21 @@ public class CharacterAttack : MonoBehaviour
                     //handle the AI
                     if (enemeyAI != null)
                     {
+
                         enemeyAI.setAttackDirection(directionAnimation);
                     }
-                    spawnBlood(enemy);
+                    if(droneAI != null)
+                    {
+                        //lakukan sesuai dengan drone damage
+                    }
+                    else
+                    {
+                        spawnBlood(enemy);
+                    }
                     if (CameraShake.Instance != null)
                     {
                         CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
                     }
-
                 }
             } 
 
@@ -121,6 +129,7 @@ public class CharacterAttack : MonoBehaviour
             }
         }
 
+     
     }
 
     private Vector3 setLocalToParent(Vector3 scale)

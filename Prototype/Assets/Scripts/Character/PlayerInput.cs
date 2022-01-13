@@ -38,7 +38,7 @@ public class PlayerInput : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			playerVelocity.OnFallInputDown();
+			playerVelocity.OnDashInputDown(0, 0, true);
 		}
 
 		if (Input.GetKeyDown(KeyCode.LeftShift))
