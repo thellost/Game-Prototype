@@ -22,22 +22,20 @@ public class Checkpoint : MonoBehaviour
 
     private void OnCheckpoint()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKey(KeyCode.E))
         {
-            GameManager.Progress.lastCheckpointIndex = SceneManager.GetActiveScene().buildIndex;
-            GameManager.Progress.currentHp = playerStats.maxPlayerHP;
-            GameManager.Progress.currentEnergy = playerStats.maxPlayerEnergy;
-            GameManager.Save();
+            //GameManager.Progress.lastCheckpointIndex = SceneManager.GetActiveScene().buildIndex;
+            playerStats.currentHp = playerStats.maxPlayerHP;
+            playerStats.currentEnergy = playerStats.maxPlayerEnergy;
+            //GameManager.Save();
         }
     }
 
-/*    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag=="Player")
+        if (other.gameObject.tag == "Player")
         {
-            anim.SetTrigger("Hit");
-
-            GameManager.Instance.respawnPoint = transform.position;
+            OnCheckpoint();
         }
-    }*/
+    }
 }
