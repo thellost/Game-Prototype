@@ -375,7 +375,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9a85203bb9aa0ef459a51ef35ad67c66, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -602,6 +602,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 98278275}
     m_Modifications:
+    - target: {fileID: 820396640211384470, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820396640211384470, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1214516616628564440, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -758,6 +766,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 98278274}
+    - target: {fileID: 8267737272535805762, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267737272535805762, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
+      propertyPath: m_MaxValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8267737272535805762, guid: c2481a0b4a4488b4b9994e1673d50b83, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

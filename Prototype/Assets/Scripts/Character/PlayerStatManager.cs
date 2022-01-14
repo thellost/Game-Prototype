@@ -130,11 +130,13 @@ public class PlayerStatManager : MonoBehaviour
         animator.SetDead(true);
         animator.enabled = false;
         attack.enabled = false;
-        GameManager.Progress.currentHp = maxPlayerHP;
+       
         if (!isDead)
         {
             StartCoroutine(resetScene());
         }
+        GameManager.Progress.currentHp = maxPlayerHP;
+        GameManager.Save();
         isDead = true;
 
     }
