@@ -31,13 +31,16 @@ public class UImanager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            if (isPaused)
+            if (map != null)
             {
-                CloseMap();
-            }
-            else
-            {
-                OpenMap();
+                if (isPaused)
+                {
+                    CloseMap();
+                }
+                else
+                {
+                    OpenMap();
+                }
             }
         }
     }

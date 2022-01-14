@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerPrefsDetector : MonoBehaviour
 {
@@ -16,9 +17,12 @@ public class PlayerPrefsDetector : MonoBehaviour
 
     private void CheckPrefs()
     {
-        int isVisited = PlayerPrefs.GetInt(prefsName);
-        
-        if(isVisited == 0)
+        //int isVisited = PlayerPrefs.GetInt(prefsName);
+
+        int tmpVisited = GameManager.Progress.levels.ContainsKey(prefsName) ? 1 : 0;
+        int isVisited = tmpVisited;
+
+        if (isVisited == 0)
         {
             onFalse?.Invoke();
         } else
