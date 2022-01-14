@@ -101,6 +101,14 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON) 
     {
+        if (playerInput != null)
+        {
+            playerInput.enabled = false;
+        }
+        if (playerAttack != null)
+        {
+            playerAttack.enabled = false;
+        }
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -116,12 +124,16 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.2f);
-        if(playerAttack != null && playerInput != null)
+        if(playerInput != null)
         {
             playerInput.enabled = true;
+        }
+        if(playerAttack != null)
+        {
             playerAttack.enabled = true;
         }
-        
+
+        GetComponent<IOnDialogExit>().DialogExit();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
