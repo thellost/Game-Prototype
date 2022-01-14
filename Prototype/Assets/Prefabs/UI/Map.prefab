@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2290073910485756041}
   - component: {fileID: 5714022503596873313}
   - component: {fileID: 9065042990860328770}
+  - component: {fileID: 6464019134004367952}
   m_Layer: 5
   m_Name: Map Background
   m_TagString: Untagged
@@ -79,6 +80,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &6464019134004367952
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660405471851641499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3c21eab89264194695aebf99dd25d44, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1726035620579806812
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +229,6 @@ GameObject:
   - component: {fileID: 1726035620652308820}
   - component: {fileID: 1726035620652308817}
   - component: {fileID: 1726035620652308818}
-  - component: {fileID: 1726035620652308819}
   m_Layer: 5
   m_Name: C (5)
   m_TagString: Untagged
@@ -274,49 +293,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1726035620652308819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035620652308821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefsName: 
-  onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035620652308818}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035620652308818}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1726035620664740411
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +304,6 @@ GameObject:
   - component: {fileID: 1726035620664740410}
   - component: {fileID: 1726035620664740407}
   - component: {fileID: 1726035620664740408}
-  - component: {fileID: 1726035620664740409}
   m_Layer: 5
   m_Name: C (3)
   m_TagString: Untagged
@@ -393,49 +368,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1726035620664740409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035620664740411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefsName: eiai
-  onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035620664740408}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035620664740408}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1726035620729311552
 GameObject:
   m_ObjectHideFlags: 0
@@ -705,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: Coba Movement 2
+  prefsName: Level 2
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -856,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: eiai
+  prefsName: Level 3
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -1007,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: 
+  prefsName: Level Boss
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -1080,7 +1012,6 @@ GameObject:
   - component: {fileID: 1726035621153091873}
   - component: {fileID: 1726035621153091902}
   - component: {fileID: 1726035621153091903}
-  - component: {fileID: 1726035621153091872}
   m_Layer: 5
   m_Name: C (4)
   m_TagString: Untagged
@@ -1145,49 +1076,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1726035621153091872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035621153091874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefsName: 
-  onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035621153091903}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035621153091903}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 1ae4f568c14b16b479dd657e3661668f, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1726035621169312103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: 
+  prefsName: Level 4
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -1694,7 +1582,6 @@ GameObject:
   - component: {fileID: 1726035621786668811}
   - component: {fileID: 1726035621786668808}
   - component: {fileID: 1726035621786668809}
-  - component: {fileID: 1726035621786668810}
   m_Layer: 5
   m_Name: C (1)
   m_TagString: Untagged
@@ -1759,49 +1646,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1726035621786668810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035621786668812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefsName: Room 1
-  onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035621786668809}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035621786668809}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1726035621812345761
 GameObject:
   m_ObjectHideFlags: 0
@@ -2085,7 +1929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: Room 1
+  prefsName: Level 1
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -2208,7 +2052,6 @@ GameObject:
   - component: {fileID: 1726035622010780116}
   - component: {fileID: 1726035622010780113}
   - component: {fileID: 1726035622010780114}
-  - component: {fileID: 1726035622010780115}
   m_Layer: 5
   m_Name: C (2)
   m_TagString: Untagged
@@ -2273,49 +2116,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1726035622010780115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035622010780117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefsName: Coba Movement 2
-  onTrue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035622010780114}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onFalse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1726035622010780114}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1726035622021969098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e9333514777f34eb822b88b010c884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefsName: 
+  prefsName: Level 5
   onTrue:
     m_PersistentCalls:
       m_Calls:
@@ -2734,7 +2534,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1726035622471140446}
   - component: {fileID: 1726035622471140444}
-  - component: {fileID: 1726035622471140445}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -2770,36 +2569,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726035622471140447}
   m_CullTransparentMesh: 1
---- !u!114 &1726035622471140445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1726035622471140447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1726035622559521543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,8 +2709,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290559164
+  m_fontColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3150,8 +2919,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4290559164
+  m_fontColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
