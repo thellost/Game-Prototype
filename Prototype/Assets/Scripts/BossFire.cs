@@ -35,7 +35,7 @@ public class BossFire : MonoBehaviour
     }
     private void OnEnable()
     {
-        SoundManager.Instance.PlaySFX(shootSound,1,true);
+        SoundManager.Instance.PlaySFX(shootSound,0.5f,true);
     }
 
     // Update is called once per frame

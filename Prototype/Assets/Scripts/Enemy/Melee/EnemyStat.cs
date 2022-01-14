@@ -7,7 +7,7 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     [Header("Enemy Basic Stat")]
     public float maxEnemyHp = 100;
     [SerializeField] float invicTimer = 1;
-
+    [SerializeField] AudioClip deathAudio;
     public AudioClip enemyTakeDamageSfx;
     public float currentHp;
     public float damage;
@@ -15,6 +15,7 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     public bool dead;
     private float internalTimer;
     private EnemyAI ai;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -32,10 +33,10 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
     }
     public bool checkAlive()
     {
-        if (currentHp <= 0)
+        if (currentHp <= 0 && !dead)
         {
             dead = true;
-
+            SoundManager.Instance.PlaySFX(deathAudio);
             this.enabled = false;
             return false;
         }

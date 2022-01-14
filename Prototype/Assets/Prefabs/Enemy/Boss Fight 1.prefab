@@ -1846,7 +1846,7 @@ MonoBehaviour:
   flare: {fileID: 100006, guid: 0438351a6e6422d43a09930e9be00ee9, type: 3}
   muzzle: {fileID: 7343417565458939275}
   target: {fileID: 7343417565106181596}
-  shootSound: {fileID: 8300000, guid: e7abc2bb206e02142af52d15aec9f59c, type: 3}
+  shootSound: {fileID: 8300000, guid: f62e9a22f03c8ab40aff6dfd7c428e07, type: 3}
   cameraShakeIntensity: 5
   cameraShakeFrequency: 1
   cameraShakeTimer: 0.1

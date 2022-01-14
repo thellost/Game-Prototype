@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff5b454f126f9c46b6fcd1381cdc147, type: 3}
   m_Name: Augment 1
   m_EditorClassIdentifier: 
+  id: 1
   name: Attack Augment
   desciption: Power your viscious attack
   artwork: {fileID: 0}
