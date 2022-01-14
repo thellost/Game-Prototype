@@ -54,6 +54,7 @@ public class PlayerStatManager : MonoBehaviour
         {
             currentHp = maxPlayerHP;
         }
+        Debug.Log(currentHp);
         currentEnergy = maxPlayerEnergy;
 
 
@@ -73,8 +74,9 @@ public class PlayerStatManager : MonoBehaviour
             BloodEffect.Instance.setBlood();
             CameraShake.Instance.ShakeCamera(cameraShakeIntensity, cameraShakeTimer, cameraShakeFrequency);
             currentHp -= dmg;
-            GameManager.Progress.currentHp = currentEnergy;
+            GameManager.Progress.currentHp = currentHp;
             hpProgressUI.value = currentHp;
+
             Vector2 direction = transform.position - enemyPosition;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             float xside = Mathf.Cos(angle * Mathf.PI / 180) * knockbackPower;

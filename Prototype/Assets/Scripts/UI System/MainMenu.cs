@@ -202,10 +202,6 @@ public class MainMenu : Singleton<MainMenu>
         }
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        Destroy(gameObject);
-    }
 
     public IEnumerator ConfirmationBox()
     {

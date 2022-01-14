@@ -27,6 +27,7 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
 
     private void setPlayerStat()
     {
+
         //perlu di ubah kedepannya karena bakal ada implementasi save
         currentHp = maxEnemyHp;
 
