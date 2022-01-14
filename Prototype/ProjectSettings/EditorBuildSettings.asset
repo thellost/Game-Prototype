@@ -30,9 +30,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Test/Level/fix/Level Boss.unity
     guid: 88ca85c2d5ad2d04abff672d51fef85b
   - enabled: 1
+    path: Assets/Scenes/Test/Level/fix/Level Transisi.unity
+    guid: 76777e3287387d14fb7fc7c5aa39e37d
+  - enabled: 1
     path: Assets/Scenes/Test/Gabungan Fitur/Bar-Olin.unity
     guid: bbe195c4f27b9db4aabe48d965d510d0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Test/Gabungan Fitur/Klinik hewan.unity
     guid: c78167f67ba0af049b1cd890fe514de9
   - enabled: 0

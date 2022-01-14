@@ -563,8 +563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5ae2d8fffd903e459303444fcdae457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayerHP: 20
+  maxEnemyHp: 100
   invicTimer: 1
+  deathAudio: {fileID: 8300000, guid: de72a944dc485bb4188d66f32147005e, type: 3}
   enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 10
