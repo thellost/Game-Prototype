@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnemyHp: 20
   invicTimer: 0.6
-  deathAudio: {fileID: 8300000, guid: de72a944dc485bb4188d66f32147005e, type: 3}
+  deathAudio: {fileID: 8300000, guid: e8e17485db51a2349ac41d04e645bf89, type: 3}
   enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 15
