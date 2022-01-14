@@ -7,8 +7,8 @@ using Chronos;
 public class PlayerStatManager : MonoBehaviour
 {
     [Header("Player Basic Stat")]
-    [SerializeField] float maxPlayerHP = 100;
-    [SerializeField] float maxPlayerEnergy = 50;
+    [SerializeField] public float maxPlayerHP = 100;
+    [SerializeField] public float maxPlayerEnergy = 50;
     [SerializeField] float invicTimer = 1;
     [SerializeField] float knockbackPower = 10;
 

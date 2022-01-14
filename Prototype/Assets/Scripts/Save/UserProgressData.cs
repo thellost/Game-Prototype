@@ -15,6 +15,7 @@ public class UserProgressData
     public int lastCheckpointIndex;
     public int lastDoorIndex;
     public float currentHp;
+    public float currentEnergy;
 
 
 }
