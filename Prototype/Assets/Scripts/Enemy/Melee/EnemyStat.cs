@@ -36,7 +36,10 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
         if (currentHp <= 0 && !dead)
         {
             dead = true;
-            SoundManager.Instance.PlaySFX(deathAudio);
+            if (deathAudio != null)
+            {
+                SoundManager.Instance.PlaySFX(deathAudio);
+            }
             this.enabled = false;
             return false;
         }

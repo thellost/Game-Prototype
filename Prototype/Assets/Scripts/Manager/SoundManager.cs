@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Chronos;
+using UnityEngine.SceneManagement;
 public class SoundManager : Singleton<SoundManager>
 {
     private static AudioClip currentBgmClip;
@@ -18,6 +19,10 @@ public class SoundManager : Singleton<SoundManager>
     }
     private void OnLevelWasLoaded(int level)
     {
+        if(SceneManager.GetActiveScene().buildIndex == 0 || level == 0)
+        {
+            Destroy(gameObject);
+        }
         PlayBGM(currentBgmClip, bgmVolumStatic);
     }
     public void PlayBGM(AudioClip bgmClip, float volume = 0.5f)
