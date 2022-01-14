@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Augment" , menuName = "Augment")]
 public class Augment : ScriptableObject
 {
+    public int id;
     public new string name;
     public string desciption;
 

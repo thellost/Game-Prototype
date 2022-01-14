@@ -9,6 +9,11 @@ public class LerpingMaterial : MonoBehaviour
     public Material greyscaleMaterial;
     public Material blurShaderGraph;
     private float val;
+
+    private void OnLevelWasLoaded(int level)
+    {
+        
+    }
     public void setMaterialEffect(bool isFading)
     {
 

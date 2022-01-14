@@ -23,7 +23,7 @@ public class ShootScript: MonoBehaviour
     }
     private void fireBullet()
     {
-        SoundManager.Instance.PlaySFX(shootSound, 1, true);
+        SoundManager.Instance.PlaySFX(shootSound, 0.5f, true);
 
         GameObject particle = bulletManager.GenerateVXFromPool(flare, bulletSpawnDump, muzzle.transform.position, Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z));
         particle.GetComponent<Transform>().Rotate(new Vector3(0, 0, offset));

@@ -39,14 +39,14 @@ public class DialogueManager : MonoBehaviour
 
     private PlayerInput playerInput;
     private CharacterAttack playerAttack;
-
-
+    private PlayerVelocity playerVelocity;
+    private Augment augment;
     private void Awake() 
     {
         GameObject player = GameObject.Find("Player");
         if (player != null)
         {
-
+            playerVelocity = player.GetComponent<PlayerVelocity>();
             playerInput = player.GetComponent<PlayerInput>();
             playerAttack = player.GetComponent<CharacterAttack>();
         }
@@ -88,7 +88,7 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-
+        DisableInput(true);
         // handle continuing to the next line in the dialogue when submit is pressed
         // NOTE: The 'currentStory.currentChoiecs.Count == 0' part was to fix a bug after the Youtube video was made
         if (canContinueToNextLine 
@@ -101,14 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON) 
     {
-        if (playerInput != null)
-        {
-            playerInput.enabled = false;
-        }
-        if (playerAttack != null)
-        {
-            playerAttack.enabled = false;
-        }
+        DisableInput(true);
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -124,19 +117,33 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.2f);
-        if(playerInput != null)
-        {
-            playerInput.enabled = true;
-        }
-        if(playerAttack != null)
-        {
-            playerAttack.enabled = true;
-        }
 
+        DisableInput(false);
         GetComponent<IOnDialogExit>().DialogExit();
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+    }
+
+    private void DisableInput(bool arg)
+    {
+        if (playerInput != null)
+        {
+            playerInput.enabled = !arg;
+        }
+        if (playerAttack != null)
+        {
+            playerAttack.enabled = !arg;
+        }
+        if (playerVelocity != null)
+        {
+            playerVelocity.SetDirectionalInput(new Vector2(0, 0));
+        }
+        if (TimeManager.Instance.isInSlowmo)
+        {
+
+            TimeManager.Instance.stopSlowMotion();
+        }
     }
 
     private void ContinueStory() 

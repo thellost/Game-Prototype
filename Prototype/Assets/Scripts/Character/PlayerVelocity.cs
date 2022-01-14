@@ -343,6 +343,7 @@ public class PlayerVelocity : MonoBehaviour
 
 	private void ResetDashing()
     {
+		
 		playerInput.enabled = true;
 		isDashing = false;
 
