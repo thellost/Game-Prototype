@@ -15,14 +15,17 @@ public class UImanager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if (isPaused)
+            if (inventory != null)
             {
-                CloseInventory();
-                animator.SetTrigger("CloseInventory");
-            }
-            else
-            {
-                OpenInventory();
+                if (isPaused)
+                {
+                    CloseInventory();
+                    animator.SetTrigger("CloseInventory");
+                }
+                else
+                {
+                    OpenInventory();
+                }
             }
         }
 

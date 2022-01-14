@@ -12,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
     public LayerMask bulletLayer;
     public float attackDamage;
     public float animationOffset;
+    [SerializeField] GameObject explosionParticle;
     [SerializeField] GameObject bloodParticle;
     [SerializeField] GameObject slashParticle;
     [SerializeField] float cameraShakeIntensity = 5;
@@ -105,7 +106,8 @@ public class CharacterAttack : MonoBehaviour
                     }
                     if(droneAI != null)
                     {
-                        
+                        Explosion(enemy);
+                        Destroy(droneAI.gameObject);
                         //lakukan sesuai dengan drone damage
                     }
                     else
@@ -188,6 +190,13 @@ public class CharacterAttack : MonoBehaviour
         GameObject gameobj = Instantiate(bloodParticle, new Vector3(enemy.transform.position.x + attackRangeCircle, enemy.transform.position.y, -2), Quaternion.Euler(-90f, 0, 0));
         gameobj.transform.rotation = Quaternion.Euler(-90f, 0, 0) * rotation;
 
+    }
+
+    private void Explosion(Collider2D drone)
+    {
+        //GameObject particle = (GameObject)Instantiate(explosionParticle);
+        GameObject gameobj = Instantiate(explosionParticle, drone.transform.position, Quaternion.identity) as GameObject;
+        Debug.Log("Explode!");
     }
 
 
