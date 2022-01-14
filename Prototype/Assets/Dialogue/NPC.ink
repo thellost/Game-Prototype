@@ -1,15 +1,14 @@
-Apa yang sekarang kamu butuhkan? #speaker:Bartender #portrait:NPCNetral #layout:left
+Looking for something? #speaker:Bartender #portrait:NPCNetral #layout:leftBar
 -> main
 
 === main ===
-Apa yang sekarang kamu butuhkan? 
-+ [Toko]
-    Anda harus membeli senjata ini untuk ke tahap selanjutnya. #portrait:NPCNetral
-    Saya hanya punya satu senjata dan kamu harus membelinya. #portrait:NPCNetral
-+ [Petunjuk]
-    Jika anda memasuki area kumuh, anda harus waspada dengan geng di sana. #portrait:NPCNetral
+Looking for something?
++ [Shop]
+    You should buy this weapon to overcome the next level. This is the only weapon that available right now #portrait:NPCNetral
++ [Guide]
+    When you entering Slum area, you should be careful with the gang #portrait:NPCNetral
 
-- Well, do you have any more questions? #speaker:Bartender #portrait:NPCHappy #layout:left
+- Well, do you have any more questions? #speaker:Bartender #portrait:NPCHappy #layout:left1
 + [Yes]
     -> main
 + [No]

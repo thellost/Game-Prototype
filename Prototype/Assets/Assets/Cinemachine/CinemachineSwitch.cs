@@ -7,6 +7,7 @@ public class CinemachineSwitch : MonoBehaviour
 
     [SerializeField] Animator animator;
     [SerializeField] GameObject bossBar;
+    [SerializeField] AudioClip bossBgm;
     private bool inPlayer;
     // Start is called before the first frame update
     void Awake()
@@ -15,7 +16,11 @@ public class CinemachineSwitch : MonoBehaviour
     }
     private void OnEnable()
     {
-        if(bossBar != null)
+        if (bossBgm != null)
+        {
+            SoundManager.Instance.PlayBGM(bossBgm);
+        }
+            if (bossBar != null)
         {
             bossBar.SetActive(true);
         }

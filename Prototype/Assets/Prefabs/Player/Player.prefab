@@ -365,6 +365,7 @@ MonoBehaviour:
     m_Bits: 16384
   attackDamage: 10
   animationOffset: 0
+  explosionParticle: {fileID: 181933059371358969, guid: 74d1cc963fcb4d341a6c3339292df22e, type: 3}
   bloodParticle: {fileID: 2727237612913529644, guid: 39eb177096f03f345adbfd719611cf98, type: 3}
   slashParticle: {fileID: 65440453009767433, guid: 237838baa2471ab458f43c58926436ee, type: 3}
   cameraShakeIntensity: 5

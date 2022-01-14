@@ -78,10 +78,10 @@ public class DroneAI : MonoBehaviour
 
     public void OnHit(int damage)
     {
-
         if (stats.dead)
         {
             Destroy(gameObject);
+
             //panggil fungsi mati
         }
     }
@@ -92,7 +92,6 @@ public class DroneAI : MonoBehaviour
         {
             seeker.StartPath(rb.position, droneTarget1.position, OnPathComplete);
         }
-
     }
 
     private void OnPathComplete(Path p)
