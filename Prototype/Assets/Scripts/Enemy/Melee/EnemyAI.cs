@@ -15,7 +15,6 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
     [SerializeField] bool flipLock = false;
     [SerializeField] Collider2D hitBox;
     [SerializeField] Collider2D detectionBox;
-    [SerializeField] GameObject popupMoney;
 
     public enum State {
         Patroling,
@@ -79,6 +78,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
             if (Money.Instance != null)
             {
                 Money.Instance.addMoney(9);
+
             }
             setState(State.dead);
 
@@ -151,10 +151,7 @@ public class EnemyAI : MonoBehaviour, IDamageAble<int> {
 
                 knockback(tempDead/2 , true);
                 timeElapsed += time.deltaTime;
-                if(popupMoney != null)
-                {
-                    Instantiate(popupMoney, transform.position, Quaternion.identity);
-                }
+               
                 break;
         }
     }

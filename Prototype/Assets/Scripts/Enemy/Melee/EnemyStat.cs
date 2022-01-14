@@ -62,6 +62,11 @@ public class EnemyStat : MonoBehaviour, IDamageAble<int>
                 {
                     PopupHandler.Instance.PopupDmg(gameObject, dmg.ToString());
                 }
+                if (Money.Instance != null)
+                {
+                    Money.Instance.addMoney(9);
+
+                }
                 if (ai != null)
                 {
                     ai.setState(EnemyAI.State.knockback);
