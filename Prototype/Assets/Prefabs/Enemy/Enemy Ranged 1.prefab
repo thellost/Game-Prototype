@@ -352,8 +352,8 @@ PolygonCollider2D:
     - - {x: 0.04389642, y: -0.7357481}
       - {x: 0.05207005, y: 5.132079}
       - {x: 0.50764966, y: 6.512058}
-      - {x: 6.56777, y: 10.266365}
-      - {x: 6.545015, y: -0.8738409}
+      - {x: 7.4866424, y: 6.6166754}
+      - {x: 7.4217043, y: -0.018803835}
 --- !u!1 &3537840681134150388
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 4.19
-  attackDistance: 10
+  attackDistance: 16.39
   attackSpeed: 0.65
   knockbackForce: 15
   knockbackDuration: 0.5
@@ -565,6 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnemyHp: 10
   invicTimer: 1
+  deathAudio: {fileID: 8300000, guid: e8e17485db51a2349ac41d04e645bf89, type: 3}
   enemyTakeDamageSfx: {fileID: 8300000, guid: 4f79aa4adec75744c9413b2ccc1da75e, type: 3}
   currentHp: 0
   damage: 10
